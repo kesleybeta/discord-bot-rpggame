@@ -62,8 +62,7 @@ bot.on("message", async message => {
         console.log(`[CMD] ${message} requested by ${message.author.username}`);
         message.channel.send(prembed);
     }
-    console.log("test ----" +prefix.toUpperCase());
-    if (message.content.startsWith(prefix)) {
+    if (message.content.startsWith(prefix || prefix.toUpperCase())) {
         if (commandfile) commandfile.run(bot, message, args, cmd);
     } else {
         // ---- Coin System not related with the Role Playing
