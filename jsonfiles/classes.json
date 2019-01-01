@@ -1,0 +1,22 @@
+{
+    "Monk":{
+        "hitpoint":{
+            "hitdice": "1d8 * level",
+            "hp-1st": "8 + con-mod",
+            "hp": ["1d8 + con-mod", "5 + con-mod"]
+        },
+        "proficiencies":{
+            "armor": "none",
+            "weapons": ["Simple Weapons", "Shortswords"],
+            "tools": ["Artisan's tools", "Musical Instrument"],
+            "saving-trows": ["str","dex"],
+            "skills": ["Acrobatics", "Athletics", "History", "Insight", "Religion" ,"Stealth"]
+        },
+        "unarmored-defense":{
+            "ac": "10 + dex-mod + wis-mod"
+        },
+        "martial-arts":{
+            
+        }
+    }
+}

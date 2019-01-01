@@ -1,0 +1,23 @@
+{
+    "background":{
+        "Acolyte":{},
+        "Charlatan":{},
+        "Criminal":{},
+        "Entertainer":{},
+        "Folk Hero":{},
+        "Guild Artisan":{},
+        "Haunted One":{},
+        "Hermit":{},
+        "Noble":{},
+        "Outlander":{},
+        "Sage":{
+            "skill-prof":["Arcana", "History"],
+            "languages":"Choose two more",
+            "specialty":"Researcher",
+            "personality-traits":"Choose two"
+        },
+        "Sailor":{},
+        "Soldier":{},
+        "Urchin":{}
+    }
+}

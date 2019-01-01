@@ -1,0 +1,58 @@
+{
+    "races": [
+        "Human",
+        "Genasi"
+    ],
+    "Human": {},
+    "Genasi": {
+        "subraces": [
+            "Air",
+            "Earth",
+            "Fire",
+            "Water"
+        ],
+        "Air Genasi": {
+            "ability-score": {
+                "dex": 1
+            },
+            "features": [
+                "Unending Breath",
+                "Mingle with the Wind"
+            ],
+            "languages": [
+                "Common",
+                "Primordial"
+            ]
+        },
+        "Earth Genasi": {
+            "ability-score": {
+                "str": 1
+            },
+            "features": [
+                "Earth Walk",
+                "Merge with Stone"
+            ]
+        },
+        "Fire Genasi": {
+            "ability-score": {
+                "itl": 1
+            },
+            "features": [
+                "Dark Vision",
+                "Fire Resistance",
+                "Reach to the Blaze"
+            ]
+        },
+        "Water Genasi": {
+            "ability-score": {
+                "wis": 1
+            },
+            "features": [
+                "Acid Resistance",
+                "Amphibious",
+                "Swim Speed (30ft)",
+                "Call to the Wave"
+            ]
+        }
+    }
+}
