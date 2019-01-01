@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
 
         for (let i = 0; i < diceQtd; i++) {
             sideFace = Math.floor(Math.random() * (diceSide - 1 + 1)) + 1;
-            descr = descr +  "\nYou got a > "+`${sideFace}`
+            descr = descr +  "\nYou got a > "+`**${sideFace}**`
         }
 
         message.channel.send(embed.setDescription(descr));

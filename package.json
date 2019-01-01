@@ -9,6 +9,8 @@
   "author": "LUKE",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^2.4.1",
+    "dateformat": "^3.0.3",
     "discord.js": "^11.4.2",
     "mongoose": "^5.4.1",
     "ms": "^2.1.1",

@@ -5,12 +5,14 @@ const fs = require("fs");
 const bot = new Discord.Client({
     disableEveryone: true
 });
+const dateFormat = require('dateformat'); //https://www.npmjs.com/package/dateformat
 const mongoose = require("mongoose");
 const CoinMod = require("./models/mod-coins.js");
 
 mongoose.connect("mongodb://localhost:27017/Coins", {
     useNewUrlParser: true
 })
+console.log("[LOG] Connected to the database.");
 
 require("./util/eventHandler")(bot);
 
@@ -25,7 +27,7 @@ fs.readdir("./commands/", (err, files) => {
         return;
     }
     jsfile.forEach((f, i) => {
-        var timel = new Date().toISOString().replace('T', ' ').replace('Z', '');
+        var timel = dateFormat(new Date(), "l")
         let commandFile = require(`./commands/${f}`);
         console.log(`[${timel}] Command file loaded: ${f}`);
         bot.commands.set(commandFile.config.name, commandFile);
@@ -54,20 +56,20 @@ bot.on("message", async message => {
 
     if (cmd === `prefix`) {
         let prembed = new Discord.RichEmbed()
-            .setColor("#ccefcb")
-            .setAuthor(bot.user.username, bot.user.avatarURL)
+            .setColor("#808080")
+            //.setAuthor(bot.user.username, bot.user.avatarURL)
             .setThumbnail("https://cdn4.iconfinder.com/data/icons/dortmund/Dortmund-32x32/config.png")
-            .addField("Current prefix", `\`${prefix}\``);
+            .setDescription("Current prefix" + `\`\`\`css\n${prefix}\`\`\``);
 
         console.log(`[CMD] ${message} requested by ${message.author.username}`);
         message.channel.send(prembed);
     }
-    if (message.content.startsWith(prefix || prefix.toUpperCase())) {
+    if (message.content.startsWith(prefix)) {
         if (commandfile) commandfile.run(bot, message, args, cmd);
     } else {
         // ---- Coin System not related with the Role Playing
-        let coinstoadd = Math.ceil(Math.random() * 50);
-        console.log("[---] " + coinstoadd + " coins");
+        let coinstoadd = Math.ceil(Math.random() * 20);
+        //console.log("[---] " + coinstoadd + " coins");
         CoinMod.findOne({
             userID: message.author.id,
             serverID: message.guild.id
