@@ -31,7 +31,7 @@ prefix
 ```
 ` * * *`
 ```diff
-!OTHERS COMMANDS!
+!MISCELLANEOUS!
 `{p}hello`
 --- Talk to the GM bot.
 `{p}doggo`
