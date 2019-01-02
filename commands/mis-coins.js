@@ -24,7 +24,7 @@ module.exports.run = async (bot, message, args) => {
             return message.channel.send(embed);
         }
     })
-    console.log(`[CMD] ${message} requested by ${message.author.tag} ID: (${message.author.id})`);
+    console.log(`[CMD] ${message} > requested by [${message.author.username}],[${message.author.id}]`);
 }
 module.exports.config = {
     name: "coins",

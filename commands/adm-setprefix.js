@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, args, prefix) => {
     .setDescription(`Set to ${args[0]}`);
     message.channel.send(pfembed);
     
-    console.log(`[CMD] ${message} requested by ${message.author.username}`);
+    console.log(`[CMD] ${message} > requested by [${message.author.username}],[${message.author.id}]`);
 }
 module.exports.config = {
     name: "setprefix",

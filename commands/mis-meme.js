@@ -11,8 +11,8 @@ module.exports.run = async (bot, message, args) => {
     .setImage(body.url)
     .setFooter("from Get-a.life");
     
-    console.log(`[cmd] MEME requested by ${message.author.tag} ID: (${message.author.id})`);
     message.channel.send(dogembed);
+    console.log(`[CMD] ${message} > requested by [${message.author.username}],[${message.author.id}]`);
 }
 
 module.exports.config = {

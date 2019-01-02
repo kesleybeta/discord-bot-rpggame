@@ -6,7 +6,8 @@ module.exports.run = async (bot, message, args) => {
     const sayMessage = args.join(" ");
     message.delete().catch();
     message.channel.send(sayMessage);
-    console.log(`---cmd: SAY requested by ${message.author.username}`)
+    
+    console.log(`[CMD] ${message} > requested by [${message.author.username}],[${message.author.id}]`);
 }
 
 module.exports.config = {

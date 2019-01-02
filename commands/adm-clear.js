@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
     message.channel.bulkDelete(args[0]).then(() => {
         message.channel.send(`Cleared ${args[0]} messages.`).then(msg => msg.delete(2500));
     });
-    console.log(`[CMD] ${message} requested by ${message.author.tag} ID: (${message.author.id})`);
+    console.log(`[CMD] ${message} > requested by [${message.author.username}],[${message.author.id}]`);
 }
 
 module.exports.config = {

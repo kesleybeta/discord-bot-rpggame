@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, args, prefix) => {
     .addField("CHOOSE YOUR CHARACTER'S RACE:", jsonraces["races"], true)
     message.channel.send(rcembed);
 
-    console.log(`[cmd] ${message} requested by ${message.author.tag} ID: (${message.author.id})`);
+    console.log(`[CMD] ${message} > requested by [${message.author.username}],[${message.author.id}]`);
 }
 
 module.exports.config = {

@@ -27,7 +27,7 @@ module.exports.run = async (bot, message, args) => {
         let replytext = Math.floor((Math.random() * replies.length) + 0);
         message.reply(replies[replytext]);
     }
-    console.log(`[cmd] ${message} requested by ${message.author.tag} ID: (${message.author.id})`);
+    console.log(`[CMD] ${message} > requested by [${message.author.username}],[${message.author.id}]`);
 }
 
 module.exports.config = {

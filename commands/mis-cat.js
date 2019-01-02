@@ -11,8 +11,8 @@ module.exports.run = async (bot, message, args) => {
     .setImage(body.file)
     .setFooter("from Random.cat");
     
-    console.log(`[cmd] CAT requested by ${message.author.tag} ID: (${message.author.id})`);
     message.channel.send(dogembed);
+    console.log(`[CMD] ${message} > requested by [${message.author.username}],[${message.author.id}]`);
 }
 
 module.exports.config = {

@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args, prefix) => {
     .addField(`I am the *Game Master*. I'm here to guide you on your adventure. \n Well, If you are ready type **${prefix}start**`)
 
     message.channel.send(helemb);
-    console.log(`---cmd: HELLO requested by ${message.author.username}`);
+    console.log(`[CMD] ${message} > requested by [${message.author.username}],[${message.author.id}]`);
 }
 module.exports.config = {
     name: "hello",

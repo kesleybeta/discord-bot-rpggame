@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, args, cmd) => {
     .addBlankField()
     .setFooter("© LuKe-SN ( Idealized by Lucas | Created by Kesley )");
 
-    console.log(`[CMD] ${rqcmd} requested by ${message.author.tag} ID: (${message.author.id})`);
+    console.log(`[CMD] ${message} > requested by [${message.author.username}],[${message.author.id}]`);
     return message.channel.send(serverembed);
 }
 
