@@ -1,6 +1,7 @@
 const botconfig = require("./botconfig.json");
 const tokenfile = require("./token.json");
 const Discord = require("discord.js");
+const chalk = require("chalk");
 const fs = require("fs");
 const bot = new Discord.Client({
     disableEveryone: true
@@ -8,11 +9,14 @@ const bot = new Discord.Client({
 const dateFormat = require('dateformat'); //https://www.npmjs.com/package/dateformat
 const mongoose = require("mongoose");
 const CoinMod = require("./models/mod-coins.js");
+const dbDefault = "mongodb://localhost:27017/UltimateData";
 
-mongoose.connect("mongodb://localhost:27017/Coins", {
+mongoose.connect(dbDefault, {
     useNewUrlParser: true
 })
-console.log("[LOG] Connected to the database.");
+mongoose.connection.on('connected', function () {
+    console.log(chalk.cyan("[LOG] Connected to", dbDefault));
+});
 
 require("./util/eventHandler")(bot);
 
@@ -57,7 +61,6 @@ bot.on("message", async message => {
     if (cmd === `prefix`) {
         let prembed = new Discord.RichEmbed()
             .setColor("#808080")
-            //.setAuthor(bot.user.username, bot.user.avatarURL)
             .setThumbnail("https://cdn4.iconfinder.com/data/icons/dortmund/Dortmund-32x32/config.png")
             .setDescription("Current prefix" + `\`\`\`css\n${prefix}\`\`\``);
 
@@ -69,7 +72,7 @@ bot.on("message", async message => {
     } else {
         // ---- Coin System not related with the Role Playing
         let coinstoadd = Math.ceil(Math.random() * 20);
-        //console.log("[---] " + coinstoadd + " coins");
+
         CoinMod.findOne({
             userID: message.author.id,
             serverID: message.guild.id
@@ -84,6 +87,7 @@ bot.on("message", async message => {
                 })
                 newCoins.save().catch(err => console.log("[ERR]" + err));
             } else {
+                console.log("[---] Coins: "+coinstoadd);
                 coins.coins = coins.coins + coinstoadd;
                 coins.save().catch(err => console.log("[ERR]" + err));
             }

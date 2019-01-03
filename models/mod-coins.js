@@ -7,4 +7,4 @@ const coinSchema = mongoose.Schema({
     coins: Number
 })
 
-module.exports = mongoose.model("Coins", coinSchema);
+module.exports = mongoose.model("coinsystem", coinSchema);

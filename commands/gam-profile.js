@@ -1,7 +1,9 @@
 const Discord = require("discord.js");
+const mongoose = require("mongoose");
 
 module.exports.run = async (bot, message, args, prefix) => {
-    
+    await message.delete();
+
     let embed = new Discord.RichEmbed()
     .setColor("#000000")
     .setThumbnail(message.author.displayAvatarURL)

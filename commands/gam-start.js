@@ -1,26 +1,36 @@
 const Discord = require("discord.js");
-const fs = require("fs");
+const mongoose = require("mongoose");
+const modRaces = require("../models/mod-races.js");
 
-module.exports.run = async (bot, message, args, prefix) => {
-    
-    let jsonraces = JSON.parse(fs.readFileSync("./jsonfiles/races.json", "utf8"));
-    
+module.exports.run = async (bot, message, args, cmd) => {
+    //let jsonraces = JSON.parse(fs.readFileSync("./jsonfiles/races.json", "utf8"));
     let stembed = new Discord.RichEmbed()
-    .setAuthor("Game Master", "https://cdn.iconscout.com/icon/premium/png-256-thumb/wizard-23-483776.png")
-    .setColor("#808080")
-    .setDescription("To start your new adventure I'll need your card number...\n*Haha! Just kidding, this doesn't exist here...\n...cofcof (yet)\nSo...*\n\nLet's create your new CHARACTER.");
-    message.channel.send({embed: stembed});
-    
-    // - -- - --adicionar racial traits + outro raças
-    let rcembed = new Discord.RichEmbed()
-    .setAuthor("Game Master", "https://cdn.iconscout.com/icon/premium/png-256-thumb/wizard-23-483776.png")
-    .setDescription("**>** Every character belongs to a race.\n**>** The race you choose contributes to your character's identity in an important way by establishing a general appearance and the natural talents gained from culture and ancestry.")
-    .setColor("#808088")
-    .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Villager-512.png")
-    .addBlankField()
-    .addField("CHOOSE YOUR CHARACTER'S RACE:", jsonraces["races"], true)
-    message.channel.send(rcembed);
+        .setAuthor("Game Master", "https://cdn.iconscout.com/icon/premium/png-256-thumb/wizard-23-483776.png")
+        .setColor("#808080")
+        .setDescription("— To start your new adventure I'll need your card number...\n— *Haha! Just kidding, this doesn't exist here...\n— ...cofcof (yet)\n— So...*\n\n▼ **Let's create your new CHARACTER.**");
+    message.channel.send(stembed);
 
+    modRaces.findOne({
+        _id: "5c2d54fbb47fbb35d05210c1"
+    }, (err, races) => {
+        if (err) console.log("[ERR] " + err);
+        let embed = new Discord.RichEmbed()
+            .setTitle("CHOOSE YOUR CHARACTER'S RACE")
+            .setColor("#00D0FF")
+            .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Villager-512.png")
+            .setDescription("► Every character belongs to a race.\n► The race you choose contributes to your character's identity in an important way by establishing a general appearance and the natural talents gained from culture and ancestry.")
+            .setFooter("You'll have 10 seconds to type your desired race.")
+            .addBlankField();
+
+        if (!races) {
+            embed.addField("↙ Choose", "No races found", true);
+            return message.channel.send(embed);
+        } else {
+            embed.addField(`↙ Choose`, races.races.toString().split(','), true)
+            return message.channel.send(embed);
+        }
+    })
+    
     console.log(`[CMD] ${message} > requested by [${message.author.username}],[${message.author.id}]`);
 }
 
@@ -28,3 +38,5 @@ module.exports.config = {
     name: "start",
     aliases: []
 }
+
+// alt+16 ► \ alt+17 ◄ \ alt+30 ▲ \ alt+31 ▼

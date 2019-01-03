@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const mongoose = require("mongoose");
 const CoinMod = require("../models/mod-coins.js");
 
-mongoose.connect("mongodb://localhost:27017/Coins", {
+mongoose.connect("mongodb://localhost:27017/UltimateData", {
     useNewUrlParser: true
 })
 
@@ -12,10 +12,13 @@ module.exports.run = async (bot, message, args) => {
         userID: message.author.id,
         serverID: message.guild.id
     }, (err, coins) => {
+        if(err) console.log("[ERR] " + err);
+
         let embed = new Discord.RichEmbed()
             .setTitle("Coins")
-            .setColor("#4000FF")
+            .setColor("#FFDF00")
             .setThumbnail(message.author.displayAvatarURL);
+
         if (!coins) {
             embed.addField("You have", "0 coins", true);
             return message.channel.send(embed);
@@ -30,6 +33,5 @@ module.exports.config = {
     name: "coins",
     aliases: []
 }
-
 
 
