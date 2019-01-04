@@ -1,5 +1,6 @@
 {
-    "racialtraits": {
+    "racialSchema": {
+        "description":"",
         "abilityscore": {
             "ability": 0
         },
@@ -15,17 +16,18 @@
         "languages": [
             "languages known"
         ],
+        "features":{},
         "subraces": []
     },
-    "races": [
+    "allraces": [
+        "Dragonborn",
         "Dwarf",
         "Elf",
-        "Halfing",
-        "Human",
-        "Dragonborn",
         "Gnome",
+        "Halfing",
         "Half-Elf",
         "Half-Orc",
+        "Human",
         "Tielfing",
         "Genasi"
     ],
@@ -41,6 +43,7 @@
         "alignment": "lawful",
         "size": "medium",
         "speed": 25,
+        "languages":["Common", "Dwarvish"],
         "subraces": [
             "Hill Dwarf",
             "Mountain Dwarf"
@@ -50,21 +53,151 @@
                 "Darkvision",
                 60
             ],
-            "1": [
-                "Dwarven Resilience",
-                60
-            ],
-            "2": [
-                "Dwarven Combat Training",
-                60
-            ],
-            "3": [
-                "Tool Proficiency",
-                60
-            ]
+            "1": "Dwarven Resilience",
+            "2": "Dwarven Combat Training",
+            "3": "Tool Proficiency"
         }
     },
-    "Human": {},
+    "Dragonborn": {
+        "description":"",
+        "abilityscore": {
+            "ability": 0
+        },
+        "age": {
+            "adult": 0,
+            "max": 0
+        },
+        "alignment": "alignment",
+        "size": [
+            "small or medium"
+        ],
+        "speed": 0,
+        "languages": [
+            "languages known"
+        ],
+        "features":{},
+        "subraces": []
+    },
+    "Elf": {
+        "description":"",
+        "abilityscore": {
+            "ability": 0
+        },
+        "age": {
+            "adult": 0,
+            "max": 0
+        },
+        "alignment": "alignment",
+        "size": [
+            "small or medium"
+        ],
+        "speed": 0,
+        "languages": [
+            "languages known"
+        ],
+        "features":{},
+        "subraces": []
+    },
+    "Gnome": {
+        "description":"",
+        "abilityscore": {
+            "ability": 0
+        },
+        "age": {
+            "adult": 0,
+            "max": 0
+        },
+        "alignment": "alignment",
+        "size": [
+            "small or medium"
+        ],
+        "speed": 0,
+        "languages": [
+            "languages known"
+        ],
+        "features":{},
+        "subraces": []
+    },
+    "Halfling": {
+        "description":"",
+        "abilityscore": {
+            "ability": 0
+        },
+        "age": {
+            "adult": 0,
+            "max": 0
+        },
+        "alignment": "alignment",
+        "size": [
+            "small or medium"
+        ],
+        "speed": 0,
+        "languages": [
+            "languages known"
+        ],
+        "features":{},
+        "subraces": []
+    },
+    "Half-Elf": {
+        "description":"",
+        "abilityscore": {
+            "ability": 0
+        },
+        "age": {
+            "adult": 0,
+            "max": 0
+        },
+        "alignment": "alignment",
+        "size": [
+            "small or medium"
+        ],
+        "speed": 0,
+        "languages": [
+            "languages known"
+        ],
+        "features":{},
+        "subraces": []
+    },
+    "Half-Orc": {
+        "description":"",
+        "abilityscore": {
+            "ability": 0
+        },
+        "age": {
+            "adult": 0,
+            "max": 0
+        },
+        "alignment": "alignment",
+        "size": [
+            "small or medium"
+        ],
+        "speed": 0,
+        "languages": [
+            "languages known"
+        ],
+        "features":{},
+        "subraces": []
+    },
+    "Human": {
+        "description":"",
+        "abilityscore": {
+            "ability": 0
+        },
+        "age": {
+            "adult": 0,
+            "max": 0
+        },
+        "alignment": "alignment",
+        "size": [
+            "small or medium"
+        ],
+        "speed": 0,
+        "languages": [
+            "languages known"
+        ],
+        "features":{},
+        "subraces": []
+    },
     "Genasi": {
         "subraces": [
             "Air Genasi",

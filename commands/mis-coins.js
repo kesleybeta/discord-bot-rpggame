@@ -1,10 +1,5 @@
 const Discord = require("discord.js");
-const mongoose = require("mongoose");
 const CoinMod = require("../models/mod-coins.js");
-
-mongoose.connect("mongodb://localhost:27017/UltimateData", {
-    useNewUrlParser: true
-})
 
 module.exports.run = async (bot, message, args) => {
     await message.delete();
@@ -27,11 +22,10 @@ module.exports.run = async (bot, message, args) => {
             return message.channel.send(embed);
         }
     })
+
     console.log(`[CMD] ${message} > requested by [${message.author.username}],[${message.author.id}]`);
 }
 module.exports.config = {
     name: "coins",
     aliases: []
 }
-
-

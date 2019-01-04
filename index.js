@@ -1,22 +1,23 @@
 const botconfig = require("./botconfig.json");
 const tokenfile = require("./token.json");
 const Discord = require("discord.js");
-const chalk = require("chalk");
+const chalk = require("chalk"); //https://www.npmjs.com/package/chalk
 const fs = require("fs");
 const bot = new Discord.Client({
     disableEveryone: true
 });
 const dateFormat = require('dateformat'); //https://www.npmjs.com/package/dateformat
+
 const mongoose = require("mongoose");
 const CoinMod = require("./models/mod-coins.js");
 const dbDefault = "mongodb://localhost:27017/UltimateData";
 
 mongoose.connect(dbDefault, {
     useNewUrlParser: true
-})
+}).catch(err => console.log(chalk.redBright("[ERR] " + err)));;
 mongoose.connection.on('connected', function () {
     console.log(chalk.cyan("[LOG] Connected to", dbDefault));
-});
+}).catch(err => console.log(chalk.redBright("[ERR] " + err)));;
 
 require("./util/eventHandler")(bot);
 
@@ -24,8 +25,8 @@ bot.commands = new Discord.Collection();
 bot.aliases = new Discord.Collection();
 
 fs.readdir("./commands/", (err, files) => {
-    if (err) console.log("[ERR]" + err);
-    let jsfile = files.filter(f => f.split(".").pop() === "js");
+    if (err) console.log(chalk.redBright("[ERR] " + err));
+    let jsfile = files.filter(filterJsExtension => filterJsExtension.split(".").pop() === "js");
     if (jsfile.length <= 0) {
         console.log("[LOG] Couldn't find commands.");
         return;
@@ -77,7 +78,7 @@ bot.on("message", async message => {
             userID: message.author.id,
             serverID: message.guild.id
         }, (err, coins) => {
-            if (err) console.log("[ERR]" + err);
+            if (err) console.log(chalk.bgRedBright("[ERR] " + err));
             if (!coins) {
                 const newCoins = new CoinMod({
                     userID: message.author.id,
@@ -85,11 +86,11 @@ bot.on("message", async message => {
                     serverID: message.guild.id,
                     coins: coinstoadd
                 })
-                newCoins.save().catch(err => console.log("[ERR]" + err));
+                newCoins.save().catch(err => console.log(chalk.redBright("[ERR] newCoins.save() > " + err)));
             } else {
-                console.log("[---] Coins: "+coinstoadd);
+                console.log("[---] Coins: " + coinstoadd);
                 coins.coins = coins.coins + coinstoadd;
-                coins.save().catch(err => console.log("[ERR]" + err));
+                coins.save().catch(err => console.log(chalk.redBright("[ERR] coins.save() > " + err)));
             }
         })
     }
