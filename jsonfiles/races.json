@@ -1,18 +1,79 @@
 {
+    "racialtraits": {
+        "abilityscore": {
+            "ability": 0
+        },
+        "age": {
+            "adult": 0,
+            "max": 0
+        },
+        "alignment": "alignment",
+        "size": [
+            "small or medium"
+        ],
+        "speed": 0,
+        "languages": [
+            "languages known"
+        ],
+        "subraces": []
+    },
     "races": [
+        "Dwarf",
+        "Elf",
+        "Halfing",
         "Human",
+        "Dragonborn",
+        "Gnome",
+        "Half-Elf",
+        "Half-Orc",
+        "Tielfing",
         "Genasi"
     ],
+    "Dwarf": {
+        "description": "Bold and hardy, dwarves are known as skilled warriors, miners, and workers of stone and melal.",
+        "abilityscore": {
+            "con": 2
+        },
+        "age": {
+            "adult":50,
+            "max": 400
+        },
+        "alignment": "lawful",
+        "size": "medium",
+        "speed": 25,
+        "subraces": [
+            "Hill Dwarf",
+            "Mountain Dwarf"
+        ],
+        "features": {
+            "0": [
+                "Darkvision",
+                60
+            ],
+            "1": [
+                "Dwarven Resilience",
+                60
+            ],
+            "2": [
+                "Dwarven Combat Training",
+                60
+            ],
+            "3": [
+                "Tool Proficiency",
+                60
+            ]
+        }
+    },
     "Human": {},
     "Genasi": {
         "subraces": [
-            "Air",
-            "Earth",
-            "Fire",
-            "Water"
+            "Air Genasi",
+            "Earth Genasi",
+            "Fire Genasi",
+            "Water Genasi"
         ],
         "Air Genasi": {
-            "ability-score": {
+            "abilityscore": {
                 "dex": 1
             },
             "features": [
@@ -25,26 +86,26 @@
             ]
         },
         "Earth Genasi": {
-            "ability-score": {
+            "abilityscore": {
                 "str": 1
             },
-            "features": [
-                "Earth Walk",
-                "Merge with Stone"
-            ]
+            "features": {
+                "Earth Walk": "",
+                "Merge with Stone": ""
+            }
         },
         "Fire Genasi": {
-            "ability-score": {
+            "abilityscore": {
                 "itl": 1
             },
             "features": [
-                "Dark Vision",
+                "Darkvision",
                 "Fire Resistance",
                 "Reach to the Blaze"
             ]
         },
         "Water Genasi": {
-            "ability-score": {
+            "abilityscore": {
                 "wis": 1
             },
             "features": [
