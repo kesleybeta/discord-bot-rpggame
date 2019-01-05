@@ -97,4 +97,4 @@ bot.on("message", async message => {
     // ---- close.
 })
 
-bot.login(tokenfile.token);
+bot.login(token.process.env.BOT_TOKEN);
