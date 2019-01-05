@@ -1,6 +1,6 @@
 {
     "racialSchema": {
-        "description":"",
+        "description": "",
         "abilityscore": {
             "ability": 0
         },
@@ -16,7 +16,7 @@
         "languages": [
             "languages known"
         ],
-        "features":{},
+        "features": {},
         "subraces": []
     },
     "allraces": [
@@ -31,19 +31,39 @@
         "Tielfing",
         "Genasi"
     ],
+    "Dragonborn": {
+        "description": "",
+        "abilityscore": {
+            "ability": 0
+        },
+        "age": {
+            "adult": 0,
+            "max": 0
+        },
+        "alignment": "alignment",
+        "size": [
+            "small or medium"
+        ],
+        "speed": 0,
+        "languages": [
+            "languages known"
+        ],
+        "features": {},
+        "subraces": []
+    },
     "Dwarf": {
         "description": "Bold and hardy, dwarves are known as skilled warriors, miners, and workers of stone and melal.",
         "abilityscore": {
             "con": 2
         },
         "age": {
-            "adult":50,
+            "adult": 50,
             "max": 400
         },
         "alignment": "lawful",
         "size": "medium",
         "speed": 25,
-        "languages":["Common", "Dwarvish"],
+        "languages": ["Common", "Dwarvish"],
         "subraces": [
             "Hill Dwarf",
             "Mountain Dwarf"
@@ -58,28 +78,8 @@
             "3": "Tool Proficiency"
         }
     },
-    "Dragonborn": {
-        "description":"",
-        "abilityscore": {
-            "ability": 0
-        },
-        "age": {
-            "adult": 0,
-            "max": 0
-        },
-        "alignment": "alignment",
-        "size": [
-            "small or medium"
-        ],
-        "speed": 0,
-        "languages": [
-            "languages known"
-        ],
-        "features":{},
-        "subraces": []
-    },
     "Elf": {
-        "description":"",
+        "description": "",
         "abilityscore": {
             "ability": 0
         },
@@ -95,11 +95,11 @@
         "languages": [
             "languages known"
         ],
-        "features":{},
+        "features": {},
         "subraces": []
     },
     "Gnome": {
-        "description":"",
+        "description": "",
         "abilityscore": {
             "ability": 0
         },
@@ -115,11 +115,11 @@
         "languages": [
             "languages known"
         ],
-        "features":{},
+        "features": {},
         "subraces": []
     },
     "Halfling": {
-        "description":"",
+        "description": "",
         "abilityscore": {
             "ability": 0
         },
@@ -135,11 +135,11 @@
         "languages": [
             "languages known"
         ],
-        "features":{},
+        "features": {},
         "subraces": []
     },
     "Half-Elf": {
-        "description":"",
+        "description": "",
         "abilityscore": {
             "ability": 0
         },
@@ -155,11 +155,11 @@
         "languages": [
             "languages known"
         ],
-        "features":{},
+        "features": {},
         "subraces": []
     },
     "Half-Orc": {
-        "description":"",
+        "description": "",
         "abilityscore": {
             "ability": 0
         },
@@ -175,11 +175,11 @@
         "languages": [
             "languages known"
         ],
-        "features":{},
+        "features": {},
         "subraces": []
     },
     "Human": {
-        "description":"",
+        "description": "",
         "abilityscore": {
             "ability": 0
         },
@@ -195,10 +195,47 @@
         "languages": [
             "languages known"
         ],
-        "features":{},
+        "features": {},
+        "subraces": []
+    },
+    "Tielfing": {
+        "description": "",
+        "abilityscore": {
+            "ability": 0
+        },
+        "age": {
+            "adult": 0,
+            "max": 0
+        },
+        "alignment": "alignment",
+        "size": [
+            "small or medium"
+        ],
+        "speed": 0,
+        "languages": [
+            "languages known"
+        ],
+        "features": {},
         "subraces": []
     },
     "Genasi": {
+        "description": "",
+        "abilityscore": {
+            "ability": 0
+        },
+        "age": {
+            "adult": 0,
+            "max": 0
+        },
+        "alignment": "alignment",
+        "size": [
+            "small or medium"
+        ],
+        "speed": 0,
+        "languages": [
+            "languages known"
+        ],
+        "features": {},
         "subraces": [
             "Air Genasi",
             "Earth Genasi",

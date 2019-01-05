@@ -10,7 +10,7 @@ const dateFormat = require('dateformat'); //https://www.npmjs.com/package/datefo
 
 const mongoose = require("mongoose");
 const CoinMod = require("./models/mod-coins.js");
-const dbDefault = "mongodb://localhost:27017/UltimateData";
+const dbDefault = process.env.MONGO_URI;
 
 mongoose.connect(dbDefault, {
     useNewUrlParser: true
