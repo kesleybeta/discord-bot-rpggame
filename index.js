@@ -62,8 +62,9 @@ bot.on("message", async message => {
     if (cmd === `prefix`) {
         let prembed = new Discord.RichEmbed()
             .setColor("#808080")
+            .setTitle("Current prefix")
             .setThumbnail("https://cdn4.iconfinder.com/data/icons/dortmund/Dortmund-32x32/config.png")
-            .setDescription("Current prefix" + `\`\`\`css\n${prefix}\`\`\``);
+            .setDescription(`\`\`\`css\n${prefix}\`\`\``);
 
         console.log(`[CMD] ${message} requested by ${message.author.username}`);
         message.channel.send(prembed);
