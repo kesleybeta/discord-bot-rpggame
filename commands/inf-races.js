@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args, cmd) => {
     .setColor("#10E0FF")
     .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Villager-512.png")
     //.addBlankField()
-    .addField(`🧙🏻`, jsonRaces.allraces.toString().split(','), true);
+    .addField(`🧙`, jsonRaces.allraces.toString().replace(',', ' '), true);
     
     return message.channel.send(rEmbed);
 }
