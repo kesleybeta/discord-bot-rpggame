@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args, cmd) => {
-    var rqcmd = cmd.toUpperCase();
-    
+    await message.delete();
+        
     var wascreated = message.guild.createdAt.toString().split(' ');
     var created = wascreated[1] +' '+ wascreated[2] +' '+ wascreated[3];
     var wasjoined = message.guild.joinedAt.toString().split(' ');

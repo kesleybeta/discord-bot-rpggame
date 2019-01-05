@@ -60,6 +60,7 @@ bot.on("message", async message => {
     let commandfile = bot.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)));
 
     if (cmd === `prefix`) {
+        await message.delete();    
         let prembed = new Discord.RichEmbed()
             .setColor("#808080")
             .setTitle("Current prefix")

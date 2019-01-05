@@ -2,6 +2,8 @@ const Discord = require("discord.js");
 const superagent = require("superagent");
 
 module.exports.run = async (bot, message, args) => {
+    await message.delete();
+    
     let {body} = await superagent
     .get(`https://aws.random.cat/meow`);
 

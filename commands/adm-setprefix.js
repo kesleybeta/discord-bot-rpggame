@@ -2,6 +2,8 @@ const Discord = require("discord.js");
 const fs = require("fs");
 
 module.exports.run = async (bot, message, args, prefix) => {
+    await message.delete();
+    
     if(!message.member.hasPermission("MANAGE_SERVER")) return message.reply("You don't have enough permission.");
     if(!args[0] || args[0 == "help"]) return message.reply(`Usage: ${prefix}setprefix <desired prefix>`);
     

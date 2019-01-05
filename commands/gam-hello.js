@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const botconfig = require("../botconfig.json");
 
 module.exports.run = async (bot, message, args, prefix) => {
+    await message.delete();
     
     let helemb = new Discord.RichEmbed()
     //.setAuthor("Game Master", "https://cdn.iconscout.com/icon/premium/png-256-thumb/wizard-23-483776.png")

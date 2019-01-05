@@ -4,6 +4,8 @@ const modRaces = require("../models/mod-races.js");
 let jsonRaces = JSON.parse(fs.readFileSync("./jsonfiles/races.json", 'utf8'));
 
 module.exports.run = async (bot, message, args, cmd) => {
+    await message.delete();
+    
     console.log(`[CMD] '${cmd.slice(1)}' [MSG] '${args}' > requested by: [${message.author.username}]`);
     await message.delete();
     let stembed = new Discord.RichEmbed()

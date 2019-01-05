@@ -1,6 +1,8 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
+    await message.delete();
+    
     let adembed = new Discord.RichEmbed()
     .setTitle("Player: " + `${message.author.name}`)
     .setColor("#000000");

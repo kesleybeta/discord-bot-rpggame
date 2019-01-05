@@ -1,6 +1,8 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
+    await message.delete();
+    
     var diceQtd = args[0];
     var diceSide = args[1];
 
