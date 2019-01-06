@@ -15,6 +15,7 @@ const dbDefault = process.env.MONGO_URI;
 mongoose.connect(dbDefault, {
     useNewUrlParser: true
 }).catch(err => console.log(chalk.redBright("[ERR] " + err)));;
+
 mongoose.connection.on('connected', function () {
     console.log(chalk.cyan("[LOG] Connected to", dbDefault));
 }).catch(err => console.log(chalk.redBright("[ERR] " + err)));;

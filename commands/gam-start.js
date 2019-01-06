@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args, cmd) => {
     message.channel.send(stembed);
 
     let rEmbed = new Discord.RichEmbed()
-        .setTitle("**1.** CHOOSE YOUR CHARACTER'S RACE")
+        .setTitle("1. CHOOSE YOUR CHARACTER'S RACE")
         .setColor("#00D0FF")
         .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Villager-512.png")
         .setDescription("► Every character belongs to a race.\n► The race you choose contributes to your character's identity in an important way by establishing a general appearance and the natural talents gained from culture and ancestry.")
@@ -23,12 +23,16 @@ module.exports.run = async (bot, message, args, cmd) => {
         .addBlankField();
 
     try {
-        modRaces.findOne({
-            _id: "5c2d54fbb47fbb35d05210c1"
+        modRaces.find({
+            //_id: "5c2d54fbb47fbb35d05210c1"
         }, (err, races) => {
             if (err) console.log("[ERR] " + err);
             if (!races) {
                 embed.addField("↙ Choose", "No races found", true);
+                const newcoll = new modRaces({
+                    allraces: "Dragonborn"
+                })
+                newcoll.save().catch(err => console.log(chalk.redBright("[ERR] newcoll.save() > " + err)));
                 return message.channel.send(embed);
             } else {
                 embed.addField(`↙ Choose`, races.races.toString().split(','), true)
