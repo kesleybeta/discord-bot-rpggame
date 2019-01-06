@@ -12,13 +12,13 @@ module.exports.run = async (bot, message, args, cmd) => {
         .setDescription("— To start your new adventure I'll need your card number...\n— *Haha! Just kidding, this doesn't exist here...\n— ...cofcof (yet)\n— So...*\n\n▼ **Let's create your new CHARACTER.**");
     message.channel.send(stembed);
 
-    // let rEmbed = new Discord.RichEmbed()
-    //     .setTitle("1. CHOOSE YOUR CHARACTER'S RACE")
-    //     .setColor("#00D0FF")
-    //     .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Villager-512.png")
-    //     .setDescription("► Every character belongs to a race.\n► The race you choose contributes to your character's identity in an important way by establishing a general appearance and the natural talents gained from culture and ancestry.")
-    //     .setFooter("You'll have 10 seconds to type your desired race.")
-    //     .addBlankField();
+    let rEmbed = new Discord.RichEmbed()
+        .setTitle("1. CHOOSE YOUR CHARACTER'S RACE")
+        .setColor("#00D0FF")
+        .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Villager-512.png")
+        .setDescription("► Every character belongs to a race.\n► The race you choose contributes to your character's identity in an important way by establishing a general appearance and the natural talents gained from culture and ancestry.")
+        .setFooter("You'll have 10 seconds to type your desired race.")
+        .addBlankField();
 
     // try {
         modRaces.find({
