@@ -35,12 +35,12 @@ module.exports.run = async (bot, message, args, cmd) => {
                 newcoll.save().catch(err => console.log(chalk.redBright("[ERR] newcoll.save() > " + err)));
                 return message.channel.send(embed);
             } else {
-                embed.addField(`↙ Choose`, races.races.toString().split(','), true)
+                embed.setFooter("From DataBase file.").addField(`↙ Choose`, races.races.toString().split(','), true)
                 return message.channel.send(embed);
             }
         })
     } catch (err) { console.log(err) } finally {
-        rEmbed.addField(`↙ Choose`, jsonRaces.allraces.toString().split(','), true);
+        rEmbed.setFooter("From JSON file.").addField(`↙ Choose`, jsonRaces.allraces.toString().split(','), true);
         return message.channel.send(rEmbed);
     }
 
