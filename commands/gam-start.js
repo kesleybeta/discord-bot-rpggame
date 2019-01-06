@@ -35,8 +35,7 @@ module.exports.run = async (bot, message, args, cmd) => {
                 newcoll.save().catch(err => console.log(chalk.redBright("[ERR] newcoll.save() > " + err)));
                 return message.channel.send(rEmbed);
             } else {
-                rEmbed.setFooter("From DataBase file.");
-                rEmbed.addField(`↙ Choose`, races.races.toString().split(','), true)
+                rEmbed.addField(`↙ Choose`, races.races.toString().split(','), true);
                 return message.channel.send(rEmbed);
             }
         })
