@@ -28,19 +28,21 @@ module.exports.run = async (bot, message, args, cmd) => {
         }, (err, races) => {
             if (err) console.log("[ERR] " + err);
             if (!races) {
-                embed.addField("↙ Choose", "No races found", true);
+                rEmbed.addField("↙ Choose", "No races found", true);
                 const newcoll = new modRaces({
                     allraces: "Dragonborn"
                 })
                 newcoll.save().catch(err => console.log(chalk.redBright("[ERR] newcoll.save() > " + err)));
-                return message.channel.send(embed);
+                return message.channel.send(rEmbed);
             } else {
-                embed.setFooter("From DataBase file.").addField(`↙ Choose`, races.races.toString().split(','), true)
-                return message.channel.send(embed);
+                rEmbed.setFooter("From DataBase file.");
+                rEmbed.addField(`↙ Choose`, races.races.toString().split(','), true)
+                return message.channel.send(rEmbed);
             }
         })
     } catch (err) { console.log(err) } finally {
-        rEmbed.setFooter("From JSON file.").addField(`↙ Choose`, jsonRaces.allraces.toString().split(','), true);
+        rEmbed.setFooter("From JSON file.");
+        rEmbed.addField(`↙ Choose`, jsonRaces.allraces.toString().split(','), true);
         return message.channel.send(rEmbed);
     }
 
