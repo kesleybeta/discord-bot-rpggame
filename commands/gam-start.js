@@ -21,22 +21,18 @@ module.exports.run = async (bot, message, args, cmd) => {
     //     .addBlankField();
 
     // try {
-    //     modRaces.find({
-    //         //_id: "5c2d54fbb47fbb35d05210c1"
-    //     }, (err, races) => {
-    //         if (err) console.log("[ERR] " + err);
-    //         if (!races) {
-    //             rEmbed.addField("↙ Choose", "No races found", true);
-    //             const newcoll = new modRaces({
-    //                 allraces: "Dragonborn"
-    //             })
-    //             newcoll.save().catch(err => console.log(chalk.redBright("[ERR] newcoll.save() > " + err)));
-    //             return message.channel.send(rEmbed);
-    //         } else {
-    //             rEmbed.addField(`↙ Choose`, races.races.toString().split(','), true);
-    //             return message.channel.send(rEmbed);
-    //         }
-    //     })
+        modRaces.find({
+            //_id: "5c2d54fbb47fbb35d05210c1"
+        }, (err, races) => {
+            if (err) console.log("[ERR] " + err);
+            if (!races) {
+                rEmbed.addField("↙ Choose", "No races found", true);
+                return message.channel.send(rEmbed);
+            } else {
+                rEmbed.addField(`↙ Choose`, races.races.toString().split(','), true);
+                return message.channel.send(rEmbed);
+            }
+        })
     // } catch (err) { console.log(err) } finally {
     //     rEmbed.setFooter("From JSON file.");
     //     rEmbed.addField(`↙ Choose`, jsonRaces.allraces.toString().split(','), true);
