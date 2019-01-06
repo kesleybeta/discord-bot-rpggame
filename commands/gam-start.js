@@ -6,7 +6,6 @@ let jsonRaces = JSON.parse(fs.readFileSync("./jsonfiles/races.json", 'utf8'));
 module.exports.run = async (bot, message, args, cmd) => {
     console.log(`[CMD] '${cmd.slice(1)}' [MSG] '${args}' > requested by: [${message.author.username}]`);
     await message.delete();
-    message.reply("Test app");
     let stembed = new Discord.RichEmbed()
         .setAuthor("Game Master", "https://cdn.iconscout.com/icon/premium/png-256-thumb/wizard-23-483776.png")
         .setColor("#808080")
