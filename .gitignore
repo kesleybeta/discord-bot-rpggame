@@ -60,5 +60,6 @@ typings/
 # next.js build output
 .next
 
-# token file
+# files
 token.json
+test.js
