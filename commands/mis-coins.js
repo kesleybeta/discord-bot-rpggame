@@ -16,10 +16,10 @@ module.exports.run = async (bot, message, args) => {
 
         if (!coins) {
             embed.addField("You have", "0 coins", true);
-            return message.channel.send(embed);
+            return message.channel.send(embed).then(msg => msg.delete(5000));
         } else {
             embed.addField("You have", coins.coins + " coins", true)
-            return message.channel.send(embed);
+            return message.channel.send(embed).then(msg => msg.delete(5000));
         }
     })
 
