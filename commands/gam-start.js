@@ -3,9 +3,10 @@ const fs = require("fs");
 const modRaces = require("../models/mod-races.js");
 let jsonRaces = JSON.parse(fs.readFileSync("./jsonfiles/races.json", 'utf8'));
 
-module.exports.run = async (bot, message, args, cmd) => {    
+module.exports.run = async (bot, message, args, cmd) => {
     console.log(`[CMD] '${cmd.slice(1)}' [MSG] '${args}' > requested by: [${message.author.username}]`);
     await message.delete();
+    message.reply("Test app");
     let stembed = new Discord.RichEmbed()
         .setAuthor("Game Master", "https://cdn.iconscout.com/icon/premium/png-256-thumb/wizard-23-483776.png")
         .setColor("#808080")
@@ -20,27 +21,21 @@ module.exports.run = async (bot, message, args, cmd) => {
         .setFooter("You'll have 10 seconds to type your desired race.")
         .addBlankField();
 
-    // try {
-        modRaces.find({
-            //_id: "5c2d54fbb47fbb35d05210c1"
-        }, (err, races) => {
-            if (err) console.log("[ERR] " + err);
-            if (!races) {
-                rEmbed.addField("↙ Choose", "No races found", true);
-                return message.channel.send(rEmbed);
-            } else {
-                rEmbed.addField(`↙ Choose`, races.races.toString().split(','), true);
-                return message.channel.send(rEmbed);
-            }
-        })
-    // } catch (err) { console.log(err) } finally {
-    //     rEmbed.setFooter("From JSON file.");
-    //     rEmbed.addField(`↙ Choose`, jsonRaces.allraces.toString().split(','), true);
-    //     return message.channel.send(rEmbed);
-    // }
+    modRaces.findOne({
+        _id: "5c315c02dd843e0698842af5"
+    }, (err, races) => {
+        if (err) console.log("[ERR] " + err);
+        if (!races) {
+            rEmbed.setFooter("From JSON file.").addField(`↙ Choose`, jsonRaces.allraces.toString().split(',').join(', '), true);
+            return message.channel.send(rEmbed);
+        } else {
+            console.log("[TST] " + races.allraces);
+            rEmbed.addField(`↙ Choose`, races.allraces.toString().split(',').join(', '), true);
+            return message.channel.send(rEmbed);
+        }
+    })
 
 }
-
 module.exports.config = {
     name: "start",
     aliases: []

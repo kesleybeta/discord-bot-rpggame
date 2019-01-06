@@ -24,11 +24,11 @@
         "Dwarf",
         "Elf",
         "Gnome",
-        "Halfing",
+        "Halfling",
         "Half-Elf",
         "Half-Orc",
         "Human",
-        "Tielfing",
+        "Tiefling",
         "Genasi"
     ],
     "Dragonborn": {
