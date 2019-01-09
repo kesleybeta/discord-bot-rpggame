@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, cmd, args) => {
     await message.delete()
     console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`)
 
-    if (!args) {
+    if (!args.toString()) {
         let rEmbed = new Discord.RichEmbed()
             .setTitle("ALL RACES FROM FIFTH EDITION OF THE PLAYER'S HANDBOOK")
             .setColor("#10E0FF")
