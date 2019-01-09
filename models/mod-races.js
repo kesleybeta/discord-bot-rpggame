@@ -12,7 +12,7 @@ const raceSchema = mongoose.Schema({
     namel: String,
     name: String,
     size: String,
-    speed: Number,
+    speed: String,
     subraces: Array
 })
 

@@ -1,17 +1,17 @@
-const Discord = require("discord.js");
-const mongoose = require("mongoose");
+const Discord = require("discord.js")
+const mongoose = require("mongoose")
 
-module.exports.run = async (bot, message, args, prefix) => {
-    await message.delete();
+module.exports.run = async (bot, message, cmd, args) => {
+    await message.delete()
+    console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`)
 
     let embed = new Discord.RichEmbed()
-    .setColor("#000000")
-    .setThumbnail(message.author.displayAvatarURL)
-    .setTitle(`Hello ${message.author.username}`)
-    .addField(`Your`,`character`);
+        .setColor("#000000")
+        .setThumbnail(message.author.displayAvatarURL)
+        .setTitle(`Hello ${message.author.username}`)
+        .addField(`Your`, `character`)
 
-    message.channel.send(embed);
-    console.log(`[CMD] ${message} > requested by [${message.author.username}],[${message.author.id}]`);
+    message.channel.send(embed)
 }
 
 module.exports.config = {

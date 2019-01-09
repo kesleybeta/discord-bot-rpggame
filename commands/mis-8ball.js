@@ -1,7 +1,10 @@
-const Discord = require("discord.js");
+const Discord = require("discord.js")
 
-module.exports.run = async (bot, message, args) => {
-    if (!args.toString()) return message.reply("Give me a question to answer.");
+module.exports.run = async (bot, message, cmd, args) => {
+    await message.delete()
+    console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`)
+
+    if (!args.toString()) return message.reply("Give me a question to answer.")
     else {
         const replies = ["It is certain",
             "It is decidedly so",
@@ -23,11 +26,10 @@ module.exports.run = async (bot, message, args) => {
             "My sources say no",
             "Outlook not so good",
             "Very doubtful"
-        ];
-        let replytext = Math.floor((Math.random() * replies.length) + 0);
-        message.reply(replies[replytext]);
+        ]
+        let replytext = Math.floor((Math.random() * replies.length) + 0)
+        return message.channel.send("❔ — " + args.join(" ") + "\n🤔 — [...]\n❕ — "+replies[replytext])
     }
-    console.log(`[CMD] ${message} > requested by [${message.author.username}],[${message.author.id}]`);
 }
 
 module.exports.config = {

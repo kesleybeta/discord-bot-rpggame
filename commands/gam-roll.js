@@ -1,32 +1,32 @@
-const Discord = require("discord.js");
+const Discord = require("discord.js")
 
-module.exports.run = async (bot, message, args) => {
-    await message.delete();
-    
-    var diceQtd = args[0];
-    var diceSide = args[1];
+module.exports.run = async (bot, message, cmd, args) => {
+    await message.delete()
+    console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`)
+
+    let diceQtd = args[0]
+    let diceSide = args[1]
 
     if (!isNaN(diceSide)) {
-        let sideFace;
-        let descr = "";
+        let sideFace
+        let descr = ""
 
         let embed = new Discord.RichEmbed()
-            .setAuthor(`You rolled a D${diceSide}`, "https://game-icons.net/icons/delapouite/originals/png/dice-twenty-faces-twenty.png");
+            .setAuthor(`You rolled a D${diceSide}`, "https://game-icons.net/icons/delapouite/originals/png/dice-twenty-faces-twenty.png")
 
         for (let i = 0; i < diceQtd; i++) {
-            sideFace = Math.floor(Math.random() * (diceSide - 1 + 1)) + 1;
-            descr = descr +  "\nYou got a > "+`**${sideFace}**`
+            sideFace = Math.floor(Math.random() * (diceSide - 1 + 1)) + 1
+            descr = descr + "\nYou got a > " + `**${sideFace}**`
         }
 
-        message.channel.send(embed.setDescription(descr));
+        message.channel.send(embed.setDescription(descr))
 
     } else {
         return message.reply("¯\\_(ツ)_/¯")
     }
-    console.log(`[CMD] ${message} > requested by [${message.author.username}],[${message.author.id}]`);
 }
 
 module.exports.config = {
     name: "roll",
-    aliases: []
+    aliases: ["rl", "rola"]
 }

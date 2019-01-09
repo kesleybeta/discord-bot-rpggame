@@ -1,20 +1,22 @@
-const Discord = require("discord.js");
-const superagent = require("superagent");
+const Discord = require("discord.js")
+const superagent = require("superagent")
 
-module.exports.run = async (bot, message, args) => {
-    await message.delete();
-    
-    let {body} = await superagent
-    .get(`https://aws.random.cat/meow`);
+module.exports.run = async (bot, message, cmd, args) => {
+    await message.delete()
+    console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`)
 
-    let dogembed = new Discord.RichEmbed()
-    .setColor("#ff99ff")
-    .setTitle("Human enemy")
-    .setImage(body.file)
-    .setFooter("from Random.cat");
-    
-    message.channel.send(dogembed);
-    console.log(`[CMD] ${message} > requested by [${message.author.username}],[${message.author.id}]`);
+    let {
+        body
+    } = await superagent
+        .get(`https://aws.random.cat/meow`)
+
+    let embed = new Discord.RichEmbed()
+        .setColor("#ff99ff")
+        .setTitle("Human enemy")
+        .setImage(body.file)
+        .setFooter("from Random.cat")
+
+    message.channel.send(embed)
 }
 
 module.exports.config = {

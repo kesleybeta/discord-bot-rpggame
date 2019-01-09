@@ -1,14 +1,12 @@
-const Discord = require("discord.js");
+const Discord = require("discord.js")
 
-module.exports.run = async (bot, message, args) => {
-    await message.delete();
-    
-    if(!message.member.hasPermission("ADMINISTRATOR")) return;
-    const sayMessage = args.join(" ");
-    message.delete().catch();
-    message.channel.send(sayMessage);
-    
-    console.log(`[CMD] ${message} > requested by [${message.author.username}],[${message.author.id}]`);
+module.exports.run = async (bot, message, cmd, args) => {
+    console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`)
+
+    if (!message.member.hasPermission("ADMINISTRATOR")) return
+    const sayMessage = args.join(" ")
+    message.delete().catch(err => console.log("[say] "+err))
+    message.channel.send(sayMessage)
 }
 
 module.exports.config = {

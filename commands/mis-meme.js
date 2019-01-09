@@ -1,20 +1,21 @@
-const Discord = require("discord.js");
-const superagent = require("superagent");
+const Discord = require("discord.js")
+const superagent = require("superagent")
 
-module.exports.run = async (bot, message, args) => {
-    await message.delete();
-    
-    let {body} = await superagent
-    .get(`https://api-to.get-a.life/meme`);
+module.exports.run = async (bot, message, cmd, args) => {
+    await message.delete()
+    console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`)
 
-    let dogembed = new Discord.RichEmbed()
-    .setColor("#f99f09")
-    .setTitle("Menes")
-    .setImage(body.url)
-    .setFooter("from Get-a.life");
-    
-    message.channel.send(dogembed);
-    console.log(`[CMD] ${message} > requested by [${message.author.username}],[${message.author.id}]`);
+    let {
+        body
+    } = await superagent
+        .get(`https://api-to.get-a.life/meme`)
+
+    let embed = new Discord.RichEmbed()
+        .setColor("#f99f09")
+        .setTitle("Menes")
+        .setImage(body.url)
+        .setFooter("from Get-a.life")
+    message.channel.send(embed)
 }
 
 module.exports.config = {

@@ -1,22 +1,25 @@
-const Discord = require("discord.js");
+const Discord = require("discord.js")
+const dateFormat = require('dateformat') //https://www.npmjs.com/package/dateformat
 
-module.exports.run = async (bot, message, args) => {
-    await message.delete();
+module.exports.run = async (bot, message, cmd, args) => {
+    await message.delete()
+    console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`)
 
-    let bicon = bot.user.displayAvatarURL;
+    let date = dateFormat(new Date(), "dddd, mmmm dS, yyyy")
     let botembed = new Discord.RichEmbed()
-    .setDescription("BOT information")
-    .setColor("#15f153")
-    .setThumbnail(bicon)
-    .addField("Bot name", bot.user.username)
-    .addBlankField()
-    .addField("Created On", bot.user.createdAt);
+        .setDescription("BOT information")
+        .setColor("#15f153")
+        .setThumbnail(bot.user.displayAvatarURL)
+        .addField("Bot name", bot.user.username, true)
+        .addField("Created On", date, true)
+        .addField("Developed by","Kesley", true)
+        .addField("Idealized by","Lucas", true)
+        .setFooter("© LuKe-SN")
 
-    console.log(`---cmd: BOTINFO requested by ${message.author.username}`)
-    message.channel.send(botembed);
+    message.channel.send(botembed)
 }
 
 module.exports.config = {
     name: "botinfo",
-    aliases: []
+    aliases: ["info"]
 }
