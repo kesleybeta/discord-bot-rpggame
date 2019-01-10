@@ -25,18 +25,21 @@ module.exports.run = async (bot, message, cmd, args) => {
         edition: "5th"
     }).sort([
         ['name', 'descending']
-    ]).exec((err, res) => {
-        if (err) return console.log("[ERR] " + err)
-        if (res.length === 0) return message.reply("GS02 - Contact the ALGUEM")
-        if (res === null) return message.reply("GS03 - Contact the ALGUEM")
+    ]).exec((err1, res) => {
+        if (err1) {
+            message.reply("GS01 - Contact the dev.")
+            return console.log("[GS01] " + err1)
+        }
+        if (res.length === 0) return message.reply("GS02 - Contact the dev")
+        if (res === null) return message.reply("GS03 - Contact the dev")
         if (!res) {
             rEmbed.setFooter("From JSON file.").addField(`↘ Choose`, jsonRaces.allraces.join(', '), true)
             return message.channel.send(rEmbed)
         } else {
             try {
                 tudo.push(res[0].name)
-            } catch (outroerro) {
-                return message.reply("GS04 - Contact the ALGUEM")
+            } catch (err4) {
+                return message.reply("GS04 - Contact the dev")
             }
             for (i = 1; i < res.length; i++)
                 tudo.unshift(res[i].name)

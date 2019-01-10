@@ -1,46 +1,51 @@
 ```md
-#-------------> ALL COMMANDS ADDED <-------------#
+# - - - - - - - - - - - > ALL COMMANDS ADDED < - - - - - - - - - - - #
 ```
-` * * *`
 ```diff
-!INFORMATIONAL!
-prefix
----Current prefix set
-{u}serverinfo
----Information about the server.
-{u}botinfo
----Information about the bot.
-{u}races | {u}races <race> | {u}races <race> <property>
----Information about the bot.
+- - - INFORMATIONAL - - -
++prefix
+     Current prefix set
++[serverinfo]
+     Information about the server
++[botinfo]
+     Information about the bot
++[races]
++[races] <race>
+     Information about races
 ```
-` * * *`
 ```diff
-!ADMINISTRATIVE!
-{u}clear <amount>
----Clear <amount> of messages.
-{u}setprefix <new prefix>
----Changes the prefix.
+- - - ADMINISTRATIVE - - -
++[clear] <amount>
+     Clear <amount> of messages
++[setprefix] <new prefix>
+     Changes the prefix
 ```
-` * * *`
 ```diff
-!- - - GAME COMMANDS - - -!
-{u}start
----The character creation.
-{u}profile
----The character profile.
-{u}roll <dice quantity> <dice side>
----Roll a certain quantity of an specific dice.
----Ex: {u}roll 2 6 (rolling 2D6)
+- - - GAME COMMANDS - - -
++[adventure]
+     (not yet finished)
++[start]
+     The character creation
++[profile]
+     The character profile
++[roll] <dice quantity> <dice side>
+     Roll a certain quantity of an specific dice
+     ---roll 2 6 => (rolling 2D6)
++[coins]
+     Shows the gained coins through typing
 ```
-` * * *`
 ```diff
-!MISCELLANEOUS!
-{u}hello
----Talk to the GM bot.
-{u}doggo
----A picture or gif of a random dog.
-{u}cat
----A picture or gif of a random cat.
-{u}meme
----A picture or gif of a random meme.
+- - - MISCELLANEOUS - - -
++[hello]
+     Talk to the GM bot
++[8ball]
+     Answer to a YES/NO question
++[say]
+     The bot talk for you
++[doggo]
+     A picture or gif of a random dog
++[cat]
+     A picture or gif of a random cat
++[meme]
+     A picture or gif of a random meme
 ```

@@ -5,8 +5,8 @@ module.exports.run = async (bot, message, cmd, args) => {
     console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`)
 
     let adembed = new Discord.RichEmbed()
-        .setTitle("Player: " + `${message.author.name}`)
-        .setColor("#000000")
+        .setTitle("Player: " + `**${message.author.username}**`)
+        .setColor("#010101")
 
     switch (args.toString()) {
         case "1":
