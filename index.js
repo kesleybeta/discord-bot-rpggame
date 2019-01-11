@@ -31,7 +31,7 @@ fs.readdir("./commands/", (err, files) => {
         console.log("[LOG] Couldn't find commands.")
         return
     }
-    jsfile.forEach((f, i) => {
+    jsfile.forEach(f => {
         var timel = dateFormat(new Date(), "l")
         let commandFile = require(`./commands/${f}`)
         console.log(`[${timel}] Command file loaded: ${f}`)
