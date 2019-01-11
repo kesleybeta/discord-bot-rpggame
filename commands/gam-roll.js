@@ -1,6 +1,6 @@
 const Discord = require("discord.js")
 
-module.exports.run = async (bot, message, cmd, args) => {
+module.exports.run = async (message, cmd, args) => {
     await message.delete()
     console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`)
 
