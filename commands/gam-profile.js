@@ -1,5 +1,5 @@
 const Discord = require("discord.js")
-const profileMod = require("../models/mod-profile.js")
+const profileMod = require("../models/mod-character.js")
 
 module.exports.run = async (message, cmd, args) => {
     await message.delete()

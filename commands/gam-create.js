@@ -111,7 +111,7 @@ module.exports.run = async (message, cmd, args) => {
 
 module.exports.config = {
     name: "create",
-    aliases: ["new"]
+    aliases: []
 }
 
 //Simbols: alt+16 ► \ alt+17 ◄ \ alt+30 ▲ \ alt+31 ▼
