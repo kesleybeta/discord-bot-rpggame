@@ -1,6 +1,5 @@
 const botconfig = require("./botconfig.json")
 const Discord = require("discord.js")
-const chalk = require("chalk") //https://www.npmjs.com/package/chalk
 const fs = require("fs")
 const bot = new Discord.Client({
     disableEveryone: true
@@ -13,11 +12,11 @@ const dbDefault = process.env.MONGO_URI
 
 mongoose.connect(dbDefault, {
     useNewUrlParser: true
-}).catch(err => console.log(chalk.redBright("[ERR] " + err)))
+}).catch(err => console.log("ERRAPPIND01 " + err))
 
 mongoose.connection.on('connected', function () {
-    console.log(chalk.cyan("[LOG] Connected to /ultimatedata"))
-}).catch(err => console.log(chalk.redBright("[ERR] " + err)))
+    console.log("[LOG] Connected to /ultimatedata")
+}).catch(err => console.log("ERRAPPIND02 " + err))
 
 require("./util/eventHandler")(bot)
 
@@ -25,16 +24,16 @@ bot.commands = new Discord.Collection()
 bot.aliases = new Discord.Collection()
 
 fs.readdir("./commands/", (err, files) => {
-    if (err) console.log(chalk.redBright("[ERR] " + err))
+    if (err) console.log("ERRAPPIND03 " + err)
     let jsfile = files.filter(filterJsExtension => filterJsExtension.split(".").pop() === "js")
     if (jsfile.length <= 0) {
         console.log("[LOG] Couldn't find commands.")
         return
     }
     jsfile.forEach(f => {
-        var timel = dateFormat(new Date(), "l")
+        var timel = dateFormat(new Date(), "ss:l")
         let commandFile = require(`./commands/${f}`)
-        console.log(`[${timel}] Command file loaded: ${f}`)
+        console.log(`[${timel}] Command loaded: ${f.toUpperCase().split(".JS")}`)
         bot.commands.set(commandFile.config.name, commandFile)
         commandFile.config.aliases.forEach(alias => {
             bot.aliases.set(alias, commandFile.config.name)
@@ -65,9 +64,9 @@ bot.on("message", async message => {
             .setColor("#808080")
             .setTitle("Current prefix")
             .setThumbnail("https://cdn4.iconfinder.com/data/icons/dortmund/Dortmund-32x32/config.png")
-            .setDescription(`\`\`\`css\n${prefix}\`\`\``)
+            .setDescription(`\`\`\`json\n${prefix}\`\`\``)
 
-        console.log(`[CMD] ${message} requested by ${message.author.username}`)
+        console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`)
         message.channel.send(prembed)
     }
     if (message.content.startsWith(prefix)) {
@@ -79,20 +78,20 @@ bot.on("message", async message => {
         CoinMod.findOne({
             userID: message.author.id,
             serverID: message.guild.id
-        }, (err, coins) => {
-            if (err) console.log(chalk.bgRedBright("[ERR] " + err))
-            if (!coins) {
-                const newCoins = new CoinMod({
+        }, (err, coinsSystem) => {
+            if (err) console.log("ERRAPPIND04 " + err)
+            if (!coinsSystem) {
+                const newDocCoins = new CoinMod({
                     userID: message.author.id,
                     userNm: message.author.tag,
                     serverID: message.guild.id,
                     coins: coinstoadd
                 })
-                newCoins.save().catch(err => console.log(chalk.redBright("[ERR] newCoins.save() > " + err)))
+                newDocCoins.save().catch(err => console.log("ERRAPPIND05 " + err))
             } else {
                 console.log("[---] Coins: " + coinstoadd)
-                coins.coins = coins.coins + coinstoadd
-                coins.save().catch(err => console.log(chalk.redBright("[ERR] coins.save() > " + err)))
+                coinsSystem.coins = coinsSystem.coins + coinstoadd
+                coinsSystem.save().catch(err => console.log("ERRAPPIND06 " + err))
             }
         })
     }
