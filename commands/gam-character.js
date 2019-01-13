@@ -1,5 +1,6 @@
 const Discord = require("discord.js")
-const ModCharacter = require("../models/mod-character") //.default
+const ModProfile = require("../models/mod-character")
+const ModCharacter = require("../models/mod-character")
 
 // tcreate 1 vai direto pra RACE
 // tcreate 2 vai direto pra CLASS
@@ -13,20 +14,20 @@ module.exports.run = async (message, cmd, args) => {
     let embed = new Discord.RichEmbed()
     embed.setAuthor(message.author.tag, message.author.avatarURL)
     // Find Profile
-    ModCharacter
+    ModProfile
         .findOne({
             userID: message.author.id,
             serverID: message.guild.id
-        })
+        }).maxTimeMS(1000)
         .exec((err, result) => {
             // ERROR handling
-            if (err) return message.reply("ERRGAMCHA01 - An error occurred.  Try contacting the dev.")
+            if (err) return message.reply(message.author.id + "GAMCHA01 - An error occurred.  Try contacting the dev.")
             // RESULT handling
             //if (result === null) message.reply("Looks like your profile is empty. Try contacting the dev.")
             if (!result) {
                 // Create a new profile
                 message.reply(`▼ You didn't have a profile. A new one will be created.`)
-                const newProfile = new ModCharacter({
+                const newProfile = new ModProfile({
                     userID: message.author.id,
                     serverID: message.guild.id,
                     userTag: message.author.tag,
@@ -43,7 +44,29 @@ module.exports.run = async (message, cmd, args) => {
                         return message.reply(message.author.id + "GAMCHA02 - Couldn't save your new profile")
                     })
             }
-            if (result.characters.valid === 1) return message.reply(`► You already have a character. Named: ***${result.characters.name}***`)
+            //message.channel.send("Let's build your new character.")
+        })
+
+    ModCharacter
+        .findOne({
+            userID: message.author.id,
+            serverID: message.guild.id
+        })
+        .exec((err, result) => {
+            // ERROR handling
+            if (err) return message.reply(message.author.id + "GAMCHA03 - An error occurred.  Try contacting the dev.")
+            // RESULT handling
+            console.log(result)
+            //if (result === null) message.reply("Looks like your profile is empty. Try contacting the dev.")
+            if (!result) return message.reply(message.author.id + "GAMCHA04 - An error occurred.  Try contacting the dev.")
+            else {
+                let anewchar = result.characters
+                if (anewchar.valid === 1) return message.reply(`► You already have a character. Named: ***${anewchar.name}***`)
+                if (anewchar.valid === 0) {
+                    console.log(anewchar)
+                    if (!anewchar.race) return message.reply("Let's choose a new race:")
+                }
+            }
         })
 
     // message.reply("► You already have a profile. Use the command `profile` to take a look")
@@ -62,7 +85,6 @@ module.exports.run = async (message, cmd, args) => {
     //             console.log(err)
     //         })
     // } else {
-    //     
     // }
 
 }

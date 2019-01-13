@@ -12,7 +12,14 @@ const profileSchema = mongoose.Schema({
         class: String,
         background: String,
         attributes: {
-            str: Number,
+            str: {
+                base: Number,
+                racial: Number,
+                ability: Number,
+                misc: Number,
+                mod: Number,
+                total: Number
+            },
             con: Number,
             dex: Number,
             int: Number,
