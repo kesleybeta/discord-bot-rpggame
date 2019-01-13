@@ -5,6 +5,8 @@ const profileSchema = mongoose.Schema({
     userTag: String,
     serverID: String,
     characters: {
+        id: Number,
+        valid: Number,
         name: String,
         race: String,
         class: String,

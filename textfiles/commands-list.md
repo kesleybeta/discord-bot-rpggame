@@ -24,10 +24,10 @@
 - - - GAME COMMANDS - - -
 +[adventure]
      (not yet finished)
-+[start]
++[new] <section>
      The character creation
-+[profile]
-     The character profile
++[profile/p] <@user>
+     Your character profile
 +[roll] <dice quantity> <dice side>
      Roll a certain quantity of an specific dice
      ---roll 2 6 => (rolling 2D6)

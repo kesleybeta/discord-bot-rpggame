@@ -3,7 +3,7 @@ const ModProfile = require("../models/mod-character.js")
 
 module.exports.run = async (message, cmd, args) => {
     await message.delete()
-    console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`)
+    console.log(`[${cmd.slice(1)}:${args[0]}] requested by: [${message.author.tag}]`)
     let target = message.mentions.users.first() || message.author
 
     let embed = new Discord.RichEmbed()
@@ -15,8 +15,8 @@ module.exports.run = async (message, cmd, args) => {
         userID: target.id,
         serverID: message.guild.id
     }, (err, result) => {
-        if (err) return console.log(target.id + "GP01 " + err)
-        if (result === null) return message.reply(target.id + "GP02 - Contact the dev")
+        if (err) return console.log(target.id + "GAMPRO01 " + err)
+        if (result === null) return message.reply(target.id + "GAMPRO02 - Contact the dev")
         if (!result) {
             //embed.addField("Log", `You're new here so, a new profile was created.`, true)
             message.reply(`\nYou're new here so, a new profile has to be created.\nType \`new\` to build your character.`)
@@ -24,12 +24,11 @@ module.exports.run = async (message, cmd, args) => {
             embed
                 //.setThumbnail(message.author.displayAvatarURL)
                 .addField("Name", `\`${result.characters.name} \``, true)
-                .addField("Race", `\`${result.characters.race} \``)
+                .addField("Race", `\`${result.characters.race} \``, true)
                 .addField("Class", `\`${result.characters.class} \``, true)
-                .addField("Background", `\`${result.characters.background} \``)
-                .addField("Attributes", `\`
-STR: ${result.characters.attributes.str}
-CON: ${result.characters.attributes.con}
+                .addField("Background", `\`${result.characters.background} \``, true)
+                .addField("Attributes", `\`STR: ${result.characters.attributes.str}\`
+\`CON: ${result.characters.attributes.con}
 DEX: ${result.characters.attributes.dex}
 INT: ${result.characters.attributes.int}
 WIS: ${result.characters.attributes.wis}
