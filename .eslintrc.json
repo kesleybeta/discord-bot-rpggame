@@ -53,7 +53,7 @@
             "error",
             "never"
         ],
-        "consistent-return": "error",
+        "consistent-return": "warn",
         "consistent-this": "error",
         "curly": "off",
         "default-case": "error",

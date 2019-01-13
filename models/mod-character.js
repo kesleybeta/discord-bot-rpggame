@@ -8,7 +8,15 @@ const profileSchema = mongoose.Schema({
         name: String,
         race: String,
         class: String,
-        background: String
+        background: String,
+        attributes: {
+            str: Number,
+            con: Number,
+            dex: Number,
+            int: Number,
+            wis: Number,
+            cha: Number
+        }
     }
 })
 

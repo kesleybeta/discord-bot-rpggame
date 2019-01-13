@@ -23,20 +23,20 @@ module.exports.run = async (message, cmd, args) => {
             //if (result === null) message.reply("Looks like your profile is empty. Try contacting the dev.")
             if (!result) {
                 // Create a new profile
-                message.reply(`○ You didn't have a profile. A new one will be created.`)
+                message.reply(`► You didn't have a profile. A new one will be created.`)
                 const newProfile = new ModCharacter({
                     userID: message.author.id,
                     serverID: message.guild.id
                 })
                 newProfile
                     .save()
-                    .then(message.reply("○ A new profile was created for you. Use the command - \`profile\` - to take a look.")) // This REPLY has to be placed on the end of the character creation.
+                    .then(message.reply("► A new profile was created for you. Use the command - \`profile\` - to take a look.")) // This REPLY has to be placed on the end of the character creation.
                     .catch(err => {
                         console.log(err)
                         return message.reply("ERRGAMCHA02 - Couldn't save your new profile")
                     })
             } else {
-                message.reply("○ You already have a profile.")
+                message.reply("► You already have a profile.")
                 return message.channel.send(embed)
             }
         })

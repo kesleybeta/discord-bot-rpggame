@@ -5,6 +5,7 @@ const bot = new Discord.Client({
     disableEveryone: true
 })
 const dateFormat = require('dateformat') //https://www.npmjs.com/package/dateformat
+var timel = dateFormat(new Date(), "hh:MM:ss:L")
 
 const mongoose = require("mongoose")
 const CoinMod = require("./models/mod-coins.js")
@@ -15,7 +16,7 @@ mongoose.connect(dbDefault, {
 }).catch(err => console.log("ERRAPPIND01 " + err))
 
 mongoose.connection.on('connected', function () {
-    console.log("[LOG] Connected to /ultimatedata")
+    console.log(`[${timel}] Connected to /ultimatedata`)
 }).catch(err => console.log("ERRAPPIND02 " + err))
 
 require("./util/eventHandler")(bot)
@@ -31,7 +32,6 @@ fs.readdir("./commands/", (err, files) => {
         return
     }
     jsfile.forEach(f => {
-        var timel = dateFormat(new Date(), "ss:l")
         let commandFile = require(`./commands/${f}`)
         console.log(`[${timel}] Command loaded: ${f.toUpperCase().split(".JS")}`)
         bot.commands.set(commandFile.config.name, commandFile)

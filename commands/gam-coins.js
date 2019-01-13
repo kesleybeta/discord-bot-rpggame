@@ -5,6 +5,9 @@ module.exports.run = async (message, cmd, args) => {
     await message.delete()
     console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`)
 
+    //Add an argument handling
+    //coin <stay> : Doesn't delete the message
+
     CoinMod.findOne({
         userID: message.author.id,
         serverID: message.guild.id
