@@ -27,7 +27,7 @@ module.exports.run = async (message, cmd, args) => {
                 tudo.push(res[0].name)
                 for (let i = 1; i < res.length; i++) tudo.unshift(res[i].name)
 
-                rEmbed.setDescription(`\`\`\`css\n${tudo.join(", ")} \`\`\``)
+                rEmbed.setDescription(`\`\`\`diff\n+ ${tudo.join('\n+ ')}\`\`\``)
                 return message.channel.send(rEmbed)
             })
     } else {
@@ -52,7 +52,7 @@ module.exports.run = async (message, cmd, args) => {
                     .setDescription(`${result.description}`)
                     .addField("Name", `***${result.name}*** `, true)
                     .addField("Age", `**Adult**: ***${result.age.adult}*** | **Max**: ***${result.age.max}*** `, true)
-                    .addField("Ability score increase", `**STR**: ***${result.abilityscore.str}*** | **DEX**: ***${result.abilityscore.dex}*** | **CON**: ***${result.abilityscore.con}*** | **INT**: ***${result.abilityscore.int}*** | **WIS**: ***${result.abilityscore.wis}*** | **CHA**: ***${result.abilityscore.cha}***`)
+                    //.addField("Ability score increase", `**STR**: ***${result.abilityscore.str}*** | **DEX**: ***${result.abilityscore.dex}*** | **CON**: ***${result.abilityscore.con}*** | **INT**: ***${result.abilityscore.int}*** | **WIS**: ***${result.abilityscore.wis}*** | **CHA**: ***${result.abilityscore.cha}***`)
                     .addField("Alignment", `***${result.alignment}*** `, true)
                     .addField("Size", `***${result.size}*** `, true)
                     .addField("Speed", `***${result.speed}*** `, true)

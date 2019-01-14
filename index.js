@@ -89,7 +89,6 @@ bot.on("message", async message => {
                 })
                 newDocCoins.save().catch(err => console.log("ERRAPPIND05 " + err))
             } else {
-                console.log("[---] Coins: " + coinstoadd)
                 coinsSystem.coins = coinsSystem.coins + coinstoadd
                 coinsSystem.save().catch(err => console.log("ERRAPPIND06 " + err))
             }
