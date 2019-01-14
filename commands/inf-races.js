@@ -15,20 +15,25 @@ module.exports.run = async (message, cmd, args) => {
 
         let tudo = []
         modRaces.find({
-            edition: "5th"
-        }).sort([
-            ['name', 'descending']
-        ]).exec((err, res) => {
-            if (err) return console.log('erro' + err)
-            tudo.push(res[0].name)
-            for (i = 1; i < res.length; i++)
-                tudo.unshift(res[i].name)
+                edition: "5th"
+            }).sort([
+                [
+                    'name',
+                    'descending'
+                ]
+            ])
+            .exec((err, res) => {
+                if (err) return console.log('erro' + err)
+                tudo.push(res[0].name)
+                for (let i = 1; i < res.length; i++) tudo.unshift(res[i].name)
 
-            rEmbed.setDescription(`\`\`\`css\n${tudo.join(", ")} \`\`\``)
-            return message.channel.send(rEmbed)
-        })
+                rEmbed.setDescription(`\`\`\`css\n${tudo.join(", ")} \`\`\``)
+                return message.channel.send(rEmbed)
+            })
     } else {
-        let specificRace = args.toString().toLowerCase().split(",").join(" ")
+        let specificRace = args.toString().toLowerCase()
+            .split(",")
+            .join(" ")
         let dembed = new Discord.RichEmbed()
             .setTitle("RACE'S MANUAL")
             .setColor("#5D69D6")

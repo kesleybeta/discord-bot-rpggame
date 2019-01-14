@@ -1,7 +1,5 @@
 const Discord = require("discord.js")
-const fs = require("fs")
 const modRaces = require("../models/mod-races.js")
-let jsonRaces = JSON.parse(fs.readFileSync("./jsonfiles/races.json", 'utf8'))
 
 // 1. RACE
 // 2. CLASS
@@ -15,7 +13,7 @@ module.exports.run = async (message, cmd, args) => {
     console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`)
 
     if (args.toString()) {
-        if(isNaN(args)) return message.reply("IT'S Not A Number")
+        if (isNaN(args)) return message.reply("IT'S Not A Number")
         if (args.toString() === '1') return message.reply("You will set the RACE")
     }
 
@@ -59,10 +57,16 @@ module.exports.run = async (message, cmd, args) => {
                 const reaction = collected.first()
                 switch (reaction.emoji.name) {
                     case '❎':
-                        message.channel.bulkDelete(1).catch(err => message.reply("ERRGAMCRE05 - Try again later or contact the dev."))
+                        message.channel.bulkDelete(1).catch(err => {
+                                message.reply("ERRGAMCRE05 - Try again later or contact the dev.")
+                                console.log(err)
+                            })
                         return message.reply("Come back later!")
                     case '✅':
-                        message.channel.bulkDelete(1).catch(err => message.reply("ERRGAMCRE05 - Try again later or contact the dev."))  
+                        message.channel.bulkDelete(1).catch(err => {
+                            message.reply("ERRGAMCRE05 - Try again later or contact the dev.")
+                            console.log(err)
+                        })
                         message.reply("Let's start so!")
                         modRaces
                             .find({
@@ -81,7 +85,6 @@ module.exports.run = async (message, cmd, args) => {
                                 if (res.length === 0) return message.reply("ERRGAMCRE02 - Try again later or contact the dev.")
                                 if (res === null) return message.reply("ERRGAMCRE03 - Try again later or contact the dev.")
                                 if (!res) {
-                                    rEmbed.setFooter("From JSON file. Not connected to DB.").addField(`↘ Choose`, jsonRaces.allraces.join(', '), true)
                                     return message.channel.send(rEmbed).then(msg => msg.delete(15000))
                                 } else {
                                     try {
@@ -102,7 +105,7 @@ module.exports.run = async (message, cmd, args) => {
             })
             .catch(collected => {
                 console.log(collected)
-//                message.channel.bulkDelete(1).catch(err => message.reply("ERRGAMCRE05 - Try again later or contact the dev."))
+                //                message.channel.bulkDelete(1).catch(err => message.reply("ERRGAMCRE05 - Try again later or contact the dev."))
                 return message.reply("I couldn't do any!")
             })
         //.then(msg => msg.delete(5000))

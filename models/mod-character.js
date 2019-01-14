@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 // eslint-disable-next-line new-cap
 const profileSchema = mongoose.Schema({
     userID: String,
-    userTag: String,
     serverID: String,
     characters: {
         id: Number,
@@ -20,11 +19,46 @@ const profileSchema = mongoose.Schema({
                 mod: Number,
                 total: Number
             },
-            con: Number,
-            dex: Number,
-            int: Number,
-            wis: Number,
-            cha: Number
+            con: {
+                base: Number,
+                racial: Number,
+                ability: Number,
+                misc: Number,
+                mod: Number,
+                total: Number
+            },
+            dex: {
+                base: Number,
+                racial: Number,
+                ability: Number,
+                misc: Number,
+                mod: Number,
+                total: Number
+            },
+            int: {
+                base: Number,
+                racial: Number,
+                ability: Number,
+                misc: Number,
+                mod: Number,
+                total: Number
+            },
+            wis: {
+                base: Number,
+                racial: Number,
+                ability: Number,
+                misc: Number,
+                mod: Number,
+                total: Number
+            },
+            cha: {
+                base: Number,
+                racial: Number,
+                ability: Number,
+                misc: Number,
+                mod: Number,
+                total: Number
+            }
         }
     }
 })
