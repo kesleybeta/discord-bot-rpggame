@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 // eslint-disable-next-line new-cap
-const raceSchema = mongoose.Schema({
+const classSchema = mongoose.Schema({
     name: String,
     namel: String,
     description: String,
@@ -27,4 +27,4 @@ const raceSchema = mongoose.Schema({
     equipment: Array
 })
 
-module.exports = mongoose.model("classes", raceSchema);
+module.exports = mongoose.model("classes", classSchema);

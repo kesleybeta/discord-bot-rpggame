@@ -1,12 +1,9 @@
 const Discord = require("discord.js")
 const ModProfile = require("../models/mod-character") // Require profile schema
-const ModCharacter = require("../models/mod-character") // Require character profile schema
+//const ModCharacter = require("../models/mod-character") // Require character profile schema
 const ModRaces = require("../models/mod-races") // Require races schema
-const ModClass = require("../models/mod-class") // Require races schema
-
-// tcreate 1 vai direto pra RACE
-// tcreate 2 vai direto pra CLASS
-// tcreate 3 vai direto pra BACKGROUND
+const ModClass = require("../models/mod-class") // Require classes schema
+const ModBack = require("../models/mod-background") // Require backgrounds schema
 
 module.exports.run = async (message, cmd, args) => {
   await message.delete() // Deletes the command message
@@ -26,23 +23,21 @@ module.exports.run = async (message, cmd, args) => {
     .setTitle("1. CHOOSE YOUR CHARACTER'S RACE")
     .setColor("#00D0FF")
     .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Villager-512.png")
-    .setDescription(`
-            • Every character belongs to a race.
-            • The race you choose contributes to your character's identity in an important way by establishing a general appearance and the natural talents gained from culture and ancestry.
-        `)
-    .setFooter("⏰ You'll have `15 seconds` to type your desired race.")
+    .setDescription(`• Every character belongs to a race.\n• The race you choose contributes to your character's identity in an important way by establishing a general appearance and the natural talents gained from culture and ancestry.`)
+    .setFooter("⏰ You'll have `15 seconds` to type your desired RACE.")
   let cEmbed = new Discord.RichEmbed() // An embed for class information
     .setTitle("2. CHOOSE YOUR CHARACTER'S CLASS")
-    .setColor("#11D1FF")
-    .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Villager-512.png")
-    .setDescription(`
-            • Class is the primary definition of what your character can do.
-            • It’s more than a profession; it’s your character’s calling.  Class shapes the way you think about the world and interact with it and your relationship with other people and powers in the multiverse.
-        `)
-    .setFooter("⏰ You'll have `15 seconds` to type your desired race.")
-  let dembed = new Discord.RichEmbed() // An embed for class information
-    .setTitle("RACE'S MANUAL")
-    .setColor("#5D69D6")
+    .setColor("#11E200")
+    .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Knight-512.png")
+    .setDescription(`• Class is the primary definition of what your character can do.\n• It’s more than a profession; it’s your character’s calling.  Class shapes the way you think about the world and interact with it and your relationship with other people and powers in the multiverse.`)
+    .setFooter("⏰ You'll have `15 seconds` to type your desired CLASS.")
+
+  let bEmbed = new Discord.RichEmbed() // An embed for class information
+    .setTitle("3. CHOOSE YOUR CHARACTER'S **BACKGROUND**")
+    .setColor("#22F311")
+    .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Grim_Reaper-512.png")
+    .setDescription(`• Every story has a beginning.\n• Your character’s background reveals where you came from, how you became an adventurer, and your place in the world.`)
+    .setFooter("⏰ You'll have `15 seconds` to type your desired BACKGROUND.")
 
   // Find Profile
   ModProfile
@@ -50,18 +45,18 @@ module.exports.run = async (message, cmd, args) => {
       userID: sender.id,
       serverID: sender.id
     })
-    .exec((err1, result) => {
+    .exec((e, result) => {
       // ERROR handling
-      if (err1) {
-        console.log('[ERR01] ' + err1)
-        return message.reply(sender.id + "GAMCHA01 - An error occurred.  Try contacting the dev.")
+      if (e) {
+        console.log('[ERR01] ' + e)
+        return message.reply("GAMCHA01 - An error occurred.  Try contacting the dev.")
       }
       // RESULT handling
       if (!result) message.reply(`▼ A new one will be created. Follow the guide:`)
-      else return message.reply(`► You already have a character. `)
+      else return message.channel.send(`► You already have a character.\nHIS NAME: *${result.name}*`)
     })
 
-  // 1. Listing races for choose
+  // 1. Listing RACES for choose ----------------------------------------------------------
   let raceArray = []
   await ModRaces // Building the RACE embed.
     .find({
@@ -74,23 +69,24 @@ module.exports.run = async (message, cmd, args) => {
       ]
     ])
     .exec((e, res) => {
+      console.log(res.length)
       if (e) {
         console.log('[ERR02] ' + e)
-        return message.reply(sender.id + "GAMCHA02 - Try again later or contact the dev.")
+        return message.reply("GAMCHA02 - Try again later or contact the dev.")
       }
       if (!res) {
         console.log("[ERR03] Couldn't find result")
-        return message.reply(sender.id + "GAMCHA03 - Try again later.")
+        return message.reply("GAMCHA03 - Try again later.")
       } else {
         try {
           raceArray.push(res[0].name)
         } catch (err) {
           console.log('[ERR04] ' + err)
-          return message.reply(sender.id + "GAMCHA05 - Try again later or contact the dev.")
+          return message.reply("GAMCHA05 - Try again later or contact the dev.")
         }
         for (let i = 1; i < res.length; i++) raceArray.unshift(res[i].name)
         rEmbed.addField(`↙ Choose one`, `\`\`\`diff\n+ ${raceArray.join('\n+ ')}\`\`\``, true)
-        message.channel.send(rEmbed).then(msg => msg.delete(15001))
+        return message.channel.send(rEmbed).then(msg => msg.delete(15001))
       }
     })
   // 2. Message await - this will wait for user to type the desire race
@@ -100,36 +96,30 @@ module.exports.run = async (message, cmd, args) => {
       errors: ['time']
     }).then(collected => {
       if (collected.first().content.toLowerCase() !== '') choosenRace = collected.first().content.toLowerCase()
-      // message.reply("You choose: **" + choosenRace.toUpperCase() + "** ?").then(msg => msg.delete(5000))
     })
     .catch(err => {
-      console.log("[ERR06] " + err)
+      console.log("[ERR05] " + err)
       return message.channel.send(`Please, give a valid RACE!\nRestart the guide typing: \`${cmd}\`.`)
     })
-
   // 3. Validation of the choice - if RACE is valid the guide keep going.
   if (choosenRace !== 'nd') {
     await ModRaces.findOne({
       namel: choosenRace
     }, (err, result) => {
-      if (err) console.log("[ERR07] " + err)
+      if (err) console.log("[ERR06] " + err)
       if (result === null) {
         choosenRace = 'nd'
-        return message.channel.send(`Please, give a valid RACE!\nRestart the guide typing: \`${cmd}\`.`)
+        return message.channel.send(`Please, give a valid RACE! - Restart the guide typing: \`${cmd}\``)
       }
-      if (!result) {
-        dembed.setDescription("Couldn't find any information.")
-        return message.channel.send(dembed)
-      } else {
+      if (!result) return message.channel.send("Couldn't find any information.")
+      else {
         console.log(result.name)
         //if (result.subraces) message.reply("Opcao de escolha de subraça aqui.")
       }
-
     })
-  } else {
-    return message.reply("Try again later.")
   }
-  // 1. Listing classes for choose
+
+  // 1. Listing CLASSES for choose ----------------------------------------------------------
   let classArray = []
   await ModClass // Building the CLASS embed.
     .find({
@@ -142,25 +132,26 @@ module.exports.run = async (message, cmd, args) => {
       ]
     ])
     .exec((e, res) => {
-      //console.log(res)
+      console.log(res.length)
       if (e) {
-        console.log('[ERR02] ' + e)
-        return message.reply(sender.id + "GAMCHA02 - Try again later or contact the dev.")
+        console.log('[ERR07] ' + e)
+        return message.reply("GAMCHA07 - Try again later or contact the dev.")
       }
       if (!res) {
-        console.log("[ERR03] Couldn't find result")
-        return message.reply(sender.id + "GAMCHA03 - Try again later.")
+        console.log("[ERR08] Couldn't find result")
+        return message.reply("GAMCHA08 - Try again later.")
       } else {
         try {
           classArray.push(res[0].name)
         } catch (err) {
-          console.log('[ERR04] ' + err)
-          return message.reply(sender.id + "GAMCHA05 - Try again later or contact the dev.")
+          console.log('[ERR09] ' + err)
+          return message.reply("GAMCHA09 - Try again later or contact the dev.")
         }
         for (let i = 1; i < res.length; i++) classArray.unshift(res[i].name)
         cEmbed.addField(`↙ Choose one`, `\`\`\`diff\n+ ${classArray.join('\n+ ')}\`\`\``, true)
-        if (choosenRace !== 'nd') message.channel.send(cEmbed).then(msg => msg.delete(15001))
+        if (choosenRace !== 'nd') return message.channel.send(cEmbed).then(msg => msg.delete(15001))
       }
+      return console.log('---')
     })
   // 2. Message await - this will wait for user to type the desire class
   if (choosenRace !== 'nd') {
@@ -172,7 +163,7 @@ module.exports.run = async (message, cmd, args) => {
         if (collected.first().content.toLowerCase() !== '') choosenClass = collected.first().content.toLowerCase()
       })
       .catch(err => {
-        console.log("[ERR06] " + err)
+        console.log("[ERR10] " + err)
         return message.channel.send(`Please, give a valid CLASS!\nRestart the guide typing: \`${cmd}\`.`)
       })
   }
@@ -181,18 +172,79 @@ module.exports.run = async (message, cmd, args) => {
     await ModClass.findOne({
       namel: choosenClass
     }, (err, result) => {
-      if (err) console.log("[ERR07] " + err)
+      if (err) console.log("[ERR11] " + err)
       if (result === null) {
         choosenClass = 'nd'
         return message.channel.send(`Please, give a valid CLASS!\nRestart the guide typing: \`${cmd}\`.`)
       }
-      if (!result) {
-        dembed.setDescription("Couldn't find any information.")
-        return message.channel.send(dembed)
-      } else {
+      if (!result) return message.channel.send("Couldn't find any information.")
+      else {
         console.log(result.name)
       }
-
+    })
+  }
+  // 1. Listing BACKGROUND for choose ----------------------------------------------------------
+  let backArray = []
+  await ModBack // Building the BACKGROUND embed.
+    .find({
+      source: "basicrules"
+    })
+    .sort([
+      [
+        'name',
+        'descending'
+      ]
+    ])
+    .exec((eR, res) => {
+      console.log(res.length)
+      if (eR) {
+        console.log('[ERR12] ' + eR)
+        return message.reply("GAMCHA12 - Try again later or contact the dev.")
+      }
+      if (!res) {
+        console.log("[ERR13] Couldn't find result")
+        return message.reply("GAMCHA13 - Try again later.")
+      } else {
+        // try {
+        //   backArray.push(res[0].name)
+        // } catch (err) {
+        //   console.log('[ERR14] ' + err)
+        //   return message.reply("GAMCHA14 - Try again later or contact the dev.")
+        // }
+        // for (let i = 1; i < res.length; i++) backArray.unshift(res[i].name)
+        bEmbed.addField(`↙ Choose one`, `\`\`\`diff\n+ ${backArray.join('\n+ ')}\`\`\``, true)
+        if (choosenClass !== 'nd') return message.channel.send(bEmbed).then(msg => msg.delete(15001))
+      }
+    })
+  // 2. Message await - this will wait for user to type the desire class
+  if (choosenClass !== 'nd' && choosenRace !== 'nd') {
+    await message.channel.awaitMessages(filter, {
+        max: 1,
+        time: 15000,
+        errors: ['time']
+      }).then(collected => {
+        if (!collected.first().content) choosenBack = ''
+        else choosenBack = collected.first().content.toLowerCase()
+      })
+      .catch(err => {
+        console.log("[ERR15] " + err)
+        return message.channel.send(`Please, give a valid CLASS!\nRestart the guide typing: \`${cmd}\`.`)
+      })
+  }
+  // 3. Validation of the choice - if BACKGROUND is valid the guide keep going.
+  if (choosenBack !== 'nd') {
+    await ModBack.findOne({
+      namel: choosenBack
+    }, (err, result) => {
+      if (err) console.log("[ERR16] " + err)
+      if (result === null) {
+        choosenBack = 'nd'
+        return message.channel.send(`Please, give a valid BACKGROUND!\nRestart the guide typing: \`${cmd}\`.`)
+      }
+      if (!result) return message.channel.send("Couldn't find any information.")
+      else {
+        console.log(result.name)
+      }
     })
   }
 
@@ -214,24 +266,12 @@ module.exports.run = async (message, cmd, args) => {
   //     })
   //     .catch(err2 => {
   //         console.log('[ERR02] ' + err2)
-  //         return message.reply(sender.id + "GAMCHA02 - Couldn't save your new profile")
+  //         return message.reply("GAMCHA02 - Couldn't save your new profile")
   //     })
 
   // console.log('Start sleeping')
   // await new Promise(resolve => setTimeout(resolve, 5000))
   // console.log('Five seconds later')
-
-
-  // else {
-  //     let anewchar = result.characters
-  //     if (anewchar.valid === 1) return message.reply(`► You already have a character. Named: *${anewchar.name}*`)
-  //     if (anewchar.valid === 0) {
-  //         console.log(anewchar)
-  //         if (!anewchar.race) {
-  //             message.reply("Let's choose a new race:") //Choosing a new RACE for the characater.
-  //             return message.channel.send("Here will be the reading choices")
-  //         }
-  //     }
 
   if (choosenRace !== 'nd' && choosenClass !== 'nd' && choosenBack !== 'nd') {
     message.channel.send(`\`\`\`diff\n+ User       > ${sender.username}
