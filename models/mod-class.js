@@ -2,12 +2,11 @@ const mongoose = require("mongoose");
 // eslint-disable-next-line new-cap
 const raceSchema = mongoose.Schema({
     name: String,
-    namel: {
-        type: String,
-        text: true
-    },
+    namel: String,
     description: String,
-    iconurl: String,
+    icon: String,
+    thumb: String,
+    source: String,
     table: {
         lvl: Number,
         bonus: Number,

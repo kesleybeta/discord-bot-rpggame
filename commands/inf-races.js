@@ -15,7 +15,7 @@ module.exports.run = async (message, cmd, args) => {
 
         let tudo = []
         modRaces.find({
-                edition: "5th"
+                source: "handbook"
             }).sort([
                 [
                     'name',
