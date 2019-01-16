@@ -24,20 +24,20 @@ module.exports.run = async (message, cmd, args) => {
     .setTitle("1. CHOOSE YOUR CHARACTER'S RACE")
     .setColor("#9665d8")
     .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Villager-512.png")
-    .setDescription(`• Every character belongs to a race.\n• The race you choose contributes to your character's identity in an important way by establishing a general appearance and the natural talents gained from culture and ancestry.`)
+    .setDescription(`• The race you choose contributes to your character's identity in an important way by establishing a general appearance and the natural talents gained from culture and ancestry.`)
     .setFooter("⏰ You'll have `15 seconds` to type your desired RACE.")
   let cEmbed = new Discord.RichEmbed() // An embed for class information
     .setTitle("2. CHOOSE YOUR CHARACTER'S CLASS")
     .setColor("#65d8d6")
     .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Knight-512.png")
-    .setDescription(`• Class is the primary definition of what your character can do.\n• It’s more than a profession; it’s your character’s calling.  Class shapes the way you think about the world and interact with it and your relationship with other people and powers in the multiverse.`)
+    .setDescription(`• Class shapes the way you think about the world and interact with it and your relationship with other people and powers in the multiverse.`)
     .setFooter("⏰ You'll have `15 seconds` to type your desired CLASS.")
 
   let bEmbed = new Discord.RichEmbed() // An embed for class information
     .setTitle("3. CHOOSE YOUR CHARACTER'S **BACKGROUND**")
     .setColor("#69db83")
     .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Grim_Reaper-512.png")
-    .setDescription(`• Every story has a beginning.\n• Your character’s background reveals where you came from, how you became an adventurer, and your place in the world.`)
+    .setDescription(`• Your character’s background reveals where you came from, how you became an adventurer, and your place in the world.`)
     .setFooter("⏰ You'll have `15 seconds` to type your desired BACKGROUND.")
 
   await ModProfile // Find Profile
@@ -111,6 +111,7 @@ module.exports.run = async (message, cmd, args) => {
       }
       if (!result) return message.channel.send("Couldn't find any information.")
       else {
+        if (result.subraces) return message.reply("F 0 D 3 U DE VEEEZ")
         return console.log('[1][3]: ' + result.name)
         //if (result.subraces) message.reply("Opcao de escolha de subraça aqui.")                               ############
       }
@@ -279,9 +280,7 @@ module.exports.run = async (message, cmd, args) => {
   // await new Promise(resolve => setTimeout(resolve, 5000))
   // console.log('Five seconds later')
 
-  if (choosenRace !== 'nd' && choosenClass !== 'nd' && choosenBack !== 'nd') {
-    return message.channel.send(`\`\`\`diff\n- User       > ${sender.username}\n+ Race       > ${choosenRace.toUpperCase()}\n+ Class      > ${choosenClass.toUpperCase()}\n+ Background > ${choosenBack.toUpperCase()}\`\`\``)
-  }
+  if (choosenRace !== 'nd' && choosenClass !== 'nd' && choosenBack !== 'nd') return message.channel.send(`\`\`\`diff\n- User       > ${sender.username}\n+ Race       > ${choosenRace.toUpperCase()}\n+ Class      > ${choosenClass.toUpperCase()}\n+ Background > ${choosenBack.toUpperCase()}\`\`\``)
   return console.log('[END]')
 }
 
@@ -289,5 +288,3 @@ module.exports.config = {
   name: "new",
   aliases: ["create"]
 }
-
-//Simbols: alt+16 ► \ alt+17 ◄ \ alt+30 ▲ \ alt+31 ▼
