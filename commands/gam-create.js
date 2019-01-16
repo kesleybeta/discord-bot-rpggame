@@ -1,13 +1,6 @@
 const Discord = require("discord.js")
 const modRaces = require("../models/mod-races.js")
 
-// 1. RACE
-// 2. CLASS
-// 3. BACKGROUND
-// tcreate 1 vai direto pra RACE
-// tcreate 2 vai direto pra CLASS
-// tcreate 3 vai direto pra BACKGROUND
-
 module.exports.run = async (message, cmd, args) => {
   await message.delete()
   console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`)
@@ -22,7 +15,7 @@ module.exports.run = async (message, cmd, args) => {
     .setColor("#808080")
     .setDescription(`
             — To start your new adventure I'll need your card number... *ha.. haha.. just kidding, this doesn't exist here.. ~yet~?*
-
+            
             — Let's create your new **CHARACTER** ?? ▼
         `)
 
@@ -113,7 +106,7 @@ module.exports.run = async (message, cmd, args) => {
 }
 
 module.exports.config = {
-  name: "create",
+  name: "notcreate",
   aliases: []
 }
 
