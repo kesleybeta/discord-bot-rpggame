@@ -24,7 +24,12 @@ const raceSchema = mongoose.Schema({
     size: String,
     source: String,
     speed: String,
-    subraces: Array
+    subraces: [
+        {
+            name: String,
+            namel: String
+        }
+    ]
 })
 
 module.exports = mongoose.model("races", raceSchema);

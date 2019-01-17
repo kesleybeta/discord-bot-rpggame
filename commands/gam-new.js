@@ -1,6 +1,5 @@
 const Discord = require("discord.js")
-const ModProfile = require("../models/mod-character") // Require profile schema
-//const ModCharacter = require("../models/mod-character") // Require character profile schema
+const ModCharacter = require("../models/mod-character") // Require profile schema
 const ModRaces = require("../models/mod-races") // Require races schema
 const ModClass = require("../models/mod-class") // Require classes schema
 const ModBack = require("../models/mod-background") // Require backgrounds schema
@@ -17,40 +16,48 @@ module.exports.run = async (message, cmd, args) => {
   let choosenClass = 'nd'
   let choosenBack = 'nd'
   let milisec = 30000
-  let stembed = new Discord.RichEmbed()
-    .setAuthor("Game Master", "https://cdn.iconscout.com/icon/premium/png-256-thumb/wizard-23-483776.png")
+  let guideEmbed = new Discord.RichEmbed()
+    .setAuthor("CHARACTER'S CREATION", "https://cdn4.iconfinder.com/data/icons/game-rounded-2-set/512/scroll-512.png")
+    .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Spell_Scroll-512.png")
     .setColor("#808080")
-    .setDescription(`— To start your new adventure I'll need your card number... *ha.. haha.. just kidding, this doesn't exist here.. ~yet~?*\n— Let's create your new **CHARACTER** ?? ▼`)
-  let rEmbed = new Discord.RichEmbed() // An embed for races information
-    .setTitle("1. Choose your character's RACE")
+    .setDescription(`Your first step in playing an adventurer in the Dungeons & Dragons game is to imagine and create a character of your own. Your character is a combination of game statistics, roleplaying hooks, and your imagination.\n— Let's create your new **CHARACTER** ?? ▼`)
+  let raceEmbed = new Discord.RichEmbed() // An embed for races information
+    .setAuthor("CHARACTER'S CREATION", "https://cdn4.iconfinder.com/data/icons/game-rounded-2-set/512/scroll-512.png")
+    .setTitle("1. CHARACTER's RACE")
     .setColor("#9665d8")
     .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Villager-512.png")
     .setDescription(`• The race you choose contributes to your character's identity in an important way by establishing a general appearance and the natural talents gained from culture and ancestry.`)
     .setFooter(`⏰ You'll have ${milisec / 1000} seconds to type your desired RACE.`)
-  let sRembed = new Discord.RichEmbed()
-    .setTitle("1.5. CHOOSE YOUR CHARACTER'S SUB-RACE")
+  let subRaceEmbed = new Discord.RichEmbed()
+    .setAuthor("CHARACTER'S CREATION", "https://cdn4.iconfinder.com/data/icons/game-rounded-2-set/512/scroll-512.png")
+    .setTitle("1.5. CHARACTER's SUB-RACE")
     .setColor("#9665d8")
+    .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Viking-512.png")
+    .setDescription(`• Some races have subraces. Members of a subrace have the traits of the parent race in addition to the traits specified for their subrace.`)
     .setFooter(`⏰ You'll have ${milisec / 1000} seconds to type your desired SUBRACE.`)
-  let cEmbed = new Discord.RichEmbed() // An embed for class information
-    .setTitle("2. CHOOSE YOUR CHARACTER'S CLASS")
+  let classEmbed = new Discord.RichEmbed() // An embed for class information
+    .setAuthor("CHARACTER'S CREATION", "https://cdn4.iconfinder.com/data/icons/game-rounded-2-set/512/scroll-512.png")
+    .setTitle("2. CHARACTER's CLASS")
     .setColor("#65d8d6")
     .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Knight-512.png")
     .setDescription(`• Class shapes the way you think about the world and interact with it and your relationship with other people and powers in the multiverse.`)
     .setFooter(`⏰ You'll have ${milisec / 1000} seconds to type your desired CLASS.`)
-  let bEmbed = new Discord.RichEmbed() // An embed for background information
-    .setTitle("3. CHOOSE YOUR CHARACTER'S **BACKGROUND**")
+  let backgroundEmbed = new Discord.RichEmbed() // An embed for background information
+    .setAuthor("CHARACTER'S CREATION", "https://cdn4.iconfinder.com/data/icons/game-rounded-2-set/512/scroll-512.png")
+    .setTitle("3. CHARACTER'S BACKGROUND")
     .setColor("#69db83")
     .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Grim_Reaper-512.png")
     .setDescription(`• Your character’s background reveals where you came from, how you became an adventurer, and your place in the world.`)
     .setFooter(`⏰ You'll have ${milisec / 1000} seconds to type your desired BACKGROUND.`)
-  await ModProfile // Find Profile ------------------------------------------------------------------------------------------------------
+  await ModCharacter // Find from the specific user profile ------------------------------------------------------------------------------------------------------
     .findOne({
       userID: sender.id,
-      serverID: sender.id
+      serverID: sender.id,
+      'character.valid': 1
     })
     .exec((e, result) => {
       if (e) return message.reply("[GAMNEW01] - An error occurred.  Try contacting the dev.").then(console.log('[ERR01] ' + e))
-      if (!result) return message.channel.send(stembed)
+      if (!result) return message.channel.send(guideEmbed)
       else return message.channel.send(`► You already have a character.\nHIS NAME: *${result.name}*`)
     }) //  ---------------------------------------------------------------------- ----------------------------------------------------------------------
   let raceArray = [] // 1 - 1. Listing RACES for choose
@@ -74,8 +81,8 @@ module.exports.run = async (message, cmd, args) => {
           return message.reply("[GAMNEW04] - Try again later or contact the dev.").then(console.log('[ERR04] ' + ce))
         }
         for (let i = 1; i < res.length; i++) raceArray.unshift(res[i].name)
-        rEmbed.addField(`↙ Choose one:`, `\`\`\`diff\n+ ${raceArray.join('\n+ ')}\`\`\``, true) // Building the array list of the RACES
-        return message.channel.send(rEmbed).then(console.log(' + [1][1]: Race embed builded.')) //.then(msg => msg.delete(milisec - 1))
+        raceEmbed.addField(`↙ Choose one:`, `\`\`\`diff\n+ ${raceArray.join('\n+ ')}\`\`\``, true) // Building the array list of the RACES
+        return message.channel.send(raceEmbed)
       }
     })
   await message.channel.awaitMessages(filter, { // 1 - 2. Message await - this will wait for user to type the desire race
@@ -85,13 +92,12 @@ module.exports.run = async (message, cmd, args) => {
     }).then(collected => {
       if (collected.first().content.toLowerCase() === "cancel") return message.reply("Cancelled!")
       if (collected.first().content.toLowerCase()) choosenRace = collected.first().content.toLowerCase()
-      return console.log('    | [2]: Race await finished.')
     })
     .catch(ce => {
       console.log("[ERR05] " + ce)
       return message.channel.send(`Please, give a valid RACE! • Restart the guide typing: \`${cmd}\`.`)
     })
-  if (choosenRace !== 'nd') { // 13. Validation of the choice - if RACE is valid the guide keep going.
+  if (choosenRace !== 'nd') { // 1 - 3. Validation of the choice - if RACE is valid the guide keep going.
     await ModRaces.findOne({
       namel: choosenRace
     }, (e, result) => {
@@ -101,16 +107,23 @@ module.exports.run = async (message, cmd, args) => {
         return message.channel.send(`Please, give a valid RACE! • Restart the guide typing: \`${cmd}\``)
       }
       if (!result) return message.channel.send("Couldn't find any information.")
-      if (result.subraces !== "") {
-        console.log('    | [-]: ' + result.subraces)
+      if (!result.subraces.toString()) choosenSubRace = ''
+      else {
+        let subraceArray = []
         choosenSubRace = 'ndy'
-        sRembed.addField('↙ Choose one:', `\`\`\`diff\n+ ${result.subraces.join('\n+ ')}\`\`\``, true) // Building the array list of the SUBRACES
-      } else choosenSubRace = ''
-      return console.log('    - [3]: Valid > ' + result.name)
+        try {
+          subraceArray.push(result.subraces[0].name)
+        } catch (ce) {
+          return message.reply("[GAMNEW04] - Try again later or contact the dev.").then(console.log('[ERR04] ' + ce))
+        }
+        for (let i = 1; i < result.subraces.length; i++) subraceArray.unshift(result.subraces[i].name)
+        subRaceEmbed.addField(`↙ Choose one:`, `\`\`\`diff\n+ ${subraceArray.join('\n+ ')}\`\`\``, true) // Building the array list of the RACES
+        // Building the array list of the SUBRACES     subRaceEmbed.addField('↙ Choose one:', `\`\`\`diff\n+ ${result.subraces[0].name.join('\n+ ')}\`\`\``, true)
+      }
     }) //  ---------------------------------------------------------------------- ----------------------------------------------------------------------
   }
   if (choosenSubRace === 'ndy') {
-    message.channel.send(sRembed)
+    await message.channel.send(subRaceEmbed)
     await message.channel.awaitMessages(filter, { //1.5 - 2. Message await - this will wait for user to type the desire race
         max: 1,
         time: milisec,
@@ -118,13 +131,25 @@ module.exports.run = async (message, cmd, args) => {
       }).then(collected => {
         if (collected.first().content.toLowerCase() === "cancel") return message.reply("Cancelled!")
         if (collected.first().content.toLowerCase()) choosenSubRace = collected.first().content.toLowerCase()
-        return console.log('    | [-]: Await finished.')
       })
       .catch(err => {
-        console.log("[ERR05.5] " + err)
+        console.log("[ERR06.1] " + err)
         return message.channel.send(`Please, give a valid SUBRACE! • Restart the guide typing: \`${cmd}\`.`)
       })
-  } //  ---------------------------------------------------------------------- ----------------------------------------------------------------------
+  }
+  if (choosenSubRace !== '' && choosenSubRace !== 'ndy') {
+    await ModRaces.findOne({
+      'subraces.namel': choosenSubRace
+    }, (err, result) => {
+      if (err) console.log("[ERR6.2] " + err)
+      if (result === null) {
+        choosenSubRace = 'nd'
+        return message.channel.send(`Please, give a valid SUBRACE! • Restart the guide typing: \`${cmd}\`.`)
+      }
+      if (!result) return message.channel.send("Couldn't find any information.")
+    })
+  }
+  //  ---------------------------------------------------------------------- ----------------------------------------------------------------------
   let classArray = [] // 2 - 1. Listing CLASSES for choose
   await ModClass // Building the CLASS embed.
     .find({
@@ -147,12 +172,12 @@ module.exports.run = async (message, cmd, args) => {
           return message.reply("GAMCHA09 - Try again later or contact the dev.")
         }
         for (let i = 1; i < res.length; i++) classArray.unshift(res[i].name)
-        cEmbed.addField(`↙ Choose one`, `\`\`\`diff\n+ ${classArray.join('\n+ ')}\`\`\``, true)
-        if (choosenRace !== 'nd') return message.channel.send(cEmbed).then(console.log(' + [2][1]: Class embed builded.')) //.then(msg => msg.delete(milisec - 1))
-        else return message.channel.send("Try again later.")
+        classEmbed.addField(`↙ Choose one`, `\`\`\`diff\n+ ${classArray.join('\n+ ')}\`\`\``, true)
+        if (choosenRace !== 'nd' && choosenSubRace !== 'ndy') return message.channel.send(classEmbed) //Class embed builded sended
+        ///else return
       }
     })
-  if (choosenRace !== 'nd') { // 2 - 2. Message await - this will wait for user to type the desire class
+  if (choosenRace !== 'nd' && choosenSubRace !== 'ndy') { // 2 - 2. Message await - this will wait for user to type the desire class
     await message.channel.awaitMessages(filter, {
         max: 1,
         time: milisec,
@@ -160,7 +185,6 @@ module.exports.run = async (message, cmd, args) => {
       }).then(collected => {
         if (collected.first().content.toLowerCase() === "cancel") return message.reply("Cancelled!")
         if (collected.first().content.toLowerCase()) choosenClass = collected.first().content.toLowerCase()
-        return console.log('    | [2]: Class await finished.')
       })
       .catch(err => {
         console.log("[ERR10] " + err)
@@ -177,7 +201,6 @@ module.exports.run = async (message, cmd, args) => {
         return message.channel.send(`Please, give a valid CLASS! • Restart the guide typing: \`${cmd}\`.`)
       }
       if (!result) return message.channel.send("Couldn't find any information.")
-      else return console.log('    - [3]: Validated > ' + result.name)
     })
   } //  ---------------------------------------------------------------------- ----------------------------------------------------------------------
   let backArray = [] // 3 - 1. Listing BACKGROUND for choose
@@ -202,13 +225,12 @@ module.exports.run = async (message, cmd, args) => {
             return message.reply("GAMCHA14 - Try again later or contact the dev.").then(console.log('[ERR14] ' + ce))
           }
           for (let i = 1; i < res.length; i++) backArray.unshift(res[i].name)
-          bEmbed.addField(`↙ Choose one`, `\`\`\`diff\n+ ${backArray.join('\n+ ')}\`\`\``, true)
-          if (choosenClass !== 'nd') message.channel.send(bEmbed) //.then(msg => msg.delete(milisec - 1)) return
+          backgroundEmbed.addField(`↙ Choose one`, `\`\`\`diff\n+ ${backArray.join('\n+ ')}\`\`\``, true)
+          if (choosenClass !== 'nd') message.channel.send(backgroundEmbed)
         }
-        return console.log(' + [3][1]: Background embed builded.') //return
       })
   }
-  if (choosenClass !== 'nd' && choosenRace !== 'nd') { // 3 - 2. Message await - this will wait for user to type the desire class
+  if (choosenClass !== 'nd' && choosenRace !== 'nd' && choosenSubRace !== 'ndy') { // 3 - 2. Message await - this will wait for user to type the desire class
     await message.channel.awaitMessages(filter, {
         max: 1,
         time: milisec,
@@ -217,7 +239,6 @@ module.exports.run = async (message, cmd, args) => {
         if (collected.first().content.toLowerCase() === "cancel") return message.reply("Cancelled!")
         if (!collected.first().content) choosenBack = 'nd'
         else choosenBack = collected.first().content.toLowerCase()
-        return console.log('    | [2]: Class await finished.')
       })
       .catch(ce => {
         message.channel.send(`Please, give a valid CLASS! • Restart the guide typing: \`${cmd}\`.`)
@@ -234,40 +255,83 @@ module.exports.run = async (message, cmd, args) => {
         return message.channel.send(`Please, give a valid BACKGROUND! • Restart the guide typing: \`${cmd}\`.`)
       }
       if (!background) return message.channel.send("Couldn't find any information.")
-      else return console.log('    - [3]: Valid > ' + background.name) // return test
     })
   } //  ---------------------------------------------------------------------- ----------------------------------------------------------------------
+  let qtd = 8
+  if (choosenSubRace.toUpperCase() !== '') qtd = 10
+  if (choosenRace !== 'nd' && choosenClass !== 'nd' && choosenBack !== 'nd') {
+    message.channel.bulkDelete(qtd)
+    guideEmbed.setFooter(`Do you wish to continue?`)
+      .setDescription(`An official D&D character sheet is a fine place to start until you know what information you need and how you use it during the game.`)
+      .addField(`Your choices, **${sender.username}**:`, `\`\`\`diff\n+ Race       > ${choosenSubRace.toUpperCase() || choosenRace.toUpperCase()}\n+ Class      > ${choosenClass.toUpperCase()}\n+ Background > ${choosenBack.toUpperCase()}\`\`\``)
+    const filterReaction = (reaction, user) => [
+      '✅',
+      '❎'
+    ].includes(reaction.emoji.name) && user.id === message.author.id
+    await message.channel.send(guideEmbed).then(async msg => {
+      await msg.react('✅')
+      await msg.react('❎')
+      msg
+        .awaitReactions(filterReaction, {
+          max: 1,
+          time: milisec,
+          errors: ['time']
+        })
+        .then(collected => {
+          const reaction = collected.first()
+          switch (reaction.emoji.name) {
+            case '❎':
+              //message.channel.bulkDelete(1).catch(e => { message.reply("[ERR17] - Try again later or contact the dev.").then(console.log(e))})
+              return message.reply("Come back later!")
+            case '✅':
+              //message.channel.bulkDelete(1).catch(e => { message.reply("[ERR18] - Try again later or contact the dev.").then(console.log(e)) })
 
-  //message.reply("You choose: *" + choosenRace + "* ?")
-  // const newProfile = new ModProfile({
+              return message.reply("I'm saving youuu....")
+            default:
+              return message.channel.send("¯\\_(ツ)_/¯")
+          }
+        })
+        .catch(ce => {
+          console.log(ce)
+          return message.reply("I couldn't do any!")
+        })
+    })
+  }
+  // ModCharacter.findOne({
   //     userID: sender.id,
-  //     serverID: message.guild.id,
-  //     characters: { // --------------------THIS IS JUST THE END DUMB
-  //         id: 0,
-  //         valid: 0
-  //     }
-  // })
-  // newProfile
-  //     .save()
-  //     .then(msg => {
-  //         console.log("id" + msg.characters.id)
-  //         message.reply("▲ A new PROFILE was created for you.")
+  //     serverID: message.guild.id
+  //   })
+  //   .exec((e, result) => {
+  //     if (e) return message.reply("[GAMNEW01] - An error occurred.  Try contacting the dev.").then(console.log('[ERR01] ' + e))
+  //     if (!result) {
+  //       const newProfile = new ModCharacter({
+  //         userID: sender.id,
+  //         serverID: message.guild.id,
+  //         characters: {
+  //           id: 0,
+  //           valid: 0
+  //         }
+  //       })
+  //       newProfile
+  //         .save()
+  //         .then(msg => {
+  //           console.log("id" + msg.characters.id)
+  //           message.reply("▲ A new PROFILE was created for you.")
 
-  //     })
-  //     .catch(err2 => {
-  //         console.log('[ERR02] ' + err2)
-  //         return message.reply("GAMCHA02 - Couldn't save your new profile")
-  //     })
+  //         })
+  //         .catch(err2 => {
+  //           console.log('[ERR02] ' + err2)
+  //           return message.reply("GAMCHA02 - Couldn't save your new profile")
+  //         })
+  //     } else return message.channel.send(`► You already have a character.\nHIS NAME: *${result.name}*`)
+  //   })
+  //   .catch(ce => {
+  //     console.log("[ERR3515]: " + ce)
+  //   })
 
   // console.log('Start sleeping')
   // await new Promise(resolve => setTimeout(resolve, 5000))
   // console.log('Five seconds later')
-
-  if (choosenRace !== 'nd' && choosenSubRace !== 'nd' && choosenClass !== 'nd' && choosenBack !== 'nd') {
-    // eslint-disable-next-line multiline-ternary
-    return message.channel.send(`\`\`\`diff\n- User       > ${sender.username}\n+ Race       > ${choosenRace.toUpperCase()} ${choosenSubRace.toUpperCase() !== 'NDY' ? '- '+choosenSubRace.toUpperCase() : ' '}\n+ Class      > ${choosenClass.toUpperCase()}\n+ Background > ${choosenBack.toUpperCase()}\`\`\``) // eslint-disable-line no-ternary
-  }
-  return console.log('[END]')
 }
 
 module.exports.config = {

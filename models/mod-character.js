@@ -59,7 +59,13 @@ const profileSchema = mongoose.Schema({
                 mod: Number,
                 total: Number
             }
-        }
+        },
+        hp: {
+            hpoints: Number
+        },
+        alignment: String,
+        sex: String,
+        thumb: String
     }
 })
 
