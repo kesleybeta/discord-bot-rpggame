@@ -12,7 +12,7 @@
   "dependencies": {
     "dateformat": "^3.0.3",
     "discord.js": "^11.4.2",
-    "mongoose": "^5.4.3",
+    "mongoose": "^5.4.4",
     "ms": "^2.1.1",
     "superagent": "^4.1.0"
   },
