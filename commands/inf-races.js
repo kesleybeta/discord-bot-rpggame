@@ -32,6 +32,11 @@ module.exports.run = async (message, cmd, args) => {
     let specificRace = args.toString().toLowerCase()
       .split(",")
       .join(" ")
+
+    console.log(args)
+    console.log(args.toString())
+    console.log(message.content)
+
     let dembed = new Discord.RichEmbed()
       .setColor("#9665d8")
 
@@ -49,12 +54,12 @@ module.exports.run = async (message, cmd, args) => {
           .setThumbnail(`${result.thumb}`)
           .setTitle(`${result.name} `)
           .setDescription(`${result.description}`)
-          // .addField("Age", `**Adult**: ***${result.age.adult}*** | **Max**: ***${result.age.max}*** `, true)
-          // .addField("Alignment", `***${result.alignment}*** `, true)
-          // .addField("Speed", `***${result.speed}*** `, true)
-          // .addField("Languages", `***${result.languages.join(', ')}*** `, true)
-          // .addField("Features", `***${result.features.join(', ')}*** `, true)
-          // .addField("Subraces", `***${result.subraces.join(', ') || "None"}*** `, true)
+        // .addField("Age", `**Adult**: ***${result.age.adult}*** | **Max**: ***${result.age.max}*** `, true)
+        // .addField("Alignment", `***${result.alignment}*** `, true)
+        // .addField("Speed", `***${result.speed}*** `, true)
+        // .addField("Languages", `***${result.languages.join(', ')}*** `, true)
+        // .addField("Features", `***${result.features.join(', ')}*** `, true)
+        // .addField("Subraces", `***${result.subraces.join(', ') || "None"}*** `, true)
         return message.channel.send(dembed)
       }
     })

@@ -17,33 +17,33 @@ module.exports.run = async (message, cmd, args) => {
   let choosenBack = 'nd'
   let milisec = 30000
   let guideEmbed = new Discord.RichEmbed()
-    .setAuthor("CHARACTER'S CREATION", "https://cdn4.iconfinder.com/data/icons/game-rounded-2-set/512/scroll-512.png")
+    .setAuthor("Character Creation", "https://cdn4.iconfinder.com/data/icons/game-rounded-2-set/512/scroll-512.png")
     .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Spell_Scroll-512.png")
     .setColor("#808080")
     .setDescription(`Your first step in playing an adventurer in the Dungeons & Dragons game is to imagine and create a character of your own. Your character is a combination of game statistics, roleplaying hooks, and your imagination.\n— Let's create your new **CHARACTER** ?? ▼`)
   let raceEmbed = new Discord.RichEmbed() // An embed for races information
-    .setAuthor("CHARACTER'S CREATION", "https://cdn4.iconfinder.com/data/icons/game-rounded-2-set/512/scroll-512.png")
+    .setAuthor("Character Creation", "https://cdn4.iconfinder.com/data/icons/game-rounded-2-set/512/scroll-512.png")
     .setTitle("1. CHARACTER's RACE")
     .setColor("#9665d8")
     .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Villager-512.png")
     .setDescription(`• The race you choose contributes to your character's identity in an important way by establishing a general appearance and the natural talents gained from culture and ancestry.`)
     .setFooter(`⏰ You'll have ${milisec / 1000} seconds to type your desired RACE.`)
   let subRaceEmbed = new Discord.RichEmbed()
-    .setAuthor("CHARACTER'S CREATION", "https://cdn4.iconfinder.com/data/icons/game-rounded-2-set/512/scroll-512.png")
+    .setAuthor("Character Creation", "https://cdn4.iconfinder.com/data/icons/game-rounded-2-set/512/scroll-512.png")
     .setTitle("1.5. CHARACTER's SUB-RACE")
     .setColor("#9665d8")
     .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Viking-512.png")
     .setDescription(`• Some races have subraces. Members of a subrace have the traits of the parent race in addition to the traits specified for their subrace.`)
     .setFooter(`⏰ You'll have ${milisec / 1000} seconds to type your desired SUBRACE.`)
   let classEmbed = new Discord.RichEmbed() // An embed for class information
-    .setAuthor("CHARACTER'S CREATION", "https://cdn4.iconfinder.com/data/icons/game-rounded-2-set/512/scroll-512.png")
+    .setAuthor("Character Creation", "https://cdn4.iconfinder.com/data/icons/game-rounded-2-set/512/scroll-512.png")
     .setTitle("2. CHARACTER's CLASS")
     .setColor("#65d8d6")
     .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Knight-512.png")
     .setDescription(`• Class shapes the way you think about the world and interact with it and your relationship with other people and powers in the multiverse.`)
     .setFooter(`⏰ You'll have ${milisec / 1000} seconds to type your desired CLASS.`)
   let backgroundEmbed = new Discord.RichEmbed() // An embed for background information
-    .setAuthor("CHARACTER'S CREATION", "https://cdn4.iconfinder.com/data/icons/game-rounded-2-set/512/scroll-512.png")
+    .setAuthor("Character Creation", "https://cdn4.iconfinder.com/data/icons/game-rounded-2-set/512/scroll-512.png")
     .setTitle("3. CHARACTER'S BACKGROUND")
     .setColor("#69db83")
     .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Grim_Reaper-512.png")
@@ -52,8 +52,7 @@ module.exports.run = async (message, cmd, args) => {
   await ModCharacter // Find from the specific user profile ------------------------------------------------------------------------------------------------------
     .findOne({
       userID: sender.id,
-      serverID: sender.id,
-      'character.valid': 1
+      serverID: sender.id
     })
     .exec((e, result) => {
       if (e) return message.reply("[GAMNEW01] - An error occurred.  Try contacting the dev.").then(console.log('[ERR01] ' + e))
@@ -118,7 +117,6 @@ module.exports.run = async (message, cmd, args) => {
         }
         for (let i = 1; i < result.subraces.length; i++) subraceArray.unshift(result.subraces[i].name)
         subRaceEmbed.addField(`↙ Choose one:`, `\`\`\`diff\n+ ${subraceArray.join('\n+ ')}\`\`\``, true) // Building the array list of the RACES
-        // Building the array list of the SUBRACES     subRaceEmbed.addField('↙ Choose one:', `\`\`\`diff\n+ ${result.subraces[0].name.join('\n+ ')}\`\`\``, true)
       }
     }) //  ---------------------------------------------------------------------- ----------------------------------------------------------------------
   }
