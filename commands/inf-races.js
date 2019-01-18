@@ -32,20 +32,15 @@ module.exports.run = async (message, cmd, args) => {
     let specificRace = args.toString().toLowerCase()
       .split(",")
       .join(" ")
-
-    console.log(args)
     if (message.content.indexOf('-') > 0) {
-      console.log(' - - - menor q 0: ' + args)
       property = args.pop().slice(1)
       let argslice = args //.slice(0, args.length - 1)
       specificRace = argslice.toString().toLowerCase()
         .split(",")
         .join(" ")
     }
-
     let dembed = new Discord.RichEmbed()
       .setColor("#9665d8")
-
     modRaces.findOne({
       namel: specificRace
     }, (err, result) => {
@@ -55,14 +50,13 @@ module.exports.run = async (message, cmd, args) => {
         dembed.addField("Races:", "Couldn't find any information.")
         return message.channel.send(dembed)
       } else if (property !== '') {
-        console.log(property)
-        property = {property}
-        console.log(property)
         dembed
           .setAuthor("Races's Manual", `${result.icon}`)
           .setThumbnail(`${result.thumb}`)
           .setTitle(`${result.name} `)
-          .setDescription(`${result.property} `)
+
+        if (property === 'age') dembed.addField("Age: ", `Adult: ${result.age.adult}\nMaximum: ${result.age.max}`)
+        if (property === 'alignment') dembed.addField("Alignment: ", `${result.alignment} `)
         return message.channel.send(dembed)
       } else {
         dembed
@@ -74,7 +68,7 @@ module.exports.run = async (message, cmd, args) => {
         // .addField("Alignment", `***${result.alignment}*** `, true)
         // .addField("Speed", `***${result.speed}*** `, true)
         // .addField("Languages", `***${result.languages.join(', ')}*** `, true)
-        // .addField("Features", `***${result.features.join(', ')}*** `, true)
+        // .addField("Features", `***${result.features.join(', ')}*** `, true)  
         // .addField("Subraces", `***${result.subraces.join(', ') || "None"}*** `, true)
         return message.channel.send(dembed)
       }
