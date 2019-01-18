@@ -57,7 +57,7 @@ module.exports.run = async (message, cmd, args) => {
     .exec((e, result) => {
       if (e) return message.reply("[GAMNEW01] - An error occurred.  Try contacting the dev.").then(console.log('[ERR01] ' + e))
       if (!result) return message.channel.send(guideEmbed)
-      else return message.channel.send(`► You already have a character.\nHIS NAME: *${result.name}*`)
+      else return message.channel.send(`• You already have a character. ► HIS NAME: *${result.name}*`)
     }) //  ---------------------------------------------------------------------- ----------------------------------------------------------------------
   let raceArray = [] // 1 - 1. Listing RACES for choose
   await ModRaces // Building the RACE embed.

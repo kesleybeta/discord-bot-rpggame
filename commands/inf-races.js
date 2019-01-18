@@ -12,7 +12,7 @@ module.exports.run = async (message, cmd, args) => {
       .setColor("#9665d8")
 
     let raceArray = []
-    modRaces.find({
+    modRaces.find({ // Building the races embed using an array
         source: "handbook"
       }).sort([
         [
@@ -24,18 +24,24 @@ module.exports.run = async (message, cmd, args) => {
         if (err) return console.log('erro' + err)
         raceArray.push(res[0].name)
         for (let i = 1; i < res.length; i++) raceArray.unshift(res[i].name)
-
         rEmbed.addField("Races:", `\`\`\`diff\n+ ${raceArray.join('\n+ ')}\`\`\``)
         return message.channel.send(rEmbed)
       })
   } else {
+    let property = ''
     let specificRace = args.toString().toLowerCase()
       .split(",")
       .join(" ")
 
     console.log(args)
-    console.log(args.toString())
-    console.log(message.content)
+    if (message.content.indexOf('-') > 0) {
+      console.log(' - - - menor q 0: ' + args)
+      property = args.pop().slice(1)
+      let argslice = args //.slice(0, args.length - 1)
+      specificRace = argslice.toString().toLowerCase()
+        .split(",")
+        .join(" ")
+    }
 
     let dembed = new Discord.RichEmbed()
       .setColor("#9665d8")
@@ -47,6 +53,16 @@ module.exports.run = async (message, cmd, args) => {
       if (result === null) return message.reply(`Please, give a valid RACE! Type \`${cmd}\` to see the race's list.`)
       if (!result) {
         dembed.addField("Races:", "Couldn't find any information.")
+        return message.channel.send(dembed)
+      } else if (property !== '') {
+        console.log(property)
+        property = {property}
+        console.log(property)
+        dembed
+          .setAuthor("Races's Manual", `${result.icon}`)
+          .setThumbnail(`${result.thumb}`)
+          .setTitle(`${result.name} `)
+          .setDescription(`${result.property} `)
         return message.channel.send(dembed)
       } else {
         dembed

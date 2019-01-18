@@ -1,35 +1,59 @@
 const mongoose = require("mongoose");
 
 const raceSchema = mongoose.Schema({
-    abilityscore: {
-        str: Number,
-        dex: Number,
-        con: Number,
-        int: Number,
-        wis: Number,
-        cha: Number
-    },
-    age: {
-        adult: Number,
-        max: Number
-    },
-    alignment: String,
-    description: String,
-    features: Array,
-    icon: String,
-    thumb: String,
-    languages: Array,
-    namel: String,
+  namel: String,
+  name: String,
+  abilityscore: {
+    str: Number,
+    dex: Number,
+    con: Number,
+    int: Number,
+    wis: Number,
+    cha: Number
+  },
+  age: {
+    adult: Number,
+    max: Number
+  },
+  alignment: String,
+  description: String,
+  features: Array,
+  languages: Array,
+  icon: String,
+  thumb: String,
+  size: String,
+  source: String,
+  speed: {
+    walking: Number,
+    flying: Number,
+    swimming: Number
+  },
+  prof: {
+    skill: String,
+    weapon: Array,
+    armor: Array,
+    tools: Array
+  },
+  subraces: [{
     name: String,
-    size: String,
-    source: String,
-    speed: String,
-    subraces: [
-        {
-            name: String,
-            namel: String
-        }
-    ]
+    namel: String,
+    abilityscore: {
+      str: Number,
+      dex: Number,
+      con: Number,
+      int: Number,
+      wis: Number,
+      cha: Number
+    },
+    prof: {
+      skill: Array,
+      weapon: Array,
+      armor: Array,
+      tools: Array
+    },
+    languages: Array
+  }],
+  variant: Array
 })
 
 module.exports = mongoose.model("races", raceSchema);
