@@ -50,9 +50,10 @@ module.exports.run = async (message, cmd, args) => {
       } else {
         cembed
           //.setAuthor("Classes's Manual", `${result.icon}`)
-          .setThumbnail(`${result.thumb}`)
+          .setAuthor("Classes's Manual", "https://media-waterdeep.cursecdn.com/avatars/104/378/636511944060210307.png")
           .setTitle(`${result.name} `)
-          .addField("Description:", `${result.description} `)
+          .setThumbnail(`${result.thumb}`)
+          .setDescription(`${result.description}`)
         return message.channel.send(cembed)
       }
     })
