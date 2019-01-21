@@ -32,12 +32,16 @@ fs.readdir("./commands/", (err, files) => {
         return
     }
     jsfile.forEach(f => {
-        let commandFile = require(`./commands/${f}`)
-        console.log(`[${timel}] Command loaded: ${f.toUpperCase().split(".JS")}`)
-        bot.commands.set(commandFile.config.name, commandFile)
-        commandFile.config.aliases.forEach(alias => {
-            bot.aliases.set(alias, commandFile.config.name)
-        })
+        try {
+            let commandFile = require(`./commands/${f}`)
+            //console.log(`[${timel}] Command loaded: ${f.toUpperCase().split(".JS")}`)
+            bot.commands.set(commandFile.config.name, commandFile)
+            commandFile.config.aliases.forEach(alias => {
+                bot.aliases.set(alias, commandFile.config.name)
+            })
+        } catch (e) {
+            return console.log(`[${timel}] Command not loaded: ${f.toUpperCase().split(".JS")} ` + e)
+        }
     })
 })
 
@@ -53,7 +57,7 @@ bot.on("message", async message => {
     }
 
     let prefix = prefixes[message.guild.id].prefixes
-    let messageArray = message.content.split(" ")
+    let messageArray = message.content.toLowerCase().split(" ")
     let cmd = messageArray[0]
     let args = messageArray.slice(1)
     let commandfile = bot.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)))
@@ -69,7 +73,7 @@ bot.on("message", async message => {
         console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`)
         message.channel.send(prembed)
     }
-    if (message.content.startsWith(prefix)) {
+    if (message.content.toLowerCase().startsWith(prefix)) {
         if (commandfile) commandfile.run(message, cmd, args)
     } else {
         // ---- Coin System not related with the Role Playing

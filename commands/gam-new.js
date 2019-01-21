@@ -28,7 +28,7 @@ module.exports.run = async (message, cmd, args) => {
     .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Villager-512.png")
     .setDescription(`• The race you choose contributes to your character's identity in an important way by establishing a general appearance and the natural talents gained from culture and ancestry.`)
     .setFooter(`⏰ You'll have ${milisec / 1000} seconds to type your desired RACE.`)
-  let subRaceEmbed = new Discord.RichEmbed()
+  let subRaceEmbed = new Discord.RichEmbed() // An embed for subraces information
     .setAuthor("Character Creation", "https://cdn4.iconfinder.com/data/icons/game-rounded-2-set/512/scroll-512.png")
     .setTitle("1.5. CHARACTER's SUB-RACE")
     .setColor("#9665d8")
