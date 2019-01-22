@@ -5,8 +5,8 @@ const raceSchema = mongoose.Schema({
   name: String,
   abilityscore: {
     str: Number,
-    dex: Number,
     con: Number,
+    dex: Number,
     int: Number,
     wis: Number,
     cha: Number
@@ -39,8 +39,8 @@ const raceSchema = mongoose.Schema({
     namel: String,
     abilityscore: {
       str: Number,
-      dex: Number,
       con: Number,
+      dex: Number,
       int: Number,
       wis: Number,
       cha: Number

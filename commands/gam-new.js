@@ -1,18 +1,24 @@
 const Discord = require("discord.js")
+const fs = require("fs")
 const ModCharacter = require("../models/mod-character") // Require profile schema
 const ModRaces = require("../models/mod-races") // Require races schema
 const ModClass = require("../models/mod-class") // Require classes schema
 const ModBack = require("../models/mod-background") // Require backgrounds schema
 
+const low = require('lowdb')
+const FileSync = require('lowdb/adapters/FileSync')
+const arr = low(new FileSync('./jsonfiles/newLists.json', 'utf8'))
+
 module.exports.run = async (message, cmd, args) => {
   await message.delete() // Deletes the command message
   if (String(args)) return message.reply("ERRGAMCHA00 - Please don't use arguments.") // Command must be without args
   console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`) // Logging the request of the command
-  //Util variables
+  // Variables
   let sender = message.author // For better code-read purposes
   const filter = msg => msg.author.id === sender.id
   let choosenRace = 'nd'
   let choosenSubRace = ''
+  let asRacial = []
   let choosenClass = 'nd'
   let choosenBack = 'nd'
   let milisec = 30000
@@ -56,34 +62,13 @@ module.exports.run = async (message, cmd, args) => {
     })
     .exec((e, result) => {
       if (e) return message.reply("[GAMNEW01] - An error occurred.  Try contacting the dev.").then(console.log('[ERR01] ' + e))
-      if (!result) return message.channel.send(guideEmbed)
-      else return message.channel.send(`• You already have a character. ► HIS NAME: *${result.name}*`)
-    }) //  ---------------------------------------------------------------------- ----------------------------------------------------------------------
-  let raceArray = [] // 1 - 1. Listing RACES for choose
-  await ModRaces // Building the RACE embed.
-    .find({
-      source: "handbook"
-    })
-    .sort([
-      [
-        'name',
-        'descending'
-      ]
-    ])
-    .exec((e, res) => {
-      if (e) return message.reply("[GAMNEW02] - Try again later or contact the dev.").then(console.log('[ERR02] ' + e)) // ERROR handling
-      if (!res) return message.reply("[GAMNEW03] - Try again later.") // RESULT handling
-      else {
-        try {
-          raceArray.push(res[0].name)
-        } catch (ce) {
-          return message.reply("[GAMNEW04] - Try again later or contact the dev.").then(console.log('[ERR04] ' + ce))
-        }
-        for (let i = 1; i < res.length; i++) raceArray.unshift(res[i].name)
-        raceEmbed.addField(`↙ Choose one:`, `\`\`\`diff\n+ ${raceArray.join('\n+ ')}\`\`\``, true) // Building the array list of the RACES
+      if (!result) {
+        message.channel.send(guideEmbed)
+        raceEmbed.addField(`↙ Choose one:`, `\`\`\`diff\n+ ${arr.get('allraces').value().join('\n+ ')}\`\`\``, true) // Building the array list of the RACES
         return message.channel.send(raceEmbed)
-      }
+      } else return message.channel.send(`• You already have a character. ► HIS NAME: *${result.name}*`)
     })
+  //  ---------------------------------------------------------------------- ----------------------------------------------------------------------
   await message.channel.awaitMessages(filter, { // 1 - 2. Message await - this will wait for user to type the desire race
       max: 1,
       time: milisec,
@@ -106,18 +91,16 @@ module.exports.run = async (message, cmd, args) => {
         return message.channel.send(`Please, give a valid RACE! • Restart the guide typing: \`${cmd}\``)
       }
       if (!result) return message.channel.send("Couldn't find any information.")
-      if (!result.subraces.toString()) choosenSubRace = ''
       else {
-        let subraceArray = []
-        choosenSubRace = 'ndy'
-        try {
-          subraceArray.push(result.subraces[0].name)
-        } catch (ce) {
-          return message.reply("[GAMNEW04] - Try again later or contact the dev.").then(console.log('[ERR04] ' + ce))
+        let rab = result.abilityscore
+        asRacial = [rab.str, rab.con, rab.dex, rab.int, rab.wis, rab.cha]
+        if (!result.subraces.toString()) choosenSubRace = ''
+        else {
+          choosenSubRace = 'ndy'
+          subRaceEmbed.addField(`↙ Choose one:`, `\`\`\`diff\n+ ${arr.get('subraces.' + choosenRace).value().join('\n+ ')}\`\`\``, true) // Building the array list of the RACES
         }
-        for (let i = 1; i < result.subraces.length; i++) subraceArray.unshift(result.subraces[i].name)
-        subRaceEmbed.addField(`↙ Choose one:`, `\`\`\`diff\n+ ${subraceArray.join('\n+ ')}\`\`\``, true) // Building the array list of the RACES
       }
+      console.log(result.abilityscore)
     }) //  ---------------------------------------------------------------------- ----------------------------------------------------------------------
   }
   if (choosenSubRace === 'ndy') {
@@ -145,50 +128,34 @@ module.exports.run = async (message, cmd, args) => {
         return message.channel.send(`Please, give a valid SUBRACE! • Restart the guide typing: \`${cmd}\`.`)
       }
       if (!result) return message.channel.send("Couldn't find any information.")
+      else {
+        asRacial[0] = asRacial[0] + result.abilityscore.str
+        asRacial[1] = asRacial[1] + result.abilityscore.con
+        asRacial[2] = asRacial[2] + result.abilityscore.dex
+        asRacial[3] = asRacial[3] + result.abilityscore.int
+        asRacial[4] = asRacial[4] + result.abilityscore.wis
+        asRacial[5] = asRacial[5] + result.abilityscore.cha
+        //console.log(result.name)
+        message.channel.send(result)
+      }
     })
   }
   //  ---------------------------------------------------------------------- ----------------------------------------------------------------------
-  let classArray = [] // 2 - 1. Listing CLASSES for choose
-  await ModClass // Building the CLASS embed.
-    .find({
-      source: "official"
+  await classEmbed.addField(`↙ Choose one`, `\`\`\`diff\n+ ${arr.get('allclasses').value().join('\n+ ')}\`\`\``, true)
+  if (choosenRace !== 'nd' && choosenSubRace !== 'ndy') await message.channel.send(classEmbed) // 2 - 2. Message await - this will wait for user to type the desire class
+  await message.channel.awaitMessages(filter, {
+      max: 1,
+      time: milisec,
+      errors: ['time']
+    }).then(collected => {
+      if (collected.first().content.toLowerCase() === "cancel") return message.reply("Cancelled!")
+      if (collected.first().content.toLowerCase()) choosenClass = collected.first().content.toLowerCase()
     })
-    .sort([
-      [
-        'name',
-        'descending'
-      ]
-    ])
-    .exec((e, res) => {
-      if (e) return message.reply("GAMCHA07 - Try again later or contact the dev.").then(console.log('[ERR07] ' + e))
-      if (!res) return message.reply("GAMCHA08 - Try again later.").then(console.log("[ERR08] Couldn't find result"))
-      else {
-        try {
-          classArray.push(res[0].name)
-        } catch (err) {
-          console.log('[ERR09] ' + err)
-          return message.reply("GAMCHA09 - Try again later or contact the dev.")
-        }
-        for (let i = 1; i < res.length; i++) classArray.unshift(res[i].name)
-        classEmbed.addField(`↙ Choose one`, `\`\`\`diff\n+ ${classArray.join('\n+ ')}\`\`\``, true)
-        if (choosenRace !== 'nd' && choosenSubRace !== 'ndy') return message.channel.send(classEmbed) //Class embed builded sended
-        ///else return
-      }
+    .catch(err => {
+      console.log("[ERR10] " + err)
+      return message.channel.send(`Please, give a valid CLASS! • Restart the guide typing: \`${cmd}\`.`)
     })
-  if (choosenRace !== 'nd' && choosenSubRace !== 'ndy') { // 2 - 2. Message await - this will wait for user to type the desire class
-    await message.channel.awaitMessages(filter, {
-        max: 1,
-        time: milisec,
-        errors: ['time']
-      }).then(collected => {
-        if (collected.first().content.toLowerCase() === "cancel") return message.reply("Cancelled!")
-        if (collected.first().content.toLowerCase()) choosenClass = collected.first().content.toLowerCase()
-      })
-      .catch(err => {
-        console.log("[ERR10] " + err)
-        return message.channel.send(`Please, give a valid CLASS! • Restart the guide typing: \`${cmd}\`.`)
-      })
-  }
+
   if (choosenClass !== 'nd') { // 2 - 3. Validation of the choice - if CLASS is valid the guide keep going.
     await ModClass.findOne({
       namel: choosenClass
@@ -201,32 +168,9 @@ module.exports.run = async (message, cmd, args) => {
       if (!result) return message.channel.send("Couldn't find any information.")
     })
   } //  ---------------------------------------------------------------------- ----------------------------------------------------------------------
-  let backArray = [] // 3 - 1. Listing BACKGROUND for choose
-  if (choosenClass !== 'nd') {
-    await ModBack // Building the BACKGROUND embed.
-      .find({
-        source: "basicrules"
-      })
-      .sort([
-        [
-          'name',
-          'descending'
-        ]
-      ])
-      .exec((e, res) => {
-        if (e) return message.reply("GAMCHA12 - Try again later or contact the dev.").then(console.log('[ERR12] ' + e))
-        if (!res) return message.reply("GAMCHA13 - Try again later.").then(console.log("[ERR13] Couldn't find result"))
-        else {
-          try {
-            backArray.push(res[0].name)
-          } catch (ce) {
-            return message.reply("GAMCHA14 - Try again later or contact the dev.").then(console.log('[ERR14] ' + ce))
-          }
-          for (let i = 1; i < res.length; i++) backArray.unshift(res[i].name)
-          backgroundEmbed.addField(`↙ Choose one`, `\`\`\`diff\n+ ${backArray.join('\n+ ')}\`\`\``, true)
-          if (choosenClass !== 'nd') message.channel.send(backgroundEmbed)
-        }
-      })
+  if (choosenClass !== 'nd') { // 3 - 1. Listing BACKGROUND for choose
+    backgroundEmbed.addField(`↙ Choose one`, `\`\`\`diff\n+ ${arr.get('allbacks').value().join('\n+ ')}\`\`\``, true)
+    if (choosenClass !== 'nd') message.channel.send(backgroundEmbed)
   }
   if (choosenClass !== 'nd' && choosenRace !== 'nd' && choosenSubRace !== 'ndy') { // 3 - 2. Message await - this will wait for user to type the desire class
     await message.channel.awaitMessages(filter, {
@@ -262,10 +206,7 @@ module.exports.run = async (message, cmd, args) => {
     guideEmbed.setFooter(`Do you wish to continue?`)
       .setDescription(`An official D&D character sheet is a fine place to start until you know what information you need and how you use it during the game.`)
       .addField(`Your choices, **${sender.username}**:`, `\`\`\`diff\n+ Race       > ${choosenSubRace.toUpperCase() || choosenRace.toUpperCase()}\n+ Class      > ${choosenClass.toUpperCase()}\n+ Background > ${choosenBack.toUpperCase()}\`\`\``)
-    const filterReaction = (reaction, user) => [
-      '✅',
-      '❎'
-    ].includes(reaction.emoji.name) && user.id === message.author.id
+    const filterReaction = (reaction, user) => ['✅', '❎'].includes(reaction.emoji.name) && user.id === message.author.id
     await message.channel.send(guideEmbed).then(async msg => {
       await msg.react('✅')
       await msg.react('❎')
@@ -330,6 +271,7 @@ module.exports.run = async (message, cmd, args) => {
   // console.log('Start sleeping')
   // await new Promise(resolve => setTimeout(resolve, 5000))
   // console.log('Five seconds later')
+  console.log(asRacial)
 }
 
 module.exports.config = {
