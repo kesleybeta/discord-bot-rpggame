@@ -61,6 +61,5 @@ typings/
 .next
 
 # files
-jsonfiles/
 token.json
 test.js

@@ -1,0 +1,22 @@
+{
+  "allraces": [
+    "Dragonborn", "Dwarf", "Elf", "Gnome", "Half Elf", "Half Orc", "Halfling", "Human", "Tiefling"
+  ],
+  "subraces": {
+    "dragonborn": [""],
+    "dwarf": ["Hill Dwarf", "Mountain Dwarf"],
+    "elf": ["Dark Elf", "High Elf", "Wood Elf"],
+    "gnome": ["Deep Gnome", "Forest Gnome", "Rock Gnome"],
+    "half elf": [""],
+    "half orc": [""],
+    "halfling": ["Lightfoot Halfling", "Stout Halfling"],
+    "human": [""],
+    "tiefling": [""]
+  },
+  "allclasses": [
+    "Barbarian", "Bard", "Monk", "Paladin", "Ranger", "Rogue", "Warlock", "Wizard"
+  ],
+  "allbacks": [
+    "Acolyte", "Criminal", "Folk Hero", "Noble", "Sage", "Soldier"
+  ]
+}

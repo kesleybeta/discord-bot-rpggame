@@ -19,7 +19,7 @@ const profileSchema = mongoose.Schema({
                 mod: Number,
                 total: Number
             },
-            con: {
+            dex: {
                 base: Number,
                 racial: Number,
                 ability: Number,
@@ -27,7 +27,7 @@ const profileSchema = mongoose.Schema({
                 mod: Number,
                 total: Number
             },
-            dex: {
+            con: {
                 base: Number,
                 racial: Number,
                 ability: Number,
