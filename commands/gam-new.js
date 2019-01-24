@@ -1,6 +1,8 @@
+/* eslint-disable operator-assignment */
 const Discord = require("discord.js")
 const ModCharacter = require("../models/mod-character") // Require profile schema
 const ModRaces = require("../models/mod-races") // Require races schema
+const ModSubRaces = require("../models/mod-subraces") // Require subraces schema
 const ModClass = require("../models/mod-class") // Require classes schema
 const ModBack = require("../models/mod-background") // Require backgrounds schema
 
@@ -20,6 +22,7 @@ module.exports.run = async (message, cmd, args) => {
   let asRacial = []
   let choosenClass = 'nd'
   let choosenBack = 'nd'
+  let choosenName = 'nd'
   let milisec = 30000 // Global time of wait
   // --------------------
   // Building Rich Embeds
@@ -64,7 +67,7 @@ module.exports.run = async (message, cmd, args) => {
       serverID: sender.id
     })
     .exec((e, result) => {
-      if (e) return message.reply("[GAMNEW01] - An error occurred.  Try contacting the dev.").then(console.log('[ERR01] ' + e))
+      if (e) return message.reply("ERR#GAMNEW01 - An error occurred.  Try contacting the dev.").then(console.log('[ERR01] ' + e))
       if (!result || result === null) {
         message.channel.send(guideEmbed)
         // --------------------------------------------
@@ -73,12 +76,11 @@ module.exports.run = async (message, cmd, args) => {
         .join('\n+ ')}\`\`\``, true)
         return message.channel.send(raceEmbed)
       } else return message.channel.send(`• You already have a character. ► HIS NAME: *${result.name}*`)
-    })
-  // -----------------------------------------------------------------------
+    }) // ------------------------------------------------------------------
   // 1 - 2. Message await - this will wait for user to type the desire race.
   await message.channel.awaitMessages(filter, {
       max: 1,
-      time: milisec / 3,
+      time: milisec,
       errors: ['time']
     }).then(collected => {
       if (collected.first().content.toLowerCase() === "cancel") return message.reply("Cancelled!")
@@ -86,9 +88,8 @@ module.exports.run = async (message, cmd, args) => {
     })
     .catch(ce => {
       message.channel.send(`Time's up! • Restart the guide typing: \`${cmd}\`.`)
-      console.error(ce)
-    })
-  // ------------------------------------------------------------------------
+      return console.error(ce)
+    }) // -------------------------------------------------------------------
   // 1 - 3. Validation of the choice - if RACE is valid the guide keep going.
   if (choosenRace !== 'nd') {
     await ModRaces.findOne({
@@ -100,17 +101,18 @@ module.exports.run = async (message, cmd, args) => {
         return message.channel.send(`Please, give a valid RACE! • Restart the guide typing: \`${cmd}\``)
       } else {
         asRacial = result.abilityscore
-        if (!result.subraces.toString()) choosenSubRace = ''
+        // If choosen RACE have a subrace build an embed with a subrace's list
+        if (!result.subraces || result.subraces === null) choosenSubRace = ''
         else {
-          // If choosen RACE have a subrace build an embed with a subrace's list
           choosenSubRace = 'ndy'
+          // ----------------------------------------
+          // Building the array list of the SUBRACES.
           subRaceEmbed.addField(`↙ Choose one:`, `\`\`\`diff\n+ ${arr.get('subraces.' + choosenRace).value()
-          .join('\n+ ')}\`\`\``, true) // Building the array list of the RACES
+          .join('\n+ ')}\`\`\``, true)
         }
       }
     })
-  }
-  // -------------------------------------------------------------------------
+  } // -----------------------------------------------------------------------
   // 1.5 - 2. Message await - this will wait for user to type the desire race.
   if (choosenSubRace === 'ndy') {
     await message.channel.send(subRaceEmbed)
@@ -123,35 +125,36 @@ module.exports.run = async (message, cmd, args) => {
         if (collected.first().content.toLowerCase()) choosenSubRace = collected.first().content.toLowerCase()
       })
       .catch(err => {
-        console.log("[ERR06.1] " + err)
-        message.channel.send(`Time's up! • Restart the guide typing: \`${cmd}\`. `)
+        message.channel.send(`Time's up! • Restart the guide typing: \`${cmd}\`.`)
+        return console.log("[ERR06.1] " + err)
       })
-  }
-  // -----------------------------------------------------------------------------
+  } // ---------------------------------------------------------------------------
   // 1.5 - 3. Validation of the choice - if SUBRACE is valid the guide keep going.
   if (choosenSubRace !== '' && choosenSubRace !== 'ndy') {
-    await ModRaces.findOne({
-      'subraces.namel': choosenSubRace
-    }, (e, result) => {
-      if (e) console.log("[ERR06.2] " + e)
-      if (!result || result === null) {
-        choosenSubRace = 'nd'
-        return message.channel.send(`Please, give a valid SUBRACE! • Restart the guide typing: \`${cmd}\`.`)
-      } else {
-        asRacial.str = asRacial.str + result.abilityscore.str
-        asRacial.dex = asRacial.dex + result.abilityscore.dex
-        asRacial.con = asRacial.con + result.abilityscore.con
-        asRacial.int = asRacial.int + result.abilityscore.int
-        asRacial.wis = asRacial.wis + result.abilityscore.wis
-        asRacial.cha = asRacial.cha + result.abilityscore.cha
-        message.channel.send(`R: ${result.abilityscore}`)
-      }
-    })
-  }
-  // ------------------------------------------------------------------------
-  // 2 - 2. Message await - this will wait for user to type the desire class.
+    await ModSubRaces.findOne({
+        namel: choosenSubRace
+      })
+      .exec((e, result) => {
+        if (e) console.log("[ERR06.2] " + e)
+        if (!result || result === null || result.length === 0) {
+          choosenSubRace = 'nd'
+          return message.channel.send(`Please, give a valid SUBRACE! • Restart the guide typing: \`${cmd}\`.`)
+        } else {
+          console.log(asRacial + '\n' + result.abilityscore)
+          asRacial.str += result.abilityscore.str
+          asRacial.dex += result.abilityscore.dex
+          asRacial.con += result.abilityscore.con
+          asRacial.int += result.abilityscore.int
+          asRacial.wis += result.abilityscore.wis
+          asRacial.cha += result.abilityscore.cha
+        }
+      })
+  } // --------------------------------------------
+  // 2 - 1. Building the array list of the CLASSES.
   await classEmbed.addField(`↙ Choose one`, `\`\`\`diff\n+ ${arr.get('allclasses').value()
   .join('\n+ ')}\`\`\``, true)
+  // ------------------------------------------------------------------------
+  // 2 - 2. Message await - this will wait for user to type the desire class.
   if (choosenRace !== 'nd' && choosenSubRace !== 'ndy') await message.channel.send(classEmbed)
   await message.channel.awaitMessages(filter, {
       max: 1,
@@ -177,15 +180,15 @@ module.exports.run = async (message, cmd, args) => {
         return message.channel.send(`Please, give a valid CLASS! • Restart the guide typing: \`${cmd}\`.`)
       }
     })
-  }
-  // -------------------------------------
-  // 3 - 1. Listing BACKGROUND for choose.
+  } // ------------------------------------------------
+  // 3 - 1. Building the array list of the BACKGROUNDS.
   if (choosenClass !== 'nd') {
     backgroundEmbed.addField(`↙ Choose one`, `\`\`\`diff\n+ ${arr.get('allbacks').value()
     .join('\n+ ')}\`\`\``, true)
     if (choosenClass !== 'nd') message.channel.send(backgroundEmbed)
-  }
-  if (choosenClass !== 'nd' && choosenRace !== 'nd' && choosenSubRace !== 'ndy') { // 3 - 2. Message await - this will wait for user to type the desire class
+  } // ----------------------------------------------------------------------
+  // 3 - 2. Message await - this will wait for user to type the desire class.
+  if (choosenClass !== 'nd' && choosenRace !== 'nd' && choosenSubRace !== 'ndy') {
     await message.channel.awaitMessages(filter, {
         max: 1,
         time: milisec,
@@ -199,8 +202,7 @@ module.exports.run = async (message, cmd, args) => {
         message.channel.send(`Time's up! • Restart the guide typing: \`${cmd}\`.`)
         return console.log("[ERR15] " + ce)
       })
-  }
-  // ------------------------------------------------------------------------------
+  } // ----------------------------------------------------------------------------
   // 3 - 3. Validation of the choice - if BACKGROUND is valid the guide keep going.
   if (choosenBack !== 'nd') {
     await ModBack.findOne({
@@ -213,12 +215,11 @@ module.exports.run = async (message, cmd, args) => {
       }
       if (!background) return message.channel.send("Couldn't find any information.")
     })
-  }
-  //  ----------------------------------------------------------------------
+  } // ----------------------------------------------------------------------
   let qtd = 8
   if (choosenSubRace.toUpperCase() !== '') qtd = 10
-  message.channel.bulkDelete(qtd)
   if (choosenRace !== 'nd' && choosenClass !== 'nd' && choosenBack !== 'nd') {
+    message.channel.bulkDelete(qtd)
     guideEmbed.setFooter(`Do you wish to continue?`)
       .setDescription(`An official D&D character sheet is a fine place to start until you know what information you need and how you use it during the game.`)
       .addField(`Your choices, **${sender.username}**:`, `\`\`\`diff\n+ Race       > ${choosenSubRace.toUpperCase() || choosenRace.toUpperCase()}\n+ Class      > ${choosenClass.toUpperCase()}\n+ Background > ${choosenBack.toUpperCase()}\`\`\``)
@@ -235,7 +236,7 @@ module.exports.run = async (message, cmd, args) => {
           time: milisec,
           errors: ['time']
         })
-        .then(collected => {
+        .then(async collected => {
           const reaction = collected.first()
           switch (reaction.emoji.name) {
             case '❎':
@@ -243,7 +244,118 @@ module.exports.run = async (message, cmd, args) => {
               return message.reply("Come back later!")
             case '✅':
               //message.channel.bulkDelete(1).catch(e => { message.reply("[ERR18] - Try again later or contact the dev.").then(console.log(e)) })
+              await ModCharacter.findOne({
+                  userID: sender.id,
+                  serverID: message.guild.id
+                })
+                .exec(async (e, result) => {
+                  if (e) return message.reply("[ERR#GAMNEW16] - An error occurred.  Try contacting the dev.").then(console.log('[ERR16] ' + e))
+                  if (!result || result === null) {
+                    let nameEmbed = new Discord.RichEmbed()
+                      .setColor(3447003)
+                      .setAuthor("Character Creation", "https://cdn4.iconfinder.com/data/icons/game-rounded-2-set/512/scroll-512.png")
+                      .setTitle("4. CHARACTER's NAME")
+                      .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Villager-512.png")
+                      .setDescription(`• Choose a ***name*** for your character.`)
+                      .setFooter(`⏰ You'll have ${milisec / 1000} seconds to type.`)
+                    await message.channel.send(nameEmbed)
+                    await message.channel.awaitMessages(filter, {
+                        max: 1,
+                        time: milisec,
+                        errors: ['time']
+                      }).then(collected => {
+                        if (collected.first().content.toLowerCase() === "cancel") return message.reply("Cancelled!")
+                        if (!collected.first().content) choosenName = 'nd'
+                        else choosenName = collected.first().content.toUpperCase()
+                      })
+                      .catch(cce => {
+                        message.channel.send(`Time's up! • Restart the guide typing: \`${cmd}\`.`)
+                        return console.log("[ERRO17] " + cce)
+                      })
+                    // const newProfile = new ModCharacter({
+                    //   userID: String,
+                    //   serverID: String,
+                    //   characters: {
+                    //     id: Number,
+                    //     valid: Number,
+                    //     name: String,
+                    //     race: String,
+                    //     class: String,
+                    //     background: String,
+                    //     attributes: {
+                    //       str: {
+                    //         base: Number,
+                    //         racial: Number,
+                    //         ability: Number,
+                    //         misc: Number,
+                    //         mod: Number,
+                    //         total: Number
+                    //       },
+                    //       dex: {
+                    //         base: Number,
+                    //         racial: Number,
+                    //         ability: Number,
+                    //         misc: Number,
+                    //         mod: Number,
+                    //         total: Number
+                    //       },
+                    //       con: {
+                    //         base: Number,
+                    //         racial: Number,
+                    //         ability: Number,
+                    //         misc: Number,
+                    //         mod: Number,
+                    //         total: Number
+                    //       },
+                    //       int: {
+                    //         base: Number,
+                    //         racial: Number,
+                    //         ability: Number,
+                    //         misc: Number,
+                    //         mod: Number,
+                    //         total: Number
+                    //       },
+                    //       wis: {
+                    //         base: Number,
+                    //         racial: Number,
+                    //         ability: Number,
+                    //         misc: Number,
+                    //         mod: Number,
+                    //         total: Number
+                    //       },
+                    //       cha: {
+                    //         base: Number,
+                    //         racial: Number,
+                    //         ability: Number,
+                    //         misc: Number,
+                    //         mod: Number,
+                    //         total: Number
+                    //       }
+                    //     },
+                    //     hp: {
+                    //       hpoints: Number
+                    //     },
+                    //     alignment: String,
+                    //     sex: String,
+                    //     thumb: String
+                    //   }
+                    // })
+                    // newProfile
+                    //   .save()
+                    //   .then(msg => {
+                    //     console.log("[ID: %s]", msg.characters.id)
+                    //     message.reply("▲ A new PROFILE was created for you.")
 
+                    //   })
+                    //   .catch(ce => {
+                    //     message.reply("GAMCHA02 - Couldn't save your new profile")
+                    //     return console.log('[ERR16] ' + ce)
+                    //   })
+                  } else return message.channel.send(`► You already have a character.\nHIS NAME: *${result.name}*`)
+                })
+                .catch(ce => {
+                  console.log("[ERR3515]: " + ce)
+                })
               return message.reply("I'm saving youuu....")
             default:
               return message.channel.send("¯\\_(ツ)_/¯")
@@ -255,41 +367,11 @@ module.exports.run = async (message, cmd, args) => {
         })
     })
   }
-  // ModCharacter.findOne({
-  //     userID: sender.id,
-  //     serverID: message.guild.id
-  //   })
-  //   .exec((e, result) => {
-  //     if (e) return message.reply("[GAMNEW01] - An error occurred.  Try contacting the dev.").then(console.log('[ERR01] ' + e))
-  //     if (!result) {
-  //       const newProfile = new ModCharacter({
-  //         userID: sender.id,
-  //         serverID: message.guild.id,
-  //         characters: {
-  //           id: 0,
-  //           valid: 0
-  //         }
-  //       })
-  //       newProfile
-  //         .save()
-  //         .then(msg => {
-  //           console.log("id" + msg.characters.id)
-  //           message.reply("▲ A new PROFILE was created for you.")
-
-  //         })
-  //         .catch(err2 => {
-  //           console.log('[ERR02] ' + err2)
-  //           return message.reply("GAMCHA02 - Couldn't save your new profile")
-  //         })
-  //     } else return message.channel.send(`► You already have a character.\nHIS NAME: *${result.name}*`)
-  //   })
-  //   .catch(ce => {
-  //     console.log("[ERR3515]: " + ce)
-  //   })
 
   // console.log('Start sleeping')
   // await new Promise(resolve => setTimeout(resolve, 5000))
   // console.log('Five seconds later')
+  console.log(asRacial)
 }
 
 module.exports.config = {
