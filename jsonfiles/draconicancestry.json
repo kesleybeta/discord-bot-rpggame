@@ -1,0 +1,54 @@
+{
+    "ancestries":[
+        "Black",
+        "Blue",
+        "Brass",
+        "Bronze",
+        "Copper",
+        "Gold",
+        "Green",
+        "Red",
+        "Silver",
+        "White"
+    ],
+    "Black": {
+        "damagetype": "Acid",
+        "breathweapon": "5 by 30 ft. line (dex save)"
+    },
+    "Blue": {
+        "damagetype": "Lightning",
+        "breathweapon": "5 by 30 ft. line (dex save)"
+    },
+    "Brass": {
+        "damagetype": "Fire",
+        "breathweapon": "5 by 30 ft. line (dex save)"
+    },
+    "Bronze": {
+        "damagetype": "Lightning",
+        "breathweapon": "5 by 30 ft. line (dex save)"
+    },
+    "Copper": {
+        "damagetype": "Acid",
+        "breathweapon": "5 by 30 ft. line (dex save)"
+    },
+    "Gold": {
+        "damagetype": "Poison",
+        "breathweapon": "15 ft. cone (dex save)"
+    },
+    "Green": {
+        "damagetype": "Poison",
+        "breathweapon": "15 ft. cone (con save)"
+    },
+    "Red": {
+        "damagetype": "Poison",
+        "breathweapon": "15 ft. cone (dex save)"
+    },
+    "Silver": {
+        "damagetype": "Poison",
+        "breathweapon": "15 ft. cone (con save)"
+    },
+    "White": {
+        "damagetype": "Poison",
+        "breathweapon": "15 ft. cone (con save)"
+    }
+}

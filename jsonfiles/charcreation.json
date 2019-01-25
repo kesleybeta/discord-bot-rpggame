@@ -2,6 +2,9 @@
   "allraces": [
     "Dragonborn", "Dwarf", "Elf", "Gnome", "Half Elf", "Half Orc", "Halfling", "Human", "Tiefling"
   ],
+  "allsubraces": [
+    "Hill Dwarf", "Mountain Dwarf", "Dark Elf", "High Elf", "Wood Elf", "Deep Gnome", "Forest Gnome", "Rock Gnome", "Lightfoot Halfling", "Stout Halfling"
+  ],
   "subraces": {
     "dragonborn": [""],
     "dwarf": ["Hill Dwarf", "Mountain Dwarf"],

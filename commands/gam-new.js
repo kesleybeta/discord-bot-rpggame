@@ -24,6 +24,7 @@ module.exports.run = async (message, cmd, args) => {
   let choosenBack = 'nd'
   let choosenName = 'nd'
   let milisec = 30000 // Global time of wait
+  let salva = false
   // --------------------
   // Building Rich Embeds
   let guideEmbed = new Discord.RichEmbed()
@@ -59,6 +60,13 @@ module.exports.run = async (message, cmd, args) => {
     .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Grim_Reaper-512.png")
     .setDescription(`• Your character’s background reveals where you came from, how you became an adventurer, and your place in the world.`)
     .setFooter(`⏰ You'll have ${milisec / 1000} seconds to type your desired BACKGROUND.`)
+  let nameEmbed = new Discord.RichEmbed()
+    .setColor(3447003)
+    .setAuthor("Character Creation", "https://cdn4.iconfinder.com/data/icons/game-rounded-2-set/512/scroll-512.png")
+    .setTitle("4. CHARACTER's NAME")
+    .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Villager-512.png")
+    .setDescription(`• Choose a ***name*** for your character.`)
+    .setFooter(`⏰ You'll have ${milisec / 1000} seconds to type.`)
   // ------------------------------------
   // Find from the specific user profile.
   await ModCharacter
@@ -74,7 +82,7 @@ module.exports.run = async (message, cmd, args) => {
         // 1 - 1. Building the array list of the RACES.
         raceEmbed.addField(`↙ Choose one:`, `\`\`\`diff\n+ ${arr.get('allraces').value()
         .join('\n+ ')}\`\`\``, true)
-        return message.channel.send(raceEmbed)
+        message.channel.send(raceEmbed)
       } else return message.channel.send(`• You already have a character. ► HIS NAME: *${result.name}*`)
     }) // ------------------------------------------------------------------
   // 1 - 2. Message await - this will wait for user to type the desire race.
@@ -131,24 +139,28 @@ module.exports.run = async (message, cmd, args) => {
   } // ---------------------------------------------------------------------------
   // 1.5 - 3. Validation of the choice - if SUBRACE is valid the guide keep going.
   if (choosenSubRace !== '' && choosenSubRace !== 'ndy') {
-    await ModSubRaces.findOne({
-        namel: choosenSubRace
-      })
-      .exec((e, result) => {
-        if (e) console.log("[ERR06.2] " + e)
-        if (!result || result === null || result.length === 0) {
-          choosenSubRace = 'nd'
-          return message.channel.send(`Please, give a valid SUBRACE! • Restart the guide typing: \`${cmd}\`.`)
-        } else {
-          console.log(asRacial + '\n' + result.abilityscore)
-          asRacial.str += result.abilityscore.str
-          asRacial.dex += result.abilityscore.dex
-          asRacial.con += result.abilityscore.con
-          asRacial.int += result.abilityscore.int
-          asRacial.wis += result.abilityscore.wis
-          asRacial.cha += result.abilityscore.cha
-        }
-      })
+    try {
+      await ModSubRaces.findOne({
+          namel: choosenSubRace
+        })
+        .exec((e, result) => {
+          if (e) console.log("[ERR06.2] " + e)
+          if (!result || result === null || result.length === 0) {
+            choosenSubRace = 'nd'
+            return message.channel.send(`Please, give a valid SUBRACE! • Restart the guide typing: \`${cmd}\`.`)
+          } else {
+            console.log(asRacial + '\n' + result.abilityscore)
+            asRacial.str += result.abilityscore.str
+            asRacial.dex += result.abilityscore.dex
+            asRacial.con += result.abilityscore.con
+            asRacial.int += result.abilityscore.int
+            asRacial.wis += result.abilityscore.wis
+            asRacial.cha += result.abilityscore.cha
+          }
+        })
+    } catch (err) {
+      console.log(err)
+    }
   } // --------------------------------------------
   // 2 - 1. Building the array list of the CLASSES.
   await classEmbed.addField(`↙ Choose one`, `\`\`\`diff\n+ ${arr.get('allclasses').value()
@@ -236,129 +248,17 @@ module.exports.run = async (message, cmd, args) => {
           time: milisec,
           errors: ['time']
         })
-        .then(async collected => {
+        .then(collected => {
           const reaction = collected.first()
           switch (reaction.emoji.name) {
-            case '❎':
-              //message.channel.bulkDelete(1).catch(e => { message.reply("[ERR17] - Try again later or contact the dev.").then(console.log(e))})
-              return message.reply("Come back later!")
             case '✅':
-              //message.channel.bulkDelete(1).catch(e => { message.reply("[ERR18] - Try again later or contact the dev.").then(console.log(e)) })
-              await ModCharacter.findOne({
-                  userID: sender.id,
-                  serverID: message.guild.id
-                })
-                .exec(async (e, result) => {
-                  if (e) return message.reply("[ERR#GAMNEW16] - An error occurred.  Try contacting the dev.").then(console.log('[ERR16] ' + e))
-                  if (!result || result === null) {
-                    let nameEmbed = new Discord.RichEmbed()
-                      .setColor(3447003)
-                      .setAuthor("Character Creation", "https://cdn4.iconfinder.com/data/icons/game-rounded-2-set/512/scroll-512.png")
-                      .setTitle("4. CHARACTER's NAME")
-                      .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Villager-512.png")
-                      .setDescription(`• Choose a ***name*** for your character.`)
-                      .setFooter(`⏰ You'll have ${milisec / 1000} seconds to type.`)
-                    await message.channel.send(nameEmbed)
-                    await message.channel.awaitMessages(filter, {
-                        max: 1,
-                        time: milisec,
-                        errors: ['time']
-                      }).then(collected => {
-                        if (collected.first().content.toLowerCase() === "cancel") return message.reply("Cancelled!")
-                        if (!collected.first().content) choosenName = 'nd'
-                        else choosenName = collected.first().content.toUpperCase()
-                      })
-                      .catch(cce => {
-                        message.channel.send(`Time's up! • Restart the guide typing: \`${cmd}\`.`)
-                        return console.log("[ERRO17] " + cce)
-                      })
-                    // const newProfile = new ModCharacter({
-                    //   userID: String,
-                    //   serverID: String,
-                    //   characters: {
-                    //     id: Number,
-                    //     valid: Number,
-                    //     name: String,
-                    //     race: String,
-                    //     class: String,
-                    //     background: String,
-                    //     attributes: {
-                    //       str: {
-                    //         base: Number,
-                    //         racial: Number,
-                    //         ability: Number,
-                    //         misc: Number,
-                    //         mod: Number,
-                    //         total: Number
-                    //       },
-                    //       dex: {
-                    //         base: Number,
-                    //         racial: Number,
-                    //         ability: Number,
-                    //         misc: Number,
-                    //         mod: Number,
-                    //         total: Number
-                    //       },
-                    //       con: {
-                    //         base: Number,
-                    //         racial: Number,
-                    //         ability: Number,
-                    //         misc: Number,
-                    //         mod: Number,
-                    //         total: Number
-                    //       },
-                    //       int: {
-                    //         base: Number,
-                    //         racial: Number,
-                    //         ability: Number,
-                    //         misc: Number,
-                    //         mod: Number,
-                    //         total: Number
-                    //       },
-                    //       wis: {
-                    //         base: Number,
-                    //         racial: Number,
-                    //         ability: Number,
-                    //         misc: Number,
-                    //         mod: Number,
-                    //         total: Number
-                    //       },
-                    //       cha: {
-                    //         base: Number,
-                    //         racial: Number,
-                    //         ability: Number,
-                    //         misc: Number,
-                    //         mod: Number,
-                    //         total: Number
-                    //       }
-                    //     },
-                    //     hp: {
-                    //       hpoints: Number
-                    //     },
-                    //     alignment: String,
-                    //     sex: String,
-                    //     thumb: String
-                    //   }
-                    // })
-                    // newProfile
-                    //   .save()
-                    //   .then(msg => {
-                    //     console.log("[ID: %s]", msg.characters.id)
-                    //     message.reply("▲ A new PROFILE was created for you.")
-
-                    //   })
-                    //   .catch(ce => {
-                    //     message.reply("GAMCHA02 - Couldn't save your new profile")
-                    //     return console.log('[ERR16] ' + ce)
-                    //   })
-                  } else return message.channel.send(`► You already have a character.\nHIS NAME: *${result.name}*`)
-                })
-                .catch(ce => {
-                  console.log("[ERR3515]: " + ce)
-                })
-              return message.reply("I'm saving youuu....")
+              salva = true
+              break
+            case '❎':
+              salva = false
+              return message.reply("Come back later!")
             default:
-              return message.channel.send("¯\\_(ツ)_/¯")
+              return message.reply("Come back later!")
           }
         })
         .catch(ce => {
@@ -366,14 +266,125 @@ module.exports.run = async (message, cmd, args) => {
           return message.reply("I couldn't do any!")
         })
     })
+    .catch(ce1 => {
+      console.log(ce1)
+      return message.reply("I couldn't do any!")
+    })
   }
+  await ModCharacter.findOne({
+      userID: sender.id,
+      serverID: message.guild.id
+    })
+    .exec(async (e, result) => {
+      if (e) return message.reply("[ERR#GAMNEW16] - An error occurred.  Try contacting the dev.").then(console.log('[ERR16] ' + e))
+      if (!result || result === null) {
+        if (salva === true) {
+          await message.channel.send(nameEmbed)
+          await message.channel.awaitMessages(filter, {
+              max: 1,
+              time: milisec,
+              errors: ['time']
+            }).then(collected => {
+              console.log(collected.first().content)
+              if (collected.first().content.toLowerCase() === "cancel") return message.reply("Cancelled!")
+              if (!collected.first().content) choosenName = 'nd'
+              else choosenName = collected.first().content.toUpperCase()
+              console.log(choosenName)
+            })
+            .catch(cce => {
+              message.channel.send(`Time's up! • Restart the guide typing: \`${cmd}\`.`)
+              return console.log("[ERRO17] " + cce)
+            })
+        }
+      } else return message.channel.send(`► You already have a character.\nHIS NAME: *${result.name}*`)
+    })
+    .catch(ccee => {
+      message.channel.send(`Time's up! • Restart the guide typing: \`${cmd}\`.`)
+      return console.log("[ERRO17] " + ccee)
+    })
+  // const newProfile = new ModCharacter({
+  //   userID: String,
+  //   serverID: String,
+  //   characters: {
+  //     id: Number,
+  //     valid: Number,
+  //     name: String,
+  //     race: String,
+  //     class: String,
+  //     background: String,
+  //     attributes: {
+  //       str: {
+  //         base: Number,
+  //         racial: Number,
+  //         ability: Number,
+  //         misc: Number,
+  //         mod: Number,
+  //         total: Number
+  //       },
+  //       dex: {
+  //         base: Number,
+  //         racial: Number,
+  //         ability: Number,
+  //         misc: Number,
+  //         mod: Number,
+  //         total: Number
+  //       },
+  //       con: {
+  //         base: Number,
+  //         racial: Number,
+  //         ability: Number,
+  //         misc: Number,
+  //         mod: Number,
+  //         total: Number
+  //       },
+  //       int: {
+  //         base: Number,
+  //         racial: Number,
+  //         ability: Number,
+  //         misc: Number,
+  //         mod: Number,
+  //         total: Number
+  //       },
+  //       wis: {
+  //         base: Number,
+  //         racial: Number,
+  //         ability: Number,
+  //         misc: Number,
+  //         mod: Number,
+  //         total: Number
+  //       },
+  //       cha: {
+  //         base: Number,
+  //         racial: Number,
+  //         ability: Number,
+  //         misc: Number,
+  //         mod: Number,
+  //         total: Number
+  //       }
+  //     },
+  //     hp: {
+  //       hpoints: Number
+  //     },
+  //     alignment: String,
+  //     sex: String,
+  //     thumb: String
+  //   }
+  // })
+  // newProfile
+  //   .save()
+  //   .then(msg => {
+  //     console.log("[ID: %s]", msg.characters.id)
+  //     message.reply("▲ A new PROFILE was created for you.")
 
-  // console.log('Start sleeping')
-  // await new Promise(resolve => setTimeout(resolve, 5000))
-  // console.log('Five seconds later')
-  console.log(asRacial)
+  //   })
+  //   .catch(ce => {
+  //     message.reply("GAMCHA02 - Couldn't save your new profile")
+  //     return console.log('[ERR16] ' + ce)
+  //   })
+
+  //console.log('Start sleeping') await new Promise(resolve => setTimeout(resolve, 5000)) console.log('Five seconds later')
+
 }
-
 module.exports.config = {
   name: "new",
   aliases: ["create"]
