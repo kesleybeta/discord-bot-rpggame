@@ -1,5 +1,4 @@
-const Discord = require("discord.js")
-
 module.exports = bot => {
-    console.warn();
+    console.warn()
+    console.log(bot)
 }
