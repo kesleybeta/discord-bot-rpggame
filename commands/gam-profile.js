@@ -14,7 +14,6 @@ module.exports.run = async (message, cmd, args) => {
         userID: target.id,
         serverID: message.guild.id
     }, (e, result) => {
-        console.log(result)
         if (e) return console.log("[GAMPRO01] " + e)
         if (result === null) return message.reply(`Sorry, no character found.`)
         if (!result) return message.reply(`\nYou're new here so, a new profile has to be created.\nType \`new\` to build your character.`)

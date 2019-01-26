@@ -5,24 +5,24 @@ module.exports.run = async (message, cmd, args) => {
   // Logging
   await console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`)
   // Variables
-  let min = Math.ceil(8)
-  let max = Math.floor(15)
+  let min = Math.ceil(10)
+  let max = Math.floor(20)
 
-  let basestr = Math.floor(Math.random() * (max - min + 1)) + min
-  let basedex = Math.floor(Math.random() * (max - min + 1)) + min
-  let basecon = Math.floor(Math.random() * (max - min + 1)) + min
-  let baseint = Math.floor(Math.random() * (max - min + 1)) + min
-  let basewis = Math.floor(Math.random() * (max - min + 1)) + min
-  let basecha = Math.floor(Math.random() * (max - min + 1)) + min
-  let modstr = tools.modifier(basestr)
-  let moddex = tools.modifier(basedex)
-  let modcon = tools.modifier(basecon)
-  let modint = tools.modifier(baseint)
-  let modwis = tools.modifier(basewis)
-  let modcha = tools.modifier(basecha)
+  let basestr = await Math.floor(Math.random() * (max - min + 1)) + min
+  let basedex = await Math.floor(Math.random() * (max - min + 1)) + min
+  let basecon = await Math.floor(Math.random() * (max - min + 1)) + min
+  let baseint = await Math.floor(Math.random() * (max - min + 1)) + min
+  let basewis = await Math.floor(Math.random() * (max - min + 1)) + min
+  let basecha = await Math.floor(Math.random() * (max - min + 1)) + min
+
+  let modstr = await tools.modifier(basestr)
+  let moddex = await tools.modifier(basedex)
+  let modcon = await tools.modifier(basecon)
+  let modint = await tools.modifier(baseint)
+  let modwis = await tools.modifier(basewis)
+  let modcha = await tools.modifier(basecha)
   // Code lines
-  await new Promise(resolve => setTimeout(resolve, 5000))
-  await console.log('mods: str %d dex %d con %d int %d wis %d cha %d', modstr, moddex, modcon, modint, modwis, modcha)
+  message.channel.send(`\`Str: ${basestr} | Mod: ${modstr}\nDex: ${basedex} | Mod: ${moddex}\nCon: ${basecon} | Mod: ${modcon}\nInt: ${baseint} | Mod: ${modint}\nWis: ${basewis} | Mod: ${modwis}\nCha: ${basecha} | Mod: ${modcha}\``)
 }
 
 module.exports.config = {
