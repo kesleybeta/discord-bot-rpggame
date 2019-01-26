@@ -22,7 +22,7 @@ module.exports.run = async (message, cmd, args) => {
   let modwis = await tools.modifier(basewis)
   let modcha = await tools.modifier(basecha)
   // Code lines
-  message.channel.send(`\`Str: ${basestr} | Mod: ${modstr}\nDex: ${basedex} | Mod: ${moddex}\nCon: ${basecon} | Mod: ${modcon}\nInt: ${baseint} | Mod: ${modint}\nWis: ${basewis} | Mod: ${modwis}\nCha: ${basecha} | Mod: ${modcha}\``)
+  message.reply(`♠ Here's your random ability scores\n\`Str: ${basestr} | Mod: ${modstr}\nDex: ${basedex} | Mod: ${moddex}\nCon: ${basecon} | Mod: ${modcon}\nInt: ${baseint} | Mod: ${modint}\nWis: ${basewis} | Mod: ${modwis}\nCha: ${basecha} | Mod: ${modcha}\``)
 }
 
 module.exports.config = {
