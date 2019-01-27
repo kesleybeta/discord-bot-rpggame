@@ -4,5 +4,9 @@
     ],
     "standard": {},
     "manual": {},
-    "point-buy": {}
+    "pointbuy": {
+        "cost": [
+            0, 1, 2, 3, 4, 5, 7, 9
+        ]
+    }
 }

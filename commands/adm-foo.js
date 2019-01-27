@@ -5,8 +5,8 @@ module.exports.run = async (message, cmd, args) => {
   // Logging
   await console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`)
   // Variables
-  let min = Math.ceil(10)
-  let max = Math.floor(20)
+  let min = Math.ceil(8)
+  let max = Math.floor(18)
 
   let basestr = await Math.floor(Math.random() * (max - min + 1)) + min
   let basedex = await Math.floor(Math.random() * (max - min + 1)) + min

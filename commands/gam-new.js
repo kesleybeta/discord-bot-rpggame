@@ -5,8 +5,8 @@ const ModRaces = require("../models/mod-races") // Require races schema
 const ModSubRaces = require("../models/mod-subraces") // Require subraces schema
 const ModClass = require("../models/mod-class") // Require classes schema
 const ModBack = require("../models/mod-background") // Require backgrounds schema
-const tools = require("../util/functions")
-
+const tools = require("../util/functions") // Require global functions
+// Require lowdb and then FileSync
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 const arr = low(new FileSync('./jsonfiles/charcreation.json', 'utf8'))
@@ -16,8 +16,6 @@ module.exports.run = async (message, cmd, args) => {
   if (String(args)) return message.reply("ERRGAMCHA00 - Please don't use arguments.") // Command must be without args
   console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`) // Logging the request of the command
   // Variables
-  let min = Math.ceil(8)
-  let max = Math.floor(15)
   let sender = message.author // For better code-read purposes
   const filter = msg => msg.author.id === sender.id
   let choosenRace = 'nd'
@@ -28,12 +26,23 @@ module.exports.run = async (message, cmd, args) => {
   let choosenName = 'nd'
   let milisec = 30000 // Global time of wait
   let salva = false
-  let basestr = Math.floor(Math.random() * (max - min + 1)) + min
-  let basedex = Math.floor(Math.random() * (max - min + 1)) + min
-  let basecon = Math.floor(Math.random() * (max - min + 1)) + min
-  let baseint = Math.floor(Math.random() * (max - min + 1)) + min
-  let basewis = Math.floor(Math.random() * (max - min + 1)) + min
-  let basecha = Math.floor(Math.random() * (max - min + 1)) + min
+
+  let min = Math.ceil(8)
+  let max = Math.floor(15)
+
+  let basestr = await Math.floor(Math.random() * (max - min + 1)) + min
+  let basedex = await Math.floor(Math.random() * (max - min + 1)) + min
+  let basecon = await Math.floor(Math.random() * (max - min + 1)) + min
+  let baseint = await Math.floor(Math.random() * (max - min + 1)) + min
+  let basewis = await Math.floor(Math.random() * (max - min + 1)) + min
+  let basecha = await Math.floor(Math.random() * (max - min + 1)) + min
+
+  let modstr = await tools.modifier(basestr)
+  let moddex = await tools.modifier(basedex)
+  let modcon = await tools.modifier(basecon)
+  let modint = await tools.modifier(baseint)
+  let modwis = await tools.modifier(basewis)
+  let modcha = await tools.modifier(basecha)
   //let modstr = tools.modifier(basestr)
   console.log('modstr: ' + tools.modifier(basestr))
   // --------------------
@@ -237,7 +246,7 @@ module.exports.run = async (message, cmd, args) => {
       }
       if (!background) return message.channel.send("Couldn't find any information.")
     })
-  } // ----------------------------------------------------------------------
+  } // ----------------------------------------------------------------------------
   let qtd = 8
   if (choosenSubRace.toUpperCase() !== '') qtd = 10
   if (choosenRace !== 'nd' && choosenClass !== 'nd' && choosenBack !== 'nd') {
@@ -273,7 +282,6 @@ module.exports.run = async (message, cmd, args) => {
                 message.reply("Come back later!")
                 break
             }
-            //console.log('react: ' + salva)
             if (salva) {
               await ModCharacter.findOne({
                   userID: sender.id,
@@ -288,7 +296,6 @@ module.exports.run = async (message, cmd, args) => {
                         time: milisec,
                         errors: ['time']
                       }).then(collected => {
-                        //console.log(collected.first().content)
                         if (collected.first().content.toLowerCase() === "cancel") return message.reply("Cancelled!")
                         if (!collected.first().content) choosenName = 'nd'
                         else choosenName = collected.first().content.toUpperCase()
@@ -297,7 +304,6 @@ module.exports.run = async (message, cmd, args) => {
                         message.channel.send(`Time's up! • Restart the guide typing: \`${cmd}\`.`)
                         return console.log("[ERRO17] " + cce)
                       })
-                    //console.log(choosenName)
                     const newProfile = new ModCharacter({
                       userID: sender.id,
                       serverID: message.guild.id,
@@ -312,37 +318,37 @@ module.exports.run = async (message, cmd, args) => {
                           str: {
                             base: basestr,
                             racial: asRacial.str,
-                            mod: Number,
+                            mod: modstr,
                             total: basestr + asRacial.str
                           },
                           dex: {
                             base: basedex,
                             racial: asRacial.dex,
-                            mod: Number,
+                            mod: moddex,
                             total: basedex + asRacial.dex
                           },
                           con: {
                             base: basecon,
                             racial: asRacial.con,
-                            mod: Number,
+                            mod: modcon,
                             total: basecon + asRacial.con
                           },
                           int: {
                             base: baseint,
                             racial: asRacial.int,
-                            mod: Number,
+                            mod: modint,
                             total: baseint + asRacial.int
                           },
                           wis: {
                             base: basewis,
                             racial: asRacial.wis,
-                            mod: Number,
+                            mod: modwis,
                             total: basewis + asRacial.wis
                           },
                           cha: {
                             base: basecha,
                             racial: asRacial.cha,
-                            mod: Number,
+                            mod: modcha,
                             total: basecha + asRacial.cha
                           }
                         },
@@ -379,53 +385,7 @@ module.exports.run = async (message, cmd, args) => {
         return message.reply("I couldn't do any!")
       })
   }
-  // if (salva) {
-  //   await ModCharacter.findOne({
-  //       userID: sender.id,
-  //       serverID: message.guild.id
-  //     })
-  //     .exec(async (e, result) => {
-  //       if (e) return message.reply("[ERR#GAMNEW16] - An error occurred.  Try contacting the dev.").then(console.log('[ERR16] ' + e))
-  //       if (!result || result === null) {
-  //         await message.channel.send(nameEmbed)
-  //       } else return message.channel.send(`► You already have a character.\nHIS NAME: *${result.name}*`)
-  //     })
-  // }
-  // await ModCharacter.findOne({
-  //     userID: sender.id,
-  //     serverID: message.guild.id
-  //   })
-  //   .exec(async (e, result) => {
-  //     if (e) return message.reply("[ERR#GAMNEW16] - An error occurred.  Try contacting the dev.").then(console.log('[ERR16] ' + e))
-  //     if (!result || result === null) {
-  //       if (salva === true) {
-  //         await message.channel.send(nameEmbed)
-  //         await message.channel.awaitMessages(filter, {
-  //             max: 1,
-  //             time: milisec,
-  //             errors: ['time']
-  //           }).then(collected => {
-  //             console.log(collected.first().content)
-  //             if (collected.first().content.toLowerCase() === "cancel") return message.reply("Cancelled!")
-  //             if (!collected.first().content) choosenName = 'nd'
-  //             else choosenName = collected.first().content.toUpperCase()
-  //             console.log(choosenName)
-  //           })
-  //           .catch(cce => {
-  //             message.channel.send(`Time's up! • Restart the guide typing: \`${cmd}\`.`)
-  //             return console.log("[ERRO17] " + cce)
-  //           })
-  //       }
-  //     } else return message.channel.send(`► You already have a character.\nHIS NAME: *${result.name}*`)
-  //   })
-  //   .catch(ccee => {
-  //     message.channel.send(`Time's up! • Restart the guide typing: \`${cmd}\`.`)
-  //     return console.log("[ERRO17] " + ccee)
-  //   })
-
-
   //console.log('Start sleeping') await new Promise(resolve => setTimeout(resolve, 5000)) console.log('Five seconds later')
-
 }
 module.exports.config = {
   name: "new",

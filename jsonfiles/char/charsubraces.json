@@ -1,0 +1,123 @@
+{
+  "drow": {
+    "_id": {
+      "$oid": "5c49e4f5fb6fc02d2ef2de77"
+    },
+    "abilityscore": {
+      "cha": 1,
+      "con": 0,
+      "dex": 0,
+      "int": 0,
+      "str": 0,
+      "wis": 0
+    },
+    "features": ["Keen Senses", "Superior Darkvision", "Sunlight Sensitivity", "Drow Magic", "Drow Weapon Training"],
+    "name": "Drow",
+    "namel": "drow",
+    "racel": "elf"
+  },
+  "high elf": {
+    "_id": {
+      "$oid": "5c49d85cfb6fc02d2ef2d3d9"
+    },
+    "abilityscore": {
+      "cha": 0,
+      "con": 0,
+      "dex": 0,
+      "int": 1,
+      "str": 0,
+      "wis": 0
+    },
+    "features": ["Elf Weapon Training", "Cantrip", "Extra Language"],
+    "name": "High Elf",
+    "namel": "high elf",
+    "racel": "elf"
+  },
+  "hill dwarf": {
+    "_id": {
+      "$oid": "5c4df457e7179a090e0adc54"
+    },
+    "abilityscore": {
+      "cha": 0,
+      "con": 0,
+      "dex": 0,
+      "int": 0,
+      "str": 0,
+      "wis": 1
+    },
+    "features:": ["Dwarven Toughness"],
+    "name": "Hill Dwarf",
+    "namel": "hill dwarf",
+    "racel": "Dwarf"
+  },
+  "mountain dwarf": {
+    "_id": {
+      "$oid": "5c4df652e7179a090e0add53"
+    },
+    "abilityscore": {
+      "cha": 0,
+      "con": 0,
+      "dex": 0,
+      "int": 0,
+      "str": 0,
+      "wis": 1
+    },
+    "features:": ["Dwarven Armor Training"],
+    "name": "Mountain Dwarf",
+    "namel": "mountain dwarf",
+    "racel": "Dwarf"
+  },
+  "wood elf": {
+    "_id": {
+      "$oid": "5c49e338fb6fc02d2ef2dcfa"
+    },
+    "abilityscore": {
+      "cha": 0,
+      "con": 0,
+      "dex": 0,
+      "int": 0,
+      "str": 0,
+      "wis": 1
+    },
+    "features": ["Fleet of Foot", "Mask of the Wild", "ElfWeapon Training"],
+    "name": "Wood Elf",
+    "namel": "wood elf",
+    "racel": "elf"
+  },
+  "lightfoot": {
+    "_id": {
+      "$oid": "5c4dfc4ce7179a090e0adf4e"
+    },
+    "abilityscore": {
+      "cha": 1,
+      "con": 0,
+      "dex": 0,
+      "int": 0,
+      "str": 0,
+      "wis": 0
+    },
+    "features": ["Naturally Stealthy"],
+    "name": "Lightfoot",
+    "namel": "lightfoot",
+    "racel": "halfling"
+  },
+  "stout": {
+    "_id": {
+      "$oid": "5c4dfd05e7179a090e0adf91"
+    },
+    "abilityscore": {
+      "cha": 0,
+      "con": 1,
+      "dex": 0,
+      "int": 0,
+      "str": 0,
+      "wis": 0
+    },
+    "features": [
+      "Stout Resilience"
+    ],
+    "name": "Stout",
+    "namel": "stout",
+    "racel": "halfling"
+  }
+}

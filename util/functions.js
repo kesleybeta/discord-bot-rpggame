@@ -9,7 +9,7 @@ module.exports = {
     try {
       mod = score.get('modifiers').value()[base]
     } catch (err) {
-      console.log('[ERR#FUN0102]: ' + err)
+      console.log('[ERR#FUN0101]: ' + err)
     }
     return mod
   } // -------------------------------------------------------------- //
