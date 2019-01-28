@@ -18,14 +18,16 @@ module.exports.run = async (message, cmd, args) => {
   // Variables
   let sender = message.author // For better code-read purposes
   const filter = msg => msg.author.id === sender.id
+  let milisec = 30000 // Global time of wait
+  let salva = false
+  // - // Character variables
   let choosenRace = 'nd'
   let choosenSubRace = ''
   let asRacial = []
   let choosenClass = 'nd'
   let choosenBack = 'nd'
   let choosenName = 'nd'
-  let milisec = 30000 // Global time of wait
-  let salva = false
+  let align = ''
 
   let min = Math.ceil(8)
   let max = Math.floor(15)
@@ -127,6 +129,7 @@ module.exports.run = async (message, cmd, args) => {
         return message.channel.send(`Please, give a valid RACE! • Restart the guide typing: \`${cmd}\``)
       } else {
         asRacial = result.abilityscore
+        align = result.alignment
         // If choosen RACE have a subrace build an embed with a subrace's list
         if (!result.subraces || result.subraces === null) choosenSubRace = ''
         else {
@@ -154,7 +157,8 @@ module.exports.run = async (message, cmd, args) => {
         message.channel.send(`Time's up! • Restart the guide typing: \`${cmd}\`.`)
         return console.log("[ERR06.1] " + err)
       })
-  } // ---------------------------------------------------------------------------
+  } else console.log('else')
+  // ---------------------------------------------------------------------------
   // 1.5 - 3. Validation of the choice - if SUBRACE is valid the guide keep going.
   if (choosenSubRace !== '' && choosenSubRace !== 'ndy') {
     try {
@@ -302,6 +306,7 @@ module.exports.run = async (message, cmd, args) => {
                         message.channel.send(`Time's up! • Restart the guide typing: \`${cmd}\`.`)
                         return console.log("[ERRO17] " + cce)
                       })
+                    // Create a new character profile with the choices made and the informations collected from it
                     const newProfile = new ModCharacter({
                       userID: sender.id,
                       serverID: message.guild.id,
@@ -353,7 +358,7 @@ module.exports.run = async (message, cmd, args) => {
                         hp: {
                           hpoints: 0
                         },
-                        alignment: 'u',
+                        alignment: align,
                         sex: 'u',
                         thumb: "https://cdn4.iconfinder.com/data/icons/famous-character-vol-2-flat/48/Avatar_Famous_Characters-07-512.png"
                       }

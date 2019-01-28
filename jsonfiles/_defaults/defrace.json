@@ -27,6 +27,7 @@
     "female": [""],
     "male": [""]
   },
+  "raceonly": {},
   "size": "",
   "source": "",
   "speed": {
@@ -37,5 +38,4 @@
   "subraces": [""],
   "thumb": "",
   "variant": [""]
-
 }

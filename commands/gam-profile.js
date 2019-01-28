@@ -21,18 +21,10 @@ module.exports.run = async (message, cmd, args) => {
             let reschar = result.characters
             let resattr = reschar.attributes
             embed
-                .setAuthor(`About ${target.username}`, "https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Helmet.jpg-512.png")
+                .setAuthor(`About ${reschar.name}`, "https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Helmet.jpg-512.png")
                 .setThumbnail(reschar.thumb)
-                .setDescription(`
-                **Background:** ${reschar.background}
-                **Alignment:** ${reschar.alignment}
-
-                **Racial Traits**:
-                ${reschar.race}
-
-                **${reschar.class} features**:
-                \`STR: ${resattr.str.total}\nCON: ${resattr.con.total}\nDEX: ${resattr.dex.total}\nINT: ${resattr.int.total}\nWIS: ${resattr.wis.total}\nCHA: ${resattr.cha.total}\`
-                `)
+                .setDescription(`**Background:** ${reschar.background}\n**Alignment:** ${reschar.alignment}\n\n\n**Racial Traits**:\n${reschar.race}\n
+**${reschar.class} features**:\n\`STR: ${resattr.str.total}\nCON: ${resattr.con.total}\nDEX: ${resattr.dex.total}\nINT: ${resattr.int.total}\nWIS: ${resattr.wis.total}\nCHA: ${resattr.cha.total}\``)
             message.channel.send(embed)
         }
     })
