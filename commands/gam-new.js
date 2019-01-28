@@ -43,8 +43,6 @@ module.exports.run = async (message, cmd, args) => {
   let modint = await tools.modifier(baseint)
   let modwis = await tools.modifier(basewis)
   let modcha = await tools.modifier(basecha)
-  //let modstr = tools.modifier(basestr)
-  console.log('modstr: ' + tools.modifier(basestr))
   // --------------------
   // Building Rich Embeds
   let guideEmbed = new Discord.RichEmbed()

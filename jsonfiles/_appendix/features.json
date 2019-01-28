@@ -2,17 +2,27 @@
   "features": {
     "Cantrip": {
       "elf": {
-        "_description": "You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it."
+        "_defaults": ["spells.wizard"],
+        "_description": "You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it.",
+        "spells": {
+          "wizard": ["unchoosen01"]
+        }
       }
     },
     "Darkvision": {
+      "_content": ["dwarf", "elf"],
       "dwarf": {
         "_defaults": ["distance", "type"],
-        "_description": "Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discren color in darkness, only shades of gray",
+        "_description": "Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light.",
         "distance": 60,
         "type": "You can't discern color in darkness, only shades of gray"
       },
-      "elf": {}
+      "elf": {
+        "_defaults": ["distance", "type"],
+        "_description": "Accustomed to twilit forests and the night sky, you have superior vision io dark aod dim cooditioos. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light.",
+        "distance": 60,
+        "type": "You can't discern color in darkness, only shades of gray"
+      }
     },
     "Dwarven Armor Training": {
       "dwarf": {
@@ -37,7 +47,7 @@
         "_defaults": ["advantage.savthrows", "resistance"],
         "_description": "You have advantage on saving throws against poison, and you have resistance against poisonn damage (explained in Chap 09 on PHB)",
         "advantage": {
-          "savthrows": ["poison"]
+          "conditions": ["poisoned"]
         },
         "resistance": ["Poison damage"]
       }
@@ -53,10 +63,27 @@
       }
     },
     "Elf Weapon Training": {
-      "_description": "You have proficiency with the longsword, shortsword, shortbow, and longbow."
+      "_defaults": ["prof.weapons"],
+      "_description": "You have proficiency with the longsword, shortsword, shortbow, and longbow.",
+      "prof": {
+        "weapons": ["longsword", "shortsword", "shortbow", "longbow"]
+      }
     },
-    "Fey Ancestry": {},
-    "Keen Senses": {},
+    "Fey Ancestry": {
+      "elf": {
+        "_defaults": [""],
+        "_description": "You have advantage on saving throws against being charmed, and magic can't put you to sleep.",
+        "advantage": {
+          "conditions": ["charmed"]
+        }
+      }
+    },
+    "Keen Senses": {
+      "elf": {
+        "_defaults": [""],
+        "_description": ""
+      }
+    },
     "Stonecunning": {
       "dwarf": {
         "_defaults": ["check.history.profbonus"],
