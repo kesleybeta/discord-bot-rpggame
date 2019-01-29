@@ -15,13 +15,11 @@ module.exports.run = async (message, cmd, args) => {
         serverID: message.guild.id
     }, (e, result) => {
         if (e) return console.log("[GAMPRO01] " + e)
-        if (result === null) return message.reply(`Sorry, no character found.`)
-        if (!result) return message.reply(`\nYou're new here so, a new profile has to be created.\nType \`new\` to build your character.`)
+        if (!result || result === null) return message.reply(`\nYou're new here so, a new profile has to be created.\nType \`new\` to build your character.`)
         else {
             let reschar = result.characters
             let resattr = reschar.attributes
-            embed
-                .setAuthor(`About ${reschar.name}`, "https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Helmet.jpg-512.png")
+            embed.setAuthor(`About ${reschar.name}`, "https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Helmet.jpg-512.png")
                 .setThumbnail(reschar.thumb)
                 .setDescription(`**Background:** ${reschar.background}\n**Alignment:** ${reschar.alignment}\n\n\n**Racial Traits**:\n${reschar.race}\n
 **${reschar.class} features**:\n\`STR: ${resattr.str.total}\nCON: ${resattr.con.total}\nDEX: ${resattr.dex.total}\nINT: ${resattr.int.total}\nWIS: ${resattr.wis.total}\nCHA: ${resattr.cha.total}\``)
