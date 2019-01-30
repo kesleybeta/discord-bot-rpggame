@@ -76,6 +76,7 @@ module.exports.run = async (message, cmd, args) => {
     .setColor("#65d8d6")
     .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Knight-512.png")
     .setDescription(`• Class shapes the way you think about the world and interact with it and your relationship with other people and powers in the multiverse.`)
+    .addField(`↙ Choose one`, `\`\`\`diff\n+ ${arr.get('allclasses').value().join('\n+ ')}\`\`\``, true)
     .setFooter(`⏰ You'll have ${milisec / 1000} seconds to type your desired CLASS.`)
   let backgroundEmbed = new Discord.RichEmbed() // An embed for background information
     .setAuthor("Character Creation", "https://cdn4.iconfinder.com/data/icons/game-rounded-2-set/512/scroll-512.png")
@@ -92,14 +93,13 @@ module.exports.run = async (message, cmd, args) => {
     .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Villager-512.png")
     .setDescription(`• Choose a ***name*** for your character.`)
     .setFooter(`⏰ You'll have ${milisec / 1000} seconds to type.`)
-  // ------------------------------------
   // Find character from the specific user profile.
   await message.channel.send(guideEmbed)
   await ModCharacter
     .findOne({
       userID: sender.id,
       serverID: sender.id
-    }) // ---------------------------
+    })
     .exec(async (e, result) => {
       if (e) return message.reply("ERR#GAMNEW01 - An error occurred.  Try contacting the dev.").then(console.log('[ERR01] ' + e))
       if (!result || result === null) await message.channel.send(raceEmbed) // 1 - 1. Sending RACES embed.
@@ -111,43 +111,40 @@ module.exports.run = async (message, cmd, args) => {
       time: milisec,
       errors: ['time']
     }).then(async collected => {
-      console.log("---collected --------------------------------------")
-      console.log(collected)
-      console.log("---first ------------------------------------------\n" + collected.first())
-      console.log("---------------------------------------------------")
-
       if (collected.first().content.toLowerCase() === "cancel") return message.reply("Cancelled!")
-      if (collected.first().content.toLowerCase()) choosenRace = collected.first().content.toLowerCase()
+      if (collected.first().content) choosenRace = collected.first().content.toLowerCase()
       else choosenRace = "notdefined"
-      await console.log(" RACE > " + choosenRace)
+      // 1 - 3. Validation of the choice - if RACE is valid the guide keep going.
       if (choosenRace !== "notdefined") {
         await ModRaces.findOne({
           namel: choosenRace
-        }, (e, res) => {
-          if (e) console.log("[ERR06] " + e)
+        }, (err, res) => {
+          if (err) console.log("[ERR06] " + err)
           if (!res || res === null) {
             choosenRace = "notdefined"
             return message.channel.send(`Please, give a valid RACE! • Restart the guide typing: \`${cmd}\``)
           } else {
             asRacial = res.abilityscore
-            align = res.alignment
+            align = capitalize.words(res.alignment)
             if (!res.subraces || res.subraces === null) choosenSubRace = "nulo"
             else { // ----------------------------------------
-              choosenSubRace = "choose"
-              // Building the array list of the SUBRACES.
-              subRaceEmbed.addField(`↙ Choose one:`, `\`\`\`diff\n+ ${arr.get('subraces.' + choosenRace).value().join('\n+ ')}\`\`\``, true)
+              choosenSubRace = "choose" // Building the array list of the SUBRACES.
+              try {
+                subRaceEmbed.addField(`↙ Choose one:`, `\`\`\`diff\n+ ${arr.get('subraces.' + choosenRace).value().join('\n+ ')}\`\`\``, true)
+              } catch (terr) {
+                return message.reply("An error occurred. Try again later.").then(console.log(terr))
+              }
             }
+            choosenRace = capitalize.words(choosenRace)
           }
         })
-      }
+      } else return console.log("Race is not defined")
     })
     .catch(ce => {
       message.channel.send(`Time's up! • Restart the guide typing: \`${cmd}\`.`)
+      choosenRace = "notdefined"
       return console.error(ce)
     }) // -------------------------------------------------------------------
-  console.log(choosenSubRace)
-  // 1 - 3. Validation of the choice - if RACE is valid the guide keep going.
-  // -------------------------------------------------------------------------
   // 1.5 - 2. Message await - this will wait for user to type the desire race.
   if (choosenSubRace === "choose") {
     await message.channel.send(subRaceEmbed)
@@ -157,17 +154,17 @@ module.exports.run = async (message, cmd, args) => {
         errors: ['time']
       }).then(collected => {
         if (collected.first().content.toLowerCase() === "cancel") return message.reply("Cancelled!")
-        if (collected.first().content.toLowerCase()) choosenSubRace = collected.first().content.toLowerCase()
+        if (collected.first().content) choosenSubRace = collected.first().content.toLowerCase()
+        else choosenSubRace = "notdefined"
       })
       .catch(err => {
-        message.channel.send(`Time's up! • Restart the guide typing: \`${cmd}\`.`)
-        return console.log("[ERR06.1] " + err)
+        choosenSubRace = "notdefined"
+        return message.channel.send(`Time's up! • Restart the guide typing: \`${cmd}\`.`).then(console.log("[ERR06.1] " + err))
       })
-  } else console.log('else')
-  return
+  } else if (choosenSubRace === "notdefined") return
   // -----------------------------------------------------------------------------
   // 1.5 - 3. Validation of the choice - if SUBRACE is valid the guide keep going.
-  if (choosenSubRace !== 'u' && choosenSubRace !== 'notdefinedyet') {
+  if (choosenRace !== "notdefined" && choosenSubRace !== "notdefined") {
     try {
       await ModSubRaces.findOne({
           namel: choosenSubRace
@@ -184,62 +181,62 @@ module.exports.run = async (message, cmd, args) => {
             asRacial.int += result.abilityscore.int
             asRacial.wis += result.abilityscore.wis
             asRacial.cha += result.abilityscore.cha
+            choosenSubRace = capitalize.words(choosenSubRace)
           }
         })
     } catch (err) {
-      console.log('[ERR06.3]' + err)
+      choosenSubRace = "notdefined"
+      return message.channel.send(`Time's up! • Restart the guide typing: \`${cmd}\`.`).then(console.log('[ERR06.3]' + err))
     }
-  } // --------------------------------------------
-  // 2 - 1. Building the array list of the CLASSES.
-  await classEmbed.addField(`↙ Choose one`, `\`\`\`diff\n+ ${arr.get('allclasses').value()
-  .join('\n+ ')}\`\`\``, true)
-  // ------------------------------------------------------------------------
+  } // ----------------------------------------------------------------------
   // 2 - 2. Message await - this will wait for user to type the desire class.
-  if (choosenRace !== "notdefined" && choosenSubRace !== "notdefinedyet") await message.channel.send(classEmbed)
-  await message.channel.awaitMessages(filter, {
-      max: 1,
-      time: milisec,
-      errors: ['time']
-    }).then(collected => {
-      if (collected.first().content.toLowerCase() === "cancel") return message.reply("Cancelled!")
-      if (collected.first().content.toLowerCase()) choosenClass = collected.first().content.toLowerCase()
-    })
-    .catch(ce => {
-      message.channel.send(`Time's up! • Restart the guide typing: \`${cmd}\`.`)
-      return console.log("[ERR10] " + ce)
-    })
-  //--------------------------------------------------------------------------
-  // 2 - 3. Validation of the choice - if CLASS is valid the guide keep going.
-  if (choosenClass !== 'notdefined') {
-    await ModClass.findOne({
-      namel: choosenClass
-    }, (err, result) => {
-      if (err) console.log("[ERR11] " + err)
-      if (!result || result === null) {
-        choosenClass = 'notdefined'
-        return message.channel.send(`Please, give a valid CLASS! • Restart the guide typing: \`${cmd}\`.`)
-      } else choosenClass = capitalize.words(choosenClass)
-    })
-  } // ------------------------------------------------
-  // 3 - 1. Building the array list of the BACKGROUNDS.
-  if (choosenClass !== 'notdefined') message.channel.send(backgroundEmbed)
-  // ------------------------------------------------------------------------
-  // 3 - 2. Message await - this will wait for user to type the desire class.
-  if (choosenClass !== 'notdefined' && choosenRace !== 'notdefined' && choosenSubRace !== 'notdefinedyet') {
+  if (choosenRace !== "notdefined" && choosenSubRace !== "notdefined") {
+    await message.channel.send(classEmbed)
     await message.channel.awaitMessages(filter, {
         max: 1,
         time: milisec,
         errors: ['time']
       }).then(collected => {
         if (collected.first().content.toLowerCase() === "cancel") return message.reply("Cancelled!")
-        if (!collected.first().content) choosenBack = 'notdefined'
+        if (collected.first().content) choosenClass = collected.first().content.toLowerCase()
+        else choosenClass = "notdefined"
+      })
+      .catch(ce => {
+        choosenClass = "notdefined"
+        return message.channel.send(`Time's up! • Restart the guide typing: \`${cmd}\`.`).then(console.log("[ERR10] " + ce))
+      })
+  } else return
+  //--------------------------------------------------------------------------
+  // 2 - 3. Validation of the choice - if CLASS is valid the guide keep going.
+  if (choosenClass !== "notdefined") {
+    await ModClass.findOne({
+      namel: choosenClass
+    }, (err, result) => {
+      if (err) console.log("[ERR11] " + err)
+      if (!result || result === null) {
+        choosenClass = "notdefined"
+        return message.channel.send(`Please, give a valid CLASS! • Restart the guide typing: \`${cmd}\`.`)
+      } else choosenClass = capitalize.words(choosenClass)
+    })
+  } else return
+  //--------------------------------------------------------------------------
+  if (choosenClass !== "notdefined") {
+    await message.channel.send(backgroundEmbed)
+    // 3 - 2. Message await - this will wait for user to type the desire BACKGROUND.
+    await message.channel.awaitMessages(filter, {
+        max: 1,
+        time: milisec,
+        errors: ['time']
+      }).then(collected => {
+        if (collected.first().content.toLowerCase() === "cancel") return message.reply("Cancelled!")
+        if (!collected.first().content) choosenBack = "notdefined"
         else choosenBack = collected.first().content.toLowerCase()
       })
       .catch(ce => {
-        message.channel.send(`Time's up! • Restart the guide typing: \`${cmd}\`.`)
-        return console.log("[ERR15] " + ce)
+        choosenBack = "notdefined"
+        return message.channel.send(`Time's up! • Restart the guide typing: \`${cmd}\`.`).then(console.log("[ERR15] " + ce))
       })
-  } // ----------------------------------------------------------------------------
+  } else return // ----------------------------------------------------------------
   // 3 - 3. Validation of the choice - if BACKGROUND is valid the guide keep going.
   if (choosenBack !== 'notdefined') {
     await ModBack.findOne({
@@ -247,19 +244,21 @@ module.exports.run = async (message, cmd, args) => {
     }, (e, background) => {
       if (e) console.log("[ERR16] " + e)
       if (background === null) {
-        choosenBack = 'notdefined'
+        choosenBack = "notdefined"
         return message.channel.send(`Please, give a valid BACKGROUND! • Restart the guide typing: \`${cmd}\`.`)
       }
       if (!background) return message.channel.send("Couldn't find any information.")
+      else choosenBack = capitalize.words(choosenBack)
     })
-  } // ----------------------------------------------------------------------------
+  } else return
+  // ----------------------------------------------------------------------------
   let qtd = 8
-  if (choosenSubRace !== 'u') qtd = 10
-  if (choosenRace !== 'notdefined' && choosenClass !== 'notdefined' && choosenBack !== 'notdefined') {
+  if (choosenSubRace !== "notdefined") qtd = 10
+  if (choosenRace !== "notdefined" && choosenClass !== "notdefined" && choosenBack !== "notdefined") {
     await message.channel.bulkDelete(qtd)
     await guideEmbed.setFooter(`Do you wish to continue?`)
       .setDescription(`An official D&D character sheet is a fine place to start until you know what information you need and how you use it during the game.`)
-      .addField(`Your choices, **${sender.username}**:`, `\`\`\`diff\n+ Race       > ${choosenSubRace.toUpperCase() || choosenRace.toUpperCase()}\n+ Class      > ${choosenClass.toUpperCase()}\n+ Background > ${choosenBack.toUpperCase()}\`\`\``)
+      .addField(`**${sender.username}**, your choices are:`, `\`\`\`diff\n+ Race       > ${choosenSubRace.toUpperCase() || choosenRace.toUpperCase()}\n+ Class      > ${choosenClass.toUpperCase()}\n+ Background > ${choosenBack.toUpperCase()}\`\`\``)
     const filterReaction = (reaction, user) => [
       '✅',
       '❎'
@@ -295,7 +294,7 @@ module.exports.run = async (message, cmd, args) => {
                 })
                 .exec(async (e, result) => {
                   if (e) return message.reply("[ERR#GAMNEW16] - An error occurred.  Try contacting the dev.").then(console.log('[ERR16] ' + e))
-                  if (result === null) return message.reply("[ERR#GAMNEW16.5] - An error occurred on database.  Try contacting the dev.")
+                  //if (result === null) return message.reply("[ERR#GAMNEW16.5] - An error occurred on database.  Try contacting the dev.")
                   if (!result) {
                     await message.channel.send(nameEmbed)
                     await message.channel.awaitMessages(filter, {
@@ -372,8 +371,7 @@ module.exports.run = async (message, cmd, args) => {
                       .save()
                       .then(msg => {
                         console.log("[ID: %s]", msg.characters.id)
-                        message.reply("▲ A new PROFILE was created for you.")
-
+                        message.reply("▲ A new PROFILE was created for you. Type command \`profile\` to see.")
                       })
                       .catch(ce => {
                         message.reply("GAMCHA02 - Couldn't save your new profile")
@@ -392,7 +390,7 @@ module.exports.run = async (message, cmd, args) => {
         console.log(ce1)
         return message.reply("I couldn't do any!")
       })
-  }
+  } else return console.log("Exiting!")
   //console.log('Start sleeping') await new Promise(resolve => setTimeout(resolve, 5000)) console.log('Five seconds later')
 }
 module.exports.config = {

@@ -6,22 +6,17 @@ module.exports.run = async (message, cmd, args) => {
   await message.delete()
   console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`)
   let target = message.mentions.users.first() || message.author
-  let embed = new Discord.RichEmbed()
-    .setAuthor(`${target.username}'s pouch:`, `${target.displayAvatarURL}`)
-    .setColor("#62c65f")
-    .setThumbnail("https://cdn4.iconfinder.com/data/icons/banking-and-finance/500/money-icon-dollar-512.png")
-
+  let sym = '='
+  let charnum = String(target.username).length
   CoinMod.findOne({
     userID: target.id,
     serverID: message.guild.id
   }, (err, res) => {
     if (err) console.log("[ERR] " + err)
     if (!res) {
-      embed.addField(`\`💰\``, `\`\`\`diff\n+ Coins:  0\n+ Gold:   0 pieces\n+ Silver: 0 pieces\n+ Bronze: 0 pieces\n\`\`\``)
-      return moneyHook.send(embed).catch(console.error)
+      return moneyHook.send(`\`\`\`css\n≠==== [ ${target.username}'s pouch ] ====≠\n| Coins  : 0 pennies\n| Gold   : 0 pieces\n| Silver : 0 pieces\n| Bronze : 0 pieces\n#=======${sym.repeat(charnum + 8)}=======#\n\`\`\``).catch(console.error)
     } else {
-      embed.addField(`\`💰\``, `\`\`\`md\n+ Coins  : ${res.coins}\n+ Gold   : 0 pieces\n+ Silver : 0 pieces\n+ Bronze : 0 pieces\`\`\``)
-      return moneyHook.send(embed).catch(console.error)
+      return moneyHook.send(`\`\`\`css\n#==== [ ${target.username}'s pouch ] ====#\n| Coins  : ${res.coins} pennies\n| Gold   : 0 pieces\n| Silver : 0 pieces\n| Bronze : 0 pieces\n#=======${sym.repeat(charnum + 8)}=======#\n\`\`\``).catch(console.error)
     }
   })
 }
