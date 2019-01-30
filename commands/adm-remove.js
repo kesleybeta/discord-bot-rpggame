@@ -15,12 +15,15 @@ module.exports.run = async (message, cmd, args) => {
       .findOne({
         userID: message.author.id,
         serverID: message.guild.id
-      })
+      }).select(
+        'characters'
+      )
       .exec(async (e, result) => {
         if (e) return message.reply("ERR#ADMREM01 - An error occurred.  Try contacting the dev.").then(console.log('[ERR01] ' + e))
         if (!result || result === null) await message.reply("Profile not found!")
         else {
-          return message.channel.send(`• Remove a character. ► HIS NAME: *${result.characters.name}*`)
+          console.log(result)
+          //return message.channel.send(`• Remove a character. ► HIS NAME: *${result.characters.name}*`)
         }
       })
   }

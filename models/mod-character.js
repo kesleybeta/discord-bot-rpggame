@@ -10,52 +10,41 @@ const profileSchema = mongoose.Schema({
         race: String,
         class: String,
         background: String,
+        alignment: String,
         attributes: {
             str: {
                 base: Number,
                 racial: Number,
-                ability: Number,
-                misc: Number,
                 mod: Number,
                 total: Number
             },
             dex: {
                 base: Number,
                 racial: Number,
-                ability: Number,
-                misc: Number,
                 mod: Number,
                 total: Number
             },
             con: {
                 base: Number,
                 racial: Number,
-                ability: Number,
-                misc: Number,
                 mod: Number,
                 total: Number
             },
             int: {
                 base: Number,
                 racial: Number,
-                ability: Number,
-                misc: Number,
                 mod: Number,
                 total: Number
             },
             wis: {
                 base: Number,
                 racial: Number,
-                ability: Number,
-                misc: Number,
                 mod: Number,
                 total: Number
             },
             cha: {
                 base: Number,
                 racial: Number,
-                ability: Number,
-                misc: Number,
                 mod: Number,
                 total: Number
             }
@@ -63,7 +52,7 @@ const profileSchema = mongoose.Schema({
         hp: {
             hpoints: Number
         },
-        alignment: String,
+        level: Number,
         sex: String,
         thumb: String
     }
