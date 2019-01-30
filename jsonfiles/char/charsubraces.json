@@ -16,6 +16,23 @@
     "namel": "drow",
     "racel": "elf"
   },
+  "forest gnome": {
+    "_id": {
+      "$oid": "5c51e55fe7179a1e4685c30b"
+    },
+    "abilityscore": {
+      "cha": 0,
+      "con": 0,
+      "dex": 1,
+      "int": 0,
+      "str": 0,
+      "wis": 0
+    },
+    "features": ["Natural Illusionist", "Speak with Small Beasts"],
+    "name": "Forest Gnome",
+    "namel": "forest gnome",
+    "racel": "gnome"
+  },
   "high elf": {
     "_id": {
       "$oid": "5c49d85cfb6fc02d2ef2d3d9"
@@ -45,44 +62,10 @@
       "str": 0,
       "wis": 1
     },
-    "features:": ["Dwarven Toughness"],
+    "features": ["Dwarven Toughness"],
     "name": "Hill Dwarf",
     "namel": "hill dwarf",
-    "racel": "Dwarf"
-  },
-  "mountain dwarf": {
-    "_id": {
-      "$oid": "5c4df652e7179a090e0add53"
-    },
-    "abilityscore": {
-      "cha": 0,
-      "con": 0,
-      "dex": 0,
-      "int": 0,
-      "str": 0,
-      "wis": 1
-    },
-    "features:": ["Dwarven Armor Training"],
-    "name": "Mountain Dwarf",
-    "namel": "mountain dwarf",
-    "racel": "Dwarf"
-  },
-  "wood elf": {
-    "_id": {
-      "$oid": "5c49e338fb6fc02d2ef2dcfa"
-    },
-    "abilityscore": {
-      "cha": 0,
-      "con": 0,
-      "dex": 0,
-      "int": 0,
-      "str": 0,
-      "wis": 1
-    },
-    "features": ["Fleet of Foot", "Mask of the Wild", "ElfWeapon Training"],
-    "name": "Wood Elf",
-    "namel": "wood elf",
-    "racel": "elf"
+    "racel": "dwarf"
   },
   "lightfoot": {
     "_id": {
@@ -101,6 +84,40 @@
     "namel": "lightfoot",
     "racel": "halfling"
   },
+  "mountain dwarf": {
+    "_id": {
+      "$oid": "5c4df652e7179a090e0add53"
+    },
+    "abilityscore": {
+      "cha": 0,
+      "con": 0,
+      "dex": 0,
+      "int": 0,
+      "str": 0,
+      "wis": 1
+    },
+    "features": ["Dwarven Armor Training"],
+    "name": "Mountain Dwarf",
+    "namel": "mountain dwarf",
+    "racel": "dwarf"
+  },
+  "rock gnome": {
+    "_id": {
+      "$oid": "5c51e56ee7179a1e4685c31f"
+    },
+    "abilityscore": {
+      "cha": 0,
+      "con": 1,
+      "dex": 0,
+      "int": 0,
+      "str": 0,
+      "wis": 0
+    },
+    "features": ["Artificer's Lore", "Tinker"],
+    "name": "Rock Gnome",
+    "namel": "rock gnome",
+    "racel": "gnome"
+  },
   "stout": {
     "_id": {
       "$oid": "5c4dfd05e7179a090e0adf91"
@@ -113,11 +130,26 @@
       "str": 0,
       "wis": 0
     },
-    "features": [
-      "Stout Resilience"
-    ],
+    "features": ["Stout Resilience"],
     "name": "Stout",
     "namel": "stout",
     "racel": "halfling"
+  },
+  "wood elf": {
+    "_id": {
+      "$oid": "5c49e338fb6fc02d2ef2dcfa"
+    },
+    "abilityscore": {
+      "cha": 0,
+      "con": 0,
+      "dex": 0,
+      "int": 0,
+      "str": 0,
+      "wis": 1
+    },
+    "features": ["Fleet of Foot", "Mask of the Wild", "ElfWeapon Training"],
+    "name": "Wood Elf",
+    "namel": "wood elf",
+    "racel": "elf"
   }
 }

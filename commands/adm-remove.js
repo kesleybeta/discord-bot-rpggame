@@ -1,3 +1,5 @@
+const ModCharacter = require("../models/mod-character") // Require profile schema
+
 module.exports.run = async (message, cmd, args) => {
   await message.delete()
   // Logging
@@ -5,8 +7,24 @@ module.exports.run = async (message, cmd, args) => {
   // Variables
   // Code lines
   if (!args) return message.reply("Please, tell me what you wanna remove")
-  
-  return message.channel.send(`BAR`)
+
+  if (args[0] === "profile") {
+    if (isNaN(args[1])) return message.reply("Please give a valid character ID!")
+
+    await ModCharacter
+      .findOne({
+        userID: message.author.id,
+        serverID: message.guild.id
+      })
+      .exec(async (e, result) => {
+        if (e) return message.reply("ERR#ADMREM01 - An error occurred.  Try contacting the dev.").then(console.log('[ERR01] ' + e))
+        if (!result || result === null) await message.reply("Profile not found!")
+        else {
+          return message.channel.send(`• Remove a character. ► HIS NAME: *${result.characters.name}*`)
+        }
+      })
+  }
+
 }
 
 module.exports.config = {

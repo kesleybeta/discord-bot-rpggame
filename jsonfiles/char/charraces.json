@@ -1,4 +1,65 @@
 {
+  "dragonborn": {
+    "_id": {
+      "$oid": "5c51deeae7179a1e4685bc9a"
+    },
+    "abilityscore": {
+      "cha": 1,
+      "con": 0,
+      "dex": 0,
+      "int": 0,
+      "str": 2,
+      "wis": 0
+    },
+    "age": {
+      "adult": 15,
+      "max": 80
+    },
+    "alignment": "Good",
+    "description": "Born of dragons, as their name proclaims, the dragonborn walk proudly through a world that greets them with fearful incomprehension.",
+    "features": ["Draconic Ancestry", "Breath Weapon", "Damage Resistance"],
+    "icon": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/4808/149/400/250/636771205894109291.jpeg",
+    "languages": ["Common", "Draconic"],
+    "mark": [""],
+    "name": "Dragonborn",
+    "namel": "dragonborn",
+    "names": {
+      "family": ["Clethtinthiallor", "Daardendrian", "Delmirev", "Drachedandion", "Fenkenkabradon", "Kepeshkmolik", "Kerrhylon", "Kimbatuul", "Linxakasendalor", "Myastan", "Nemmonis", "Norixius", "Ophinshtalajiir", "Prexijandilin", "Shestendeliath", "Turnuroth", "Verthisathurgiesh", "Yarjerit"],
+      "female": ["Akra", "Biri", "Daar", "Farideh", "Harann", "HaviJar", "Jheri", "Kava", "Korinn", "Mishann", "Nala", "Perra", "Raiann", "Sora", "Surina", "Thava", "Uadjit"],
+      "male": ["Arjhan", "Balasar", "Bharash", "Donnar", "Ghesh", "Heskan", "Kriv", "Medrash", "Mehen", "Nadarr", "Pandjed", "Patrin", "Rhogar", "Shamash", "Shedinn", "Tarhun", "Torinn"]
+    },
+    "raceonly": {
+      "dragon": {
+        "black": {
+          "breathweapon": {
+            "distance": 30,
+            "savthrow": "dex",
+            "type": "line"
+          },
+          "damagetype": "acid"
+        },
+        "blue": {},
+        "brass": {},
+        "bronze": {},
+        "copper": {},
+        "gold": {},
+        "green": {},
+        "red": {},
+        "silver": {},
+        "white": {}
+      }
+    },
+    "size": "medium",
+    "source": "handbook",
+    "speed": {
+      "flying": 0,
+      "swimming": 0,
+      "walking": 30
+    },
+    "subraces": [""],
+    "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/340/420/618/636272677995471928.png",
+    "variant": [""]
+  },
   "dwarf": {
     "_id": {
       "$oid": "5c4de5dfe7179a090e0ad793"
@@ -80,6 +141,47 @@
     "subraces": ["High Elf", "Wood Elf", "Drow"],
     "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/7/639/420/618/636287075350739045.png",
     "variant": ["Eladrin Elf"]
+  },
+  "gnome": {
+    "_id": {
+      "$oid": "5c51e526e7179a1e4685c2cd"
+    },
+    "abilityscore": {
+      "cha": 0,
+      "con": 0,
+      "dex": 0,
+      "int": 2,
+      "str": 0,
+      "wis": 0
+    },
+    "age": {
+      "adult": 40,
+      "max": 425
+    },
+    "alignment": "Good",
+    "description": "A constant hum of busy activity pervades the warrens and neighborhoods where gnomes form their close-knit communities.\nLouder sounds punctuate the hum: a crunch of grinding gears here, a minor explosion there, a yelp of surprise or triumph, and especially bursts ofon, and play.",
+    "features": ["Darkvision", "Gnome Cunning"],
+    "icon": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/4808/149/400/250/636771205894109291.jpeg",
+    "languages": ["Common", "Gnomish"],
+    "mark": [""],
+    "name": "Gnome",
+    "namel": "gnome",
+    "names": {
+      "family": ["Beren", "Daergel", "Folkor", "Garrick", "Nackle", "Murnig", "Ningel", "Raulnor", "Scheppen", "Timbers", "Turen"],
+      "female": ["Bimpnollin", "Breena", "Caramip", "Carlin", "Donella", "Duvamil", "Ella", "Ellyjobell", "Ellywick", "Lilli", "Loopmottin", "Lorilla", "Mardnab", "Nissa", "Nyx", "Oda", "Orla", "Roywyn", "Shamil", "Tana", "Waywocket", "Zanna"],
+      "male": ["Alston", "Alvyn", "Boddynock", "Brocc", "Burgell", "Dimble", "Eldon", "Erky", "Fonkin", "Frug", "Gerbo", "Gimble", "Glim", "Jebeddo", "Kellen", "Namfoodle", "Orryn", "Roondar", "Seebo", "Sindri", "Warryn", "Wrenn", "Zook"]
+    },
+    "raceonly": {},
+    "size": "small",
+    "source": "handbook",
+    "speed": {
+      "flying": 0,
+      "swimming": 0,
+      "walking": 25
+    },
+    "subraces": ["Rock Gnome", "Forest Gnome"],
+    "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/334/420/618/636272671553055253.png",
+    "variant": [""]
   },
   "halfling": {
     "_id": {
@@ -166,5 +268,49 @@
     "subraces": [""],
     "thumb": "",
     "variant": ["Variant Human"]
+  },
+  "half elf": {
+    "_id": {
+      "$oid": "db-generate"
+    },
+    "abilityscore": {
+      "cha": 2,
+      "con": 1,
+      "dex": 1,
+      "int": 0,
+      "str": 0,
+      "wis": 0
+    },
+    "age": {
+      "adult": 20,
+      "max": 180
+    },
+    "alignment": "Chaotic",
+    "description": "Walking in two worlds but truly belonging to neither, half-elves combine what some say are the best qualities of their elf and human parents: human curiosity, inventiveness, and ambition tempered by the refined senses, love of nature, and artistic tastes of the elves.ife.",
+    "features": ["Darkvision",
+      "Fey Ancestry",
+      "Skill Versatility"
+    ],
+    "icon": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/4808/149/400/250/636771205894109291.jpeg",
+    "languages": ["Common", "Elvish", "unchoosen01"],
+    "mark": ["Detection Half Elf", "Storm Half Elf"],
+    "name": "Half Elf",
+    "namel": "half elf",
+    "names": {
+      "family": ["Basha", "Dumein", "Jassan", "Khalid", "Mostana", "Pashar", "Rein", "Amblecrown", "Buckman", "Dundragon", "Evenwood", "Greycastle", "Tallstag", "Bersk", "Chernin", "Dotsk", "Kulenov", "Marsk", "Nemetsk", "Shemov", "Starag", "Brightwood", "Helder", "Hornraven", "Lackman", "Stormwind", "Windrivver", "Ankhalab", "Anskuld", "Fezim", "Hahpet", "Nathandem", "Sepret", "Uuthrakt", "Chergoba", "Dyernina", "Iltazyara", "Murnyethara", "Stayanoga", "Ulmokina", "Chien", "Huang", "Kao", "Kung", "Lao", "Ling", "Mei", "Pin", "Shin", "Sum", "Tan", "Wan", "Agosto", "Astorio", "Calabra", "Domine", "Falone", "Marivaldi", "Pisacar", "Ramondo"],
+      "female": ["Atala", "Ceidil", "Hama", "Jasmal", "Meilil", "Seipora", "Yasheira", "Zasheida", "Arveene", "Esvele", "Jhessail", "Kerri", "Lureene", "Miri", "Rowan", "Shandri", "Tessele", "Alethra", "Kara", "Katernin", "Natali", "Mara", "Olma", "Tana", "Zora", "Amafrey", "Betha", "Cefrey", "Kethra", "Mara", "Olga", "Silifrey", "Westra", "Arizima", "Chathi", "Nephis", "Nulara", "Murithi", "Sefris", "Thola", "Umara", "Zolis", "Fyevarra", "Hulmarra", "Immith", "Imzel", "Navarra", "Shevarra", "Tammith", "Yuldra", "Bai", "Chao", "Jia", "Lei", "Mei", "Qiao", "Shui", "Tai", "Balama", "Dona", "Faila", "Jalana", "Luisa", "Marta", "Quara", "Selise", "Vonda"],
+      "male": ["Aseir", "Bardeid", "Haseid", "Khemed", "Mehmen", "Sudeiman", "Zasheir", "Darvin", "Dorn", "Evendur", "Gorstag", "Grim", "Helm", "Malark", "Morn", "Randal", "Stedd", "Bor", "Fodel", "Glar", "Grigor", "Igan", "Ivor", "Kosef", "Mival", "Orel", "Pavel", "Sergor", "Ander", "Blath", "Bran", "Frath", "Geth", "Lander", "Luth", "Malcer", "Stor", "Taman", "Urth", "Aoth", "Bareris", "Ehput-Ki", "Kethoth", "Mumed", "Ramas", "So-Kehur", "Thazar-De", "Urhur", "Borivik", "Faurgar", "Jandar", "Kanithar", "Madislak", "Ralmevik", "Shaumar", "Vladislak", "An", "Chen", "Chi", "Fai", "Jiang", "Jun", "Lian", "Long", "Meng", "On", "Shan", "Shui", "Wen", "Anton", "Diero", "Marcon", "Pieron", "Rimardo", "Romero", "Salazar", "Umbero"]
+    },
+    "raceonly": {},
+    "size": "medium",
+    "source": "handbook",
+    "speed": {
+      "flying": 0,
+      "swimming": 0,
+      "walking": 30
+    },
+    "subraces": [""],
+    "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/481/420/618/636274618102950794.png",
+    "variant": [""]
   }
 }

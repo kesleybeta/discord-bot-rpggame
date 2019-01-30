@@ -18,7 +18,8 @@ module.exports.run = async (message, cmd, args) => {
   if (String(args)) return message.reply("ERRGAMCHA00 - Please don't use arguments.") // Command must be without args
   console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`) // Logging the request of the command
   // Variables
-  let sender = message.author // For better code-read purposes
+  let server = message.guild
+  let sender = message.author
   const filter = msg => msg.author.id === sender.id
   let milisec = 30000 // Global time of wait
   let salva = false
@@ -98,7 +99,7 @@ module.exports.run = async (message, cmd, args) => {
   await ModCharacter
     .findOne({
       userID: sender.id,
-      serverID: sender.id
+      serverID: server.id
     })
     .exec(async (e, result) => {
       if (e) return message.reply("ERR#GAMNEW01 - An error occurred.  Try contacting the dev.").then(console.log('[ERR01] ' + e))
@@ -313,7 +314,7 @@ module.exports.run = async (message, cmd, args) => {
                     // Create a new character profile with the choices made and the informations collected from it
                     const newProfile = new ModCharacter({
                       userID: sender.id,
-                      serverID: message.guild.id,
+                      serverID: server.id,
                       characters: {
                         id: 0,
                         valid: 1,
