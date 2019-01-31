@@ -20,7 +20,6 @@
     "weapons": [""]
   },
   "source": "",
-  "speed": [""],
   "table": {
     "1": {"bonus": 2, "features": [""], "lvl": 1},
     "2": {"bonus": 2, "features": [""], "lvl": 2},
