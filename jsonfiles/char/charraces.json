@@ -183,6 +183,88 @@
     "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/334/420/618/636272671553055253.png",
     "variant": [""]
   },
+  "half elf": {
+    "_id": {
+      "$oid": "5c51f67ce7179a1e4685d586"
+    },
+    "abilityscore": {
+      "cha": 2,
+      "con": 1,
+      "dex": 1,
+      "int": 0,
+      "str": 0,
+      "wis": 0
+    },
+    "age": {
+      "adult": 20,
+      "max": 180
+    },
+    "alignment": "Chaotic",
+    "description": "Walking in two worlds but truly belonging to neither, half-elves combine what some say are the best qualities of their elf and human parents: human curiosity, inventiveness, and ambition tempered by the refined senses, love of nature, and artistic tastes of the elves.ife.",
+    "features": ["Darkvision", "Fey Ancestry", "Skill Versatility"],
+    "icon": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/4808/149/400/250/636771205894109291.jpeg",
+    "languages": ["Common", "Elvish", "unchoosen01"],
+    "mark": ["Detection Half Elf", "Storm Half Elf"],
+    "name": "Half Elf",
+    "namel": "half elf",
+    "names": {
+      "family": ["Basha", "Dumein", "Jassan", "Khalid", "Mostana", "Pashar", "Rein", "Amblecrown", "Buckman", "Dundragon", "Evenwood", "Greycastle", "Tallstag", "Bersk", "Chernin", "Dotsk", "Kulenov", "Marsk", "Nemetsk", "Shemov", "Starag", "Brightwood", "Helder", "Hornraven", "Lackman", "Stormwind", "Windrivver", "Ankhalab", "Anskuld", "Fezim", "Hahpet", "Nathandem", "Sepret", "Uuthrakt", "Chergoba", "Dyernina", "Iltazyara", "Murnyethara", "Stayanoga", "Ulmokina", "Chien", "Huang", "Kao", "Kung", "Lao", "Ling", "Mei", "Pin", "Shin", "Sum", "Tan", "Wan", "Agosto", "Astorio", "Calabra", "Domine", "Falone", "Marivaldi", "Pisacar", "Ramondo"],
+      "female": ["Atala", "Ceidil", "Hama", "Jasmal", "Meilil", "Seipora", "Yasheira", "Zasheida", "Arveene", "Esvele", "Jhessail", "Kerri", "Lureene", "Miri", "Rowan", "Shandri", "Tessele", "Alethra", "Kara", "Katernin", "Natali", "Mara", "Olma", "Tana", "Zora", "Amafrey", "Betha", "Cefrey", "Kethra", "Mara", "Olga", "Silifrey", "Westra", "Arizima", "Chathi", "Nephis", "Nulara", "Murithi", "Sefris", "Thola", "Umara", "Zolis", "Fyevarra", "Hulmarra", "Immith", "Imzel", "Navarra", "Shevarra", "Tammith", "Yuldra", "Bai", "Chao", "Jia", "Lei", "Mei", "Qiao", "Shui", "Tai", "Balama", "Dona", "Faila", "Jalana", "Luisa", "Marta", "Quara", "Selise", "Vonda"],
+      "male": ["Aseir", "Bardeid", "Haseid", "Khemed", "Mehmen", "Sudeiman", "Zasheir", "Darvin", "Dorn", "Evendur", "Gorstag", "Grim", "Helm", "Malark", "Morn", "Randal", "Stedd", "Bor", "Fodel", "Glar", "Grigor", "Igan", "Ivor", "Kosef", "Mival", "Orel", "Pavel", "Sergor", "Ander", "Blath", "Bran", "Frath", "Geth", "Lander", "Luth", "Malcer", "Stor", "Taman", "Urth", "Aoth", "Bareris", "Ehput-Ki", "Kethoth", "Mumed", "Ramas", "So-Kehur", "Thazar-De", "Urhur", "Borivik", "Faurgar", "Jandar", "Kanithar", "Madislak", "Ralmevik", "Shaumar", "Vladislak", "An", "Chen", "Chi", "Fai", "Jiang", "Jun", "Lian", "Long", "Meng", "On", "Shan", "Shui", "Wen", "Anton", "Diero", "Marcon", "Pieron", "Rimardo", "Romero", "Salazar", "Umbero"]
+    },
+    "raceonly": {},
+    "size": "medium",
+    "source": "handbook",
+    "speed": {
+      "flying": 0,
+      "swimming": 0,
+      "walking": 30
+    },
+    "subraces": [""],
+    "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/481/420/618/636274618102950794.png",
+    "variant": [""]
+  },
+  "half orc": {
+    "_id": {
+      "$oid": "5c52d4bde7179a1e46866156"
+    },
+    "abilityscore": {
+      "cha": 0,
+      "con": 1,
+      "dex": 0,
+      "int": 0,
+      "str": 2,
+      "wis": 0
+    },
+    "age": {
+      "adult": 14,
+      "max": 75
+    },
+    "alignment": "Chaotic",
+    "description": "Half-orcs most often live among orcs. Of the other races, humans are most likely to accept half-orcs, and half-orcs almost always live in human lands when not living among orc tribes.",
+    "features": ["Darkvision", "Menancing", "Relentless Endurance", "Savage Attacks"],
+    "icon": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/4808/149/400/250/636771205894109291.jpeg",
+    "languages": ["Common", "Orc"],
+    "mark": ["Finding Half Orc"],
+    "name": "Half Orc",
+    "namel": "half orc",
+    "names": {
+      "family": [""],
+      "female": ["Baggi", "Emen", "Engong", "Kansif", "Myev", "Neega", "Ovak", "Ownka", "Shaulha", "Sulha", "Vola", "Volen", "Yevelda"],
+      "male": ["Deneh", "Feng", "Gell", "Henk", "Holg", "Imsh", "Kelh", "Krusk", "Mhurren", "Ront", "Shump", "Thokk"]
+    },
+    "raceonly": {},
+    "size": "medium",
+    "source": "handbook",
+    "speed": {
+      "flying": 0,
+      "swimming": 0,
+      "walking": 30
+    },
+    "subraces": [""],
+    "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/466/420/618/636274570630462055.png",
+    "variant": [""]
+  },
   "halfling": {
     "_id": {
       "$oid": "5c4dfacae7179a090e0adeb6"
@@ -269,37 +351,34 @@
     "thumb": "",
     "variant": ["Variant Human"]
   },
-  "half elf": {
+  "tiefling": {
     "_id": {
       "$oid": "db-generate"
     },
     "abilityscore": {
       "cha": 2,
-      "con": 1,
-      "dex": 1,
-      "int": 0,
+      "con": 0,
+      "dex": 0,
+      "int": 1,
       "str": 0,
       "wis": 0
     },
     "age": {
-      "adult": 20,
-      "max": 180
+      "adult": 18,
+      "max": 125
     },
-    "alignment": "Chaotic",
-    "description": "Walking in two worlds but truly belonging to neither, half-elves combine what some say are the best qualities of their elf and human parents: human curiosity, inventiveness, and ambition tempered by the refined senses, love of nature, and artistic tastes of the elves.ife.",
-    "features": ["Darkvision",
-      "Fey Ancestry",
-      "Skill Versatility"
-    ],
+    "alignment": "Evil",
+    "description": "To be greeted with stares and whispers, to suffer violence and insult on the street, to see mistrust and fear in every eye: this is the lot of the tiefling.",
+    "features": ["Darkvision", "Hellish Resistance", "Infernal Legacy"],
     "icon": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/4808/149/400/250/636771205894109291.jpeg",
-    "languages": ["Common", "Elvish", "unchoosen01"],
-    "mark": ["Detection Half Elf", "Storm Half Elf"],
-    "name": "Half Elf",
-    "namel": "half elf",
+    "languages": ["Common", "Infernal"],
+    "mark": [""],
+    "name": "Tiefling",
+    "namel": "tiefling",
     "names": {
-      "family": ["Basha", "Dumein", "Jassan", "Khalid", "Mostana", "Pashar", "Rein", "Amblecrown", "Buckman", "Dundragon", "Evenwood", "Greycastle", "Tallstag", "Bersk", "Chernin", "Dotsk", "Kulenov", "Marsk", "Nemetsk", "Shemov", "Starag", "Brightwood", "Helder", "Hornraven", "Lackman", "Stormwind", "Windrivver", "Ankhalab", "Anskuld", "Fezim", "Hahpet", "Nathandem", "Sepret", "Uuthrakt", "Chergoba", "Dyernina", "Iltazyara", "Murnyethara", "Stayanoga", "Ulmokina", "Chien", "Huang", "Kao", "Kung", "Lao", "Ling", "Mei", "Pin", "Shin", "Sum", "Tan", "Wan", "Agosto", "Astorio", "Calabra", "Domine", "Falone", "Marivaldi", "Pisacar", "Ramondo"],
-      "female": ["Atala", "Ceidil", "Hama", "Jasmal", "Meilil", "Seipora", "Yasheira", "Zasheida", "Arveene", "Esvele", "Jhessail", "Kerri", "Lureene", "Miri", "Rowan", "Shandri", "Tessele", "Alethra", "Kara", "Katernin", "Natali", "Mara", "Olma", "Tana", "Zora", "Amafrey", "Betha", "Cefrey", "Kethra", "Mara", "Olga", "Silifrey", "Westra", "Arizima", "Chathi", "Nephis", "Nulara", "Murithi", "Sefris", "Thola", "Umara", "Zolis", "Fyevarra", "Hulmarra", "Immith", "Imzel", "Navarra", "Shevarra", "Tammith", "Yuldra", "Bai", "Chao", "Jia", "Lei", "Mei", "Qiao", "Shui", "Tai", "Balama", "Dona", "Faila", "Jalana", "Luisa", "Marta", "Quara", "Selise", "Vonda"],
-      "male": ["Aseir", "Bardeid", "Haseid", "Khemed", "Mehmen", "Sudeiman", "Zasheir", "Darvin", "Dorn", "Evendur", "Gorstag", "Grim", "Helm", "Malark", "Morn", "Randal", "Stedd", "Bor", "Fodel", "Glar", "Grigor", "Igan", "Ivor", "Kosef", "Mival", "Orel", "Pavel", "Sergor", "Ander", "Blath", "Bran", "Frath", "Geth", "Lander", "Luth", "Malcer", "Stor", "Taman", "Urth", "Aoth", "Bareris", "Ehput-Ki", "Kethoth", "Mumed", "Ramas", "So-Kehur", "Thazar-De", "Urhur", "Borivik", "Faurgar", "Jandar", "Kanithar", "Madislak", "Ralmevik", "Shaumar", "Vladislak", "An", "Chen", "Chi", "Fai", "Jiang", "Jun", "Lian", "Long", "Meng", "On", "Shan", "Shui", "Wen", "Anton", "Diero", "Marcon", "Pieron", "Rimardo", "Romero", "Salazar", "Umbero"]
+      "family": [""],
+      "female": ["Akta", "Anakis", "Bryseis", "Criella", "Damaia", "Ea", "Kallista", "Lerissa", "Makaria", "Nemeia", "Orianna", "Phelaia", "Rieta"],
+      "male": ["Akmenos", "Amnon", "Barakas", "Damakos", "Ekemon", "lados", "Kairon", "Leucis", "Melech", "Mordai", "Morthos", "Pelaios", "Skamos", "Therai"]
     },
     "raceonly": {},
     "size": "medium",
@@ -307,10 +386,10 @@
     "speed": {
       "flying": 0,
       "swimming": 0,
-      "walking": 30
+      "walking": 0
     },
     "subraces": [""],
-    "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/481/420/618/636274618102950794.png",
+    "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/7/641/420/618/636287076637981942.png",
     "variant": [""]
   }
 }

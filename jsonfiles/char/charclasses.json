@@ -1,10 +1,12 @@
 {
-  "Barbarian": {
+  "barbarian": {
     "_id": {
-      "$oid": "5c3cce04fb6fc0600bdffe3d"
+      "$oid": ""
     },
     "description": "A fierce warrior of primitive background who can enter a battle rage: unbridled, unquenchable, and unthinking fury.",
-    "equipment": ["Greataxe, 2 Handaxes, Explorer's pack & 4 Javelins", "Greataxe, Simple Weapon, Explorer's pack & 4 Javelins", "Martial Melle Weapon, 2 Handaxes, Explorer's pack & 4 Javelins", "Martial Melle Weapon, Simple Weapon, Explorer's pack & 4 Javelins"],
+    "equipment": [
+      ""
+    ],
     "hp": {
       "hitdice": 12,
       "hpfirst": 12,
@@ -30,7 +32,7 @@
     }],
     "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/342/420/618/636272680339895080.png"
   },
-  "Druid": {
+  "druid": {
     "description": "Druids revere nature above all, gaining their spells and other magical powers either from the force of nature itself or from a nature deity.",
     "equipment": [
       ["wooden shield", "any simple weapon"],
@@ -60,7 +62,7 @@
     },
     "thumb": ""
   },
-  "Monk": {
+  "monk": {
     "_id": {
       "$oid": "5c34f073e7179a7d1241540f"
     },
@@ -89,7 +91,7 @@
     },
     "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/489/420/618/636274646181411106.png"
   },
-  "Paladin": {
+  "paladin": {
     "_id": {
       "$oid": "5c3f7f92fb6fc0600be1d9f7"
     },

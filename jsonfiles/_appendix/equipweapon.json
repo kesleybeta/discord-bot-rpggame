@@ -1,0 +1,147 @@
+{
+  "martial": {},
+  "simple": {
+    "melee": {
+      "club": {
+        "cost": {
+          "bp": 0,
+          "gp": 0,
+          "sp": 1
+        },
+        "damage": {
+          "hitdie": 4,
+          "type": "bludgeoning"
+        },
+        "name": "Club",
+        "namel": "club",
+        "properties": ["light"]
+      },
+      "dagger": {
+        "cost": {
+          "bp": 0,
+          "gp": 2,
+          "sp": 0
+        },
+        "damage": {
+          "hitdie": 4,
+          "type": "piercing"
+        },
+        "name": "Dagger",
+        "namel": "dagger",
+        "properties": ["finesse", "light", "thrown(range 20 / 60)"]
+      },
+      "greatclub": {
+        "cost": {
+          "bp": 0,
+          "gp": 0,
+          "sp": 2
+        },
+        "damage": {
+          "hitdie": 8,
+          "type": "bludgeoning"
+        },
+        "name": "Greatclub",
+        "namel": "greatclub",
+        "properties": ["Two - handed"]
+      },
+      "handaxe": {
+        "cost": {
+          "bp": 0,
+          "gp": 5,
+          "sp": 0
+        },
+        "damage": {
+          "hitdie": 6,
+          "type": "slashing"
+        },
+        "name": "Handaxe",
+        "namel": "handaxe",
+        "properties": ["light", "thrown(range 20 / 60)"]
+      },
+      "javelin": {
+        "cost": {
+          "bp": 0,
+          "gp": 0,
+          "sp": 5
+        },
+        "damage": {
+          "hitdie": 6,
+          "type": "piercing"
+        },
+        "name": "Javelin",
+        "namel": "javelin",
+        "properties": ["Thrown(range 30 / 120)"]
+      },
+      "light hammer": {
+        "cost": {
+          "bp": 0,
+          "gp": 2,
+          "sp": 0
+        },
+        "damage": {
+          "hitdie": 4,
+          "type": "bludgeoning"
+        },
+        "name": "Light hammer",
+        "namel": "light hammer",
+        "properties": ["light", "thrown(range 20 / 60)"]
+      },
+      "mace": {
+        "cost": {
+          "bp": 0,
+          "gp": 5,
+          "sp": 0
+        },
+        "damage": {
+          "hitdie": 6,
+          "type": "bludgeoning"
+        },
+        "name": "Mace",
+        "namel": "mace",
+        "properties": [""]
+      },
+      "quarterstaff": {
+        "cost": {
+          "bp": 0,
+          "gp": 0,
+          "sp": 2
+        },
+        "damage": {
+          "hitdie": 6,
+          "type": "bludgeoning"
+        },
+        "name": "Quarterstaff",
+        "namel": "quarterstaff",
+        "properties": ["versatile"]
+      },
+      "sickle": {
+        "cost": {
+          "bp": 0,
+          "gp": 1,
+          "sp": 0
+        },
+        "damage": {
+          "hitdie": 4,
+          "type": "slashing"
+        },
+        "name": "Sickle",
+        "namel": "sickle",
+        "properties": ["light"]
+      },
+      "spear": {
+        "cost": {
+          "bp": 0,
+          "gp": 1,
+          "sp": 0
+        },
+        "damage": {
+          "hitdie": 6,
+          "type": "piercing"
+        },
+        "name": "Spear",
+        "namel": "spear",
+        "properties": ["thrown(range 20 / 60)", "versatile"]
+      }
+    }
+  }
+}

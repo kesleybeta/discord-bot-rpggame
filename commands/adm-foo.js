@@ -1,5 +1,3 @@
-const tools = require("../util/functions")
-
 module.exports.run = async (message, cmd, args) => {
   await message.delete()
   // Logging
