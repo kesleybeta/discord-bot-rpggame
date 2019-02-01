@@ -22,8 +22,8 @@ module.exports.run = async (message, cmd, args) => {
   let sender = message.author
   const filter = msg => msg.author.id === sender.id
   let milisec = 30000 // Global time of wait
-  let salva = false
   // - // Character variables
+  let salva = false
   let choosenRace = "notdefined"
   let choosenSubRace = "notdefined"
   let choosenClass = "notdefined"

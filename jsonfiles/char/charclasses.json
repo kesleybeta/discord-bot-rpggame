@@ -24,7 +24,7 @@
     "table": {
       "1": {
         "bonus": 2,
-        "features": ["Rage", "Unarmored Defense"],
+        "features": ["rage", "unarmored defense"],
         "lvl": 1
       },
       "2": {
@@ -129,47 +129,130 @@
     "_id": {
       "$oid": "db-generate"
     },
-    "description": "",
-    "equip": [""],
+    "description": "The bard is a master of song, speech, and the magic they contain.\nBards say that the multiverse was spoken into existence, that the words of the gods gave it shape, and that echoes of these primordial Words of Creation still resound throughout the cosmos.",
+    "equip": {
+      "weapons": "rapier",
+      "pack": "entertainer",
+      "instrument": "lute"
+    },
     "hp": {
-      "hitdice": 0,
-      "hpfirst": 0,
-      "hplvl": 0
+      "hitdice": 8,
+      "hpfirst": 8,
+      "hplvl": 5
     },
-    "icon": "",
-    "name": "",
-    "namel": "",
+    "icon": "https://media-waterdeep.cursecdn.com/avatars/10/1/636336416923635770.jpeg",
+    "name": "Bard",
+    "namel": "bard",
     "prof": {
-      "armor": [""],
-      "savthrows": [""],
-      "skills": [""],
-      "tools": [""],
-      "weapons": [""]
+      "armor": ["light"],
+      "savthrows": ["dex", "cha"],
+      "skills": ["skill01", "skill02", "skill03"],
+      "tools": ["instrument01", "instrument02", "instrument03"],
+      "weapons": ["simple", "crossbow", "longsword","rapier", "shorsword"]
     },
-    "source": "",
+    "source": "handbook",
     "table": {
-      "1": {"bonus": 2, "features": [""], "lvl": 1},
-      "2": {"bonus": 2, "features": [""], "lvl": 2},
-      "3": {"bonus": 2, "features": [""], "lvl": 3},
-      "4": {"bonus": 2, "features": [""], "lvl": 4},
-      "5": {"bonus": 3, "features": [""], "lvl": 5},
-      "6": {"bonus": 3, "features": [""], "lvl": 6},
-      "7": {"bonus": 3, "features": [""], "lvl": 7},
-      "8": {"bonus": 3, "features": [""], "lvl": 8},
-      "9": {"bonus": 4, "features": [""], "lvl": 9},
-      "10": {"bonus": 4, "features": [""], "lvl": 10},
-      "11": {"bonus": 4, "features": [""], "lvl": 11},
-      "12": {"bonus": 4, "features": [""], "lvl": 12},
-      "13": {"bonus": 5, "features": [""], "lvl": 13},
-      "14": {"bonus": 5, "features": [""], "lvl": 14},
-      "15": {"bonus": 5, "features": [""], "lvl": 15},
-      "16": {"bonus": 5, "features": [""], "lvl": 16},
-      "17": {"bonus": 6, "features": [""], "lvl": 17},
-      "18": {"bonus": 6, "features": [""], "lvl": 18},
-      "19": {"bonus": 6, "features": [""], "lvl": 19},
-      "20": {"bonus": 6, "features": [""], "lvl": 20}
+      "1": {
+        "bonus": 2,
+        "features": ["spellcasting", "bardic inspiration"],
+        "lvl": 1
+      },
+      "2": {
+        "bonus": 2,
+        "features": [""],
+        "lvl": 2
+      },
+      "3": {
+        "bonus": 2,
+        "features": [""],
+        "lvl": 3
+      },
+      "4": {
+        "bonus": 2,
+        "features": [""],
+        "lvl": 4
+      },
+      "5": {
+        "bonus": 3,
+        "features": [""],
+        "lvl": 5
+      },
+      "6": {
+        "bonus": 3,
+        "features": [""],
+        "lvl": 6
+      },
+      "7": {
+        "bonus": 3,
+        "features": [""],
+        "lvl": 7
+      },
+      "8": {
+        "bonus": 3,
+        "features": [""],
+        "lvl": 8
+      },
+      "9": {
+        "bonus": 4,
+        "features": [""],
+        "lvl": 9
+      },
+      "10": {
+        "bonus": 4,
+        "features": [""],
+        "lvl": 10
+      },
+      "11": {
+        "bonus": 4,
+        "features": [""],
+        "lvl": 11
+      },
+      "12": {
+        "bonus": 4,
+        "features": [""],
+        "lvl": 12
+      },
+      "13": {
+        "bonus": 5,
+        "features": [""],
+        "lvl": 13
+      },
+      "14": {
+        "bonus": 5,
+        "features": [""],
+        "lvl": 14
+      },
+      "15": {
+        "bonus": 5,
+        "features": [""],
+        "lvl": 15
+      },
+      "16": {
+        "bonus": 5,
+        "features": [""],
+        "lvl": 16
+      },
+      "17": {
+        "bonus": 6,
+        "features": [""],
+        "lvl": 17
+      },
+      "18": {
+        "bonus": 6,
+        "features": [""],
+        "lvl": 18
+      },
+      "19": {
+        "bonus": 6,
+        "features": [""],
+        "lvl": 19
+      },
+      "20": {
+        "bonus": 6,
+        "features": [""],
+        "lvl": 20
+      }
     },
-    "thumb": ""
+    "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/369/420/618/636272705936709430.png"
   }
-  
 }
