@@ -17,32 +17,28 @@ module.exports.run = async (message, cmd, args) => {
   await message.delete() // Deletes the command message
   if (String(args)) return message.reply("ERRGAMCHA00 - Please don't use arguments.") // Command must be without args
   console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`) // Logging the request of the command
-  // Variables
+  // Local variables
   let server = message.guild
   let sender = message.author
   const filter = msg => msg.author.id === sender.id
   let milisec = 30000 // Global time of wait
-  // - // Character variables
+  // Character variables
   let salva = false
   let choosenRace = "notdefined"
   let choosenSubRace = "notdefined"
   let choosenClass = "notdefined"
   let choosenBack = "notdefined"
   let choosenName = "notdefined"
-
   let asRacial = []
   let align = ''
-
-  let min = Math.ceil(8)
-  let max = Math.floor(15)
-
-  let basestr = await Math.floor(Math.random() * (max - min + 1)) + min
-  let basedex = await Math.floor(Math.random() * (max - min + 1)) + min
-  let basecon = await Math.floor(Math.random() * (max - min + 1)) + min
-  let baseint = await Math.floor(Math.random() * (max - min + 1)) + min
-  let basewis = await Math.floor(Math.random() * (max - min + 1)) + min
-  let basecha = await Math.floor(Math.random() * (max - min + 1)) + min
-
+  // Base ability score
+  let basestr = await tools.rollfourdsix()
+  let basedex = await tools.rollfourdsix()
+  let basecon = await tools.rollfourdsix()
+  let baseint = await tools.rollfourdsix()
+  let basewis = await tools.rollfourdsix()
+  let basecha = await tools.rollfourdsix()
+  // Modifier
   let modstr = await tools.modifier(basestr)
   let moddex = await tools.modifier(basedex)
   let modcon = await tools.modifier(basecon)
@@ -142,9 +138,8 @@ module.exports.run = async (message, cmd, args) => {
       } else return console.log("Race is not defined")
     })
     .catch(ce => {
-      message.channel.send(`Time's up! • Restart the guide typing: \`${cmd}\`.`)
       choosenRace = "notdefined"
-      return console.error(ce)
+      return message.channel.send(`Time's up! • Restart the guide typing: \`${cmd}\`.`).then(console.error(ce))
     }) // -------------------------------------------------------------------
   // 1.5 - 2. Message await - this will wait for user to type the desire race.
   if (choosenSubRace === "choose") {
