@@ -5,6 +5,7 @@ const profileSchema = mongoose.Schema({
   serverID: String,
   characters: {
     alignment: String,
+    armorclass: Number,
     attributes: {
       str: {
         base: Number,

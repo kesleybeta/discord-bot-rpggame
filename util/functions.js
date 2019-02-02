@@ -3,7 +3,6 @@
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 const score = low(new FileSync('./jsonfiles/_appendix/abilityscore.json', 'utf8'))
-
 // Functions
 module.exports = {
   // Roll four 6-sided dice and record the total of the highest three
@@ -34,7 +33,6 @@ module.exports = {
     }
     return maior
   },
-
   // Return the specific ability score modifier for a determined base //
   modifier(base) {
     let mod = 0

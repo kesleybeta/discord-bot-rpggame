@@ -4,9 +4,11 @@
   },
   "description": "",
   "equip": {
-    "weapons": "",
-    "pack": "",
-    "instrument": ""
+    "armor": [""],
+    "gear": [""],
+    "pack": [""],
+    "tools": [""],
+    "weapons": [""]
   },
   "hp": {
     "hitdice": 0,

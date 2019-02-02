@@ -4,7 +4,13 @@
       "$oid": "5c53496be7179a1e4686c791"
     },
     "description": "A fierce warrior of primitive background who can enter a battle rage: unbridled, unquenchable, and unthinking fury.",
-    "equip": [""],
+    "equip": {
+      "armor": [""],
+      "gear": [""],
+      "pack": ["explorer"],
+      "tools": [""],
+      "weapons": ["greataxe", "handaxe", "javelin"]
+    },
     "hp": {
       "hitdice": 12,
       "hpfirst": 12,
@@ -14,11 +20,11 @@
     "name": "Barbarian",
     "namel": "barbarian",
     "prof": {
-      "armor": ["Light armor", "Medium armor", "Shields"],
+      "armor": ["light", "medium", "shield"],
       "savthrows": ["str", "con"],
-      "skills": ["Animal handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"],
+      "skills": ["animal handling", "athletics", "intimidation", "nature", "perception", "survival"],
       "tools": "none",
-      "weapons": ["Simple weapons", "Martial weapons"]
+      "weapons": ["simple", "martial"]
     },
     "source": "handbook",
     "table": {
@@ -127,13 +133,15 @@
   },
   "bard": {
     "_id": {
-      "$oid": "db-generate"
+      "$oid": "5c546a58e7179a1e46877859"
     },
     "description": "The bard is a master of song, speech, and the magic they contain.\nBards say that the multiverse was spoken into existence, that the words of the gods gave it shape, and that echoes of these primordial Words of Creation still resound throughout the cosmos.",
     "equip": {
-      "weapons": "rapier",
-      "pack": "entertainer",
-      "instrument": "lute"
+      "armor": [""],
+      "gear": [""],
+      "pack": ["entertainer"],
+      "tools": ["lute"],
+      "weapons": ["rapier"]
     },
     "hp": {
       "hitdice": 8,
@@ -146,9 +154,9 @@
     "prof": {
       "armor": ["light"],
       "savthrows": ["dex", "cha"],
-      "skills": ["skill01", "skill02", "skill03"],
-      "tools": ["instrument01", "instrument02", "instrument03"],
-      "weapons": ["simple", "crossbow", "longsword","rapier", "shorsword"]
+      "skills": [""],
+      "tools": [""],
+      "weapons": ["simple", "crossbow", "longsword", "rapier", "shorsword"]
     },
     "source": "handbook",
     "table": {
@@ -254,5 +262,269 @@
       }
     },
     "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/369/420/618/636272705936709430.png"
+  },
+  "cleric": {
+    "_id": {
+      "$oid": "5c54ed58fb6fc0356791ac7b"
+    },
+    "description": "Clerics are intermediaries between the mortal world and the distant planes of the gods.\nAs varied as the gods they serve, clerics strive to embody the handiwork of their deities.\nNo ordinary priest, a cleric is imbued with divine magic.",
+    "equip": {
+      "armor": ["leather", "shield"],
+      "gear": ["holy symbol"],
+      "pack": ["explorer"],
+      "tools": [""],
+      "weapons": ["mace", "light crossbow"]
+    },
+    "hp": {
+      "hitdice": 8,
+      "hpfirst": 8,
+      "hplvl": 5
+    },
+    "icon": "https://media-waterdeep.cursecdn.com/avatars/10/2/636336417054144618.jpeg",
+    "name": "Cleric",
+    "namel": "cleric",
+    "prof": {
+      "armor": ["light", "medium", "shield"],
+      "savthrows": ["wis", "cha"],
+      "skills": ["history", "insight", "medicine", "persuasion", "religion"],
+      "tools": [""],
+      "weapons": ["simple"]
+    },
+    "source": "",
+    "table": {
+      "1": {
+        "bonus": 2,
+        "features": ["spellcasting", "divine domain"],
+        "lvl": 1
+      },
+      "2": {
+        "bonus": 2,
+        "features": [""],
+        "lvl": 2
+      },
+      "3": {
+        "bonus": 2,
+        "features": [""],
+        "lvl": 3
+      },
+      "4": {
+        "bonus": 2,
+        "features": [""],
+        "lvl": 4
+      },
+      "5": {
+        "bonus": 3,
+        "features": [""],
+        "lvl": 5
+      },
+      "6": {
+        "bonus": 3,
+        "features": [""],
+        "lvl": 6
+      },
+      "7": {
+        "bonus": 3,
+        "features": [""],
+        "lvl": 7
+      },
+      "8": {
+        "bonus": 3,
+        "features": [""],
+        "lvl": 8
+      },
+      "9": {
+        "bonus": 4,
+        "features": [""],
+        "lvl": 9
+      },
+      "10": {
+        "bonus": 4,
+        "features": [""],
+        "lvl": 10
+      },
+      "11": {
+        "bonus": 4,
+        "features": [""],
+        "lvl": 11
+      },
+      "12": {
+        "bonus": 4,
+        "features": [""],
+        "lvl": 12
+      },
+      "13": {
+        "bonus": 5,
+        "features": [""],
+        "lvl": 13
+      },
+      "14": {
+        "bonus": 5,
+        "features": [""],
+        "lvl": 14
+      },
+      "15": {
+        "bonus": 5,
+        "features": [""],
+        "lvl": 15
+      },
+      "16": {
+        "bonus": 5,
+        "features": [""],
+        "lvl": 16
+      },
+      "17": {
+        "bonus": 6,
+        "features": [""],
+        "lvl": 17
+      },
+      "18": {
+        "bonus": 6,
+        "features": [""],
+        "lvl": 18
+      },
+      "19": {
+        "bonus": 6,
+        "features": [""],
+        "lvl": 19
+      },
+      "20": {
+        "bonus": 6,
+        "features": [""],
+        "lvl": 20
+      }
+    },
+    "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/371/420/618/636272706155064423.png"
+  },
+  "druid": {
+    "_id": {
+      "$oid": "5c54f4ecfb6fc0356791ae37"
+    },
+    "description": "Whether calling on the elemental forces of nature or emulating the creatures of the animal world, druids are an embodiment of nature’s resilience, cunning, and fury.\nThey claim no mastery over nature.\nInstead, they see themselves as extensions of nature’s indomitable will.",
+    "equip": {
+      "armor": ["leather"],
+      "gear": ["druidic focus"],
+      "pack": ["explorer"],
+      "tools": [""],
+      "weapons": ["spear", "scimitar"]
+    },
+    "hp": {
+      "hitdice": 8,
+      "hpfirst": 8,
+      "hplvl": 5
+    },
+    "icon": "https://media-waterdeep.cursecdn.com/avatars/10/3/636336417152216156.jpeg",
+    "name": "Druid",
+    "namel": "druid",
+    "prof": {
+      "armor": ["light", "medium", "shield"],
+      "savthrows": ["int", "wis"],
+      "skills": ["arcana", "animal handling", "insight", "medicine", "nature", "perception", "religion", "survival"],
+      "tools": ["herbalism kit"],
+      "weapons": ["club", "dagger", "dart", "javelin", "mace", "quarterstaff", "scimitar", "sickle", "sling", "spear"]
+    },
+    "source": "handbook",
+    "table": {
+      "1": {
+        "bonus": 2,
+        "features": ["druidic", "spellcasting"],
+        "lvl": 1
+      },
+      "2": {
+        "bonus": 2,
+        "features": [""],
+        "lvl": 2
+      },
+      "3": {
+        "bonus": 2,
+        "features": [""],
+        "lvl": 3
+      },
+      "4": {
+        "bonus": 2,
+        "features": [""],
+        "lvl": 4
+      },
+      "5": {
+        "bonus": 3,
+        "features": [""],
+        "lvl": 5
+      },
+      "6": {
+        "bonus": 3,
+        "features": [""],
+        "lvl": 6
+      },
+      "7": {
+        "bonus": 3,
+        "features": [""],
+        "lvl": 7
+      },
+      "8": {
+        "bonus": 3,
+        "features": [""],
+        "lvl": 8
+      },
+      "9": {
+        "bonus": 4,
+        "features": [""],
+        "lvl": 9
+      },
+      "10": {
+        "bonus": 4,
+        "features": [""],
+        "lvl": 10
+      },
+      "11": {
+        "bonus": 4,
+        "features": [""],
+        "lvl": 11
+      },
+      "12": {
+        "bonus": 4,
+        "features": [""],
+        "lvl": 12
+      },
+      "13": {
+        "bonus": 5,
+        "features": [""],
+        "lvl": 13
+      },
+      "14": {
+        "bonus": 5,
+        "features": [""],
+        "lvl": 14
+      },
+      "15": {
+        "bonus": 5,
+        "features": [""],
+        "lvl": 15
+      },
+      "16": {
+        "bonus": 5,
+        "features": [""],
+        "lvl": 16
+      },
+      "17": {
+        "bonus": 6,
+        "features": [""],
+        "lvl": 17
+      },
+      "18": {
+        "bonus": 6,
+        "features": [""],
+        "lvl": 18
+      },
+      "19": {
+        "bonus": 6,
+        "features": [""],
+        "lvl": 19
+      },
+      "20": {
+        "bonus": 6,
+        "features": [""],
+        "lvl": 20
+      }
+    },
+    "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/346/420/618/636272691461725405.png"
   }
 }
