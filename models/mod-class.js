@@ -27,104 +27,104 @@ const classSchema = mongoose.Schema({
   source: String,
   table: {
     1: {
-      bonus: 2,
+      bonus: Number,
       features: Array,
-      lvl: 1
+      lvl: Number
     },
     2: {
-      bonus: 2,
+      bonus: Number,
       features: Array,
-      lvl: 2
+      lvl: Number
     },
     3: {
-      bonus: 2,
+      bonus: Number,
       features: Array,
-      lvl: 3
+      lvl: Number
     },
     4: {
-      bonus: 2,
+      bonus: Number,
       features: Array,
-      lvl: 4
+      lvl: Number
     },
     5: {
-      bonus: 3,
+      bonus: Number,
       features: Array,
-      lvl: 5
+      lvl: Number
     },
     6: {
-      bonus: 3,
+      bonus: Number,
       features: Array,
-      lvl: 6
+      lvl: Number
     },
     7: {
-      bonus: 3,
+      bonus: Number,
       features: Array,
-      lvl: 7
+      lvl: Number
     },
     8: {
-      bonus: 3,
+      bonus: Number,
       features: Array,
-      lvl: 8
+      lvl: Number
     },
     9: {
-      bonus: 4,
+      bonus: Number,
       features: Array,
-      lvl: 9
+      lvl: Number
     },
     10: {
-      bonus: 4,
+      bonus: Number,
       features: Array,
-      lvl: 10
+      lvl: Number
     },
     11: {
-      bonus: 4,
+      bonus: Number,
       features: Array,
-      lvl: 11
+      lvl: Number
     },
     12: {
-      bonus: 4,
+      bonus: Number,
       features: Array,
-      lvl: 12
+      lvl: Number
     },
     13: {
-      bonus: 5,
+      bonus: Number,
       features: Array,
-      lvl: 13
+      lvl: Number
     },
     14: {
-      bonus: 5,
+      bonus: Number,
       features: Array,
-      lvl: 14
+      lvl: Number
     },
     15: {
-      bonus: 5,
+      bonus: Number,
       features: Array,
-      lvl: 15
+      lvl: Number
     },
     16: {
-      bonus: 5,
+      bonus: Number,
       features: Array,
-      lvl: 16
+      lvl: Number
     },
     17: {
-      bonus: 6,
+      bonus: Number,
       features: Array,
-      lvl: 17
+      lvl: Number
     },
     18: {
-      bonus: 6,
+      bonus: Number,
       features: Array,
-      lvl: 18
+      lvl: Number
     },
     19: {
-      bonus: 6,
+      bonus: Number,
       features: Array,
-      lvl: 19
+      lvl: Number
     },
     20: {
-      bonus: 6,
+      bonus: Number,
       features: Array,
-      lvl: 20
+      lvl: Number
     }
   },
   thumb: String

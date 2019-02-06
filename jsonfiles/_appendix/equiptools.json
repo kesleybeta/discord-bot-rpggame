@@ -1,0 +1,341 @@
+{
+  "artisan": {
+    "alchemist": {
+      "cost": {
+        "bp": 0,
+        "gp": 50,
+        "sp": 0
+      },
+      "name": "Alchemist's supplies",
+      "weight": 8
+    },
+    "brewer": {
+      "cost": {
+        "bp": 0,
+        "gp": 20,
+        "sp": 0
+      },
+      "name": "Brewer's supplies",
+      "weight": 9
+    },
+    "calligrapher": {
+      "cost": {
+        "bp": 0,
+        "gp": 10,
+        "sp": 0
+      },
+      "name": "Calligrapher's supplies",
+      "weight": 5
+    },
+    "carpenter": {
+      "cost": {
+        "bp": 0,
+        "gp": 8,
+        "sp": 0
+      },
+      "name": "Carpenter's tools",
+      "weight": 6
+    },
+    "cartographer": {
+      "cost": {
+        "bp": 0,
+        "gp": 15,
+        "sp": 0
+      },
+      "name": "Cartographer's tools",
+      "weight": 6
+    },
+    "cobbler": {
+      "cost": {
+        "bp": 0,
+        "gp": 5,
+        "sp": 0
+      },
+      "name": "Cobbler's tools",
+      "weight": 5
+    },
+    "cook": {
+      "cost": {
+        "bp": 0,
+        "gp": 1,
+        "sp": 0
+      },
+      "name": "Cook's utensils",
+      "weight": 8
+    },
+    "glassblower": {
+      "cost": {
+        "bp": 0,
+        "gp": 30,
+        "sp": 0
+      },
+      "name": "Glassblower's tools",
+      "weight": 5
+    },
+    "jeweler": {
+      "cost": {
+        "bp": 0,
+        "gp": 25,
+        "sp": 0
+      },
+      "name": "Jeweler's tools",
+      "weight": 2
+    },
+    "leatherworker": {
+      "cost": {
+        "bp": 0,
+        "gp": 5,
+        "sp": 0
+      },
+      "name": "Leatherworker's tools",
+      "weight": 5
+    },
+    "mason": {
+      "cost": {
+        "bp": 0,
+        "gp": 10,
+        "sp": 0
+      },
+      "name": "Mason's tools",
+      "weight": 8
+    },
+    "painter": {
+      "cost": {
+        "bp": 0,
+        "gp": 10,
+        "sp": 0
+      },
+      "name": "Painter's supplies",
+      "weight": 5
+    },
+    "potter": {
+      "cost": {
+        "bp": 0,
+        "gp": 10,
+        "sp": 0
+      },
+      "name": "Potter's tools",
+      "weight": 3
+    },
+    "smith": {
+      "cost": {
+        "bp": 0,
+        "gp": 20,
+        "sp": 0
+      },
+      "name": "Smith's tools",
+      "weight": 8
+    },
+    "tinker": {
+      "cost": {
+        "bp": 0,
+        "gp": 50,
+        "sp": 0
+      },
+      "name": "Tinker's tools",
+      "weight": 10
+    },
+    "weaver": {
+      "cost": {
+        "bp": 0,
+        "gp": 1,
+        "sp": 0
+      },
+      "name": "Weaver's tools",
+      "weight": 5
+    },
+    "woodcarver": {
+      "cost": {
+        "bp": 0,
+        "gp": 1,
+        "sp": 0
+      },
+      "name": "Woodcarver's tools",
+      "weight": 5
+    }
+  },
+  "disguise": {
+    "cost": {
+      "bp": 0,
+      "gp": 25,
+      "sp": 0
+    },
+    "name": "Disguise kit",
+    "weight": 3
+  },
+  "forgery": {
+    "cost": {
+      "bp": 0,
+      "gp": 15,
+      "sp": 0
+    },
+    "name": "Forgery kit",
+    "weight": 5
+  },
+  "gaming": {
+    "ante": {
+      "cost": {
+        "bp": 0,
+        "gp": 1,
+        "sp": 0
+      },
+      "name": "Three-Dragon Ante set",
+      "weight": 0
+    },
+    "dice": {
+      "cost": {
+        "bp": 0,
+        "gp": 0,
+        "sp": 1
+      },
+      "name": "Dice set",
+      "weight": 1
+    },
+    "dragonchess": {
+      "cost": {
+        "bp": 0,
+        "gp": 1,
+        "sp": 0
+      },
+      "name": "Dragonchess set",
+      "weight": 0.5
+    },
+    "playing": {
+      "cost": {
+        "bp": 0,
+        "gp": 0,
+        "sp": 5
+      },
+      "name": "Playing card set",
+      "weight": 0
+    }
+  },
+  "herbalism": {
+    "cost": {
+      "bp": 0,
+      "gp": 5,
+      "sp": 0
+    },
+    "name": "Herbalism kit",
+    "weight": 3
+  },
+  "instrument": {
+    "bagpipes": {
+      "cost": {
+        "bp": 0,
+        "gp": 30,
+        "sp": 0
+      },
+      "name": "Bagpipes",
+      "weight": 6
+    },
+    "drum": {
+      "cost": {
+        "bp": 0,
+        "gp": 6,
+        "sp": 0
+      },
+      "name": "Drum",
+      "weight": 3
+    },
+    "dulcimer": {
+      "cost": {
+        "bp": 0,
+        "gp": 25,
+        "sp": 0
+      },
+      "name": "Dulcimer",
+      "weight": 10
+    },
+    "flute": {
+      "cost": {
+        "bp": 0,
+        "gp": 2,
+        "sp": 0
+      },
+      "name": "flute",
+      "weight": 1
+    },
+    "horn": {
+      "cost": {
+        "bp": 0,
+        "gp": 3,
+        "sp": 0
+      },
+      "name": "Horn",
+      "weight": 2
+    },
+    "lute": {
+      "cost": {
+        "bp": 0,
+        "gp": 35,
+        "sp": 0
+      },
+      "name": "Lute",
+      "weight": 2
+    },
+    "lyre": {
+      "cost": {
+        "bp": 0,
+        "gp": 30,
+        "sp": 0
+      },
+      "name": "Lyre",
+      "weight": 2
+    },
+    "pan": {
+      "cost": {
+        "bp": 0,
+        "gp": 12,
+        "sp": 0
+      },
+      "name": "Pan flute",
+      "weight": 2
+    },
+    "shawm": {
+      "cost": {
+        "bp": 0,
+        "gp": 2,
+        "sp": 0
+      },
+      "name": "Shawm",
+      "weight": 1
+    },
+    "viol": {
+      "cost": {
+        "bp": 0,
+        "gp": 30,
+        "sp": 0
+      },
+      "name": "Viol",
+      "weight": 1
+    }
+  },
+  "navigator": {
+    "cost": {
+      "bp": 0,
+      "gp": 25,
+      "sp": 0
+    },
+    "name": "Navigator's tools",
+    "weight": 2
+  },
+  "poisoner": {
+    "cost": {
+      "bp": 0,
+      "gp": 50,
+      "sp": 0
+    },
+    "name": "Poisoner's kit",
+    "weight": 2
+  },
+  "thieves": {
+    "cost": {
+      "bp": 0,
+      "gp": 25,
+      "sp": 0
+    },
+    "name": "Thieves' tools",
+    "weight": 1
+  }
+}

@@ -11,36 +11,42 @@ const profileSchema = mongoose.Schema({
         base: Number,
         racial: Number,
         mod: Number,
+        improve: Number,
         total: Number
       },
       dex: {
         base: Number,
         racial: Number,
         mod: Number,
+        improve: Number,
         total: Number
       },
       con: {
         base: Number,
         racial: Number,
         mod: Number,
+        improve: Number,
         total: Number
       },
       int: {
         base: Number,
         racial: Number,
         mod: Number,
+        improve: Number,
         total: Number
       },
       wis: {
         base: Number,
         racial: Number,
         mod: Number,
+        improve: Number,
         total: Number
       },
       cha: {
         base: Number,
         racial: Number,
         mod: Number,
+        improve: Number,
         total: Number
       }
     },

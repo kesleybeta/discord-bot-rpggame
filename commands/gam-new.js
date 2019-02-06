@@ -317,40 +317,47 @@ module.exports.run = async (message, cmd, args) => {
                         race: choosenSubRace || choosenRace,
                         class: choosenClass,
                         background: choosenBack,
+                        level: 1,
                         attributes: {
                           str: {
                             base: basestr,
                             racial: asRacial.str,
+                            improve: 0,
                             mod: modstr,
                             total: basestr + asRacial.str
                           },
                           dex: {
                             base: basedex,
                             racial: asRacial.dex,
+                            improve: 0,
                             mod: moddex,
                             total: basedex + asRacial.dex
                           },
                           con: {
                             base: basecon,
                             racial: asRacial.con,
+                            improve: 0,
                             mod: modcon,
                             total: basecon + asRacial.con
                           },
                           int: {
                             base: baseint,
                             racial: asRacial.int,
+                            improve: 0,
                             mod: modint,
                             total: baseint + asRacial.int
                           },
                           wis: {
                             base: basewis,
                             racial: asRacial.wis,
+                            improve: 0,
                             mod: modwis,
                             total: basewis + asRacial.wis
                           },
                           cha: {
                             base: basecha,
                             racial: asRacial.cha,
+                            improve: 0,
                             mod: modcha,
                             total: basecha + asRacial.cha
                           }

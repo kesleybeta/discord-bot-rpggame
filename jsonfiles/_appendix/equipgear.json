@@ -1,0 +1,808 @@
+{
+  "ammunition": {
+    "arrows": {
+      "cost": {
+        "bp": 0,
+        "gp": 1,
+        "sp": 0
+      },
+      "qtd": 20,
+      "weight": 1
+    },
+    "blowgun needles": {
+      "cost": {
+        "bp": 0,
+        "gp": 1,
+        "sp": 0
+      },
+      "qtd": 50,
+      "weight": 1
+    },
+    "crossbow bolts": {
+      "cost": {
+        "bp": 0,
+        "gp": 1,
+        "sp": 0
+      },
+      "qtd": 20,
+      "weight": 1.5
+    },
+    "sling bullets": {
+      "cost": {
+        "bp": 4,
+        "gp": 0,
+        "sp": 0
+      },
+      "qtd": 20,
+      "weight": 1.5
+    }
+  },
+  "arcane focus": {
+    "crystal": {
+      "cost": {
+        "bp": 0,
+        "gp": 10,
+        "sp": 0
+      },
+      "weight": 1
+    },
+    "orb": {
+      "cost": {
+        "bp": 0,
+        "gp": 20,
+        "sp": 0
+      },
+      "weight": 3
+    },
+    "rod": {
+      "cost": {
+        "bp": 0,
+        "gp": 10,
+        "sp": 0
+      },
+      "weight": 2
+    },
+    "staff": {
+      "cost": {
+        "bp": 0,
+        "gp": 5,
+        "sp": 0
+      },
+      "weight": 4
+    },
+    "wand": {
+      "cost": {
+        "bp": 0,
+        "gp": 10,
+        "sp": 0
+      },
+      "weight": 1
+    }
+  },
+  "druidic focus": {
+    "sprig of mistletoe": {
+      "cost": {
+        "bp": 0,
+        "gp": 1,
+        "sp": 0
+      },
+      "weight": 0
+    },
+    "totem": {
+      "cost": {
+        "bp": 0,
+        "gp": 1,
+        "sp": 0
+      },
+      "weight": 0
+    },
+    "wooden staff": {
+      "cost": {
+        "bp": 0,
+        "gp": 5,
+        "sp": 0
+      },
+      "weight": 4
+    },
+    "yew wand": {
+      "cost": {
+        "bp": 0,
+        "gp": 10,
+        "sp": 0
+      },
+      "weight": 1
+    }
+  },
+  "holy symbol": {
+    "amulet": {
+      "cost": {
+        "bp": 0,
+        "gp": 5,
+        "sp": 0
+      },
+      "weight": 1
+    },
+    "emblem": {
+      "cost": {
+        "bp": 0,
+        "gp": 5,
+        "sp": 0
+      },
+      "weight": 0
+    },
+    "reliquary": {
+      "cost": {
+        "bp": 0,
+        "gp": 5,
+        "sp": 0
+      },
+      "weight": 2
+    }
+  },
+  "other": {
+    "Ball bearings (bag of 1,000)": {
+      "cost": {
+        "bp": 0,
+        "gp": 1,
+        "sp": 0
+      },
+      "weight": 2
+    },
+    "Barrel": {
+      "cost": {
+        "bp": 0,
+        "gp": 2,
+        "sp": 0
+      },
+      "weight": 70
+    },
+    "Basket": {
+      "cost": {
+        "bp": 0,
+        "gp": 0,
+        "sp": 2
+      },
+      "weight": 52
+    },
+    "Bedroll": {
+      "cost": {
+        "bp": 0,
+        "gp": 1,
+        "sp": 0
+      },
+      "weight": 7
+    },
+    "Bell": {
+      "cost": {
+        "bp": 0,
+        "gp": 1,
+        "sp": 0
+      },
+      "weight": 0
+    },
+    "Blanket": {
+      "cost": {
+        "bp": 0,
+        "gp": 0,
+        "sp": 5
+      },
+      "weight": 3
+    },
+    "Block and tackle": {
+      "cost": {
+        "bp": 0,
+        "gp": 1,
+        "sp": 0
+      },
+      "weight": 5
+    },
+    "Book": {
+      "cost": {
+        "bp": 0,
+        "gp": 25,
+        "sp": 0
+      },
+      "weight": 5
+    },
+    "Bottle glass": {
+      "cost": {
+        "bp": 0,
+        "gp": 2,
+        "sp": 0
+      },
+      "weight": 2
+    },
+    "Bucket": {
+      "cost": {
+        "bp": 5,
+        "gp": 0,
+        "sp": 0
+      },
+      "weight": 2
+    },
+    "Caltrops(bag of 20)": {
+      "cost": {
+        "bp": 0,
+        "gp": 1,
+        "sp": 0
+      },
+      "weight": 2
+    },
+    "Candle": {
+      "cost": {
+        "bp": 1,
+        "gp": 0,
+        "sp": 0
+      },
+      "weight": 0
+    },
+    "Case, crossbow bolt": {
+      "cost": {
+        "bp": 0,
+        "gp": 1,
+        "sp": 0
+      },
+      "weight": 1
+    },
+    "Case, map or scroll": {
+      "cost": {
+        "bp": 0,
+        "gp": 1,
+        "sp": 0
+      },
+      "weight": 1
+    },
+    "Chain(10 feet)": {
+      "cost": {
+        "bp": 0,
+        "gp": 5,
+        "sp": 0
+      },
+      "weight": 10
+    },
+    "Chalk(1 piece)": {
+      "cost": {
+        "bp": 1,
+        "gp": 0,
+        "sp": 0
+      },
+      "weight": 0
+    },
+    "Chest": {
+      "cost": {
+        "bp": 0,
+        "gp": 5,
+        "sp": 0
+      },
+      "weight": 25
+    },
+    "Climber's kit": {
+      "cost": {
+        "bp": 0,
+        "gp": 25,
+        "sp": 0
+      },
+      "weight": 12
+    },
+    "Clothes, common": {
+      "cost": {
+        "bp": 0,
+        "gp": 0,
+        "sp": 5
+      },
+      "weight": 3
+    },
+    "Clothes, costume": {
+      "cost": {
+        "bp": 0,
+        "gp": 5,
+        "sp": 0
+      },
+      "weight": 4
+    },
+    "Clothes, fine": {
+      "cost": {
+        "bp": 0,
+        "gp": 15,
+        "sp": 0
+      },
+      "weight": 6
+    },
+    "Clothes, traveler's": {
+      "cost": {
+        "bp": 0,
+        "gp": 2,
+        "sp": 0
+      },
+      "weight": 4
+    },
+    "Component pouch": {
+      "cost": {
+        "bp": 0,
+        "gp": 25,
+        "sp": 0
+      },
+      "weight": 2
+    },
+    "Crowbar": {
+      "cost": {
+        "bp": 0,
+        "gp": 2,
+        "sp": 0
+      },
+      "weight": 5
+    },
+    "Fishing tackle": {
+      "cost": {
+        "bp": 0,
+        "gp": 1,
+        "sp": 0
+      },
+      "weight": 4
+    },
+    "Flask or tankard": {
+      "cost": {
+        "bp": 1,
+        "gp": 0,
+        "sp": 0
+      },
+      "weight": 1
+    },
+    "Grappling hook": {
+      "cost": {
+        "bp": 0,
+        "gp": 2,
+        "sp": 0
+      },
+      "weight": 4
+    },
+    "Hammer": {
+      "cost": {
+        "bp": 0,
+        "gp": 1,
+        "sp": 0
+      },
+      "weight": 3
+    },
+    "Hammer, sledge": {
+      "cost": {
+        "bp": 0,
+        "gp": 2,
+        "sp": 0
+      },
+      "weight": 10
+    },
+    "Healer 's kit": {
+      "cost": {
+        "bp": 0,
+        "gp": 5,
+        "sp": 0
+      },
+      "weight": 3
+    },
+    "Holy water(flask)": {
+      "cost": {
+        "bp": 0,
+        "gp": 25,
+        "sp": 0
+      },
+      "weight": 1
+    },
+    "Hourglass": {
+      "cost": {
+        "bp": 0,
+        "gp": 25,
+        "sp": 0
+      },
+      "weight": 1
+    },
+    "Hunting trap": {
+      "cost": {
+        "bp": 0,
+        "gp": 5,
+        "sp": 0
+      },
+      "weight": 25
+    },
+    "Ink pen": {
+      "cost": {
+        "bp": 2,
+        "gp": 0,
+        "sp": 0
+      },
+      "weight": 0
+    },
+    "Ink(1 ounce bottle)": {
+      "cost": {
+        "bp": 0,
+        "gp": 10,
+        "sp": 0
+      },
+      "weight": 0
+    },
+    "Jug or pitcher": {
+      "cost": {
+        "bp": 2,
+        "gp": 0,
+        "sp": 0
+      },
+      "weight": 4
+    },
+    "Ladder(10 foot)": {
+      "cost": {
+        "bp": 0,
+        "gp": 0,
+        "sp": 1
+      },
+      "weight": 25
+    },
+    "Lamp": {
+      "cost": {
+        "bp": 0,
+        "gp": 0,
+        "sp": 5
+      },
+      "weight": 1
+    },
+    "Lantern, bullseye": {
+      "cost": {
+        "bp": 0,
+        "gp": 10,
+        "sp": 0
+      },
+      "weight": 2
+    },
+    "Lantern, hooded": {
+      "cost": {
+        "bp": 0,
+        "gp": 5,
+        "sp": 0
+      },
+      "weight": 2
+    },
+    "Lock": {
+      "cost": {
+        "bp": 0,
+        "gp": 10,
+        "sp": 0
+      },
+      "weight": 1
+    },
+    "Magnifying glass": {
+      "cost": {
+        "bp": 0,
+        "gp": 100,
+        "sp": 0
+      },
+      "weight": 0
+    },
+    "Manacles": {
+      "cost": {
+        "bp": 0,
+        "gp": 2,
+        "sp": 0
+      },
+      "weight": 6
+    },
+    "Mess kit": {
+      "cost": {
+        "bp": 0,
+        "gp": 0,
+        "sp": 2
+      },
+      "weight": 1
+    },
+    "Mirror, steel": {
+      "cost": {
+        "bp": 0,
+        "gp": 5,
+        "sp": 0
+      },
+      "weight": 1.5
+    },
+    "Oil(flask)": {
+      "cost": {
+        "bp": 0,
+        "gp": 0,
+        "sp": 1
+      },
+      "weight": 1
+    },
+    "Paper(one sheet)": {
+      "cost": {
+        "bp": 0,
+        "gp": 0,
+        "sp": 2
+      },
+      "weight": 0
+    },
+    "Parchment(one sheet)": {
+      "cost": {
+        "bp": 0,
+        "gp": 0,
+        "sp": 1
+      },
+      "weight": 0
+    },
+    "Perfume(vial)": {
+      "cost": {
+        "bp": 0,
+        "gp": 5,
+        "sp": 0
+      },
+      "weight": 0
+    },
+    "Pick, miner's": {
+      "cost": {
+        "bp": 0,
+        "gp": 2,
+        "sp": 0
+      },
+      "weight": 10
+    },
+    "Piton": {
+      "cost": {
+        "bp": 5,
+        "gp": 0,
+        "sp": 0
+      },
+      "weight": 0.75
+    },
+    "Poison, basic(vial)": {
+      "cost": {
+        "bp": 0,
+        "gp": 100,
+        "sp": 0
+      },
+      "weight": 0
+    },
+    "Pole(10 - foot)": {
+      "cost": {
+        "bp": 5,
+        "gp": 0,
+        "sp": 0
+      },
+      "weight": 7
+    },
+    "Pot, iron": {
+      "cost": {
+        "bp": 0,
+        "gp": 2,
+        "sp": 0
+      },
+      "weight": 10
+    },
+    "Potion of healing": {
+      "cost": {
+        "bp": 0,
+        "gp": 50,
+        "sp": 0
+      },
+      "weight": 0.5
+    },
+    "Pouch": {
+      "cost": {
+        "bp": 0,
+        "gp": 0,
+        "sp": 5
+      },
+      "weight": 1
+    },
+    "Quiver": {
+      "cost": {
+        "bp": 0,
+        "gp": 1,
+        "sp": 0
+      },
+      "weight": 1
+    },
+    "Ram, portable": {
+      "cost": {
+        "bp": 0,
+        "gp": 4,
+        "sp": 0
+      },
+      "weight": 35
+    },
+    "Rations(1 day)": {
+      "cost": {
+        "bp": 0,
+        "gp": 0,
+        "sp": 5
+      },
+      "weight": 2
+    },
+    "Robes": {
+      "cost": {
+        "bp": 0,
+        "gp": 1,
+        "sp": 0
+      },
+      "weight": 4
+    },
+    "Rope, hempen(50 feet)": {
+      "cost": {
+        "bp": 0,
+        "gp": 1,
+        "sp": 0
+      },
+      "weight": 10
+    },
+    "Rope, silk(50 feet)": {
+      "cost": {
+        "bp": 0,
+        "gp": 10,
+        "sp": 0
+      },
+      "weight": 5
+    },
+    "Sack": {
+      "cost": {
+        "bp": 1,
+        "gp": 0,
+        "sp": 0
+      },
+      "weight": 0.5
+    },
+    "Scale, merchant's": {
+      "cost": {
+        "bp": 0,
+        "gp": 5,
+        "sp": 0
+      },
+      "weight": 3
+    },
+    "Sealing wax": {
+      "cost": {
+        "bp": 0,
+        "gp": 0,
+        "sp": 5
+      },
+      "weight": 0
+    },
+    "Shovel": {
+      "cost": {
+        "bp": 0,
+        "gp": 2,
+        "sp": 0
+      },
+      "weight": 5
+    },
+    "Signal whistle": {
+      "cost": {
+        "bp": 5,
+        "gp": 0,
+        "sp": 0
+      },
+      "weight": 0
+    },
+    "Signet ring": {
+      "cost": {
+        "bp": 0,
+        "gp": 5,
+        "sp": 0
+      },
+      "weight": 0
+    },
+    "Soap": {
+      "cost": {
+        "bp": 2,
+        "gp": 0,
+        "sp": 0
+      },
+      "weight": 0
+    },
+    "Spellbook": {
+      "cost": {
+        "bp": 0,
+        "gp": 50,
+        "sp": 0
+      },
+      "weight": 3
+    },
+    "Spikes, iron(10)": {
+      "cost": {
+        "bp": 0,
+        "gp": 1,
+        "sp": 0
+      },
+      "weight": 5
+    },
+    "Spyglass": {
+      "cost": {
+        "bp": 0,
+        "gp": 1000,
+        "sp": 0
+      },
+      "weight": 1
+    },
+    "Tent, two - person": {
+      "cost": {
+        "bp": 0,
+        "gp": 2,
+        "sp": 0
+      },
+      "weight": 20
+    },
+    "Tinderbox": {
+      "cost": {
+        "bp": 0,
+        "gp": 0,
+        "sp": 5
+      },
+      "weight": 1
+    },
+    "Torch": {
+      "cost": {
+        "bp": 1,
+        "gp": 0,
+        "sp": 0
+      },
+      "weight": 1
+    },
+    "Vial": {
+      "cost": {
+        "bp": 0,
+        "gp": 1,
+        "sp": 0
+      },
+      "weight": 0
+    },
+    "Waterskin": {
+      "cost": {
+        "bp": 0,
+        "gp": 0,
+        "sp": 2
+      },
+      "weight": 5
+    },
+    "Whetstone": {
+      "cost": {
+        "bp": 1,
+        "gp": 0,
+        "sp": 0
+      },
+      "weight": 1
+    },
+    "abacus": {
+      "cost": {
+        "bp": 0,
+        "gp": 2,
+        "sp": 0
+      },
+      "weight": 2
+    },
+    "alchemist's fire flask": {
+      "cost": {
+        "bp": 0,
+        "gp": 50,
+        "sp": 0
+      },
+      "weight": 1
+    },
+    "backpack": {
+      "cost": {
+        "bp": 0,
+        "gp": 2,
+        "sp": 0
+      },
+      "weight": 5
+    },
+    "vial of acid": {
+      "cost": {
+        "bp": 0,
+        "gp": 25,
+        "sp": 0
+      },
+      "weight": 1
+    },
+    "vial of antitoxin": {
+      "cost": {
+        "bp": 0,
+        "gp": 50,
+        "sp": 0
+      },
+      "weight": 0
+    }
+  }
+}
