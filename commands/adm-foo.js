@@ -6,6 +6,7 @@ module.exports.run = async (message, cmd, args) => {
   await console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`)
   // Variables
   // Code lines
+
   return message.channel.send(`BAR`)
 }
 

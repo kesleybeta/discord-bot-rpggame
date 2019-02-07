@@ -5,7 +5,7 @@ const FileSync = require('lowdb/adapters/FileSync')
 const score = low(new FileSync('./jsonfiles/_appendix/abilityscore.json', 'utf8'))
 // Functions
 module.exports = {
-  // Roll four 6-sided dice and record the total of the highest three
+  // Roll four 6-sided dice and record the total of the highest three //
   rollfourdsix() {
     // variables
     let min = Math.ceil(1)
@@ -32,7 +32,8 @@ module.exports = {
       if (total > maior) maior = total
     }
     return maior
-  },
+  }, // ------------------------------------------------------------- //
+
   // Return the specific ability score modifier for a determined base //
   modifier(base) {
     let mod = 0
@@ -42,5 +43,23 @@ module.exports = {
       console.log('[ERR#FUN0101]: ' + err)
     }
     return mod
-  } // -------------------------------------------------------------- //
-}
+  }, // ------------------------------------------------------------- //
+
+  // Return sum of a 'quantity' of 'numOfSides' sided dices //
+  roll(quantity, numOfSides) {
+    // variables
+    let min = Math.ceil(1)
+    let max = 0
+    let sum = 0
+    // Code lines
+    if (isNaN(quantity)) quantity = 1 // eslint-disable-line no-param-reassign
+    if (isNaN(numOfSides)) numOfSides = Math.floor(Math.random() * (6 - 4 + 1)) + 4 // eslint-disable-line no-param-reassign
+    if (quantity < 1) quantity = 1 // eslint-disable-line no-param-reassign
+    if (!numOfSides) numOfSides = Math.floor(Math.random() * (6 - 4 + 1)) + 4 // eslint-disable-line no-param-reassign
+
+    max = Math.floor(numOfSides)
+    for (let i = 1; i <= quantity; i++) sum = sum + Math.floor(Math.random() * (max - min + 1)) + min
+
+    return sum
+  }
+} // ------------------------------------------------------ //

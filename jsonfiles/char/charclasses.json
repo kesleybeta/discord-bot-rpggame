@@ -1584,6 +1584,135 @@
     "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/357/420/618/636272696881281556.png"
   },
   "blood hunter": {
-
+    "_id": {
+      "$oid": "5c5c6f5ffb6fc06f4f57fae1"
+    },
+    "description": "They sacrifice some of their own vital force in dubious, forgotten blood rituals to better understand their enemies.\nTheir methods sometimes blur the line between themselves and the evils they hunt, calling their own humanity into question.\n\nThese folk are called 'Blood Hunters.'",
+    "equip": {
+      "armor": ["scale mail"],
+      "gear": [""],
+      "pack": ["explorer"],
+      "tools": [""],
+      "weapons": ["longsword", "hand crossbow"]
+    },
+    "hp": {
+      "hitdice": 10,
+      "hpfirst": 10,
+      "hplvl": 6
+    },
+    "icon": "https://media-waterdeep.cursecdn.com/avatars/97/501/636502525831528922.png",
+    "name": "Blood Hunter",
+    "namel": "blood hunter",
+    "prof": {
+      "armor": ["light", "medium", "shield"],
+      "savthrows": ["str", "wis"],
+      "skills": [2, "athletics", "acrobatics", "arcana", "insight", "investigation", "survival"],
+      "tools": ["alchemist"],
+      "weapons": ["simple", "martial"]
+    },
+    "source": "mattmercer",
+    "table": {
+      "1": {
+        "bonus": 2,
+        "features": ["hunter's bane", "crimson rite"],
+        "lvl": 1
+      },
+      "2": {
+        "bonus": 2,
+        "features": ["fighting style", "blood maledict"],
+        "lvl": 2
+      },
+      "3": {
+        "bonus": 2,
+        "features": ["blood hunter order"],
+        "lvl": 3
+      },
+      "4": {
+        "bonus": 2,
+        "features": ["ability score improvement"],
+        "lvl": 4
+      },
+      "5": {
+        "bonus": 3,
+        "features": ["extra attack"],
+        "lvl": 5
+      },
+      "6": {
+        "bonus": 3,
+        "features": ["blood maledict"],
+        "lvl": 6
+      },
+      "7": {
+        "bonus": 3,
+        "features": ["order feature"],
+        "lvl": 7
+      },
+      "8": {
+        "bonus": 3,
+        "features": ["ability score improvement"],
+        "lvl": 8
+      },
+      "9": {
+        "bonus": 4,
+        "features": ["grim psychometry"],
+        "lvl": 9
+      },
+      "10": {
+        "bonus": 4,
+        "features": ["dark velocity"],
+        "lvl": 10
+      },
+      "11": {
+        "bonus": 4,
+        "features": ["order feature", "blood maledict"],
+        "lvl": 11
+      },
+      "12": {
+        "bonus": 4,
+        "features": ["ability score improvement"],
+        "lvl": 12
+      },
+      "13": {
+        "bonus": 5,
+        "features": [""],
+        "lvl": 13
+      },
+      "14": {
+        "bonus": 5,
+        "features": ["hardened soul"],
+        "lvl": 14
+      },
+      "15": {
+        "bonus": 5,
+        "features": ["order feature"],
+        "lvl": 15
+      },
+      "16": {
+        "bonus": 5,
+        "features": ["ability score improvement"],
+        "lvl": 16
+      },
+      "17": {
+        "bonus": 6,
+        "features": ["blood maledict"],
+        "lvl": 17
+      },
+      "18": {
+        "bonus": 6,
+        "features": ["order feature"],
+        "lvl": 18
+      },
+      "19": {
+        "bonus": 6,
+        "features": ["ability score improvement"],
+        "lvl": 19
+      },
+      "20": {
+        "bonus": 6,
+        "features": ["sanguine mastery"],
+        "lvl": 20
+      }
+    },
+    "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/101/642/420/618/636508498805912769.png"
   }
 }

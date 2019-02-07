@@ -1,5 +1,103 @@
 {
-  "martial": {},
+  "martial": {
+    "melee": {
+      "battleaxe": {
+        "cost": {
+          "bp": 0,
+          "gp": 10,
+          "sp": 0
+        },
+        "damage": {
+          "hitdie": 8,
+          "type": "slashing"
+        },
+        "name": "Battleaxe",
+        "namel": "battleaxe",
+        "properties": ["versatile"],
+        "weight": 4
+      },
+      "flail": {
+        "cost": {
+          "bp": 0,
+          "gp": 10,
+          "sp": 0
+        },
+        "damage": {
+          "hitdie": 8,
+          "type": "bludgeoning"
+        },
+        "name": "Flail",
+        "namel": "flail",
+        "properties": [""],
+        "weight": 2
+      },
+      "glaive": {
+        "cost": {
+          "bp": 0,
+          "gp": 20,
+          "sp": 0
+        },
+        "damage": {
+          "hitdie": 10,
+          "type": "slashing"
+        },
+        "name": "Glaive",
+        "namel": "glaive",
+        "properties": ["heavy", "reach", "two-handed"],
+        "weight": 6
+      },
+      "greataxe": {
+        "cost": {
+          "bp": 0,
+          "gp": 30,
+          "sp": 0
+        },
+        "damage": {
+          "hitdie": 12,
+          "type": "slashing"
+        },
+        "name": "Greataxe",
+        "namel": "greataxe",
+        "properties": ["heavy", "two-handed"],
+        "weight": 7
+      },
+      "greatsword": {
+        "cost": {
+          "bp": 0,
+          "gp": 50,
+          "sp": 0
+        },
+        "damage": {
+          "hitdie": [2, 6],
+          "type": "slashing"
+        },
+        "name": "Greatsword",
+        "namel": "greatsword",
+        "properties": ["heavy", "two-handed"],
+        "weight": 6
+      },
+      "Halberd": "20 gp 1 d10 slashing 6 lb.Heavy, reach, two - handed",
+      "Lance": "10 gp 1 d12 piercing 6 lb.Reach, special",
+      "Longsword": "15 gp 1 d8 slashing 3 lb.Versatile(1 d10)",
+      "Maul": "10 gp 2 d6 bludgeoning 10 lb.Heavy, two - handed",
+      "Morningstar": "15 gp 1 d8 piercing 4 lb. -",
+      "Pike": "5 gp 1 d10 piercing 18 lb.Heavy, reach, two - handed",
+      "Rapier": "25 gp 1 d8 piercing 2 lb.Finesse",
+      "Scimitar": "25 gp 1 d6 slashing 3 lb.Finesse, light",
+      "Shortsword": "10 gp 1 d6 piercing 2 lb.Finesse, light",
+      "Trident": "5 gp 1 d6 piercing 4 lb.Thrown(range 20 / 60), versatile(1 d8)",
+      "War pick": "5 gp 1 d8 piercing 2 lb. -",
+      "warhammer": "15 gp 1 d8 bludgeoning 2 lb.Versatile(1 d10)",
+      "Whip": "2 gp 1 d4 slashing 3 lb.Finesse, reach"
+    },
+    "ranged": {
+      "Blowgun": "10 gp 1 piercing 1 lb.Ammunition(range 25 / 100), loading",
+      "Crossbow, hand": "75 gp 1 d6 piercing 3 lb.Ammunition(range 30 / 120), light, loading",
+      "Crossbow, heavy": "50 gp 1 d10 piercing 18 lb.Ammunition(range 100 / 400), heavy, loading, two - handed",
+      "Longbow": "50 gp 1 d8 piercing 2 lb.Ammunition(range 150 / 600), heavy, two - handed",
+      "Net": "1 gp - 3 lb.Special, thrown(range 5 / 15)"
+    }
+  },
   "simple": {
     "melee": {
       "club": {
@@ -142,6 +240,12 @@
         "namel": "spear",
         "properties": ["thrown(range 20 / 60)", "versatile"]
       }
+    },
+    "ranged": {
+      "Crossbow, light": "25 gp 1 d8 piercing 5 lb.Ammunition(range 80 / 320), loading, two - handed",
+      "Dart": "5 cp 1 d4 piercing 1 / 4 lb.Finesse, thrown(range 20 / 60)",
+      "Shortbow": "25 gp 1 d6 piercing 2 lb.Ammunition(range 80 / 320), two - handed",
+      "Sling": "1 sp 1 d4 bludgeoning - Ammunition(range 30 / 120)"
     }
   }
 }
