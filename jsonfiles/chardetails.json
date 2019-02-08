@@ -1,0 +1,16 @@
+{
+  "alignment": {},
+  "heitght": "",
+  "languages": {
+    "exotic": [],
+    "standard": []
+  },
+  "name": "",
+  "personality": {
+    "bonds": "",
+    "flaws": "",
+    "ideals": ""
+  },
+  "sex": ["f", "m", "-"],
+  "weight": ""
+}

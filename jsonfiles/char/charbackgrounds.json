@@ -3,17 +3,30 @@
     "_id": {
       "$oid": ""
     },
+    "coinstoadd": {
+      "bp": 0,
+      "gp": 15,
+      "sp": 0
+    },
     "description": "",
-    "equip": {},
-    "features": [],
-    "languages": [2, "abyssal", "celestial", "draconic", "deep speech", "infernal", "primodial", "sylvan", "undercommon"],
-    "name": "",
-    "namel": "",
+    "equip": {
+      "armor": [],
+      "gear": ["holy symbol", "prayer book", "5 sticks of incense", "vestiments", "common clothes", "belt pouch"],
+      "pack": [],
+      "tools": [],
+      "weapons": []
+    },
+    "features": ["shelter of the faithful"],
+    "languages": [2, "languages"],
+    "name": "Acolyte",
+    "namel": "acolyte",
     "prof": {
+      "armor": [],
+      "savthrows": [],
       "skills": ["insight", "religion"],
-      "tools": []
+      "tools": [],
+      "weapons": []
     },
     "thumb": ""
   }
-
 }
