@@ -14,14 +14,20 @@ module.exports.run = async (message, cmd, args) => {
   }, (err, res) => {
     if (err) console.log("[ERR] " + err)
     if (!res) {
-      return moneyHook.send(`\`\`\`css\n≠==== [ ${target.username}'s pouch ] ====≠\n| Coins  : 0 pennies\n| Gold   : 0 pieces\n| Silver : 0 pieces\n| Bronze : 0 pieces\n#=======${sym.repeat(charnum + 8)}=======#\n\`\`\``).catch(console.error)
+      return moneyHook.send(`\`\`\`css\n≠==== [ ${target.username}'s pouch ] ====≠\n| Coins  : 0 dimes\n| Gold   : 0 pieces\n| Silver : 0 pieces\n| Bronze : 0 pieces\n#=======${sym.repeat(charnum + 8)}=======#\n\`\`\``).catch(console.error)
     } else {
-      return moneyHook.send(`\`\`\`css\n#==== [ ${target.username}'s pouch ] ====#\n| Coins  : ${res.coins} pennies\n| Gold   : 0 pieces\n| Silver : 0 pieces\n| Bronze : 0 pieces\n#=======${sym.repeat(charnum + 8)}=======#\n\`\`\``).catch(console.error)
+      return moneyHook.send(`\`\`\`css\n#==== [ ${target.username}'s pouch ] ====#\n| Coins  : ${res.coins} dimes\n| Gold   : 0 pieces\n| Silver : 0 pieces\n| Bronze : 0 pieces\n#=======${sym.repeat(charnum + 8)}=======#\n\`\`\``).catch(console.error)
     }
   })
 }
 
 module.exports.config = {
   name: "coins",
-  aliases: ["coin"]
+  aliases: [
+    "coin",
+    "moeda",
+    "dindin",
+    "bufunfa",
+    "fazmerir"
+  ]
 }

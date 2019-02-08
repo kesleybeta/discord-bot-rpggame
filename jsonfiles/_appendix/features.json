@@ -1,6 +1,6 @@
 {
   "features": {
-    "Cantrip": {
+    "cantrip": {
       "elf": {
         "_defaults": ["spells.wizard"],
         "_description": "You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it.",
@@ -9,7 +9,7 @@
         }
       }
     },
-    "Darkvision": {
+    "darkvision": {
       "_content": ["dwarf", "elf"],
       "dwarf": {
         "_defaults": ["distance", "type"],
@@ -24,7 +24,7 @@
         "type": "You can't discern color in darkness, only shades of gray"
       }
     },
-    "Dwarven Armor Training": {
+    "dwarven armor training": {
       "dwarf": {
         "_defaults": ["prof.armor"],
         "_description": "You have proficiency with light and medium armor",
@@ -33,7 +33,7 @@
         }
       }
     },
-    "Dwarven Combat Training": {
+    "dwarven combat training": {
       "dwarf": {
         "_defaults": ["prof.weapons"],
         "_description": "You have proficiency with the battleaxe, handaxe, throwing hammer, and warhammer",
@@ -42,7 +42,7 @@
         }
       }
     },
-    "Dwarven Resilience": {
+    "dwarven resilience": {
       "dwarf": {
         "_defaults": ["advantage.savthrows", "resistance"],
         "_description": "You have advantage on saving throws against poison, and you have resistance against poisonn damage (explained in Chap 09 on PHB)",
@@ -52,7 +52,7 @@
         "resistance": ["Poison damage"]
       }
     },
-    "Dwarven Toughness": {
+    "dwarven toughness": {
       "dwarf": {
         "_defaults": ["hp.hitpoint", "hp.hitpointlvl"],
         "_description": "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.",
@@ -62,14 +62,14 @@
         }
       }
     },
-    "Elf Weapon Training": {
+    "elf weapon training": {
       "_defaults": ["prof.weapons"],
       "_description": "You have proficiency with the longsword, shortsword, shortbow, and longbow.",
       "prof": {
         "weapons": ["longsword", "shortsword", "shortbow", "longbow"]
       }
     },
-    "Fey Ancestry": {
+    "fey ancestry": {
       "elf": {
         "_defaults": [""],
         "_description": "You have advantage on saving throws against being charmed, and magic can't put you to sleep.",
@@ -78,13 +78,13 @@
         }
       }
     },
-    "Keen Senses": {
+    "keen senses": {
       "elf": {
         "_defaults": [""],
         "_description": ""
       }
     },
-    "Stonecunning": {
+    "stonecunning": {
       "dwarf": {
         "_defaults": ["check.history.profbonus"],
         "_description": "Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bones.",
@@ -95,7 +95,7 @@
         }
       }
     },
-    "Tool Proficiency": {
+    "tool proficiency": {
       "dwarf": {
         "_defaults": ["prof.tools"],
         "_description": "You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's, supplies, or mason's tools",
@@ -104,6 +104,6 @@
         }
       }
     },
-    "Trance": {}
+    "trance": {}
   }
 }

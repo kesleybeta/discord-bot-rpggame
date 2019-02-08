@@ -52,6 +52,7 @@ const profileSchema = mongoose.Schema({
     },
     background: String,
     class: String,
+    features: Array,
     id: Number,
     inventory: Array,
     hp: {

@@ -3,6 +3,7 @@
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 const score = low(new FileSync('./jsonfiles/_appendix/abilityscore.json', 'utf8'))
+const classFeatures = low(new FileSync('./jsonfiles/char/charclasses.json', 'utf8'))
 // Functions
 module.exports = {
   // Roll four 6-sided dice and record the total of the highest three //
@@ -40,7 +41,7 @@ module.exports = {
     try {
       mod = score.get('modifiers').value()[base]
     } catch (err) {
-      console.log('[ERR#FUN0101]: ' + err)
+      console.log('[ERR#FUN0201]: ' + err)
     }
     return mod
   }, // ------------------------------------------------------------- //
@@ -61,5 +62,18 @@ module.exports = {
     for (let i = 1; i <= quantity; i++) sum = sum + Math.floor(Math.random() * (max - min + 1)) + min
 
     return sum
+  }, // --------------------------------------------------- //
+
+  getFeature(specificClass, level) {
+    console.log('getting: %s feature, level %s', specificClass, level)
+    let featureArray = []
+    if (!level) level = "1" // eslint-disable-line no-param-reassign
+    if (!isNaN(level)) level = String(level) // eslint-disable-line no-param-reassign
+    try {
+      featureArray.push(classFeatures.get(specificClass + '.table.' + level + '.features').value())
+    } catch (err) {
+      console.log('[ERR#FUN0401]: ' + err)
+    }
+    return featureArray
   }
-} // ------------------------------------------------------ //
+}
