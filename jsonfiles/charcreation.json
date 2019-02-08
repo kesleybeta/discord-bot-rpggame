@@ -1,5 +1,5 @@
 {
-  "allbacks": ["Acolyte", "Criminal", "Folk Hero", "Noble", "Sage", "Soldier"],
+  "allbacks": ["Acolyte", "Charlatan", "Criminal", "Folk Hero", "Noble", "Sage", "Soldier"],
   "allclasses": ["Barbarian", "Bard", "Cleric", "Druid", "Monk", "Paladin", "Ranger", "Rogue", "Warlock", "Wizard", "Blood Hunter"],
   "allraces": ["Dragonborn", "Dwarf", "Elf", "Gnome", "Half Elf", "Half Orc", "Halfling", "Human", "Tiefling"],
   "allsubraces": ["Hill Dwarf", "Mountain Dwarf", "Dark Elf", "High Elf", "Wood Elf", "Deep Gnome", "Forest Gnome", "Rock Gnome", "Lightfoot Halfling", "Stout Halfling"],

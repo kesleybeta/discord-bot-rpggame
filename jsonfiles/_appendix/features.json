@@ -10,100 +10,92 @@
       }
     },
     "darkvision": {
-      "_content": ["dwarf", "elf"],
-      "dwarf": {
-        "_defaults": ["distance", "type"],
-        "_description": "Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light.",
-        "distance": 60,
-        "type": "You can't discern color in darkness, only shades of gray"
-      },
-      "elf": {
-        "_defaults": ["distance", "type"],
-        "_description": "Accustomed to twilit forests and the night sky, you have superior vision io dark aod dim cooditioos. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light.",
-        "distance": 60,
-        "type": "You can't discern color in darkness, only shades of gray"
-      }
-    },
-    "dwarven armor training": {
-      "dwarf": {
-        "_defaults": ["prof.armor"],
-        "_description": "You have proficiency with light and medium armor",
-        "prof": {
-          "armor": ["light armor", "medium armor"]
-        }
-      }
-    },
-    "dwarven combat training": {
-      "dwarf": {
-        "_defaults": ["prof.weapons"],
-        "_description": "You have proficiency with the battleaxe, handaxe, throwing hammer, and warhammer",
-        "prof": {
-          "weapons": ["battleaxe", "handaxe", "throwing hammer", "warhammer"]
-        }
-      }
-    },
-    "dwarven resilience": {
-      "dwarf": {
-        "_defaults": ["advantage.savthrows", "resistance"],
-        "_description": "You have advantage on saving throws against poison, and you have resistance against poisonn damage (explained in Chap 09 on PHB)",
-        "advantage": {
-          "conditions": ["poisoned"]
-        },
-        "resistance": ["Poison damage"]
-      }
-    },
-    "dwarven toughness": {
-      "dwarf": {
-        "_defaults": ["hp.hitpoint", "hp.hitpointlvl"],
-        "_description": "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.",
-        "hp": {
-          "hitpoint": 1,
-          "hitpointlvl": 1
-        }
-      }
-    },
-    "elf weapon training": {
-      "_defaults": ["prof.weapons"],
-      "_description": "You have proficiency with the longsword, shortsword, shortbow, and longbow.",
+      "_defaults": ["distance", "type"],
+      "_description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light.",
+      "distance": 60,
+      "type": "You can't discern color in darkness, only shades of gray"
+    }
+  },
+  "Dwarven Armor Training": {
+    "dwarf": {
+      "_defaults": ["prof.armor"],
+      "_description": "You have proficiency with light and medium armor",
       "prof": {
-        "weapons": ["longsword", "shortsword", "shortbow", "longbow"]
+        "armor": ["light armor", "medium armor"]
       }
-    },
-    "fey ancestry": {
-      "elf": {
-        "_defaults": [""],
-        "_description": "You have advantage on saving throws against being charmed, and magic can't put you to sleep.",
-        "advantage": {
-          "conditions": ["charmed"]
+    }
+  },
+  "Dwarven Combat Training": {
+    "dwarf": {
+      "_defaults": ["prof.weapons"],
+      "_description": "You have proficiency with the battleaxe, handaxe, throwing hammer, and warhammer",
+      "prof": {
+        "weapons": ["battleaxe", "handaxe", "throwing hammer", "warhammer"]
+      }
+    }
+  },
+  "Dwarven Resilience": {
+    "dwarf": {
+      "_defaults": ["advantage.savthrows", "resistance"],
+      "_description": "You have advantage on saving throws against poison, and you have resistance against poisonn damage (explained in Chap 09 on PHB)",
+      "advantage": {
+        "conditions": ["poisoned"]
+      },
+      "resistance": ["Poison damage"]
+    }
+  },
+  "Dwarven Toughness": {
+    "dwarf": {
+      "_defaults": ["hp.hitpoint", "hp.hitpointlvl"],
+      "_description": "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.",
+      "hp": {
+        "hitpoint": 1,
+        "hitpointlvl": 1
+      }
+    }
+  },
+  "Elf Weapon Training": {
+    "_defaults": ["prof.weapons"],
+    "_description": "You have proficiency with the longsword, shortsword, shortbow, and longbow.",
+    "prof": {
+      "weapons": ["longsword", "shortsword", "shortbow", "longbow"]
+    }
+  },
+  "Fey Ancestry": {
+    "elf": {
+      "_defaults": [""],
+      "_description": "You have advantage on saving throws against being charmed, and magic can't put you to sleep.",
+      "advantage": {
+        "conditions": ["charmed"]
+      }
+    }
+  },
+  "Keen Senses": {
+    "elf": {
+      "_defaults": [""],
+      "_description": ""
+    }
+  },
+  "Stonecunning": {
+    "dwarf": {
+      "_defaults": ["check.history.profbonus"],
+      "_description": "Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bones.",
+      "check": {
+        "history": {
+          "profbonus": "double"
         }
       }
-    },
-    "keen senses": {
-      "elf": {
-        "_defaults": [""],
-        "_description": ""
+    }
+  },
+  "Tool Proficiency": {
+    "dwarf": {
+      "_defaults": ["prof.tools"],
+      "_description": "You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's, supplies, or mason's tools",
+      "prof": {
+        "tools": ["battleaxe", "handaxe", "throwing hammer", "warhammer"]
       }
-    },
-    "stonecunning": {
-      "dwarf": {
-        "_defaults": ["check.history.profbonus"],
-        "_description": "Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bones.",
-        "check": {
-          "history": {
-            "profbonus": "double"
-          }
-        }
-      }
-    },
-    "tool proficiency": {
-      "dwarf": {
-        "_defaults": ["prof.tools"],
-        "_description": "You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's, supplies, or mason's tools",
-        "prof": {
-          "tools": ["battleaxe", "handaxe", "throwing hammer", "warhammer"]
-        }
-      }
-    },
-    "trance": {}
-  }
+    }
+  },
+  "Trance": {}
+}
 }

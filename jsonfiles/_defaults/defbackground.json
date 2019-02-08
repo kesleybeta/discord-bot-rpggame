@@ -1,0 +1,14 @@
+{
+  "_id": {
+    "$oid": ""
+  },
+  "equip": {},
+  "features": [],
+  "languages": [],
+  "name": "",
+  "namel": "",
+  "prof": {
+    "skills": [],
+    "tools": []
+  }
+}

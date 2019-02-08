@@ -1,0 +1,19 @@
+{
+  "acolyte": {
+    "_id": {
+      "$oid": ""
+    },
+    "description": "",
+    "equip": {},
+    "features": [],
+    "languages": [2, "abyssal", "celestial", "draconic", "deep speech", "infernal", "primodial", "sylvan", "undercommon"],
+    "name": "",
+    "namel": "",
+    "prof": {
+      "skills": ["insight", "religion"],
+      "tools": []
+    },
+    "thumb": ""
+  }
+
+}
