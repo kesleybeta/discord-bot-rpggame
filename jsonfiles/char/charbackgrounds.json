@@ -4,11 +4,12 @@
       "$oid": ""
     },
     "coinstoadd": {
+      "_container": "belt pouch",
       "bp": 0,
       "gp": 15,
       "sp": 0
     },
-    "description": "",
+    "description": "You have spent your life in the service of a temple to a specific god or pantheon of gods.\nYou act as an intermediary between the realm of the holy and the mortal world, performing sacred rites and offering sacrifices in order to conduct worshipers into the presence of the divine.",
     "equip": {
       "armor": [],
       "gear": ["holy symbol", "prayer book", "5 sticks of incense", "vestiments", "common clothes", "belt pouch"],
@@ -17,9 +18,16 @@
       "weapons": []
     },
     "features": ["shelter of the faithful"],
+    "icon": "https://media-waterdeep.cursecdn.com/avatars/104/378/636511944060210307.png",
     "languages": [2, "languages"],
     "name": "Acolyte",
     "namel": "acolyte",
+    "personality": {
+      "bond": 6,
+      "flaw": 6,
+      "ideal": 6,
+      "trait": 8
+    },
     "prof": {
       "armor": [],
       "savthrows": [],
@@ -27,6 +35,44 @@
       "tools": [],
       "weapons": []
     },
-    "thumb": ""
+    "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/4482/325/1000/1000/636712693316461218.png"
+  },
+  "charlatan": {
+    "_id": {
+      "$oid": ""
+    },
+    "coinstoadd": {
+      "_container": "",
+      "bp": 0,
+      "gp": 0,
+      "sp": 0
+    },
+    "description": "You have always had a way with people.\nYou know what makes them tick, you can tease out their heart’s desires after a few minutes of conversation, and with a few leading questions you can read them like they were children's books.",
+    "equip": {
+      "armor": [],
+      "gear": [],
+      "pack": [],
+      "tools": [],
+      "weapons": []
+    },
+    "features": [],
+    "languages": [],
+    "icon": "https://media-waterdeep.cursecdn.com/avatars/104/378/636511944060210307.png",
+    "name": "Charlatan",
+    "namel": "charlatan",
+    "personality": {
+      "bond": 0,
+      "flaw": 0,
+      "ideal": 0,
+      "trait": 0
+    },
+    "prof": {
+      "armor": [],
+      "savthrows": [],
+      "skills": [],
+      "tools": [],
+      "weapons": []
+    },
+    "thumb": "https://i.imgur.com/X04vgWu.png"
   }
 }

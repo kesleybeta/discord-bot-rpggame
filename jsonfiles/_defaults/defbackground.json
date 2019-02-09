@@ -2,13 +2,37 @@
   "_id": {
     "$oid": ""
   },
-  "equip": {},
+  "coinstoadd": {
+    "_container": "",
+    "bp": 0,
+    "gp": 0,
+    "sp": 0
+  },
+  "description": "",
+  "equip": {
+    "armor": [],
+    "gear": [],
+    "pack": [],
+    "tools": [],
+    "weapons": []
+  },
   "features": [],
   "languages": [],
+  "icon": "https://media-waterdeep.cursecdn.com/avatars/104/378/636511944060210307.png",
   "name": "",
   "namel": "",
+  "personality": {
+    "bond": 0,
+    "flaw": 0,
+    "ideal": 0,
+    "trait": 0
+  },
   "prof": {
+    "armor": [],
+    "savthrows": [],
     "skills": [],
-    "tools": []
-  }
+    "tools": [],
+    "weapons": []
+  },
+  "thumb": ""
 }
