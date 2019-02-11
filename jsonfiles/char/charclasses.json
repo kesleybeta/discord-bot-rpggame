@@ -795,7 +795,7 @@
     "_id": {
       "$oid": "5c5ad2c8fb6fc06f4f56ba72"
     },
-    "description": "",
+    "description": "Whatever their origin and their mission, paladins are united by their oaths to stand against the forces of evil.\nWhether sworn before a god\u2019s altar and the witness of a priest, in a sacred glade before nature spirits and fey beings, or in a moment of desperation and grief with the dead as the only witness, a paladin\u2019s oath is a powerful bond.",
     "equip": {
       "armor": ["martial", "shield", "chain mail"],
       "gear": ["holy symbol"],

@@ -17,8 +17,8 @@
     "weapons": []
   },
   "features": [],
+  "icon": "https://i.imgur.com/v8ftS2G.png",
   "languages": [],
-  "icon": "https://media-waterdeep.cursecdn.com/avatars/104/378/636511944060210307.png",
   "name": "",
   "namel": "",
   "personality": {
@@ -34,5 +34,6 @@
     "tools": [],
     "weapons": []
   },
-  "thumb": ""
+  "thumb": "",
+  "source": ""
 }

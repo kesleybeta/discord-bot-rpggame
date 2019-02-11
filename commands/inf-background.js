@@ -13,7 +13,7 @@ module.exports.run = async (message, cmd, args) => {
 
     let backArray = []
     ModBackground.find({
-        source: "basicrules"
+        source: "handbook"
       })
       .sort([
         [
@@ -48,9 +48,7 @@ module.exports.run = async (message, cmd, args) => {
         cembed.setDescription("Couldn't find any information.")
         return message.channel.send(cembed)
       } else {
-        cembed
-          //.setAuthor("Classes's Manual", `${result.icon}`)
-          .setAuthor("Classes's Manual", "https://media-waterdeep.cursecdn.com/avatars/104/378/636511944060210307.png")
+        cembed.setAuthor("Classes's Manual", `${result.icon}`)
           .setTitle(`${result.name} `)
           .setThumbnail(`${result.thumb}`)
           .setDescription(`${result.description}`)

@@ -1,7 +1,7 @@
 {
   "acolyte": {
     "_id": {
-      "$oid": ""
+      "$oid": "5c5e26b3e7179a2ed6122a09"
     },
     "coinstoadd": {
       "_container": "belt pouch",
@@ -18,7 +18,7 @@
       "weapons": []
     },
     "features": ["shelter of the faithful"],
-    "icon": "https://media-waterdeep.cursecdn.com/avatars/104/378/636511944060210307.png",
+    "icon": "https://i.imgur.com/v8ftS2G.png",
     "languages": [2, "languages"],
     "name": "Acolyte",
     "namel": "acolyte",
@@ -35,44 +35,85 @@
       "tools": [],
       "weapons": []
     },
-    "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/4482/325/1000/1000/636712693316461218.png"
+    "thumb": "https://i.imgur.com/W8Hr7cj.png",
+    "source": "handbook"
   },
   "charlatan": {
     "_id": {
-      "$oid": ""
+      "$oid": "5c617ce9fb6fc06f052e2da7"
     },
     "coinstoadd": {
-      "_container": "",
+      "_container": "belt pouch",
       "bp": 0,
-      "gp": 0,
+      "gp": 15,
       "sp": 0
     },
     "description": "You have always had a way with people.\nYou know what makes them tick, you can tease out their heart’s desires after a few minutes of conversation, and with a few leading questions you can read them like they were children's books.",
     "equip": {
       "armor": [],
-      "gear": [],
+      "gear": ["fine clothes", "disguise", "ten stoppered bottles filled with colored liquid", "set of weighted dice", "deck of marked cards", "belt pouch"],
       "pack": [],
       "tools": [],
       "weapons": []
     },
-    "features": [],
+    "features": ["false identity"],
     "languages": [],
-    "icon": "https://media-waterdeep.cursecdn.com/avatars/104/378/636511944060210307.png",
+    "icon": "https://i.imgur.com/v8ftS2G.png",
     "name": "Charlatan",
     "namel": "charlatan",
     "personality": {
-      "bond": 0,
-      "flaw": 0,
-      "ideal": 0,
-      "trait": 0
+      "bond": 6,
+      "flaw": 6,
+      "ideal": 6,
+      "trait": 8
     },
     "prof": {
       "armor": [],
       "savthrows": [],
-      "skills": [],
+      "skills": ["deception", "sleight of hand"],
+      "tools": ["disguise", "forgery"],
+      "weapons": []
+    },
+    "thumb": "https://i.imgur.com/v6osEG9.png",
+    "source": "handbook"
+  },
+  "criminal": {
+    "_id": {
+      "$oid": "5c617fbcfb6fc06f052e2f55"
+    },
+    "coinstoadd": {
+      "_container": "pouch",
+      "bp": 0,
+      "gp": 15,
+      "sp": 0
+    },
+    "description": "You are an experienced criminal with a history of breaking the law. You have spent a lot of time among other criminals and still have contacts within the criminal underworld.",
+    "equip": {
+      "armor": [],
+      "gear": ["crowbar", "dark common clothes", "hood", "pouch"],
+      "pack": [],
       "tools": [],
       "weapons": []
     },
-    "thumb": "https://i.imgur.com/X04vgWu.png"
+    "features": ["criminal contact"],
+    "icon": "https://i.imgur.com/v8ftS2G.png",
+    "languages": [],
+    "name": "Criminal",
+    "namel": "criminal",
+    "personality": {
+      "bond": 6,
+      "flaw": 6,
+      "ideal": 6,
+      "trait": 8
+    },
+    "prof": {
+      "armor": [],
+      "savthrows": [],
+      "skills": ["deception", "stealth"],
+      "tools": ["gaming", "thieves"],
+      "weapons": []
+    },
+    "thumb": "https://i.imgur.com/j6izgAe.png",
+    "source": "handbook"
   }
 }

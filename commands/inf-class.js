@@ -8,12 +8,12 @@ module.exports.run = async (message, cmd, args) => {
   if (!args.toString()) {
     let embed = new Discord.RichEmbed()
       .setAuthor("D&D Beyond", "https://media-waterdeep.cursecdn.com/avatars/104/378/636511944060210307.png")
-      .setDescription("Class is the primary definition of what your character can do. It’s more than a profession; it’s your character’s calling.")
-      .setColor("#65d8d6")
+      .setDescription("Class is the primary definition of what your character can do.\nIt’s more than a profession; it’s your character’s calling.")
+      .setColor("#65D8D6")
 
     let classArray = []
     ModClass.find({
-        source: "official"
+        source: "handbook"
       }).sort([
         [
           'name',
@@ -33,7 +33,7 @@ module.exports.run = async (message, cmd, args) => {
       .split(",")
       .join(" ")
     let cembed = new Discord.RichEmbed()
-      .setColor("#65d8d6")
+      .setColor("#65D8D6")
 
     ModClass.findOne({
       namel: specificClass
@@ -44,8 +44,7 @@ module.exports.run = async (message, cmd, args) => {
         cembed.addField("Classes:", "Couldn't find any information.")
         return message.channel.send(cembed)
       } else {
-        cembed
-          .setAuthor("Classes's Manual", `${result.icon}`)
+        cembed.setAuthor("Classes's Manual", `${result.icon}`)
           .setTitle(`${result.name} `)
           .setThumbnail(`${result.thumb}`)
           .setDescription(`${result.description}`)

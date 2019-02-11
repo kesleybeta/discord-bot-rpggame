@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+// eslint-disable-next-line new-cap
 const subraceSchema = mongoose.Schema({
   racel: String,
   name: String,

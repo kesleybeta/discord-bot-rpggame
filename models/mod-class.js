@@ -130,4 +130,4 @@ const classSchema = mongoose.Schema({
   thumb: String
 })
 
-module.exports = mongoose.model("classes", classSchema);
+module.exports = mongoose.model("charclasses", classSchema);
