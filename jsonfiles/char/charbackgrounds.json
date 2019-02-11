@@ -115,5 +115,122 @@
     },
     "thumb": "https://i.imgur.com/j6izgAe.png",
     "source": "handbook"
+  },
+  "entertainer": {
+    "_id": {
+      "$oid": "5c61a23ffb6fc06f052e59f9"
+    },
+    "coinstoadd": {
+      "_container": "belt pouch",
+      "bp": 0,
+      "gp": 15,
+      "sp": 0
+    },
+    "description": "",
+    "equip": {
+      "armor": [],
+      "gear": ["love lelter", "costume", "belt pouch"],
+      "pack": [],
+      "tools": ["instrument"],
+      "weapons": []
+    },
+    "features": ["by popular demand"],
+    "icon": "https://i.imgur.com/v8ftS2G.png",
+    "languages": [],
+    "name": "Entertainer",
+    "namel": "entertainer",
+    "personality": {
+      "bond": 6,
+      "flaw": 6,
+      "ideal": 6,
+      "trait": 8
+    },
+    "prof": {
+      "armor": [],
+      "savthrows": [],
+      "skills": ["acrobatics", "performance"],
+      "tools": ["disguise", "instrument"],
+      "weapons": []
+    },
+    "thumb": "https://i.imgur.com/OI9wyqw.jpg",
+    "source": "handbook"
+  },
+  "folk hero": {
+    "_id": {
+      "$oid": ""
+    },
+    "coinstoadd": {
+      "_container": "belt pouch",
+      "bp": 0,
+      "gp": 10,
+      "sp": 0
+    },
+    "description": "",
+    "equip": {
+      "armor": [],
+      "gear": ["shovel", "iron pot", "common clothes", "belt pouch"],
+      "pack": [],
+      "tools": ["artisan"],
+      "weapons": []
+    },
+    "features": ["rustic hospitality"],
+    "icon": "https://i.imgur.com/v8ftS2G.png",
+    "languages": [],
+    "name": "",
+    "namel": "",
+    "personality": {
+      "bond": 6,
+      "flaw": 6,
+      "ideal": 6,
+      "trait": 8
+    },
+    "prof": {
+      "armor": [],
+      "savthrows": [],
+      "skills": ["animal handling", "survival"],
+      "tools": ["artisan", "vehicles.land"],
+      "weapons": []
+    },
+    "thumb": "",
+    "source": ""
+  },
+  "gladiator": {
+    "_id": {
+      "$oid": ""
+    },
+    "coinstoadd": {
+      "_container": "belt pouch",
+      "bp": 0,
+      "gp": 15,
+      "sp": 0
+    },
+    "description": "",
+    "equip": {
+      "armor": [],
+      "gear": ["trinket", "costume", "belt pouch"],
+      "pack": [],
+      "tools": [],
+      "weapons": ["trident"]
+    },
+    "features": ["by popular demand"],
+    "icon": "https://i.imgur.com/v8ftS2G.png",
+    "languages": [],
+    "name": "Gladiator",
+    "namel": "gladiator",
+    "personality": {
+      "bond": 6,
+      "flaw": 6,
+      "ideal": 6,
+      "trait": 8
+    },
+    "prof": {
+      "armor": [],
+      "savthrows": [],
+      "skills": ["acrobatics", "performance"],
+      "tools": ["disguise"],
+      "weapons": []
+    },
+    "thumb": "",
+    "source": "handbook"
   }
 }

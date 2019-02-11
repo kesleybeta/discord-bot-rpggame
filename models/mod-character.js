@@ -63,7 +63,7 @@ const profileSchema = mongoose.Schema({
     race: String,
     sex: String,
     thumb: String,
-    valid: Number
+    valid: Boolean
   }
 })
 
