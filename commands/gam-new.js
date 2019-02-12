@@ -112,6 +112,7 @@ module.exports.run = async (message, cmd, args) => {
       if (collected.first().content) choosenRace = collected.first().content.toLowerCase()
       else choosenRace = "notdefined"
       // 1 - 3. Validation of the choice - if RACE is valid the guide keep going.
+      if (choosenRace === "notdefined") return message.reply("Race is not defined!")
       if (choosenRace !== "notdefined") {
         await ModRaces.findOne({
           namel: choosenRace
@@ -135,7 +136,7 @@ module.exports.run = async (message, cmd, args) => {
             choosenRace = capitalize.words(choosenRace)
           }
         })
-      } else return console.log("Race is not defined")
+      } else return console.log("Race was not defined!")
     })
     .catch(ce => {
       choosenRace = "notdefined"
