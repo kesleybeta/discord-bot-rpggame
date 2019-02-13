@@ -5,12 +5,12 @@
   "allsubraces": ["Hill Dwarf", "Mountain Dwarf", "Dark Elf", "High Elf", "Wood Elf", "Deep Gnome", "Forest Gnome", "Rock Gnome", "Lightfoot Halfling", "Stout Halfling"],
   "subraces": {
     "dragonborn": [""],
-    "dwarf": ["Hill Dwarf", "Mountain Dwarf"],
-    "elf": ["Drow", "High Elf", "Wood Elf"],
-    "gnome": ["Deep Gnome", "Forest Gnome", "Rock Gnome"],
+    "dwarf": ["Hill", "Mountain"],
+    "elf": ["Drow", "High", "Wood"],
+    "gnome": ["Forest", "Rock"],
     "half elf": [""],
     "half orc": [""],
-    "halfling": ["Lightfoot Halfling", "Stout Halfling"],
+    "halfling": ["Lightfoot", "Stout"],
     "human": [""],
     "tiefling": [""]
   }

@@ -3,7 +3,7 @@ const CoinMod = require("../models/mod-coins.js")
 const moneyHook = new Discord.WebhookClient('537710849008074754', 'Nr_a6RXlTeV24o8B4JtiwPqDcdiOzJGVQmbXq6Tj8iHkAgYozJToFohITmiI07ErtjOb');
 
 module.exports.run = async (message, cmd, args) => {
-  await message.delete()
+  await message.delete().then(message.reply(`Go to #economy channel`))
   console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`)
   let target = message.mentions.users.first() || message.author
   let sym = '='

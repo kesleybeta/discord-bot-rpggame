@@ -16,7 +16,7 @@
     "namel": "drow",
     "racel": "elf"
   },
-  "forest gnome": {
+  "forest": {
     "_id": {
       "$oid": "5c51e55fe7179a1e4685c30b"
     },
@@ -33,7 +33,7 @@
     "namel": "forest gnome",
     "racel": "gnome"
   },
-  "high elf": {
+  "high": {
     "_id": {
       "$oid": "5c49d85cfb6fc02d2ef2d3d9"
     },
@@ -50,7 +50,7 @@
     "namel": "high elf",
     "racel": "elf"
   },
-  "hill dwarf": {
+  "hill": {
     "_id": {
       "$oid": "5c4df457e7179a090e0adc54"
     },
@@ -84,7 +84,7 @@
     "namel": "lightfoot",
     "racel": "halfling"
   },
-  "mountain dwarf": {
+  "mountain": {
     "_id": {
       "$oid": "5c4df652e7179a090e0add53"
     },
@@ -101,7 +101,7 @@
     "namel": "mountain dwarf",
     "racel": "dwarf"
   },
-  "rock gnome": {
+  "rock": {
     "_id": {
       "$oid": "5c51e56ee7179a1e4685c31f"
     },
@@ -135,7 +135,7 @@
     "namel": "stout",
     "racel": "halfling"
   },
-  "wood elf": {
+  "wood": {
     "_id": {
       "$oid": "5c49e338fb6fc02d2ef2dcfa"
     },

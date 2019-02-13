@@ -56,7 +56,7 @@
       "swimming": 0,
       "walking": 30
     },
-    "subraces": "none",
+    "subraces": "",
     "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/340/420/618/636272677995471928.png",
     "variant": [""]
   },
@@ -261,7 +261,7 @@
       "swimming": 0,
       "walking": 30
     },
-    "subraces": "none",
+    "subraces": "",
     "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/466/420/618/636274570630462055.png",
     "variant": [""]
   },
@@ -347,7 +347,7 @@
       "swimming": 0,
       "walking": 30
     },
-    "subraces": "none",
+    "subraces": "",
     "thumb": "",
     "variant": ["Variant Human"]
   },
@@ -388,7 +388,7 @@
       "swimming": 0,
       "walking": 0
     },
-    "subraces": "none",
+    "subraces": "",
     "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/7/641/420/618/636287076637981942.png",
     "variant": [""]
   }

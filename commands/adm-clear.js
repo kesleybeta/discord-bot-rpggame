@@ -5,8 +5,8 @@ module.exports.run = async (message, cmd, args) => {
   let toclear = 0
   // Code lines
   if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(" ¯\\_(ツ)_/¯")
-  if (isNaN(args[0])) return message.reply(` ¯\\_(ツ)_/¯ *${args[0]} is not a number.*`)
-  if (!args[0]) return message.reply(" ¯\\_(ツ)_/¯ *My crystal ball broke, please tell me, how many to clear?*")
+  if (!args[0]) return message.reply(" ¯\\_(ツ)_/¯  *My crystal ball broke, please specify the number of messages to clear*")
+  if (isNaN(args[0])) return message.reply(` ¯\\_(ツ)_/¯  *\`${args[0]}\` is not a number.*`)
   toclear = Number(args[0])
   if (toclear >= 100) return message.reply(" Value should be less than 100!")
   else {
