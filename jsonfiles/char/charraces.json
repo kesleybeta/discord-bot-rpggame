@@ -203,7 +203,7 @@
     "description": "Walking in two worlds but truly belonging to neither, half-elves combine what some say are the best qualities of their elf and human parents: human curiosity, inventiveness, and ambition tempered by the refined senses, love of nature, and artistic tastes of the elves.ife.",
     "features": ["Darkvision", "Fey Ancestry", "Skill Versatility"],
     "icon": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/4808/149/400/250/636771205894109291.jpeg",
-    "languages": ["Common", "Elvish", "unchoosen01"],
+    "languages": ["Common", "Elvish"],
     "mark": ["Detection Half Elf", "Storm Half Elf"],
     "name": "Half Elf",
     "namel": "half elf",
@@ -326,7 +326,7 @@
     "description": "In the reckonings of most worlds. humans are the youngest of the common races.\nLate to arrive on the world scene and short-lived in comparison to dwarves, elves, and dragons.",
     "features": [""],
     "icon": "",
-    "languages": ["Common", "unchoosen01"],
+    "languages": ["Common"],
     "mark": [""],
     "name": "Human",
     "namel": "human",
@@ -386,7 +386,7 @@
     "speed": {
       "flying": 0,
       "swimming": 0,
-      "walking": 0
+      "walking": 30
     },
     "subraces": "",
     "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/7/641/420/618/636287076637981942.png",

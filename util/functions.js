@@ -4,12 +4,13 @@ const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 const score = low(new FileSync('./jsonfiles/_appendix/abilityscore.json', 'utf8'))
 const classFeatures = low(new FileSync('./jsonfiles/char/charclasses.json', 'utf8'))
+const racesTraits = low(new FileSync('./jsonfiles/char/charraces.json', 'utf8'))
 // Functions
 module.exports = {
   // Roll four 6-sided dice and record the total of the highest three //
   rollfourdsix() {
     // variables
-    let min = Math.ceil(1)
+    let min = 1
     let max = Math.floor(6)
     let total = 0
     let menor = 6
@@ -49,7 +50,7 @@ module.exports = {
   // Return sum of a 'quantity' of 'numOfSides' sided dices //
   roll(quantity, numOfSides) {
     // variables
-    let min = Math.ceil(1)
+    let min = 1
     let max = 0
     let sum = 0
     // Code lines
@@ -75,5 +76,31 @@ module.exports = {
       console.log('[ERR#FUN0401]: ' + err)
     }
     return featureArray
+  }, // --------------------------------------------------- //
+
+  randomName(race, gender) {
+    // Error handling
+    if (!gender) gender = 'm' // eslint-disable-line no-param-reassign
+
+    // Variables
+    let nameMax = 0
+    let familyMax = 0
+    let name = ""
+    // Code lines
+    if (gender === 'm') nameMax = racesTraits.get(race + '.names.male').size()
+      .value() - 1
+    if (gender === 'f') nameMax = racesTraits.get(race + '.names.female').size()
+      .value() - 1
+    familyMax = racesTraits.get(race + '.names.family').size()
+      .value() - 1
+
+    nameMax = Math.floor(Math.random() * (nameMax - 0 + 1)) + 0
+    familyMax = Math.floor(Math.random() * (familyMax - 0 + 1)) + 0
+
+    if (gender === 'm') name = racesTraits.get(race + '.names.male[' + nameMax + ']').value()
+    if (gender === 'f') name = racesTraits.get(race + '.names.female[' + nameMax + ']').value()
+    if (familyMax !== 0) name = name.concat(' ', racesTraits.get(race + '.names.family[' + familyMax + ']').value())
+
+    return name
   }
 }

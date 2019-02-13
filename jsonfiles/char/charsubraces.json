@@ -11,7 +11,13 @@
       "str": 0,
       "wis": 0
     },
-    "features": ["Keen Senses", "Superior Darkvision", "Sunlight Sensitivity", "Drow Magic", "Drow Weapon Training"],
+    "features": [
+      "Keen Senses",
+      "Superior Darkvision",
+      "Sunlight Sensitivity",
+      "Drow Magic",
+      "Drow Weapon Training"
+    ],
     "name": "Drow",
     "namel": "drow",
     "racel": "elf"
@@ -28,7 +34,10 @@
       "str": 0,
       "wis": 0
     },
-    "features": ["Natural Illusionist", "Speak with Small Beasts"],
+    "features": [
+      "Natural Illusionist",
+      "Speak with Small Beasts"
+    ],
     "name": "Forest Gnome",
     "namel": "forest gnome",
     "racel": "gnome"
@@ -45,7 +54,11 @@
       "str": 0,
       "wis": 0
     },
-    "features": ["Elf Weapon Training", "Cantrip", "Extra Language"],
+    "features": [
+      "Elf Weapon Training",
+      "Cantrip",
+      "Extra Language"
+    ],
     "name": "High Elf",
     "namel": "high elf",
     "racel": "elf"
@@ -62,7 +75,9 @@
       "str": 0,
       "wis": 1
     },
-    "features": ["Dwarven Toughness"],
+    "features": [
+      "Dwarven Toughness"
+    ],
     "name": "Hill Dwarf",
     "namel": "hill dwarf",
     "racel": "dwarf"
@@ -79,7 +94,9 @@
       "str": 0,
       "wis": 0
     },
-    "features": ["Naturally Stealthy"],
+    "features": [
+      "Naturally Stealthy"
+    ],
     "name": "Lightfoot",
     "namel": "lightfoot",
     "racel": "halfling"
@@ -96,7 +113,9 @@
       "str": 0,
       "wis": 1
     },
-    "features": ["Dwarven Armor Training"],
+    "features": [
+      "Dwarven Armor Training"
+    ],
     "name": "Mountain Dwarf",
     "namel": "mountain dwarf",
     "racel": "dwarf"
@@ -113,7 +132,10 @@
       "str": 0,
       "wis": 0
     },
-    "features": ["Artificer's Lore", "Tinker"],
+    "features": [
+      "Artificer's Lore",
+      "Tinker"
+    ],
     "name": "Rock Gnome",
     "namel": "rock gnome",
     "racel": "gnome"
@@ -130,7 +152,9 @@
       "str": 0,
       "wis": 0
     },
-    "features": ["Stout Resilience"],
+    "features": [
+      "Stout Resilience"
+    ],
     "name": "Stout",
     "namel": "stout",
     "racel": "halfling"
@@ -147,7 +171,11 @@
       "str": 0,
       "wis": 1
     },
-    "features": ["Fleet of Foot", "Mask of the Wild", "ElfWeapon Training"],
+    "features": [
+      "Fleet of Foot",
+      "Mask of the Wild",
+      "ElfWeapon Training"
+    ],
     "name": "Wood Elf",
     "namel": "wood elf",
     "racel": "elf"
