@@ -5,11 +5,17 @@
     },
     "description": "A fierce warrior of primitive background who can enter a battle rage: unbridled, unquenchable, and unthinking fury.",
     "equip": {
-      "armor": [""],
-      "gear": [""],
-      "pack": ["explorer"],
-      "tools": [""],
-      "weapons": ["greataxe", "handaxe", "javelin"]
+      "armor": [],
+      "gear": [],
+      "pack": [
+        "explorer"
+      ],
+      "tools": [],
+      "weapons": [
+        "greataxe",
+        "handaxe",
+        "javelin"
+      ]
     },
     "hp": {
       "hitdice": 12,
@@ -20,112 +26,171 @@
     "name": "Barbarian",
     "namel": "barbarian",
     "prof": {
-      "armor": ["light", "medium", "shield"],
-      "savthrows": ["str", "con"],
-      "skills": ["animal handling", "athletics", "intimidation", "nature", "perception", "survival"],
-      "tools": "none",
-      "weapons": ["simple", "martial"]
+      "armor": [
+        "light",
+        "medium",
+        "shield"
+      ],
+      "savthrows": [
+        "str",
+        "con"
+      ],
+      "skills": [
+        "animal handling",
+        "athletics",
+        "intimidation",
+        "nature",
+        "perception",
+        "survival"
+      ],
+      "tools": [],
+      "weapons": [
+        "simple",
+        "martial"
+      ]
     },
     "source": "handbook",
     "table": {
       "1": {
         "bonus": 2,
-        "features": ["Rage", "Unarmored defense"],
+        "features": [
+          "Rage",
+          "Unarmored defense"
+        ],
         "lvl": 1
       },
       "2": {
         "bonus": 2,
-        "features": ["Reckless attack", "Danger sense"],
+        "features": [
+          "Reckless attack",
+          "Danger sense"
+        ],
         "lvl": 2
       },
       "3": {
         "bonus": 2,
-        "features": ["Primal path"],
+        "features": [
+          "Primal path"
+        ],
         "lvl": 3
       },
       "4": {
         "bonus": 2,
-        "features": ["Ability score improvement"],
+        "features": [
+          "Ability score improvement"
+        ],
         "lvl": 4
       },
       "5": {
         "bonus": 3,
-        "features": ["Persistent rage"],
+        "features": [
+          "Persistent rage"
+        ],
         "lvl": 5
       },
       "6": {
         "bonus": 3,
-        "features": ["Path feature"],
+        "features": [
+          "Path feature"
+        ],
         "lvl": 6
       },
       "7": {
         "bonus": 3,
-        "features": ["Feral instinct"],
+        "features": [
+          "Feral instinct"
+        ],
         "lvl": 7
       },
       "8": {
         "bonus": 3,
-        "features": ["Ability score improvement"],
+        "features": [
+          "Ability score improvement"
+        ],
         "lvl": 8
       },
       "9": {
         "bonus": 4,
-        "features": ["Brutal critical"],
+        "features": [
+          "Brutal critical"
+        ],
         "lvl": 9
       },
       "10": {
         "bonus": 4,
-        "features": ["Path feature"],
+        "features": [
+          "Path feature"
+        ],
         "lvl": 10
       },
       "11": {
         "bonus": 4,
-        "features": ["Relentless rage"],
+        "features": [
+          "Relentless rage"
+        ],
         "lvl": 11
       },
       "12": {
         "bonus": 4,
-        "features": ["Ability score improvement"],
+        "features": [
+          "Ability score improvement"
+        ],
         "lvl": 12
       },
       "13": {
         "bonus": 5,
-        "features": ["Brutal critical"],
+        "features": [
+          "Brutal critical"
+        ],
         "lvl": 13
       },
       "14": {
         "bonus": 5,
-        "features": ["Path feature"],
+        "features": [
+          "Path feature"
+        ],
         "lvl": 14
       },
       "15": {
         "bonus": 5,
-        "features": ["Persistent rage"],
+        "features": [
+          "Persistent rage"
+        ],
         "lvl": 15
       },
       "16": {
         "bonus": 5,
-        "features": ["Ability score improvement"],
+        "features": [
+          "Ability score improvement"
+        ],
         "lvl": 16
       },
       "17": {
         "bonus": 6,
-        "features": ["Brutal critical"],
+        "features": [
+          "Brutal critical"
+        ],
         "lvl": 17
       },
       "18": {
         "bonus": 6,
-        "features": ["Indomitable might"],
+        "features": [
+          "Indomitable might"
+        ],
         "lvl": 18
       },
       "19": {
         "bonus": 6,
-        "features": ["Ability score improvement"],
+        "features": [
+          "Ability score improvement"
+        ],
         "lvl": 19
       },
       "20": {
         "bonus": 6,
-        "features": ["Primal champion"],
+        "features": [
+          "Primal champion"
+        ],
         "lvl": 20
       }
     },
@@ -137,11 +202,17 @@
     },
     "description": "The bard is a master of song, speech, and the magic they contain.\nBards say that the multiverse was spoken into existence, that the words of the gods gave it shape, and that echoes of these primordial Words of Creation still resound throughout the cosmos.",
     "equip": {
-      "armor": [""],
-      "gear": [""],
-      "pack": ["entertainer"],
-      "tools": ["lute"],
-      "weapons": ["rapier"]
+      "armor": [],
+      "gear": [],
+      "pack": [
+        "entertainer"
+      ],
+      "tools": [
+        "lute"
+      ],
+      "weapons": [
+        "rapier"
+      ]
     },
     "hp": {
       "hitdice": 8,
@@ -152,112 +223,168 @@
     "name": "Bard",
     "namel": "bard",
     "prof": {
-      "armor": ["light"],
-      "savthrows": ["dex", "cha"],
-      "skills": ["sleight of hand", "intimidation", "performance"],
-      "tools": ["lute", "dulcimer", "drum"],
-      "weapons": ["simple", "crossbow", "longsword", "rapier", "shortsword"]
+      "armor": [
+        "light"
+      ],
+      "savthrows": [
+        "dex",
+        "cha"
+      ],
+      "skills": [
+        "sleight of hand",
+        "intimidation",
+        "performance"
+      ],
+      "tools": [
+        "lute",
+        "dulcimer",
+        "drum"
+      ],
+      "weapons": [
+        "simple",
+        "crossbow",
+        "longsword",
+        "rapier",
+        "shortsword"
+      ]
     },
     "source": "handbook",
     "table": {
       "1": {
         "bonus": 2,
-        "features": ["spellcasting", "bardic inspiration"],
+        "features": [
+          "spellcasting",
+          "bardic inspiration"
+        ],
         "lvl": 1
       },
       "2": {
         "bonus": 2,
-        "features": ["jack of all trades, song of rest"],
+        "features": [
+          "jack of all trades, song of rest"
+        ],
         "lvl": 2
       },
       "3": {
         "bonus": 2,
-        "features": ["bard college, expertise"],
+        "features": [
+          "bard college, expertise"
+        ],
         "lvl": 3
       },
       "4": {
         "bonus": 2,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 4
       },
       "5": {
         "bonus": 3,
-        "features": ["bardic inspiration, font of inspiration"],
+        "features": [
+          "bardic inspiration, font of inspiration"
+        ],
         "lvl": 5
       },
       "6": {
         "bonus": 3,
-        "features": ["countercharm, bard colleg feature"],
+        "features": [
+          "countercharm, bard colleg feature"
+        ],
         "lvl": 6
       },
       "7": {
         "bonus": 3,
-        "features": [""],
+        "features": [],
         "lvl": 7
       },
       "8": {
         "bonus": 3,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 8
       },
       "9": {
         "bonus": 4,
-        "features": ["song of rest"],
+        "features": [
+          "song of rest"
+        ],
         "lvl": 9
       },
       "10": {
         "bonus": 4,
-        "features": ["bardic inspiration, expertise, magical secrets"],
+        "features": [
+          "bardic inspiration, expertise, magical secrets"
+        ],
         "lvl": 10
       },
       "11": {
         "bonus": 4,
-        "features": [""],
+        "features": [],
         "lvl": 11
       },
       "12": {
         "bonus": 4,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 12
       },
       "13": {
         "bonus": 5,
-        "features": ["song of rest"],
+        "features": [
+          "song of rest"
+        ],
         "lvl": 13
       },
       "14": {
         "bonus": 5,
-        "features": ["magical secrets, bard college feature"],
+        "features": [
+          "magical secrets, bard college feature"
+        ],
         "lvl": 14
       },
       "15": {
         "bonus": 5,
-        "features": ["bardic inspiration"],
+        "features": [
+          "bardic inspiration"
+        ],
         "lvl": 15
       },
       "16": {
         "bonus": 5,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 16
       },
       "17": {
         "bonus": 6,
-        "features": ["song of rest"],
+        "features": [
+          "song of rest"
+        ],
         "lvl": 17
       },
       "18": {
         "bonus": 6,
-        "features": ["magical secrets"],
+        "features": [
+          "magical secrets"
+        ],
         "lvl": 18
       },
       "19": {
         "bonus": 6,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 19
       },
       "20": {
         "bonus": 6,
-        "features": ["superior inspiration"],
+        "features": [
+          "superior inspiration"
+        ],
         "lvl": 20
       }
     },
@@ -269,11 +396,21 @@
     },
     "description": "Clerics are intermediaries between the mortal world and the distant planes of the gods.\nAs varied as the gods they serve, clerics strive to embody the handiwork of their deities.\nNo ordinary priest, a cleric is imbued with divine magic.",
     "equip": {
-      "armor": ["leather", "shield"],
-      "gear": ["holy symbol"],
-      "pack": ["explorer"],
-      "tools": [""],
-      "weapons": ["mace", "light crossbow"]
+      "armor": [
+        "leather",
+        "shield"
+      ],
+      "gear": [
+        "holy symbol"
+      ],
+      "pack": [
+        "explorer"
+      ],
+      "tools": [],
+      "weapons": [
+        "mace",
+        "light crossbow"
+      ]
     },
     "hp": {
       "hitdice": 8,
@@ -284,112 +421,161 @@
     "name": "Cleric",
     "namel": "cleric",
     "prof": {
-      "armor": ["light", "medium", "shield"],
-      "savthrows": ["wis", "cha"],
-      "skills": ["history", "insight", "medicine", "persuasion", "religion"],
-      "tools": [""],
-      "weapons": ["simple"]
+      "armor": [
+        "light",
+        "medium",
+        "shield"
+      ],
+      "savthrows": [
+        "wis",
+        "cha"
+      ],
+      "skills": [
+        "history",
+        "insight",
+        "medicine",
+        "persuasion",
+        "religion"
+      ],
+      "tools": [],
+      "weapons": [
+        "simple"
+      ]
     },
     "source": "",
     "table": {
       "1": {
         "bonus": 2,
-        "features": ["spellcasting", "divine domain"],
+        "features": [
+          "spellcasting",
+          "divine domain"
+        ],
         "lvl": 1
       },
       "2": {
         "bonus": 2,
-        "features": ["channel divinity", "divine domain feature"],
+        "features": [
+          "channel divinity",
+          "divine domain feature"
+        ],
         "lvl": 2
       },
       "3": {
         "bonus": 2,
-        "features": [""],
+        "features": [],
         "lvl": 3
       },
       "4": {
         "bonus": 2,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 4
       },
       "5": {
         "bonus": 3,
-        "features": ["destroy undead"],
+        "features": [
+          "destroy undead"
+        ],
         "lvl": 5
       },
       "6": {
         "bonus": 3,
-        "features": ["channel divinity", "divine domain feature"],
+        "features": [
+          "channel divinity",
+          "divine domain feature"
+        ],
         "lvl": 6
       },
       "7": {
         "bonus": 3,
-        "features": [""],
+        "features": [],
         "lvl": 7
       },
       "8": {
         "bonus": 3,
-        "features": ["ability score improvement", "destroy undead", "divine domain feature"],
+        "features": [
+          "ability score improvement",
+          "destroy undead",
+          "divine domain feature"
+        ],
         "lvl": 8
       },
       "9": {
         "bonus": 4,
-        "features": [""],
+        "features": [],
         "lvl": 9
       },
       "10": {
         "bonus": 4,
-        "features": ["divine intervention"],
+        "features": [
+          "divine intervention"
+        ],
         "lvl": 10
       },
       "11": {
         "bonus": 4,
-        "features": ["destroy undead"],
+        "features": [
+          "destroy undead"
+        ],
         "lvl": 11
       },
       "12": {
         "bonus": 4,
-        "features": [""],
+        "features": [],
         "lvl": 12
       },
       "13": {
         "bonus": 5,
-        "features": [""],
+        "features": [],
         "lvl": 13
       },
       "14": {
         "bonus": 5,
-        "features": ["destroy undead"],
+        "features": [
+          "destroy undead"
+        ],
         "lvl": 14
       },
       "15": {
         "bonus": 5,
-        "features": [""],
+        "features": [],
         "lvl": 15
       },
       "16": {
         "bonus": 5,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 16
       },
       "17": {
         "bonus": 6,
-        "features": ["destroy undead", "divine domain feature"],
+        "features": [
+          "destroy undead",
+          "divine domain feature"
+        ],
         "lvl": 17
       },
       "18": {
         "bonus": 6,
-        "features": ["channel divinity"],
+        "features": [
+          "channel divinity"
+        ],
         "lvl": 18
       },
       "19": {
         "bonus": 6,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 19
       },
       "20": {
         "bonus": 6,
-        "features": ["divine intervention improvement"],
+        "features": [
+          "divine intervention improvement"
+        ],
         "lvl": 20
       }
     },
@@ -401,11 +587,20 @@
     },
     "description": "Whether calling on the elemental forces of nature or emulating the creatures of the animal world, druids are an embodiment of nature’s resilience, cunning, and fury.\nThey claim no mastery over nature.\nInstead, they see themselves as extensions of nature’s indomitable will.",
     "equip": {
-      "armor": ["leather"],
-      "gear": ["druidic focus"],
-      "pack": ["explorer"],
-      "tools": [""],
-      "weapons": ["spear", "scimitar"]
+      "armor": [
+        "leather"
+      ],
+      "gear": [
+        "druidic focus"
+      ],
+      "pack": [
+        "explorer"
+      ],
+      "tools": [],
+      "weapons": [
+        "spear",
+        "scimitar"
+      ]
     },
     "hp": {
       "hitdice": 8,
@@ -416,112 +611,170 @@
     "name": "Druid",
     "namel": "druid",
     "prof": {
-      "armor": ["light", "medium", "shield"],
-      "savthrows": ["int", "wis"],
-      "skills": ["arcana", "animal handling", "insight", "medicine", "nature", "perception", "religion", "survival"],
-      "tools": ["herbalism kit"],
-      "weapons": ["club", "dagger", "dart", "javelin", "mace", "quarterstaff", "scimitar", "sickle", "sling", "spear"]
+      "armor": [
+        "light",
+        "medium",
+        "shield"
+      ],
+      "savthrows": [
+        "int",
+        "wis"
+      ],
+      "skills": [
+        "arcana",
+        "animal handling",
+        "insight",
+        "medicine",
+        "nature",
+        "perception",
+        "religion",
+        "survival"
+      ],
+      "tools": [
+        "herbalism kit"
+      ],
+      "weapons": [
+        "club",
+        "dagger",
+        "dart",
+        "javelin",
+        "mace",
+        "quarterstaff",
+        "scimitar",
+        "sickle",
+        "sling",
+        "spear"
+      ]
     },
     "source": "handbook",
     "table": {
       "1": {
         "bonus": 2,
-        "features": ["druidic", "spellcasting"],
+        "features": [
+          "druidic",
+          "spellcasting"
+        ],
         "lvl": 1
       },
       "2": {
         "bonus": 2,
-        "features": ["wild shape", "druid circle"],
+        "features": [
+          "wild shape",
+          "druid circle"
+        ],
         "lvl": 2
       },
       "3": {
         "bonus": 2,
-        "features": [""],
+        "features": [],
         "lvl": 3
       },
       "4": {
         "bonus": 2,
-        "features": ["wild shape improvement", "ability score improvement"],
+        "features": [
+          "wild shape improvement",
+          "ability score improvement"
+        ],
         "lvl": 4
       },
       "5": {
         "bonus": 3,
-        "features": [""],
+        "features": [],
         "lvl": 5
       },
       "6": {
         "bonus": 3,
-        "features": ["druid circle feature"],
+        "features": [
+          "druid circle feature"
+        ],
         "lvl": 6
       },
       "7": {
         "bonus": 3,
-        "features": [""],
+        "features": [],
         "lvl": 7
       },
       "8": {
         "bonus": 3,
-        "features": ["wild shape improvement", "ability score improvement"],
+        "features": [
+          "wild shape improvement",
+          "ability score improvement"
+        ],
         "lvl": 8
       },
       "9": {
         "bonus": 4,
-        "features": [""],
+        "features": [],
         "lvl": 9
       },
       "10": {
         "bonus": 4,
-        "features": ["druid circle feature"],
+        "features": [
+          "druid circle feature"
+        ],
         "lvl": 10
       },
       "11": {
         "bonus": 4,
-        "features": [""],
+        "features": [],
         "lvl": 11
       },
       "12": {
         "bonus": 4,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 12
       },
       "13": {
         "bonus": 5,
-        "features": [""],
+        "features": [],
         "lvl": 13
       },
       "14": {
         "bonus": 5,
-        "features": ["druid circle feature"],
+        "features": [
+          "druid circle feature"
+        ],
         "lvl": 14
       },
       "15": {
         "bonus": 5,
-        "features": [""],
+        "features": [],
         "lvl": 15
       },
       "16": {
         "bonus": 5,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 16
       },
       "17": {
         "bonus": 6,
-        "features": [""],
+        "features": [],
         "lvl": 17
       },
       "18": {
         "bonus": 6,
-        "features": ["timeless body", "beast spells"],
+        "features": [
+          "timeless body",
+          "beast spells"
+        ],
         "lvl": 18
       },
       "19": {
         "bonus": 6,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 19
       },
       "20": {
         "bonus": 6,
-        "features": ["archdruid"],
+        "features": [
+          "archdruid"
+        ],
         "lvl": 20
       }
     },
@@ -533,11 +786,19 @@
     },
     "description": "Questing knights, conquering overlords, royal champions, elite foot soldiers, hardened mercenaries, and bandit kings-as fighters, they all share an unparalleled mastery with weapons and armor, and a thorough knowledge of the skills of combat.",
     "equip": {
-      "armor": ["chain mail", "shield"],
-      "gear": [""],
-      "pack": ["explorer"],
-      "tools": [""],
-      "weapons": ["light crossbow", "shortsword"]
+      "armor": [
+        "chain mail",
+        "shield"
+      ],
+      "gear": [],
+      "pack": [
+        "explorer"
+      ],
+      "tools": [],
+      "weapons": [
+        "light crossbow",
+        "shortsword"
+      ]
     },
     "hp": {
       "hitdice": 10,
@@ -548,112 +809,176 @@
     "name": "Fighter",
     "namel": "fighter",
     "prof": {
-      "armor": ["light", "medium", "heavy", "shield"],
-      "savthrows": ["str", "con"],
-      "skills": ["acrobatics", "animal handling", "athletics", "history", "insight", "intimidation", "perception", "survival"],
-      "tools": ["none"],
-      "weapons": ["simple", "martial"]
+      "armor": [
+        "light",
+        "medium",
+        "heavy",
+        "shield"
+      ],
+      "savthrows": [
+        "str",
+        "con"
+      ],
+      "skills": [
+        "acrobatics",
+        "animal handling",
+        "athletics",
+        "history",
+        "insight",
+        "intimidation",
+        "perception",
+        "survival"
+      ],
+      "tools": [
+        "none"
+      ],
+      "weapons": [
+        "simple",
+        "martial"
+      ]
     },
     "source": "handbook",
     "table": {
       "1": {
         "bonus": 2,
-        "features": ["fighting style", "second wind"],
+        "features": [
+          "fighting style",
+          "second wind"
+        ],
         "lvl": 1
       },
       "2": {
         "bonus": 2,
-        "features": ["action surge"],
+        "features": [
+          "action surge"
+        ],
         "lvl": 2
       },
       "3": {
         "bonus": 2,
-        "features": ["martial archetype"],
+        "features": [
+          "martial archetype"
+        ],
         "lvl": 3
       },
       "4": {
         "bonus": 2,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 4
       },
       "5": {
         "bonus": 3,
-        "features": ["extra attack"],
+        "features": [
+          "extra attack"
+        ],
         "lvl": 5
       },
       "6": {
         "bonus": 3,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 6
       },
       "7": {
         "bonus": 3,
-        "features": ["martial archetype feature"],
+        "features": [
+          "martial archetype feature"
+        ],
         "lvl": 7
       },
       "8": {
         "bonus": 3,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 8
       },
       "9": {
         "bonus": 4,
-        "features": ["indomitable"],
+        "features": [
+          "indomitable"
+        ],
         "lvl": 9
       },
       "10": {
         "bonus": 4,
-        "features": ["martial archetype feature"],
+        "features": [
+          "martial archetype feature"
+        ],
         "lvl": 10
       },
       "11": {
         "bonus": 4,
-        "features": ["extra attack"],
+        "features": [
+          "extra attack"
+        ],
         "lvl": 11
       },
       "12": {
         "bonus": 4,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 12
       },
       "13": {
         "bonus": 5,
-        "features": ["indomitable"],
+        "features": [
+          "indomitable"
+        ],
         "lvl": 13
       },
       "14": {
         "bonus": 5,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 14
       },
       "15": {
         "bonus": 5,
-        "features": ["martial archetype feature"],
+        "features": [
+          "martial archetype feature"
+        ],
         "lvl": 15
       },
       "16": {
         "bonus": 5,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 16
       },
       "17": {
         "bonus": 6,
-        "features": ["action", "indomitable"],
+        "features": [
+          "action",
+          "indomitable"
+        ],
         "lvl": 17
       },
       "18": {
         "bonus": 6,
-        "features": ["martial archetype feature"],
+        "features": [
+          "martial archetype feature"
+        ],
         "lvl": 18
       },
       "19": {
         "bonus": 6,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 19
       },
       "20": {
         "bonus": 6,
-        "features": ["extra attack"],
+        "features": [
+          "extra attack"
+        ],
         "lvl": 20
       }
     },
@@ -665,11 +990,16 @@
     },
     "description": "A master of martial arts, harnessing the power of the body in pursuit of physical and spiritual perfection.",
     "equip": {
-      "armor": [""],
-      "gear": [""],
-      "pack": ["explorer"],
-      "tools": [""],
-      "weapons": ["shortsword", "dart"]
+      "armor": [],
+      "gear": [],
+      "pack": [
+        "explorer"
+      ],
+      "tools": [],
+      "weapons": [
+        "shortsword",
+        "dart"
+      ]
     },
     "hp": {
       "hitdice": 8,
@@ -680,112 +1010,177 @@
     "name": "Monk",
     "namel": "monk",
     "prof": {
-      "armor": ["none"],
-      "savthrows": ["str", "dex"],
-      "skills": ["acrobatics", "athletics", "history", "insight", "religion", "stealth"],
-      "tools": ["artisan", "instrument"],
-      "weapons": ["simple", "shortsword"]
+      "armor": [
+        "none"
+      ],
+      "savthrows": [
+        "str",
+        "dex"
+      ],
+      "skills": [
+        "acrobatics",
+        "athletics",
+        "history",
+        "insight",
+        "religion",
+        "stealth"
+      ],
+      "tools": [
+        "artisan",
+        "instrument"
+      ],
+      "weapons": [
+        "simple",
+        "shortsword"
+      ]
     },
     "source": "handbook",
     "table": {
       "1": {
         "bonus": 2,
-        "features": ["unarmored defense", "martial arts"],
+        "features": [
+          "unarmored defense",
+          "martial arts"
+        ],
         "lvl": 1
       },
       "2": {
         "bonus": 2,
-        "features": ["ki", "unarmored movement"],
+        "features": [
+          "ki",
+          "unarmored movement"
+        ],
         "lvl": 2
       },
       "3": {
         "bonus": 2,
-        "features": ["monastic tradition", "deflect missiles"],
+        "features": [
+          "monastic tradition",
+          "deflect missiles"
+        ],
         "lvl": 3
       },
       "4": {
         "bonus": 2,
-        "features": ["ability score improvement", "slow fall"],
+        "features": [
+          "ability score improvement",
+          "slow fall"
+        ],
         "lvl": 4
       },
       "5": {
         "bonus": 3,
-        "features": ["extra attack", "stunning strike"],
+        "features": [
+          "extra attack",
+          "stunning strike"
+        ],
         "lvl": 5
       },
       "6": {
         "bonus": 3,
-        "features": ["ki-empowered strikes", "monastic tradition feature"],
+        "features": [
+          "ki-empowered strikes",
+          "monastic tradition feature"
+        ],
         "lvl": 6
       },
       "7": {
         "bonus": 3,
-        "features": ["evasion", "stillness of mind"],
+        "features": [
+          "evasion",
+          "stillness of mind"
+        ],
         "lvl": 7
       },
       "8": {
         "bonus": 3,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 8
       },
       "9": {
         "bonus": 4,
-        "features": ["unarmored movement improvement"],
+        "features": [
+          "unarmored movement improvement"
+        ],
         "lvl": 9
       },
       "10": {
         "bonus": 4,
-        "features": ["purity of body"],
+        "features": [
+          "purity of body"
+        ],
         "lvl": 10
       },
       "11": {
         "bonus": 4,
-        "features": ["monastic tradition feature"],
+        "features": [
+          "monastic tradition feature"
+        ],
         "lvl": 11
       },
       "12": {
         "bonus": 4,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 12
       },
       "13": {
         "bonus": 5,
-        "features": ["tongue of the sun and moon"],
+        "features": [
+          "tongue of the sun and moon"
+        ],
         "lvl": 13
       },
       "14": {
         "bonus": 5,
-        "features": ["diamond soul"],
+        "features": [
+          "diamond soul"
+        ],
         "lvl": 14
       },
       "15": {
         "bonus": 5,
-        "features": ["timeless body"],
+        "features": [
+          "timeless body"
+        ],
         "lvl": 15
       },
       "16": {
         "bonus": 5,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 16
       },
       "17": {
         "bonus": 6,
-        "features": ["monastic tradition feature"],
+        "features": [
+          "monastic tradition feature"
+        ],
         "lvl": 17
       },
       "18": {
         "bonus": 6,
-        "features": ["empty body"],
+        "features": [
+          "empty body"
+        ],
         "lvl": 18
       },
       "19": {
         "bonus": 6,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 19
       },
       "20": {
         "bonus": 6,
-        "features": ["perfect self"],
+        "features": [
+          "perfect self"
+        ],
         "lvl": 20
       }
     },
@@ -797,11 +1192,21 @@
     },
     "description": "Whatever their origin and their mission, paladins are united by their oaths to stand against the forces of evil.\nWhether sworn before a god\u2019s altar and the witness of a priest, in a sacred glade before nature spirits and fey beings, or in a moment of desperation and grief with the dead as the only witness, a paladin\u2019s oath is a powerful bond.",
     "equip": {
-      "armor": ["martial", "shield", "chain mail"],
-      "gear": ["holy symbol"],
-      "pack": ["explorer"],
-      "tools": [""],
-      "weapons": ["javelin"]
+      "armor": [
+        "martial",
+        "shield",
+        "chain mail"
+      ],
+      "gear": [
+        "holy symbol"
+      ],
+      "pack": [
+        "explorer"
+      ],
+      "tools": [],
+      "weapons": [
+        "javelin"
+      ]
     },
     "hp": {
       "hitdice": 10,
@@ -812,112 +1217,171 @@
     "name": "Paladin",
     "namel": "paladin",
     "prof": {
-      "armor": ["light", "medium", "heavy", "shield"],
-      "savthrows": ["wis", "cha"],
-      "skills": [2, "athletics", "insight", "intimidation", "medicine", "persuasion", "religion"],
-      "tools": ["none"],
-      "weapons": ["simple", "martial"]
+      "armor": [
+        "light",
+        "medium",
+        "heavy",
+        "shield"
+      ],
+      "savthrows": [
+        "wis",
+        "cha"
+      ],
+      "skills": [
+        2,
+        "athletics",
+        "insight",
+        "intimidation",
+        "medicine",
+        "persuasion",
+        "religion"
+      ],
+      "tools": [
+        "none"
+      ],
+      "weapons": [
+        "simple",
+        "martial"
+      ]
     },
     "source": "handbook",
     "table": {
       "1": {
         "bonus": 2,
-        "features": ["divine sense", "lay on hands"],
+        "features": [
+          "divine sense",
+          "lay on hands"
+        ],
         "lvl": 1
       },
       "2": {
         "bonus": 2,
-        "features": ["fighting style", "spellcasting", "divine sense"],
+        "features": [
+          "fighting style",
+          "spellcasting",
+          "divine sense"
+        ],
         "lvl": 2
       },
       "3": {
         "bonus": 2,
-        "features": ["divine health", "sacred oath"],
+        "features": [
+          "divine health",
+          "sacred oath"
+        ],
         "lvl": 3
       },
       "4": {
         "bonus": 2,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 4
       },
       "5": {
         "bonus": 3,
-        "features": ["extra attack"],
+        "features": [
+          "extra attack"
+        ],
         "lvl": 5
       },
       "6": {
         "bonus": 3,
-        "features": ["aura of protection"],
+        "features": [
+          "aura of protection"
+        ],
         "lvl": 6
       },
       "7": {
         "bonus": 3,
-        "features": ["sacred oath feature"],
+        "features": [
+          "sacred oath feature"
+        ],
         "lvl": 7
       },
       "8": {
         "bonus": 3,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 8
       },
       "9": {
         "bonus": 4,
-        "features": [""],
+        "features": [],
         "lvl": 9
       },
       "10": {
         "bonus": 4,
-        "features": ["aura of courage"],
+        "features": [
+          "aura of courage"
+        ],
         "lvl": 10
       },
       "11": {
         "bonus": 4,
-        "features": ["improved divine smite"],
+        "features": [
+          "improved divine smite"
+        ],
         "lvl": 11
       },
       "12": {
         "bonus": 4,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 12
       },
       "13": {
         "bonus": 5,
-        "features": [""],
+        "features": [],
         "lvl": 13
       },
       "14": {
         "bonus": 5,
-        "features": ["cleansing touch"],
+        "features": [
+          "cleansing touch"
+        ],
         "lvl": 14
       },
       "15": {
         "bonus": 5,
-        "features": ["sacred oath feature"],
+        "features": [
+          "sacred oath feature"
+        ],
         "lvl": 15
       },
       "16": {
         "bonus": 5,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 16
       },
       "17": {
         "bonus": 6,
-        "features": [""],
+        "features": [],
         "lvl": 17
       },
       "18": {
         "bonus": 6,
-        "features": ["aura improvement"],
+        "features": [
+          "aura improvement"
+        ],
         "lvl": 18
       },
       "19": {
         "bonus": 6,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 19
       },
       "20": {
         "bonus": 6,
-        "features": ["sacred oath feature"],
+        "features": [
+          "sacred oath feature"
+        ],
         "lvl": 20
       }
     },
@@ -929,11 +1393,18 @@
     },
     "description": "Far from the bustle of cities and towns, past the hedges that shelter the most distant farms from the terrors of the wild, amid the dense-packed trees of trackless forests and across wide and empty plains, rangers keep their unending watch.",
     "equip": {
-      "armor": ["scale mail"],
-      "gear": [""],
-      "pack": ["explorer"],
-      "tools": [""],
-      "weapons": ["shortsword", "longbow"]
+      "armor": [
+        "scale mail"
+      ],
+      "gear": [],
+      "pack": [
+        "explorer"
+      ],
+      "tools": [],
+      "weapons": [
+        "shortsword",
+        "longbow"
+      ]
     },
     "hp": {
       "hitdice": 10,
@@ -944,112 +1415,175 @@
     "name": "Ranger",
     "namel": "ranger",
     "prof": {
-      "armor": ["light", "medium", "shield"],
-      "savthrows": ["str", "dex"],
-      "skills": [3, "animal handling", "athletics", "insight", "investigation", "nature", "perception", "stealth", "survival"],
-      "tools": ["none"],
-      "weapons": ["simple", "martial"]
+      "armor": [
+        "light",
+        "medium",
+        "shield"
+      ],
+      "savthrows": [
+        "str",
+        "dex"
+      ],
+      "skills": [
+        3,
+        "animal handling",
+        "athletics",
+        "insight",
+        "investigation",
+        "nature",
+        "perception",
+        "stealth",
+        "survival"
+      ],
+      "tools": [
+        "none"
+      ],
+      "weapons": [
+        "simple",
+        "martial"
+      ]
     },
     "source": "handbook",
     "table": {
       "1": {
         "bonus": 2,
-        "features": ["favored enemy", "natural explorer"],
+        "features": [
+          "favored enemy",
+          "natural explorer"
+        ],
         "lvl": 1
       },
       "2": {
         "bonus": 2,
-        "features": ["fighting style", "spellcasting"],
+        "features": [
+          "fighting style",
+          "spellcasting"
+        ],
         "lvl": 2
       },
       "3": {
         "bonus": 2,
-        "features": ["ranger archetype", "primeval awareness"],
+        "features": [
+          "ranger archetype",
+          "primeval awareness"
+        ],
         "lvl": 3
       },
       "4": {
         "bonus": 2,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 4
       },
       "5": {
         "bonus": 3,
-        "features": ["extra attack"],
+        "features": [
+          "extra attack"
+        ],
         "lvl": 5
       },
       "6": {
         "bonus": 3,
-        "features": ["favored enemy improvement", "natural explorer improvement"],
+        "features": [
+          "favored enemy improvement",
+          "natural explorer improvement"
+        ],
         "lvl": 6
       },
       "7": {
         "bonus": 3,
-        "features": ["ranger archetype feature"],
+        "features": [
+          "ranger archetype feature"
+        ],
         "lvl": 7
       },
       "8": {
         "bonus": 3,
-        "features": ["ability score improvement", "land's stride"],
+        "features": [
+          "ability score improvement",
+          "land's stride"
+        ],
         "lvl": 8
       },
       "9": {
         "bonus": 4,
-        "features": [""],
+        "features": [],
         "lvl": 9
       },
       "10": {
         "bonus": 4,
-        "features": ["natural explorer improvement", "hide in plain sight"],
+        "features": [
+          "natural explorer improvement",
+          "hide in plain sight"
+        ],
         "lvl": 10
       },
       "11": {
         "bonus": 4,
-        "features": ["ranger archetype feature"],
+        "features": [
+          "ranger archetype feature"
+        ],
         "lvl": 11
       },
       "12": {
         "bonus": 4,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 12
       },
       "13": {
         "bonus": 5,
-        "features": [""],
+        "features": [],
         "lvl": 13
       },
       "14": {
         "bonus": 5,
-        "features": ["favored enemy improvement", "vanish"],
+        "features": [
+          "favored enemy improvement",
+          "vanish"
+        ],
         "lvl": 14
       },
       "15": {
         "bonus": 5,
-        "features": ["ranger archetype feature"],
+        "features": [
+          "ranger archetype feature"
+        ],
         "lvl": 15
       },
       "16": {
         "bonus": 5,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 16
       },
       "17": {
         "bonus": 6,
-        "features": [""],
+        "features": [],
         "lvl": 17
       },
       "18": {
         "bonus": 6,
-        "features": ["feral senses"],
+        "features": [
+          "feral senses"
+        ],
         "lvl": 18
       },
       "19": {
         "bonus": 6,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 19
       },
       "20": {
         "bonus": 6,
-        "features": ["foe slayer"],
+        "features": [
+          "foe slayer"
+        ],
         "lvl": 20
       }
     },
@@ -1061,11 +1595,21 @@
     },
     "description": "Rogues rely on skill, stealth, and their foes’ vulnerabilities to get the upper hand in any situation.\nThey have a knack for finding the solution to just about any problem, demonstrating a resourcefulness and versatility that is the cornerstone of any successful adventuring party.",
     "equip": {
-      "armor": ["leather"],
-      "gear": [""],
-      "pack": ["burglar"],
-      "tools": ["thieves"],
-      "weapons": ["rapier", "shortbow", "dagger"]
+      "armor": [
+        "leather"
+      ],
+      "gear": [],
+      "pack": [
+        "burglar"
+      ],
+      "tools": [
+        "thieves"
+      ],
+      "weapons": [
+        "rapier",
+        "shortbow",
+        "dagger"
+      ]
     },
     "hp": {
       "hitdice": 8,
@@ -1076,112 +1620,180 @@
     "name": "Rogue",
     "namel": "rogue",
     "prof": {
-      "armor": ["light"],
-      "savthrows": ["dex", "int"],
-      "skills": [4, "acrobatics", "athletics", "deception", "insight", "intimidation", "investigation", "perception", "performance", "persuasion", "sleight of hand", "stealth"],
-      "tools": ["thieves"],
-      "weapons": ["simple", "hand crossbow", "longsword", "rapier", "shortsword"]
+      "armor": [
+        "light"
+      ],
+      "savthrows": [
+        "dex",
+        "int"
+      ],
+      "skills": [
+        4,
+        "acrobatics",
+        "athletics",
+        "deception",
+        "insight",
+        "intimidation",
+        "investigation",
+        "perception",
+        "performance",
+        "persuasion",
+        "sleight of hand",
+        "stealth"
+      ],
+      "tools": [
+        "thieves"
+      ],
+      "weapons": [
+        "simple",
+        "hand crossbow",
+        "longsword",
+        "rapier",
+        "shortsword"
+      ]
     },
     "source": "handbook",
     "table": {
       "1": {
         "bonus": 2,
-        "features": ["expertise", "sneak attack", "thieves' cant"],
+        "features": [
+          "expertise",
+          "sneak attack",
+          "thieves' cant"
+        ],
         "lvl": 1
       },
       "2": {
         "bonus": 2,
-        "features": ["cunning action"],
+        "features": [
+          "cunning action"
+        ],
         "lvl": 2
       },
       "3": {
         "bonus": 2,
-        "features": ["roguish archetype"],
+        "features": [
+          "roguish archetype"
+        ],
         "lvl": 3
       },
       "4": {
         "bonus": 2,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 4
       },
       "5": {
         "bonus": 3,
-        "features": ["uncannny dodge"],
+        "features": [
+          "uncannny dodge"
+        ],
         "lvl": 5
       },
       "6": {
         "bonus": 3,
-        "features": ["expertise"],
+        "features": [
+          "expertise"
+        ],
         "lvl": 6
       },
       "7": {
         "bonus": 3,
-        "features": ["evasion"],
+        "features": [
+          "evasion"
+        ],
         "lvl": 7
       },
       "8": {
         "bonus": 3,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 8
       },
       "9": {
         "bonus": 4,
-        "features": ["roguish archetype feature"],
+        "features": [
+          "roguish archetype feature"
+        ],
         "lvl": 9
       },
       "10": {
         "bonus": 4,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 10
       },
       "11": {
         "bonus": 4,
-        "features": ["reliable talent"],
+        "features": [
+          "reliable talent"
+        ],
         "lvl": 11
       },
       "12": {
         "bonus": 4,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 12
       },
       "13": {
         "bonus": 5,
-        "features": ["roguish archetype feature"],
+        "features": [
+          "roguish archetype feature"
+        ],
         "lvl": 13
       },
       "14": {
         "bonus": 5,
-        "features": ["blindsense"],
+        "features": [
+          "blindsense"
+        ],
         "lvl": 14
       },
       "15": {
         "bonus": 5,
-        "features": ["slippery mind"],
+        "features": [
+          "slippery mind"
+        ],
         "lvl": 15
       },
       "16": {
         "bonus": 5,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 16
       },
       "17": {
         "bonus": 6,
-        "features": ["roguish archetype feature"],
+        "features": [
+          "roguish archetype feature"
+        ],
         "lvl": 17
       },
       "18": {
         "bonus": 6,
-        "features": ["elusive"],
+        "features": [
+          "elusive"
+        ],
         "lvl": 18
       },
       "19": {
         "bonus": 6,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 19
       },
       "20": {
         "bonus": 6,
-        "features": ["stroke of luck"],
+        "features": [
+          "stroke of luck"
+        ],
         "lvl": 20
       }
     },
@@ -1193,11 +1805,18 @@
     },
     "description": "Sorcerers carry a magical birthright conferred upon them by an exotic bloodline, some otherworldly influence, or exposure to unknown cosmic forces.",
     "equip": {
-      "armor": [""],
-      "gear": ["arcane focus"],
-      "pack": ["explorer"],
-      "tools": [""],
-      "weapons": ["light crossbow", "dagger"]
+      "armor": [],
+      "gear": [
+        "arcane focus"
+      ],
+      "pack": [
+        "explorer"
+      ],
+      "tools": [],
+      "weapons": [
+        "light crossbow",
+        "dagger"
+      ]
     },
     "hp": {
       "hitdice": 6,
@@ -1208,112 +1827,160 @@
     "name": "Sorcerer",
     "namel": "sorcerer",
     "prof": {
-      "armor": ["none"],
-      "savthrows": ["con", "cha"],
-      "skills": [2, "arcana", "deception", "insight", "intimidation", "persuasion", "religion"],
-      "tools": [""],
-      "weapons": ["dagger", "dart", "sling", "quarterstaff", "light crossbow"]
+      "armor": [
+        "none"
+      ],
+      "savthrows": [
+        "con",
+        "cha"
+      ],
+      "skills": [
+        2,
+        "arcana",
+        "deception",
+        "insight",
+        "intimidation",
+        "persuasion",
+        "religion"
+      ],
+      "tools": [],
+      "weapons": [
+        "dagger",
+        "dart",
+        "sling",
+        "quarterstaff",
+        "light crossbow"
+      ]
     },
     "source": "handbook",
     "table": {
       "1": {
         "bonus": 2,
-        "features": ["spellcasting", "sorcerous origin"],
+        "features": [
+          "spellcasting",
+          "sorcerous origin"
+        ],
         "lvl": 1
       },
       "2": {
         "bonus": 2,
-        "features": ["font of magic"],
+        "features": [
+          "font of magic"
+        ],
         "lvl": 2
       },
       "3": {
         "bonus": 2,
-        "features": ["metamagic"],
+        "features": [
+          "metamagic"
+        ],
         "lvl": 3
       },
       "4": {
         "bonus": 2,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 4
       },
       "5": {
         "bonus": 3,
-        "features": [""],
+        "features": [],
         "lvl": 5
       },
       "6": {
         "bonus": 3,
-        "features": ["sorcerous origin feature"],
+        "features": [
+          "sorcerous origin feature"
+        ],
         "lvl": 6
       },
       "7": {
         "bonus": 3,
-        "features": [""],
+        "features": [],
         "lvl": 7
       },
       "8": {
         "bonus": 3,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 8
       },
       "9": {
         "bonus": 4,
-        "features": [""],
+        "features": [],
         "lvl": 9
       },
       "10": {
         "bonus": 4,
-        "features": ["metamagic"],
+        "features": [
+          "metamagic"
+        ],
         "lvl": 10
       },
       "11": {
         "bonus": 4,
-        "features": [""],
+        "features": [],
         "lvl": 11
       },
       "12": {
         "bonus": 4,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 12
       },
       "13": {
         "bonus": 5,
-        "features": [""],
+        "features": [],
         "lvl": 13
       },
       "14": {
         "bonus": 5,
-        "features": ["sorcerous origin feature"],
+        "features": [
+          "sorcerous origin feature"
+        ],
         "lvl": 14
       },
       "15": {
         "bonus": 5,
-        "features": [""],
+        "features": [],
         "lvl": 15
       },
       "16": {
         "bonus": 5,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 16
       },
       "17": {
         "bonus": 6,
-        "features": ["metamagic"],
+        "features": [
+          "metamagic"
+        ],
         "lvl": 17
       },
       "18": {
         "bonus": 6,
-        "features": ["sorcerous origin feature"],
+        "features": [
+          "sorcerous origin feature"
+        ],
         "lvl": 18
       },
       "19": {
         "bonus": 6,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 19
       },
       "20": {
         "bonus": 6,
-        "features": ["sorcerous restoration"],
+        "features": [
+          "sorcerous restoration"
+        ],
         "lvl": 20
       }
     },
@@ -1325,11 +1992,21 @@
     },
     "description": "Warlocks are seekers of the knowledge that lies hidden in the fabric of the multiverse.\nThrough pacts made with mysterious beings of supernatural power, warlocks unlock magical effects both subtle and spectacular.",
     "equip": {
-      "armor": ["leather"],
-      "gear": ["arcane focus"],
-      "pack": ["dungeoneer"],
-      "tools": [""],
-      "weapons": ["light crossbow", "sickle", "dagger"]
+      "armor": [
+        "leather"
+      ],
+      "gear": [
+        "arcane focus"
+      ],
+      "pack": [
+        "dungeoneer"
+      ],
+      "tools": [],
+      "weapons": [
+        "light crossbow",
+        "sickle",
+        "dagger"
+      ]
     },
     "hp": {
       "hitdice": 8,
@@ -1340,112 +2017,163 @@
     "name": "Warlock",
     "namel": "warlock",
     "prof": {
-      "armor": ["light"],
-      "savthrows": ["wis", "cha"],
-      "skills": [2, "arcana", "deception", "history", "intimidation", "investigation", "nature", "religion"],
-      "tools": ["none"],
-      "weapons": ["simple"]
+      "armor": [
+        "light"
+      ],
+      "savthrows": [
+        "wis",
+        "cha"
+      ],
+      "skills": [
+        2,
+        "arcana",
+        "deception",
+        "history",
+        "intimidation",
+        "investigation",
+        "nature",
+        "religion"
+      ],
+      "tools": [
+        "none"
+      ],
+      "weapons": [
+        "simple"
+      ]
     },
     "source": "handbook",
     "table": {
       "1": {
         "bonus": 2,
-        "features": ["otherworldly patron", "pact magic"],
+        "features": [
+          "otherworldly patron",
+          "pact magic"
+        ],
         "lvl": 1
       },
       "2": {
         "bonus": 2,
-        "features": ["eldritch invocations"],
+        "features": [
+          "eldritch invocations"
+        ],
         "lvl": 2
       },
       "3": {
         "bonus": 2,
-        "features": ["pact boon"],
+        "features": [
+          "pact boon"
+        ],
         "lvl": 3
       },
       "4": {
         "bonus": 2,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 4
       },
       "5": {
         "bonus": 3,
-        "features": [""],
+        "features": [],
         "lvl": 5
       },
       "6": {
         "bonus": 3,
-        "features": ["otherworldly patron feature"],
+        "features": [
+          "otherworldly patron feature"
+        ],
         "lvl": 6
       },
       "7": {
         "bonus": 3,
-        "features": [""],
+        "features": [],
         "lvl": 7
       },
       "8": {
         "bonus": 3,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 8
       },
       "9": {
         "bonus": 4,
-        "features": [""],
+        "features": [],
         "lvl": 9
       },
       "10": {
         "bonus": 4,
-        "features": ["otherworldly patron feature"],
+        "features": [
+          "otherworldly patron feature"
+        ],
         "lvl": 10
       },
       "11": {
         "bonus": 4,
-        "features": ["mystic arcanum"],
+        "features": [
+          "mystic arcanum"
+        ],
         "lvl": 11
       },
       "12": {
         "bonus": 4,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 12
       },
       "13": {
         "bonus": 5,
-        "features": ["mystic arcanum"],
+        "features": [
+          "mystic arcanum"
+        ],
         "lvl": 13
       },
       "14": {
         "bonus": 5,
-        "features": ["otherworldly patron feature"],
+        "features": [
+          "otherworldly patron feature"
+        ],
         "lvl": 14
       },
       "15": {
         "bonus": 5,
-        "features": ["mystic arcanum"],
+        "features": [
+          "mystic arcanum"
+        ],
         "lvl": 15
       },
       "16": {
         "bonus": 5,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 16
       },
       "17": {
         "bonus": 6,
-        "features": ["mystic arcanum"],
+        "features": [
+          "mystic arcanum"
+        ],
         "lvl": 17
       },
       "18": {
         "bonus": 6,
-        "features": [""],
+        "features": [],
         "lvl": 18
       },
       "19": {
         "bonus": 6,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 19
       },
       "20": {
         "bonus": 6,
-        "features": ["eldritch master"],
+        "features": [
+          "eldritch master"
+        ],
         "lvl": 20
       }
     },
@@ -1457,11 +2185,19 @@
     },
     "description": "Wizards are supreme magic-users, defined and united as a class by the spells they cast.\nDrawing on the subtle weave of magic that permeates the cosmos, wizards cast spells of explosive fire, arcing lightning, subtle deception, and brute-force mind control.",
     "equip": {
-      "armor": [""],
-      "gear": ["component pouch"],
-      "pack": ["scholar"],
-      "tools": ["spellbook"],
-      "weapons": ["quarterstaff"]
+      "armor": [],
+      "gear": [
+        "component pouch"
+      ],
+      "pack": [
+        "scholar"
+      ],
+      "tools": [
+        "spellbook"
+      ],
+      "weapons": [
+        "quarterstaff"
+      ]
     },
     "hp": {
       "hitdice": 6,
@@ -1472,112 +2208,158 @@
     "name": "Wizard",
     "namel": "wizard",
     "prof": {
-      "armor": ["none"],
-      "savthrows": ["int", "wis"],
-      "skills": [2, "arcana", "history", "insight", "investigation", "medicine", "religion"],
-      "tools": ["none"],
-      "weapons": ["dagger", "dart", "sling", "quarterstaff", "light crossbow"]
+      "armor": [
+        "none"
+      ],
+      "savthrows": [
+        "int",
+        "wis"
+      ],
+      "skills": [
+        2,
+        "arcana",
+        "history",
+        "insight",
+        "investigation",
+        "medicine",
+        "religion"
+      ],
+      "tools": [
+        "none"
+      ],
+      "weapons": [
+        "dagger",
+        "dart",
+        "sling",
+        "quarterstaff",
+        "light crossbow"
+      ]
     },
     "source": "handbook",
     "table": {
       "1": {
         "bonus": 2,
-        "features": ["spellcasting", "arcane recovery"],
+        "features": [
+          "spellcasting",
+          "arcane recovery"
+        ],
         "lvl": 1
       },
       "2": {
         "bonus": 2,
-        "features": ["arcane tradition"],
+        "features": [
+          "arcane tradition"
+        ],
         "lvl": 2
       },
       "3": {
         "bonus": 2,
-        "features": [""],
+        "features": [],
         "lvl": 3
       },
       "4": {
         "bonus": 2,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 4
       },
       "5": {
         "bonus": 3,
-        "features": [""],
+        "features": [],
         "lvl": 5
       },
       "6": {
         "bonus": 3,
-        "features": ["arcane tradition feature"],
+        "features": [
+          "arcane tradition feature"
+        ],
         "lvl": 6
       },
       "7": {
         "bonus": 3,
-        "features": [""],
+        "features": [],
         "lvl": 7
       },
       "8": {
         "bonus": 3,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 8
       },
       "9": {
         "bonus": 4,
-        "features": [""],
+        "features": [],
         "lvl": 9
       },
       "10": {
         "bonus": 4,
-        "features": ["arcane tradition feature"],
+        "features": [
+          "arcane tradition feature"
+        ],
         "lvl": 10
       },
       "11": {
         "bonus": 4,
-        "features": [""],
+        "features": [],
         "lvl": 11
       },
       "12": {
         "bonus": 4,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 12
       },
       "13": {
         "bonus": 5,
-        "features": [""],
+        "features": [],
         "lvl": 13
       },
       "14": {
         "bonus": 5,
-        "features": ["arcane tradition feature"],
+        "features": [
+          "arcane tradition feature"
+        ],
         "lvl": 14
       },
       "15": {
         "bonus": 5,
-        "features": [""],
+        "features": [],
         "lvl": 15
       },
       "16": {
         "bonus": 5,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 16
       },
       "17": {
         "bonus": 6,
-        "features": [""],
+        "features": [],
         "lvl": 17
       },
       "18": {
         "bonus": 6,
-        "features": ["spell mastery"],
+        "features": [
+          "spell mastery"
+        ],
         "lvl": 18
       },
       "19": {
         "bonus": 6,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 19
       },
       "20": {
         "bonus": 6,
-        "features": ["signature spells"],
+        "features": [
+          "signature spells"
+        ],
         "lvl": 20
       }
     },
@@ -1589,11 +2371,18 @@
     },
     "description": "They sacrifice some of their own vital force in dubious, forgotten blood rituals to better understand their enemies.\nTheir methods sometimes blur the line between themselves and the evils they hunt, calling their own humanity into question.\n\nThese folk are called 'Blood Hunters.'",
     "equip": {
-      "armor": ["scale mail"],
-      "gear": [""],
-      "pack": ["explorer"],
-      "tools": [""],
-      "weapons": ["longsword", "hand crossbow"]
+      "armor": [
+        "scale mail"
+      ],
+      "gear": [],
+      "pack": [
+        "explorer"
+      ],
+      "tools": [],
+      "weapons": [
+        "longsword",
+        "hand crossbow"
+      ]
     },
     "hp": {
       "hitdice": 10,
@@ -1604,112 +2393,173 @@
     "name": "Blood Hunter",
     "namel": "blood hunter",
     "prof": {
-      "armor": ["light", "medium", "shield"],
-      "savthrows": ["str", "wis"],
-      "skills": [2, "athletics", "acrobatics", "arcana", "insight", "investigation", "survival"],
-      "tools": ["alchemist"],
-      "weapons": ["simple", "martial"]
+      "armor": [
+        "light",
+        "medium",
+        "shield"
+      ],
+      "savthrows": [
+        "str",
+        "wis"
+      ],
+      "skills": [
+        2,
+        "athletics",
+        "acrobatics",
+        "arcana",
+        "insight",
+        "investigation",
+        "survival"
+      ],
+      "tools": [
+        "alchemist"
+      ],
+      "weapons": [
+        "simple",
+        "martial"
+      ]
     },
     "source": "mattmercer",
     "table": {
       "1": {
         "bonus": 2,
-        "features": ["hunter's bane", "crimson rite"],
+        "features": [
+          "hunter's bane",
+          "crimson rite"
+        ],
         "lvl": 1
       },
       "2": {
         "bonus": 2,
-        "features": ["fighting style", "blood maledict"],
+        "features": [
+          "fighting style",
+          "blood maledict"
+        ],
         "lvl": 2
       },
       "3": {
         "bonus": 2,
-        "features": ["blood hunter order"],
+        "features": [
+          "blood hunter order"
+        ],
         "lvl": 3
       },
       "4": {
         "bonus": 2,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 4
       },
       "5": {
         "bonus": 3,
-        "features": ["extra attack"],
+        "features": [
+          "extra attack"
+        ],
         "lvl": 5
       },
       "6": {
         "bonus": 3,
-        "features": ["blood maledict"],
+        "features": [
+          "blood maledict"
+        ],
         "lvl": 6
       },
       "7": {
         "bonus": 3,
-        "features": ["order feature"],
+        "features": [
+          "order feature"
+        ],
         "lvl": 7
       },
       "8": {
         "bonus": 3,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 8
       },
       "9": {
         "bonus": 4,
-        "features": ["grim psychometry"],
+        "features": [
+          "grim psychometry"
+        ],
         "lvl": 9
       },
       "10": {
         "bonus": 4,
-        "features": ["dark velocity"],
+        "features": [
+          "dark velocity"
+        ],
         "lvl": 10
       },
       "11": {
         "bonus": 4,
-        "features": ["order feature", "blood maledict"],
+        "features": [
+          "order feature",
+          "blood maledict"
+        ],
         "lvl": 11
       },
       "12": {
         "bonus": 4,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 12
       },
       "13": {
         "bonus": 5,
-        "features": [""],
+        "features": [],
         "lvl": 13
       },
       "14": {
         "bonus": 5,
-        "features": ["hardened soul"],
+        "features": [
+          "hardened soul"
+        ],
         "lvl": 14
       },
       "15": {
         "bonus": 5,
-        "features": ["order feature"],
+        "features": [
+          "order feature"
+        ],
         "lvl": 15
       },
       "16": {
         "bonus": 5,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 16
       },
       "17": {
         "bonus": 6,
-        "features": ["blood maledict"],
+        "features": [
+          "blood maledict"
+        ],
         "lvl": 17
       },
       "18": {
         "bonus": 6,
-        "features": ["order feature"],
+        "features": [
+          "order feature"
+        ],
         "lvl": 18
       },
       "19": {
         "bonus": 6,
-        "features": ["ability score improvement"],
+        "features": [
+          "ability score improvement"
+        ],
         "lvl": 19
       },
       "20": {
         "bonus": 6,
-        "features": ["sanguine mastery"],
+        "features": [
+          "sanguine mastery"
+        ],
         "lvl": 20
       }
     },
