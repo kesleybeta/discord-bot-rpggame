@@ -220,7 +220,7 @@
       "swimming": 0,
       "walking": 30
     },
-    "subraces": "none",
+    "subraces": "",
     "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/481/420/618/636274618102950794.png",
     "variant": [""]
   },
@@ -324,7 +324,7 @@
     },
     "alignment": "Neutral",
     "description": "In the reckonings of most worlds. humans are the youngest of the common races.\nLate to arrive on the world scene and short-lived in comparison to dwarves, elves, and dragons.",
-    "features": [""],
+    "features": [],
     "icon": "",
     "languages": ["Common"],
     "mark": [""],

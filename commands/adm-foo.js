@@ -4,9 +4,12 @@ const tools = require("../util/functions") // Require global functions
 const ModCharacter = require("../models/mod-character") // Require profile schema
 const low = require('lowdb') // Require lowdb and then FileSync
 const FileSync = require('lowdb/adapters/FileSync')
+
 const jsonCharCreation = low(new FileSync('./jsonfiles/charcreation.json', 'utf8'))
 const jsonRaces = low(new FileSync('./jsonfiles/char/charraces.json', 'utf8'))
 const jsonSubRaces = low(new FileSync('./jsonfiles/char/charsubraces.json', 'utf8'))
+const jsonClass = low(new FileSync('./jsonfiles/char/charclasses.json', 'utf8'))
+
 const capitalize = require("capitalize")
 
 module.exports.run = async (message, cmd) => {
@@ -30,7 +33,9 @@ module.exports.run = async (message, cmd) => {
   let choosenName = "choose"
 
   let alignment = ""
+  let equip = {}
   let features = []
+  let hp = ""
   let languages = []
   let name = ""
   let racialAttributes = {}
@@ -64,13 +69,20 @@ module.exports.run = async (message, cmd) => {
     .addField(`↙ Choose one:`, `\`\`\`diff\n+ ${jsonCharCreation.get('allraces').value().join('\n+ ')}\`\`\``, true)
     .setFooter(`⏰ You'll have ${milisec / 1000} seconds to type your desired RACE. Or 'cancel'`)
   let subRaceEmbed = new Discord.RichEmbed() // An embed for subraces information
-    .setAuthor("Character Creation", "https://cdn4.iconfinder.com/data/icons/game-rounded-2-set/512/scroll-512.png")
+    .setAuthor("Character Creation", "https://i.imgur.com/1MeVhf4.png")
     .setTitle("1.5. SUB-RACE")
-    .setColor("#9776E9")
+    .setColor("#8666EF")
     .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Viking-512.png")
     .setDescription(`• Some races have subraces. Members of a subrace have the traits of the parent race in addition to the traits specified for their subrace.`)
     .setFooter(`⏰ You'll have ${milisec / 1000} seconds to type your desired SUBRACE. Or 'cancel'`)
-
+  let classEmbed = new Discord.RichEmbed() // An embed for class information
+    .setAuthor("Character Creation", "https://i.imgur.com/1MeVhf4.png")
+    .setTitle("2. CLASS")
+    .setColor("#65d8d6")
+    .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Knight-512.png")
+    .setDescription(`• Class shapes the way you think about the world and interact with it and your relationship with other people and powers in the multiverse.`)
+    .addField(`↙ Choose one`, `\`\`\`diff\n+ ${jsonCharCreation.get('allclasses').value().join('\n+ ')}\`\`\``, true)
+    .setFooter(`⏰ You'll have ${milisec / 1000} seconds to type your desired CLASS. Or 'cancel`)
   // Code lines
   /** 0. Searching for user characters */
   await ModCharacter.findOne({
@@ -87,111 +99,129 @@ module.exports.run = async (message, cmd) => {
 
   /** 1 - 2. Message awaiting race choice */
   await message.channel.awaitMessages(filter, {
-    max: 1,
-    time: milisec,
-    errors: ['time']
-  }).then(async collected => {
-    if (collected.first().content.toLowerCase() === "cancel") return message.reply("Cancelled!").then(choosenRace = "terminate")
+      max: 1,
+      time: milisec,
+      errors: ['time']
+    }).then(async collected => {
+      if (collected.first().content.toLowerCase() === "cancel") return message.reply("Cancelled!").then(choosenRace = "terminate")
+      if (collected.first().content) choosenRace = await collected.first().content.toLowerCase()
 
-    if (collected.first().content) choosenRace = await collected.first().content.toLowerCase()
+      /**  1 - 3. Race validation */
+      if (!jsonRaces.has(choosenRace).value()) return message.reply(`\n• Please, give a valid RACE!\n• Restart the guide typing: \`${cmd}\`.`).then(choosenRace = "terminate")
 
-    /**  1 - 3. Race validation */
-    if (!jsonRaces.has(choosenRace).value()) return message.reply("Race is not defined!")
+      // Getting the races traits
+      alignment = await capitalize.words(jsonRaces.get(choosenRace + '.alignment').value())
+      features = await jsonRaces.get(choosenRace + '.features').value()
+      languages = await jsonRaces.get(choosenRace + '.languages').value()
+      name = tools.randomName(choosenRace, 'm')
+      racialAttributes = await jsonRaces.get(choosenRace + '.abilityscore').value()
+      speed = await jsonRaces.get(choosenRace + '.speed').value()
 
-    // Getting the races traits
-    alignment = await capitalize.words(jsonRaces.get(choosenRace + '.alignment').value())
-    features = await jsonRaces.get(choosenRace + '.features').value()
-    languages = await jsonRaces.get(choosenRace + '.languages').value()
-    name = tools.randomName(choosenRace, 'm')
-    racialAttributes = await jsonRaces.get(choosenRace + '.abilityscore').value()
-    speed = await jsonRaces.get(choosenRace + '.speed').value()
-
-    if (jsonRaces.get(choosenRace + '.subraces').value() === "") choosenSubRace = ""
-    else {
-      choosenSubRace = "choose"
-      try { // Building the SUBRACES embed.
-        await subRaceEmbed.addField(`↙ Choose one:`, `\`\`\`diff\n+ ${jsonCharCreation.get('subraces.' + choosenRace).value()
+      if (jsonRaces.get(choosenRace + '.subraces').value() === "") choosenSubRace = ""
+      else {
+        choosenSubRace = "choose"
+        try { // Building the SUBRACES embed.
+          await subRaceEmbed.addField(`↙ Choose one:`, `\`\`\`diff\n+ ${jsonCharCreation.get('subraces.' + choosenRace).value()
           .join('\n+ ')}\`\`\``, true)
-      } catch (ce) {
-        return message.reply("An error occurred. Try again later.").then(console.error(ce))
+        } catch (ce) {
+          return message.reply("An error occurred. Try again later.").then(console.error(ce.message))
+        }
       }
-    }
-    choosenRace = capitalize.words(choosenRace)
+      choosenRace = capitalize.words(choosenRace)
 
-  })
-    .catch(() => {
-      choosenRace = "terminate"
-      return message.reply(` • Time's up! • Restart the guide typing: \`${cmd}\`.`).then(console.error)
     })
-  if (choosenRace === "terminate") return
+    .catch(ce => {
+      choosenRace = "terminate"
+      return message.reply(` • Time's up! • Restart the guide typing: \`${cmd}\`.`).then(console.error(ce.message))
+    })
+  if (choosenRace === "terminate") return // --------------------------------------------------------------------
 
   /** 1.5 - 2. Message await - this will wait for user to type the desire race. */
   if (choosenSubRace === "choose") {
     await message.channel.send(subRaceEmbed)
     await message.channel.awaitMessages(filter, {
-      max: 1,
-      time: milisec,
-      errors: ['time']
-    }).then(async collected => {
-      if (collected.first().content.toLowerCase() === "cancel") return message.reply("Cancelled!").then(choosenSubRace = "terminate")
-      if (collected.first().content) choosenSubRace = await collected.first().content.toLowerCase()
+        max: 1,
+        time: milisec,
+        errors: ['time']
+      }).then(async collected => {
+        if (collected.first().content.toLowerCase() === "cancel") return message.reply("Cancelled!").then(choosenSubRace = "terminate")
+        if (collected.first().content) choosenSubRace = await collected.first().content.toLowerCase()
 
-      /** 1.5 - 3. Validation of the choice - if SUBRACE is valid the guide keep going. */
-      if (choosenRace !== "notdefined") {
-        try {
-          if (!jsonSubRaces.has(choosenSubRace).value()) {
-            choosenSubRace = "terminate"
-            return message.reply(`\n• Please, give a valid SUBRACE!\n• Restart the guide typing: \`${cmd}\`.`)
-          }
+        /** 1.5 - 3. Validation of the choice - if SUBRACE is valid the guide keep going. */
+        if (!jsonSubRaces.has(choosenSubRace).value()) return message.reply(`\n• Please, give a valid SUBRACE!\n• Restart the guide typing: \`${cmd}\`.`).then(choosenSubRace = "terminate")
 
-          await features.push(jsonSubRaces.get(choosenSubRace + '.features').value())
-          let subRaceAbility = await jsonSubRaces.get(choosenSubRace + '.abilityscore').value()
+        await features.push(jsonSubRaces.get(choosenSubRace + '.features').value())
+        let subRaceAbility = await jsonSubRaces.get(choosenSubRace + '.abilityscore').value()
 
-          racialAttributes.str += subRaceAbility.str
-          racialAttributes.dex += subRaceAbility.dex
-          racialAttributes.con += subRaceAbility.con
-          racialAttributes.int += subRaceAbility.int
-          racialAttributes.wis += subRaceAbility.wis
-          racialAttributes.cha += subRaceAbility.cha
+        racialAttributes.str += subRaceAbility.str
+        racialAttributes.dex += subRaceAbility.dex
+        racialAttributes.con += subRaceAbility.con
+        racialAttributes.int += subRaceAbility.int
+        racialAttributes.wis += subRaceAbility.wis
+        racialAttributes.cha += subRaceAbility.cha
 
-          choosenSubRace = jsonSubRaces.get(choosenSubRace + '.name').value()
-        } catch (err) {
-          choosenSubRace = "terminate"
-          return message.channel.send(`\n• Time's up!\n• Restart the guide typing: \`${cmd}\`.`).then(console.error(err))
-        }
-      }
-    })
+        choosenSubRace = jsonSubRaces.get(choosenSubRace + '.name').value()
+
+      })
       .catch(ce => {
         choosenSubRace = "terminate"
-        message.channel.send(`\n• Time's up!\n• Restart the guide typing: \`${cmd}\`.`).then(console.error(ce))
+        return message.reply(`\n• Time's up!\n• Restart the guide typing: \`${cmd}\`.`).then(console.error(ce.message))
       })
   }
   if (choosenSubRace === "terminate") return // --------------------------------------------------------------------
 
 
+  /** Class */
+  await message.channel.send(classEmbed)
+  await message.channel.awaitMessages(filter, {
+      max: 1,
+      time: milisec,
+      errors: ['time']
+    }).then(async collected => {
+      if (collected.first().content.toLowerCase() === "cancel") return message.reply("Cancelled!").then(choosenClass = "terminate")
+      if (collected.first().content) choosenClass = await collected.first().content.toLowerCase()
+
+      if (!jsonClass.has(choosenClass).value()) return message.reply(`\n• Please, give a valid CLASS!\n• Restart the guide typing: \`${cmd}\`.`).then(choosenClass = "terminate")
 
 
+      await features.push(jsonClass.get(choosenClass + '.table.1.features').value())
+      equip = await jsonClass.get(choosenClass + '.equip').value()
+      hp = await jsonClass.get(choosenClass + '.hp.hpfirst').value()
+      features = features.flat()
+      choosenClass = capitalize.words(choosenClass)
+    })
+    .catch(ce => {
+      choosenClass = "terminate"
+      return message.reply(`Time's up! • Restart the guide typing: \`${cmd}\`.`).then(console.error(ce.message))
+    })
 
-
-
-
+  if (choosenClass === "terminate") return
 
   embed.setColor("#447FF3")
-    .setAuthor(sender.username, sender.displayAvatarURL)
     .addField("NAME", `\`\`\`css\n${name}\n\`\`\``, true)
     .addField("RACE", `\`\`\`css\n${choosenSubRace || choosenRace}\n\`\`\``, true)
-    .addBlankField()
+    .addField("CLASS", `\`\`\`css\n${choosenClass}\n\`\`\``, true)
+    //.addBlankField()
     .addField("ALIGNMENT", `\`\`\`css\n${alignment}\n\`\`\``, true)
     .addField("ATTRIBUTES", `\`\`\`css
-         | STR | DEX | CON | INT | WIS | CHA |
-base   : |  ${base.str} |  ${base.dex} |  ${base.con} |  ${base.int} |  ${base.wis} |  ${base.cha} |
-mod    : |   ${mod.str} |   ${mod.dex} |   ${mod.con} |   ${mod.int} |   ${mod.wis} |   ${mod.cha} |
-racial : |   ${racialAttributes.str} |   ${racialAttributes.dex} |   ${racialAttributes.con} |   ${racialAttributes.int} |   ${racialAttributes.wis} |   ${racialAttributes.cha} |\n\`\`\``)
-    .addField("FEATURES", `\`\`\`css\n${features}\n\`\`\``, true)
-    .addField("LANGUAGES", `\`\`\`css\n${languages}\n\`\`\``, true)
+[STR] : ${base.str + racialAttributes.str} : (BASE: ${base.str}, MOD: ${mod.str}, RACE: ${racialAttributes.str})
+[DEX] : ${base.dex + racialAttributes.dex} : (BASE: ${base.dex}, MOD: ${mod.dex}, RACE: ${racialAttributes.dex})
+[CON] : ${base.con + racialAttributes.con} : (BASE: ${base.con}, MOD: ${mod.con}, RACE: ${racialAttributes.con})
+[INT] : ${base.int + racialAttributes.int} : (BASE: ${base.int}, MOD: ${mod.int}, RACE: ${racialAttributes.int})
+[WIS] : ${base.wis + racialAttributes.wis} : (BASE: ${base.wis}, MOD: ${mod.wis}, RACE: ${racialAttributes.wis})
+[CHA] : ${base.cha + racialAttributes.cha} : (BASE: ${base.cha}, MOD: ${mod.cha}, RACE: ${racialAttributes.cha})\n\`\`\``)
+    .addField("EQUIP", `\`\`\`css
+[Armor  ] : ${equip.armor.join(', ')}
+[Gear   ] : ${equip.gear.join(', ')}
+[Pack   ] : ${equip.pack.join(', ')}
+[Tools  ] : ${equip.tools.join(', ')}
+[Weapons] : ${equip.weapons.join(', ')}\n\`\`\``, true)
+    .addField("FEATURES", `\`\`\`css\n${features.join(', ')}\n\`\`\``, true)
+    .addField("HIT POINTS", `\`\`\`css\nMAX: ${hp}\n\`\`\``, true)
+    .addField("LANGUAGES", `\`\`\`css\n${languages.join(', ')}\n\`\`\``, true)
     .addField("SPEED", `\`\`\`css\nBase walking: ${speed.walking}\n\`\`\``, true)
     .setTimestamp(new Date())
-    .setFooter("© Character")
+    .setFooter(`© ${sender.username} Character`, sender.displayAvatarURL)
   return message.channel.send(embed)
 }
 

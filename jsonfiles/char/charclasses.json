@@ -30,102 +30,102 @@
     "table": {
       "1": {
         "bonus": 2,
-        "features": ["rage", "unarmored defense"],
+        "features": ["Rage", "Unarmored defense"],
         "lvl": 1
       },
       "2": {
         "bonus": 2,
-        "features": ["reckless attack", "danger sense"],
+        "features": ["Reckless attack", "Danger sense"],
         "lvl": 2
       },
       "3": {
         "bonus": 2,
-        "features": ["primal path"],
+        "features": ["Primal path"],
         "lvl": 3
       },
       "4": {
         "bonus": 2,
-        "features": ["ability score improvement"],
+        "features": ["Ability score improvement"],
         "lvl": 4
       },
       "5": {
         "bonus": 3,
-        "features": ["persistent rage"],
+        "features": ["Persistent rage"],
         "lvl": 5
       },
       "6": {
         "bonus": 3,
-        "features": ["path feature"],
+        "features": ["Path feature"],
         "lvl": 6
       },
       "7": {
         "bonus": 3,
-        "features": ["feral instinct"],
+        "features": ["Feral instinct"],
         "lvl": 7
       },
       "8": {
         "bonus": 3,
-        "features": ["ability score improvement"],
+        "features": ["Ability score improvement"],
         "lvl": 8
       },
       "9": {
         "bonus": 4,
-        "features": ["brutal critical"],
+        "features": ["Brutal critical"],
         "lvl": 9
       },
       "10": {
         "bonus": 4,
-        "features": ["path feature"],
+        "features": ["Path feature"],
         "lvl": 10
       },
       "11": {
         "bonus": 4,
-        "features": ["relentless rage"],
+        "features": ["Relentless rage"],
         "lvl": 11
       },
       "12": {
         "bonus": 4,
-        "features": ["ability score improvement"],
+        "features": ["Ability score improvement"],
         "lvl": 12
       },
       "13": {
         "bonus": 5,
-        "features": ["brutal critical"],
+        "features": ["Brutal critical"],
         "lvl": 13
       },
       "14": {
         "bonus": 5,
-        "features": ["path feature"],
+        "features": ["Path feature"],
         "lvl": 14
       },
       "15": {
         "bonus": 5,
-        "features": ["persistent rage"],
+        "features": ["Persistent rage"],
         "lvl": 15
       },
       "16": {
         "bonus": 5,
-        "features": ["ability score improvement"],
+        "features": ["Ability score improvement"],
         "lvl": 16
       },
       "17": {
         "bonus": 6,
-        "features": ["brutal critical"],
+        "features": ["Brutal critical"],
         "lvl": 17
       },
       "18": {
         "bonus": 6,
-        "features": ["indomitable might"],
+        "features": ["Indomitable might"],
         "lvl": 18
       },
       "19": {
         "bonus": 6,
-        "features": ["ability score improvement"],
+        "features": ["Ability score improvement"],
         "lvl": 19
       },
       "20": {
         "bonus": 6,
-        "features": ["primal champion"],
+        "features": ["Primal champion"],
         "lvl": 20
       }
     },
