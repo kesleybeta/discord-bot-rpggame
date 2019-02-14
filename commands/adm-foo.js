@@ -91,7 +91,7 @@ module.exports.run = async (message, cmd) => {
     .setColor("#69db83")
     .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Grim_Reaper-512.png")
     .setDescription(`• Your character’s background reveals where you came from, how you became an adventurer, and your place in the world.`)
-    .addField(`↙ Choose one`, `\`\`\`diff\n+ ${arr.get('allbacks').value().join('\n+ ')}\`\`\``, true)
+    .addField(`↙ Choose one`, `\`\`\`diff\n+ ${jsonCharCreation.get('allbacks').value().join('\n+ ')}\`\`\``, true)
     .setFooter(`⏰ You'll have ${milisec / 1000} seconds to type your desired BACKGROUND.`)
   let nameEmbed = new Discord.RichEmbed()
     .setColor(3447003)
@@ -228,11 +228,22 @@ module.exports.run = async (message, cmd) => {
     if (!jsonBackground.has(choosenBack).value()) return message.reply(`\n• Please, give a valid BACKGROUND!\n• Restart the guide typing: \`${cmd}\`.`).then(choosenBack = "terminate")
 
     // // Background features
-    // await features.push(jsonBackground.get(choosenClass + '.table.1.features').value())
+    await features.push(jsonBackground.get(choosenBack + '.features').value())
+    await prof.skills.push(jsonBackground.get(choosenBack + '.prof.skills').value())
+    await prof.tools.push(jsonBackground.get(choosenBack + '.prof.tools').value())
+
+    await equip.gear.push(jsonBackground.get(choosenBack + '.equip.gear').value())
+    await equip.tools.push(jsonBackground.get(choosenBack + '.equip.tools').value())
+
+    prof.skills = prof.skills.flat()
+    prof.tools = prof.tools.flat()
+
+    equip.gear = equip.gear.flat()
+    equip.tools = equip.tools.flat()
+
     // equip = await jsonClass.get(choosenClass + '.equip').value()
     // prof = await jsonClass.get(choosenClass + '.prof').value()
-    // hp = await jsonClass.get(choosenClass + '.hp.hpfirst').value() + mod.con
-    // features = features.flat()
+
     // "coinstoadd": {
     //   "_container": "belt pouch",
     //     "bp": 0,
@@ -255,13 +266,6 @@ module.exports.run = async (message, cmd) => {
     //       "ideal": 6,
     //         "trait": 8
     // },
-
-    // "prof": {
-    //   "armor": [],
-    //     "savthrows": [],
-    //       "skills": ["animal handling", "survival"],
-    //         "tools": ["artisan", "vehicles.land"],
-    //           "weapons": []
 
     choosenBack = capitalize.words(choosenBack)
   })
@@ -295,23 +299,22 @@ module.exports.run = async (message, cmd) => {
 
 
 
-
+  // prof.armor = prof.armor.map(element => capitalize.words(element))
 
   embed.setColor("#447FF3")
     .addField("NAME", `\`\`\`css\n${name}\n\`\`\``, true)
-    .addBlankField()
+    .addField("HIT POINTS", `\`\`\`css\nMAX: ${hp}\n\`\`\``, true)
+    .addField("ALIGNMENT", `\`\`\`css\n${alignment}\n\`\`\``, true)
     .addField("RACE", `\`\`\`css\n${choosenSubRace || choosenRace}\n\`\`\``, true)
     .addField("CLASS", `\`\`\`css\n${choosenClass}\n\`\`\``, true)
     .addField("BACKGROND", `\`\`\`css\n${choosenBack}\n\`\`\``, true)
-    .addBlankField()
-    .addField("ALIGNMENT", `\`\`\`css\n${alignment}\n\`\`\``, true)
     .addField("ATTRIBUTES", `\`\`\`css
 [STR] : ${base.str + racialAttributes.str} : (BASE: ${base.str}, MOD: ${mod.str}, RACE: ${racialAttributes.str})
 [DEX] : ${base.dex + racialAttributes.dex} : (BASE: ${base.dex}, MOD: ${mod.dex}, RACE: ${racialAttributes.dex})
 [CON] : ${base.con + racialAttributes.con} : (BASE: ${base.con}, MOD: ${mod.con}, RACE: ${racialAttributes.con})
 [INT] : ${base.int + racialAttributes.int} : (BASE: ${base.int}, MOD: ${mod.int}, RACE: ${racialAttributes.int})
 [WIS] : ${base.wis + racialAttributes.wis} : (BASE: ${base.wis}, MOD: ${mod.wis}, RACE: ${racialAttributes.wis})
-[CHA] : ${base.cha + racialAttributes.cha} : (BASE: ${base.cha}, MOD: ${mod.cha}, RACE: ${racialAttributes.cha})\n\`\`\``, true)
+[CHA] : ${base.cha + racialAttributes.cha} : (BASE: ${base.cha}, MOD: ${mod.cha}, RACE: ${racialAttributes.cha})\n\`\`\``)
     .addField("EQUIPMENT", `\`\`\`css
 [Armor  ] : ${equip.armor.join(', ')}
 [Gear   ] : ${equip.gear.join(', ')}
@@ -319,7 +322,6 @@ module.exports.run = async (message, cmd) => {
 [Tools  ] : ${equip.tools.join(', ')}
 [Weapons] : ${equip.weapons.join(', ')}\n\`\`\``, true)
     .addField("FEATURES", `\`\`\`css\n${features.join(', ')}\n\`\`\``, true)
-    .addField("HIT POINTS", `\`\`\`css\nMAX: ${hp}\n\`\`\``, true)
     .addField("LANGUAGES", `\`\`\`css\n${languages.join(', ')}\n\`\`\``, true)
     .addField("PROFICIENCY", `\`\`\`css
 [Armor        ] : ${prof.armor.join(', ')}

@@ -11,15 +11,22 @@
     },
     "description": "You have spent your life in the service of a temple to a specific god or pantheon of gods.\nYou act as an intermediary between the realm of the holy and the mortal world, performing sacred rites and offering sacrifices in order to conduct worshipers into the presence of the divine.",
     "equip": {
-      "armor": [],
-      "gear": ["holy symbol", "prayer book", "5 sticks of incense", "vestiments", "common clothes", "belt pouch"],
-      "pack": [],
-      "tools": [],
-      "weapons": []
+      "gear": [
+        "holy symbol",
+        "prayer book",
+        "5 sticks of incense",
+        "vestiments",
+        "common clothes",
+        "belt pouch"
+      ],
+      "tools": []
     },
-    "features": ["shelter of the faithful"],
+    "features": "Shelter of the Faithful",
     "icon": "https://i.imgur.com/v8ftS2G.png",
-    "languages": [2, "languages"],
+    "languages": [
+      2,
+      "languages"
+    ],
     "name": "Acolyte",
     "namel": "acolyte",
     "personality": {
@@ -29,14 +36,14 @@
       "trait": 8
     },
     "prof": {
-      "armor": [],
-      "savthrows": [],
-      "skills": ["insight", "religion"],
-      "tools": [],
-      "weapons": []
+      "skills": [
+        "insight",
+        "religion"
+      ],
+      "tools": []
     },
-    "thumb": "https://i.imgur.com/W8Hr7cj.png",
-    "source": "handbook"
+    "source": "handbook",
+    "thumb": "https://i.imgur.com/W8Hr7cj.png"
   },
   "charlatan": {
     "_id": {
@@ -50,15 +57,19 @@
     },
     "description": "You have always had a way with people.\nYou know what makes them tick, you can tease out their heart’s desires after a few minutes of conversation, and with a few leading questions you can read them like they were children's books.",
     "equip": {
-      "armor": [],
-      "gear": ["fine clothes", "disguise", "ten stoppered bottles filled with colored liquid", "set of weighted dice", "deck of marked cards", "belt pouch"],
-      "pack": [],
-      "tools": [],
-      "weapons": []
+      "gear": [
+        "fine clothes",
+        "disguise",
+        "ten stoppered bottles filled with colored liquid",
+        "set of weighted dice",
+        "deck of marked cards",
+        "belt pouch"
+      ],
+      "tools": []
     },
-    "features": ["false identity"],
-    "languages": [],
+    "features": "False Identity",
     "icon": "https://i.imgur.com/v8ftS2G.png",
+    "languages": [],
     "name": "Charlatan",
     "namel": "charlatan",
     "personality": {
@@ -68,14 +79,17 @@
       "trait": 8
     },
     "prof": {
-      "armor": [],
-      "savthrows": [],
-      "skills": ["deception", "sleight of hand"],
-      "tools": ["disguise", "forgery"],
-      "weapons": []
+      "skills": [
+        "deception",
+        "sleight of hand"
+      ],
+      "tools": [
+        "disguise",
+        "forgery"
+      ]
     },
-    "thumb": "https://i.imgur.com/v6osEG9.png",
-    "source": "handbook"
+    "source": "handbook",
+    "thumb": "https://i.imgur.com/v6osEG9.png"
   },
   "criminal": {
     "_id": {
@@ -89,13 +103,15 @@
     },
     "description": "You are an experienced criminal with a history of breaking the law. You have spent a lot of time among other criminals and still have contacts within the criminal underworld.",
     "equip": {
-      "armor": [],
-      "gear": ["crowbar", "dark common clothes", "hood", "pouch"],
-      "pack": [],
-      "tools": [],
-      "weapons": []
+      "gear": [
+        "crowbar",
+        "dark common clothes",
+        "hood",
+        "pouch"
+      ],
+      "tools": []
     },
-    "features": ["criminal contact"],
+    "features": "Criminal Contact",
     "icon": "https://i.imgur.com/v8ftS2G.png",
     "languages": [],
     "name": "Criminal",
@@ -107,14 +123,17 @@
       "trait": 8
     },
     "prof": {
-      "armor": [],
-      "savthrows": [],
-      "skills": ["deception", "stealth"],
-      "tools": ["gaming", "thieves"],
-      "weapons": []
+      "skills": [
+        "deception",
+        "stealth"
+      ],
+      "tools": [
+        "gaming",
+        "thieves"
+      ]
     },
-    "thumb": "https://i.imgur.com/j6izgAe.png",
-    "source": "handbook"
+    "source": "handbook",
+    "thumb": "https://i.imgur.com/j6izgAe.png"
   },
   "entertainer": {
     "_id": {
@@ -128,13 +147,16 @@
     },
     "description": "",
     "equip": {
-      "armor": [],
-      "gear": ["love lelter", "costume", "belt pouch"],
-      "pack": [],
-      "tools": ["instrument"],
-      "weapons": []
+      "gear": [
+        "love lelter",
+        "costume",
+        "belt pouch"
+      ],
+      "tools": [
+        "instrument"
+      ]
     },
-    "features": ["by popular demand"],
+    "features": "By Popular Demand",
     "icon": "https://i.imgur.com/v8ftS2G.png",
     "languages": [],
     "name": "Entertainer",
@@ -146,14 +168,17 @@
       "trait": 8
     },
     "prof": {
-      "armor": [],
-      "savthrows": [],
-      "skills": ["acrobatics", "performance"],
-      "tools": ["disguise", "instrument"],
-      "weapons": []
+      "skills": [
+        "acrobatics",
+        "performance"
+      ],
+      "tools": [
+        "disguise",
+        "instrument"
+      ]
     },
-    "thumb": "https://i.imgur.com/OI9wyqw.jpg",
-    "source": "handbook"
+    "source": "handbook",
+    "thumb": "https://i.imgur.com/OI9wyqw.jpg"
   },
   "folk hero": {
     "_id": {
@@ -167,13 +192,17 @@
     },
     "description": "",
     "equip": {
-      "armor": [],
-      "gear": ["shovel", "iron pot", "common clothes", "belt pouch"],
-      "pack": [],
-      "tools": ["artisan"],
-      "weapons": []
+      "gear": [
+        "shovel",
+        "iron pot",
+        "common clothes",
+        "belt pouch"
+      ],
+      "tools": [
+        "artisan"
+      ]
     },
-    "features": ["rustic hospitality"],
+    "features": "Rustic Hospitality",
     "icon": "https://i.imgur.com/v8ftS2G.png",
     "languages": [],
     "name": "",
@@ -185,14 +214,17 @@
       "trait": 8
     },
     "prof": {
-      "armor": [],
-      "savthrows": [],
-      "skills": ["animal handling", "survival"],
-      "tools": ["artisan", "vehicles.land"],
-      "weapons": []
+      "skills": [
+        "animal handling",
+        "survival"
+      ],
+      "tools": [
+        "artisan",
+        "vehicles.land"
+      ]
     },
-    "thumb": "",
-    "source": ""
+    "source": "",
+    "thumb": ""
   },
   "gladiator": {
     "_id": {
@@ -206,13 +238,15 @@
     },
     "description": "",
     "equip": {
-      "armor": [],
-      "gear": ["trinket", "costume", "belt pouch"],
-      "pack": [],
-      "tools": [],
-      "weapons": ["trident"]
+      "gear": [
+        "trinket",
+        "costume",
+        "belt pouch",
+        "trident"
+      ],
+      "tools": []
     },
-    "features": ["by popular demand"],
+    "features": "By Popular Demand",
     "icon": "https://i.imgur.com/v8ftS2G.png",
     "languages": [],
     "name": "Gladiator",
@@ -224,13 +258,15 @@
       "trait": 8
     },
     "prof": {
-      "armor": [],
-      "savthrows": [],
-      "skills": ["acrobatics", "performance"],
-      "tools": ["disguise"],
-      "weapons": []
+      "skills": [
+        "acrobatics",
+        "performance"
+      ],
+      "tools": [
+        "disguise"
+      ]
     },
-    "thumb": "",
-    "source": "handbook"
+    "source": "handbook",
+    "thumb": ""
   }
 }
