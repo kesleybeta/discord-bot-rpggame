@@ -204,6 +204,7 @@ module.exports.run = async (message, cmd) => {
     equip = await jsonClass.get(choosenClass + '.equip').value()
     prof = await jsonClass.get(choosenClass + '.prof').value()
     hp = await jsonClass.get(choosenClass + '.hp.hpfirst').value() + mod.con
+    console.log(features)
     features = features.flat()
 
     choosenClass = capitalize.words(choosenClass)
