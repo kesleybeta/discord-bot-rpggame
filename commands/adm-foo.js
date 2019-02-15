@@ -250,14 +250,6 @@ module.exports.run = async (message, cmd) => {
     //       "gp": 10,
     //         "sp": 0
     // },
-    // "equip": {
-    //   "armor": [],
-    //     "gear": ["shovel", "iron pot", "common clothes", "belt pouch"],
-    //       "pack": [],
-    //         "tools": ["artisan"],
-    //           "weapons": []
-    // },
-    // "features": ["rustic hospitality"],
     //   "languages": [],
 
     //     "personality": {
