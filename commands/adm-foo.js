@@ -233,22 +233,15 @@ module.exports.run = async (message, cmd) => {
 
     if (!jsonBackground.has(choosenBack).value()) return message.reply(`\n• Please, give a valid BACKGROUND!\n• Restart the guide typing: \`${cmd}\`.`).then(choosenBack = "terminate")
 
-    // // Background features
+    // Background features
     await features.push(jsonBackground.get(choosenBack + '.features').value())
-    await prof.skills.push(jsonBackground.get(choosenBack + '.prof.skills').value())
-    await prof.tools.push(jsonBackground.get(choosenBack + '.prof.tools').value())
-
-    await equip.gear.push(jsonBackground.get(choosenBack + '.equip.gear').value())
-    await equip.tools.push(jsonBackground.get(choosenBack + '.equip.tools').value())
-
-    prof.skills = prof.skills.flat()
-    prof.tools = prof.tools.flat()
-
-    equip.gear = equip.gear.flat()
-    equip.tools = equip.tools.flat()
-
-    // equip = await jsonClass.get(choosenClass + '.equip').value()
-    // prof = await jsonClass.get(choosenClass + '.prof').value()
+    // Background proficiences
+    await jsonBackground.get(choosenBack + '.prof.skills').value().map(el => prof.skills.push(el))
+    await jsonBackground.get(choosenBack + '.prof.tools').value().map(el => prof.tools.push(el))
+    // Background equipment
+    await jsonBackground.get(choosenBack + '.equip.gear').value().map(el => equip.gear.push(el))
+    await jsonBackground.get(choosenBack + '.equip.tools').value().map(el => equip.tools.push(el))
+    // Personality traits
 
     // "coinstoadd": {
     //   "_container": "belt pouch",
@@ -256,47 +249,20 @@ module.exports.run = async (message, cmd) => {
     //       "gp": 10,
     //         "sp": 0
     // },
-    //   "languages": [],
-
     //     "personality": {
     //   "bond": 6,
     //     "flaw": 6,
     //       "ideal": 6,
     //         "trait": 8
     // },
-    console.log(features)
     choosenBack = capitalize.words(choosenBack)
   })
     .catch(ce => {
       choosenBack = "terminate"
-      return message.channel.send(`\n• Time's up! • Restart the guide typing: \`${cmd}\`.`).then(console.log("[ERR15] " + ce))
+      return message.channel.send(`\n• Please, give a valid BACKGROUND! • Restart the guide typing: \`${cmd}\`.`).then(console.log("[ERR15] " + ce))
     })
 
-  // 3 - 3. Validation of the choice - if BACKGROUND is valid the guide keep going.
-  // if (choosenBack !== 'notdefined') {
-  //   await ModBack.findOne({
-  //     namel: choosenBack
-  //   }, (e, background) => {
-  //     if (e) console.log("[ERR16] " + e)
-  //     if (background === null) {
-  //       choosenBack = "notdefined"
-  //       return message.reply(`\n• Please, give a valid BACKGROUND! • Restart the guide typing: \`${cmd}\`.`)
-  //     }
-  //     if (!background) return message.channel.send("Couldn't find any information.")
-  //     else 
-  //   })
-  // } else return
-
   if (choosenBack === "terminate") return
-
-
-
-
-
-
-
-
-
   // prof.armor = prof.armor.map(element => capitalize.words(element))
 
   embed.setColor("#447FF3")
