@@ -205,13 +205,18 @@ module.exports.run = async (message, cmd) => {
     prof = await jsonClass.get(choosenClass + '.prof').value()
     hp = await jsonClass.get(choosenClass + '.hp.hpfirst').value() + mod.con
     console.log(features)
-    features = features.flat()
-
+    try {
+      features = features.flat()
+    }
+    catch (ce) {
+      console.error(ce)
+      features = tools.flattenDeep(features)
+    }
     choosenClass = capitalize.words(choosenClass)
   })
     .catch(ce => {
       choosenClass = "terminate"
-      return message.reply(`\n• Time's up! • Restart the guide typing: \`${cmd}\`.`).then(console.error(ce.message))
+      return message.reply(`\n• Restart the guide typing: \`${cmd}\`.`).then(console.error(ce.message))
     })
 
   if (choosenClass === "terminate") return
