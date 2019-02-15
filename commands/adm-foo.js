@@ -15,24 +15,22 @@ const capitalize = require("capitalize")
 
 module.exports.run = async (message, cmd) => {
   await message.delete()
-
   // Logging
   await console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`)
-
   // Variables
   let server = message.guild
   let sender = message.author
   const filter = msg => msg.author.id === sender.id
+  const filterReaction = (reaction, user) => ['✅', '❎'].includes(reaction.emoji.name) && user.id === message.author.id
   let milisec = 30000 // Global time of wait
-
-  // Character variables
-  let salva = false
+  let reaction = ""
+  let saveChoices = false
+  //Choices made
   let choosenRace = "choose"
   let choosenSubRace = ""
   let choosenClass = "choose"
   let choosenBack = "choose"
-  let choosenName = "choose"
-
+  // Character variables
   let alignment = ""
   let equip = {}
   let features = []
@@ -43,7 +41,6 @@ module.exports.run = async (message, cmd) => {
   let racialAttributes = {}
   let prof = {}
   let speed = {}
-
   let base = { // Base ability score
     str: tools.rollfourdsix(),
     dex: tools.rollfourdsix(),
@@ -60,10 +57,7 @@ module.exports.run = async (message, cmd) => {
     wis: tools.modifier(base.wis),
     cha: tools.modifier(base.cha)
   }
-
-
-
-  // Building Rich Embeds
+  // Building Rich Embeds variables
   let embed = new Discord.RichEmbed()
   let raceEmbed = new Discord.RichEmbed() // An embed for races information
     .setAuthor("Character Creation", "https://i.imgur.com/1MeVhf4.png")
@@ -96,15 +90,7 @@ module.exports.run = async (message, cmd) => {
     .setDescription(`• Your character’s background reveals where you came from, how you became an adventurer, and your place in the world.`)
     .addField(`↙ Choose one`, `\`\`\`diff\n+ ${jsonCharCreation.get('allbacks').value().join('\n+ ')}\`\`\``, true)
     .setFooter(`⏰ You'll have ${milisec / 1000} seconds to type your desired BACKGROUND.`)
-  let nameEmbed = new Discord.RichEmbed()
-    .setColor(3447003)
-    .setAuthor("Character Creation", "https://cdn4.iconfinder.com/data/icons/game-rounded-2-set/512/scroll-512.png")
-    .setTitle("4. CHARACTER's NAME")
-    .setThumbnail("https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Villager-512.png")
-    .setDescription(`• Choose a ***name*** for your character.`)
-    .setFooter(`⏰ You'll have ${milisec / 1000} seconds to type.`)
-
-  // Code lines
+  // --------- Code lines ----------------------------------------------------------------------------------------------------------------------
   /** 0. Searching for user characters */
   await ModCharacter.findOne({
     userID: sender.id,
@@ -118,7 +104,7 @@ module.exports.run = async (message, cmd) => {
     else if (doc.characters.valid === true) return message.reply(`• You already have a character. ► HIS NAME: *${doc.characters.name}*`)
   })
 
-  /** 1 - 2. Message awaiting race choice */
+  /** 1. Race */
   await message.channel.awaitMessages(filter, {
     max: 1,
     time: milisec,
@@ -157,7 +143,7 @@ module.exports.run = async (message, cmd) => {
     })
   if (choosenRace === "terminate") return // --------------------------------------------------------------------
 
-  /** Subrace */
+  /** 2. Subrace */
   if (choosenSubRace === "choose") {
     await message.channel.send(subRaceEmbed)
     await message.channel.awaitMessages(filter, {
@@ -192,7 +178,7 @@ module.exports.run = async (message, cmd) => {
   if (choosenSubRace === "terminate") return // --------------------------------------------------------------------
   featuresAux = []
 
-  /** Class */
+  /** 3. Class */
   await message.channel.send(classEmbed)
   await message.channel.awaitMessages(filter, {
     max: 1,
@@ -217,11 +203,10 @@ module.exports.run = async (message, cmd) => {
       choosenClass = "terminate"
       return message.reply(`\n• Restart the guide typing: \`${cmd}\`.`).then(console.error(ce.message))
     })
-
-  if (choosenClass === "terminate") return
+  if (choosenClass === "terminate") return // --------------------------------------------------------------------
   featuresAux = []
 
-  /** Background */
+  /** 4. Background */
   await message.channel.send(backgroundEmbed)
   await message.channel.awaitMessages(filter, {
     max: 1,
@@ -261,7 +246,6 @@ module.exports.run = async (message, cmd) => {
       choosenBack = "terminate"
       return message.channel.send(`\n• Please, give a valid BACKGROUND! • Restart the guide typing: \`${cmd}\`.`).then(console.log("[ERR15] " + ce))
     })
-
   if (choosenBack === "terminate") return
   // prof.armor = prof.armor.map(element => capitalize.words(element))
 
@@ -296,7 +280,39 @@ module.exports.run = async (message, cmd) => {
     .addField("SPEED", `\`\`\`css\nBase walking: ${speed.walking}\n\`\`\``, true)
     .setTimestamp(new Date())
     .setFooter(`© ${sender.username} Character`, sender.displayAvatarURL)
-  return message.channel.send(embed)
+
+  await message.channel.send(embed).then(async msg => {
+    await msg.react('✅')
+    await msg.react('❎')
+    msg.awaitReactions(filterReaction, {
+      max: 1,
+      time: milisec,
+      errors: ['time']
+    }).then(async collected => {
+      reaction = await collected.first().emoji.name
+      console.log(reaction)
+      switch (reaction) {
+        case '✅':
+          saveChoices = await true
+          break
+        case '❎':
+          saveChoices = await false
+          break
+        default:
+          message.reply("Come back later!")
+          break
+      }
+      message.reply(`○ ${saveChoices}`)
+    })
+      .catch(console.error)
+  })
+    .catch(() => {
+      saveChoices = false
+      return message.channel.send(`\n• Restart the guide typing: \`${cmd}\`.`).then(console.error)
+    })
+
+  if (saveChoices) return message.reply("TRUE")
+  if (!saveChoices) return message.reply("FALSE")
 }
 
 module.exports.config = {
