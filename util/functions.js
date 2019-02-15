@@ -102,9 +102,5 @@ module.exports = {
     if (familyMax !== 0) name = name.concat(' ', racesTraits.get(race + '.names.family[' + familyMax + ']').value())
 
     return name
-  },
-  flattenDeep(arr1) {
-    // eslint-disable-next-line no-ternary
-    return arr1.reduce((acc, val) => Array.isArray(val) ? acc.concat(flattenDeep(val)) : acc.concat(val), []);
   }
 }

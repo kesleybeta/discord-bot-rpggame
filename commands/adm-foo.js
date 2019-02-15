@@ -36,6 +36,7 @@ module.exports.run = async (message, cmd) => {
   let alignment = ""
   let equip = {}
   let features = []
+  let featuresAux = []
   let hp = ""
   let languages = []
   let name = ""
@@ -59,6 +60,8 @@ module.exports.run = async (message, cmd) => {
     wis: tools.modifier(base.wis),
     cha: tools.modifier(base.cha)
   }
+
+
 
   // Building Rich Embeds
   let embed = new Discord.RichEmbed()
@@ -168,7 +171,7 @@ module.exports.run = async (message, cmd) => {
       if (!jsonSubRaces.has(choosenSubRace).value()) return message.reply(`\n• Please, give a valid SUBRACE!\n• Restart the guide typing: \`${cmd}\`.`).then(choosenSubRace = "terminate")
 
       // Subrace traits
-      await features.push(jsonSubRaces.get(choosenSubRace + '.features').value())
+      featuresAux = await jsonSubRaces.get(choosenSubRace + '.features').value()
       let subRaceAbility = await jsonSubRaces.get(choosenSubRace + '.abilityscore').value()
       racialAttributes.str += subRaceAbility.str
       racialAttributes.dex += subRaceAbility.dex
@@ -176,9 +179,10 @@ module.exports.run = async (message, cmd) => {
       racialAttributes.int += subRaceAbility.int
       racialAttributes.wis += subRaceAbility.wis
       racialAttributes.cha += subRaceAbility.cha
+      featuresAux.map(el => features.push(el))
+
       // Capitalize the string
       choosenSubRace = jsonSubRaces.get(choosenSubRace + '.name').value()
-
     })
       .catch(ce => {
         choosenSubRace = "terminate"
@@ -186,6 +190,7 @@ module.exports.run = async (message, cmd) => {
       })
   }
   if (choosenSubRace === "terminate") return // --------------------------------------------------------------------
+  featuresAux = []
 
   /** Class */
   await message.channel.send(classEmbed)
@@ -200,18 +205,12 @@ module.exports.run = async (message, cmd) => {
     if (!jsonClass.has(choosenClass).value()) return message.reply(`\n• Please, give a valid CLASS!\n• Restart the guide typing: \`${cmd}\`.`).then(choosenClass = "terminate")
 
     // Class features
-    await features.push(jsonClass.get(choosenClass + '.table.1.features').value())
+    featuresAux = await jsonClass.get(choosenClass + '.table.1.features').value()
     equip = await jsonClass.get(choosenClass + '.equip').value()
     prof = await jsonClass.get(choosenClass + '.prof').value()
     hp = await jsonClass.get(choosenClass + '.hp.hpfirst').value() + mod.con
-    console.log(features)
-    try {
-      features = features.flat()
-    }
-    catch (ce) {
-      console.error(ce)
-      features = tools.flattenDeep(features)
-    }
+
+    featuresAux.map(el => features.push(el))
     choosenClass = capitalize.words(choosenClass)
   })
     .catch(ce => {
@@ -220,6 +219,7 @@ module.exports.run = async (message, cmd) => {
     })
 
   if (choosenClass === "terminate") return
+  featuresAux = []
 
   /** Background */
   await message.channel.send(backgroundEmbed)
@@ -264,7 +264,7 @@ module.exports.run = async (message, cmd) => {
     //       "ideal": 6,
     //         "trait": 8
     // },
-
+    console.log(features)
     choosenBack = capitalize.words(choosenBack)
   })
     .catch(ce => {
