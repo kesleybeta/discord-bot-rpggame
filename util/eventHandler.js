@@ -8,5 +8,4 @@ module.exports = bot => {
     bot.on("disconnect", () => reqEvent("disconnect")(bot))
     bot.on("warn", () => reqEvent("warn"))
     bot.on("error", () => reqEvent("error"))
-    //console.log(`[CMD] ${message} requested by ${message.author.tag} ID: (${message.author.id})`);
 }

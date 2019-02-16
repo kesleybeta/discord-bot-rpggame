@@ -1,35 +1,39 @@
 const Discord = require("discord.js")
 const ModUser = require("../models/mod-user.js")
 
-module.exports.run = async (message, cmd, args) => {
+module.exports.run = async (message, cmd) => {
     await message.delete()
     console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`)
-    if (String(args)) return message.reply("ERRGAMUSE00 - Please don't use arguments.")
+    let sender = message.mentions.users.first() || message.author
 
     let embed = new Discord.RichEmbed()
-        .setColor("#F0310F")
-        .setThumbnail(message.author.displayAvatarURL)
-        .setTitle(`This is your server profile.`)
-
+        .setColor("#DD6655")
+        .setTitle(`This is your user information.`)
+        .setThumbnail(sender.displayAvatarURL)
+        .addField("# Discriminator", `\`\`\`css\n${sender.discriminator}\n\`\`\``, true)
+        .addField("# ID", `\`\`\`css\n${sender.id}\n\`\`\``, true)
+        .addField("# LastMessage", `\`\`\`css\n${sender.lastMessage}\n\`\`\``, true)
+        .addField("# Activity", `\`\`\`css\n${sender.presence.game.toString()}\n\`\`\``, true)
+        .addField("# Status", `\`\`\`css\n${sender.presence.status}\n\`\`\``, true)
+        .addField("# Tag", `\`\`\`css\n${sender.tag}\n\`\`\``, true)
+        .addField("# Username", `\`\`\`css\n${sender.username}\n\`\`\``, true)
+        .setTimestamp(sender.createdAt.toDateString())
+        .setFooter("📨 Created at ")
     ModUser.findOne({
         userID: message.author.id,
         serverID: message.guild.id
     }, (err, result) => {
         if (err) console.log("[GP01] " + err)
+        if (result) return message.channel.send(embed)
         if (!result) {
             const newUser = new ModUser({
                 userID: message.author.id,
                 userTag: message.author.tag,
                 serverID: message.guild.id
             })
-            newUser.save().catch(err => console.log("[GP02] newProfile.save() > " + err))
-
-            embed
-                .addField("ID", `${result.userID}`, true)
+            newUser.save().catch(err => console.error(err))
             message.channel.send(embed)
-        } else {
-            embed.addField("ID", `${result.userID}`, true)
-            message.channel.send(embed)
+            return message.reply("Your user info was saved. Welcome to the database.")
         }
     })
 }

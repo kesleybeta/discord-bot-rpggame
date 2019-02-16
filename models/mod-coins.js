@@ -4,7 +4,10 @@ const coinSchema = mongoose.Schema({
     userID: String,
     userNm: String,
     serverID: String,
-    coins: Number
+    coins: Number,
+    gp: Number,
+    sp: Number,
+    bp: Number
 })
 
 module.exports = mongoose.model("coinsystem", coinSchema);

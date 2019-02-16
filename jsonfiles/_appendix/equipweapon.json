@@ -1,6 +1,18 @@
 {
   "martial": {
     "melee": {
+      "Halberd": "20 gp 1 d10 slashing 6 lb.Heavy, reach, two - handed",
+      "Lance": "10 gp 1 d12 piercing 6 lb.Reach, special",
+      "Longsword": "15 gp 1 d8 slashing 3 lb.Versatile(1 d10)",
+      "Maul": "10 gp 2 d6 bludgeoning 10 lb.Heavy, two - handed",
+      "Morningstar": "15 gp 1 d8 piercing 4 lb. -",
+      "Pike": "5 gp 1 d10 piercing 18 lb.Heavy, reach, two - handed",
+      "Rapier": "25 gp 1 d8 piercing 2 lb.Finesse",
+      "Scimitar": "25 gp 1 d6 slashing 3 lb.Finesse, light",
+      "Shortsword": "10 gp 1 d6 piercing 2 lb.Finesse, light",
+      "Trident": "5 gp 1 d6 piercing 4 lb.Thrown(range 20 / 60), versatile(1 d8)",
+      "War pick": "5 gp 1 d8 piercing 2 lb. -",
+      "Whip": "2 gp 1 d4 slashing 3 lb.Finesse, reach",
       "battleaxe": {
         "cost": {
           "bp": 0,
@@ -76,19 +88,7 @@
         "properties": ["heavy", "two-handed"],
         "weight": 6
       },
-      "Halberd": "20 gp 1 d10 slashing 6 lb.Heavy, reach, two - handed",
-      "Lance": "10 gp 1 d12 piercing 6 lb.Reach, special",
-      "Longsword": "15 gp 1 d8 slashing 3 lb.Versatile(1 d10)",
-      "Maul": "10 gp 2 d6 bludgeoning 10 lb.Heavy, two - handed",
-      "Morningstar": "15 gp 1 d8 piercing 4 lb. -",
-      "Pike": "5 gp 1 d10 piercing 18 lb.Heavy, reach, two - handed",
-      "Rapier": "25 gp 1 d8 piercing 2 lb.Finesse",
-      "Scimitar": "25 gp 1 d6 slashing 3 lb.Finesse, light",
-      "Shortsword": "10 gp 1 d6 piercing 2 lb.Finesse, light",
-      "Trident": "5 gp 1 d6 piercing 4 lb.Thrown(range 20 / 60), versatile(1 d8)",
-      "War pick": "5 gp 1 d8 piercing 2 lb. -",
-      "warhammer": "15 gp 1 d8 bludgeoning 2 lb.Versatile(1 d10)",
-      "Whip": "2 gp 1 d4 slashing 3 lb.Finesse, reach"
+      "warhammer": "15 gp 1 d8 bludgeoning 2 lb.Versatile(1 d10)"
     },
     "ranged": {
       "Blowgun": "10 gp 1 piercing 1 lb.Ammunition(range 25 / 100), loading",

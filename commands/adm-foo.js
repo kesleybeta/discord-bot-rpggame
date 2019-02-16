@@ -1,3 +1,4 @@
+/* eslint-disable newline-per-chained-call */
 /* eslint-disable operator-assignment */
 const Discord = require("discord.js")
 const tools = require("../util/functions") // Require global functions
@@ -21,7 +22,10 @@ module.exports.run = async (message, cmd) => {
   let server = message.guild
   let sender = message.author
   const filter = msg => msg.author.id === sender.id
-  const filterReaction = (reaction, user) => ['✅', '❎'].includes(reaction.emoji.name) && user.id === message.author.id
+  const filterReaction = (reaction, user) => [
+    '✅',
+    '❎'
+  ].includes(reaction.emoji.name) && user.id === message.author.id
   let milisec = 30000 // Global time of wait
   let reaction = ""
   let saveChoices = false
@@ -106,37 +110,37 @@ module.exports.run = async (message, cmd) => {
 
   /** 1. Race */
   await message.channel.awaitMessages(filter, {
-    max: 1,
-    time: milisec,
-    errors: ['time']
-  }).then(async collected => {
-    if (collected.first().content.toLowerCase() === "cancel") return message.reply(" • Cancelled!").then(choosenRace = "terminate")
-    if (collected.first().content) choosenRace = await collected.first().content.toLowerCase()
+      max: 1,
+      time: milisec,
+      errors: ['time']
+    }).then(async collected => {
+      if (collected.first().content.toLowerCase() === "cancel") return message.reply(" • Cancelled!").then(choosenRace = "terminate")
+      if (collected.first().content) choosenRace = await collected.first().content.toLowerCase()
 
-    /**  1 - 3. Race validation */
-    if (!jsonRaces.has(choosenRace).value()) return message.reply(`\n• Please, give a valid RACE!\n• Restart the guide typing: \`${cmd}\`.`).then(choosenRace = "terminate")
+      /**  1 - 3. Race validation */
+      if (!jsonRaces.has(choosenRace).value()) return message.reply(`\n• Please, give a valid RACE!\n• Restart the guide typing: \`${cmd}\`.`).then(choosenRace = "terminate")
 
-    // Getting the races traits
-    alignment = await capitalize.words(jsonRaces.get(choosenRace + '.alignment').value())
-    features = await jsonRaces.get(choosenRace + '.features').value()
-    languages = await jsonRaces.get(choosenRace + '.languages').value()
-    name = tools.randomName(choosenRace, 'm')
-    racialAttributes = await jsonRaces.get(choosenRace + '.abilityscore').value()
-    speed = await jsonRaces.get(choosenRace + '.speed').value()
+      // Getting the races traits
+      alignment = await capitalize.words(jsonRaces.get(choosenRace + '.alignment').value())
+      features = await jsonRaces.get(choosenRace + '.features').value()
+      languages = await jsonRaces.get(choosenRace + '.languages').value()
+      name = tools.randomName(choosenRace, 'm')
+      racialAttributes = await jsonRaces.get(choosenRace + '.abilityscore').value()
+      speed = await jsonRaces.get(choosenRace + '.speed').value()
 
-    if (jsonRaces.get(choosenRace + '.subraces').value() === "") choosenSubRace = ""
-    else {
-      choosenSubRace = "choose"
-      try { // Building the SUBRACES embed.
-        await subRaceEmbed.addField(`↙ Choose one:`, `\`\`\`diff\n+ ${jsonCharCreation.get('subraces.' + choosenRace).value()
+      if (jsonRaces.get(choosenRace + '.subraces').value() === "") choosenSubRace = ""
+      else {
+        choosenSubRace = "choose"
+        try { // Building the SUBRACES embed.
+          await subRaceEmbed.addField(`↙ Choose one:`, `\`\`\`diff\n+ ${jsonCharCreation.get('subraces.' + choosenRace).value()
           .join('\n+ ')}\`\`\``, true)
-      } catch (ce) {
-        return message.reply("An error occurred. Try again later.").then(console.error(ce.message))
+        } catch (ce) {
+          return message.reply("An error occurred. Try again later.").then(console.error(ce.message))
+        }
       }
-    }
-    choosenRace = capitalize.words(choosenRace)
+      choosenRace = capitalize.words(choosenRace)
 
-  })
+    })
     .catch(ce => {
       choosenRace = "terminate"
       return message.reply(` • Time's up! • Restart the guide typing: \`${cmd}\`.`).then(console.error(ce.message))
@@ -147,29 +151,29 @@ module.exports.run = async (message, cmd) => {
   if (choosenSubRace === "choose") {
     await message.channel.send(subRaceEmbed)
     await message.channel.awaitMessages(filter, {
-      max: 1,
-      time: milisec,
-      errors: ['time']
-    }).then(async collected => {
-      if (collected.first().content.toLowerCase() === "cancel") return message.reply(" • Cancelled!").then(choosenSubRace = "terminate")
-      if (collected.first().content) choosenSubRace = await collected.first().content.toLowerCase()
+        max: 1,
+        time: milisec,
+        errors: ['time']
+      }).then(async collected => {
+        if (collected.first().content.toLowerCase() === "cancel") return message.reply(" • Cancelled!").then(choosenSubRace = "terminate")
+        if (collected.first().content) choosenSubRace = await collected.first().content.toLowerCase()
 
-      if (!jsonSubRaces.has(choosenSubRace).value()) return message.reply(`\n• Please, give a valid SUBRACE!\n• Restart the guide typing: \`${cmd}\`.`).then(choosenSubRace = "terminate")
+        if (!jsonSubRaces.has(choosenSubRace).value()) return message.reply(`\n• Please, give a valid SUBRACE!\n• Restart the guide typing: \`${cmd}\`.`).then(choosenSubRace = "terminate")
 
-      // Subrace traits
-      featuresAux = await jsonSubRaces.get(choosenSubRace + '.features').value()
-      let subRaceAbility = await jsonSubRaces.get(choosenSubRace + '.abilityscore').value()
-      racialAttributes.str += subRaceAbility.str
-      racialAttributes.dex += subRaceAbility.dex
-      racialAttributes.con += subRaceAbility.con
-      racialAttributes.int += subRaceAbility.int
-      racialAttributes.wis += subRaceAbility.wis
-      racialAttributes.cha += subRaceAbility.cha
-      featuresAux.map(el => features.push(el))
+        // Subrace traits
+        featuresAux = await jsonSubRaces.get(choosenSubRace + '.features').value()
+        let subRaceAbility = await jsonSubRaces.get(choosenSubRace + '.abilityscore').value()
+        racialAttributes.str += subRaceAbility.str
+        racialAttributes.dex += subRaceAbility.dex
+        racialAttributes.con += subRaceAbility.con
+        racialAttributes.int += subRaceAbility.int
+        racialAttributes.wis += subRaceAbility.wis
+        racialAttributes.cha += subRaceAbility.cha
+        featuresAux.map(el => features.push(el))
 
-      // Capitalize the string
-      choosenSubRace = jsonSubRaces.get(choosenSubRace + '.name').value()
-    })
+        // Capitalize the string
+        choosenSubRace = jsonSubRaces.get(choosenSubRace + '.name').value()
+      })
       .catch(ce => {
         choosenSubRace = "terminate"
         return message.reply(`\n• Time's up!\n• Restart the guide typing: \`${cmd}\`.`).then(console.error(ce.message))
@@ -181,24 +185,24 @@ module.exports.run = async (message, cmd) => {
   /** 3. Class */
   await message.channel.send(classEmbed)
   await message.channel.awaitMessages(filter, {
-    max: 1,
-    time: milisec,
-    errors: ['time']
-  }).then(async collected => {
-    if (collected.first().content.toLowerCase() === "cancel") return message.reply(" • Cancelled!").then(choosenClass = "terminate")
-    if (collected.first().content) choosenClass = await collected.first().content.toLowerCase()
+      max: 1,
+      time: milisec,
+      errors: ['time']
+    }).then(async collected => {
+      if (collected.first().content.toLowerCase() === "cancel") return message.reply(" • Cancelled!").then(choosenClass = "terminate")
+      if (collected.first().content) choosenClass = await collected.first().content.toLowerCase()
 
-    if (!jsonClass.has(choosenClass).value()) return message.reply(`\n• Please, give a valid CLASS!\n• Restart the guide typing: \`${cmd}\`.`).then(choosenClass = "terminate")
+      if (!jsonClass.has(choosenClass).value()) return message.reply(`\n• Please, give a valid CLASS!\n• Restart the guide typing: \`${cmd}\`.`).then(choosenClass = "terminate")
 
-    // Class features
-    featuresAux = await jsonClass.get(choosenClass + '.table.1.features').value()
-    equip = await jsonClass.get(choosenClass + '.equip').value()
-    prof = await jsonClass.get(choosenClass + '.prof').value()
-    hp = await jsonClass.get(choosenClass + '.hp.hpfirst').value() + mod.con
+      // Class features
+      featuresAux = await jsonClass.get(choosenClass + '.table.1.features').value()
+      equip = await jsonClass.get(choosenClass + '.equip').value()
+      prof = await jsonClass.get(choosenClass + '.prof').value()
+      hp = await jsonClass.get(choosenClass + '.hp.hpfirst').value() + mod.con
 
-    featuresAux.map(el => features.push(el))
-    choosenClass = capitalize.words(choosenClass)
-  })
+      featuresAux.map(el => features.push(el))
+      choosenClass = capitalize.words(choosenClass)
+    })
     .catch(ce => {
       choosenClass = "terminate"
       return message.reply(`\n• Restart the guide typing: \`${cmd}\`.`).then(console.error(ce.message))
@@ -209,39 +213,30 @@ module.exports.run = async (message, cmd) => {
   /** 4. Background */
   await message.channel.send(backgroundEmbed)
   await message.channel.awaitMessages(filter, {
-    max: 1,
-    time: milisec,
-    errors: ['time']
-  }).then(async collected => {
-    if (collected.first().content.toLowerCase() === "cancel") return message.reply(" • Cancelled!").then(choosenBack = "terminate")
-    if (collected.first().content) choosenBack = await collected.first().content.toLowerCase()
+      max: 1,
+      time: milisec,
+      errors: ['time']
+    }).then(async collected => {
+      if (collected.first().content.toLowerCase() === "cancel") return message.reply(" • Cancelled!").then(choosenBack = "terminate")
+      if (collected.first().content) choosenBack = await collected.first().content.toLowerCase()
 
-    if (!jsonBackground.has(choosenBack).value()) return message.reply(`\n• Please, give a valid BACKGROUND!\n• Restart the guide typing: \`${cmd}\`.`).then(choosenBack = "terminate")
+      if (!jsonBackground.has(choosenBack).value()) return message.reply(`\n• Please, give a valid BACKGROUND!\n• Restart the guide typing: \`${cmd}\`.`).then(choosenBack = "terminate")
 
-    // Background features
-    await features.push(jsonBackground.get(choosenBack + '.features').value())
-    // Background proficiences
-    await jsonBackground.get(choosenBack + '.prof.skills').value().map(el => prof.skills.push(el))
-    await jsonBackground.get(choosenBack + '.prof.tools').value().map(el => prof.tools.push(el))
-    // Background equipment
-    await jsonBackground.get(choosenBack + '.equip.gear').value().map(el => equip.gear.push(el))
-    await jsonBackground.get(choosenBack + '.equip.tools').value().map(el => equip.tools.push(el))
-    // Personality traits
+      // Background features
+      await features.push(jsonBackground.get(choosenBack + '.features').value())
+      // Background proficiences
+      await jsonBackground.get(choosenBack + '.prof.skills').value().map(el => prof.skills.push(el))
+      await jsonBackground.get(choosenBack + '.prof.tools').value().map(el => prof.tools.push(el))
+      // Background equipment
+      await jsonBackground.get(choosenBack + '.equip.gear').value().map(el => equip.gear.push(el))
+      await jsonBackground.get(choosenBack + '.equip.tools').value().map(el => equip.tools.push(el))
+      // Personality traits
+      // "personality": { "bond": 0, "flaw": 0, "ideal": 0, "trait": 0 }
 
-    // "coinstoadd": {
-    //   "_container": "belt pouch",
-    //     "bp": 0,
-    //       "gp": 10,
-    //         "sp": 0
-    // },
-    //     "personality": {
-    //   "bond": 6,
-    //     "flaw": 6,
-    //       "ideal": 6,
-    //         "trait": 8
-    // },
-    choosenBack = capitalize.words(choosenBack)
-  })
+      // "coinstoadd": { "bp": 0, "gp": 10, "sp": 0 }
+
+      choosenBack = capitalize.words(choosenBack)
+    })
     .catch(ce => {
       choosenBack = "terminate"
       return message.channel.send(`\n• Please, give a valid BACKGROUND! • Restart the guide typing: \`${cmd}\`.`).then(console.log("[ERR15] " + ce))
@@ -282,30 +277,30 @@ module.exports.run = async (message, cmd) => {
     .setFooter(`© ${sender.username} Character`, sender.displayAvatarURL)
 
   await message.channel.send(embed).then(async msg => {
-    await msg.react('✅')
-    await msg.react('❎')
-    msg.awaitReactions(filterReaction, {
-      max: 1,
-      time: milisec,
-      errors: ['time']
-    }).then(async collected => {
-      reaction = await collected.first().emoji.name
-      console.log(reaction)
-      switch (reaction) {
-        case '✅':
-          saveChoices = await true
-          break
-        case '❎':
-          saveChoices = await false
-          break
-        default:
-          message.reply("Come back later!")
-          break
-      }
-      message.reply(`○ ${saveChoices}`)
+      await msg.react('✅')
+      await msg.react('❎')
+      msg.awaitReactions(filterReaction, {
+          max: 1,
+          time: milisec,
+          errors: ['time']
+        }).then(async collected => {
+          reaction = await collected.first().emoji.name
+          console.log(reaction)
+          switch (reaction) {
+            case '✅':
+              saveChoices = await true
+              break
+            case '❎':
+              saveChoices = await false
+              break
+            default:
+              message.reply("Come back later!")
+              break
+          }
+          message.reply(`○ ${saveChoices}`)
+        })
+        .catch(console.error)
     })
-      .catch(console.error)
-  })
     .catch(() => {
       saveChoices = false
       return message.channel.send(`\n• Restart the guide typing: \`${cmd}\`.`).then(console.error)
