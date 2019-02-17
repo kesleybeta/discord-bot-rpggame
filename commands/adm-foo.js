@@ -260,7 +260,8 @@ module.exports.run = async (message, cmd) => {
 [CHA] : ${base.cha + racialAttributes.cha} : (BASE: ${base.cha}, MOD: ${mod.cha}, RACE: ${racialAttributes.cha})\n\`\`\``)
     .addField("EQUIPMENT", `\`\`\`css
 [Armor  ] : ${equip.armor.join(', ')}
-[Gear   ] : ${equip.gear.join(', ')}
+[Gear   ]
+> ${equip.gear.join(', ')}
 [Pack   ] : ${equip.pack.join(', ')}
 [Tools  ] : ${equip.tools.join(', ')}
 [Weapons] : ${equip.weapons.join(', ')}\n\`\`\``, true)
@@ -285,7 +286,6 @@ module.exports.run = async (message, cmd) => {
           errors: ['time']
         }).then(async collected => {
           reaction = await collected.first().emoji.name
-          console.log(reaction)
           switch (reaction) {
             case '✅':
               saveChoices = await true
@@ -297,7 +297,11 @@ module.exports.run = async (message, cmd) => {
               message.reply("Come back later!")
               break
           }
-          message.reply(`○ ${saveChoices}`)
+          if (saveChoices) {
+
+            return message.reply("TRUE")
+
+          } else return message.reply("Come back later")
         })
         .catch(console.error)
     })
@@ -305,9 +309,6 @@ module.exports.run = async (message, cmd) => {
       saveChoices = false
       return message.channel.send(`\n• Restart the guide typing: \`${cmd}\`.`).then(console.error)
     })
-
-  if (saveChoices) return message.reply("TRUE")
-  if (!saveChoices) return message.reply("FALSE")
 }
 
 module.exports.config = {

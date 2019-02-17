@@ -75,7 +75,7 @@ bot.on("message", async message => {
         message.channel.send(prembed)
     }
     if (message.content.toLowerCase().startsWith(prefix)) {
-        if (commandfile) commandfile.run(message, cmd, args)
+        if (commandfile) commandfile.run(message, cmd, args, bot)
     } else {
         // ---- Coin System not related with the Role Playing
         let coinstoadd = Math.ceil(Math.random() * 20)
