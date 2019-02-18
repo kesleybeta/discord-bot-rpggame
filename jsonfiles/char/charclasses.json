@@ -829,9 +829,7 @@
         "perception",
         "survival"
       ],
-      "tools": [
-        "none"
-      ],
+      "tools": [],
       "weapons": [
         "simple",
         "martial"
@@ -1010,9 +1008,7 @@
     "name": "Monk",
     "namel": "monk",
     "prof": {
-      "armor": [
-        "none"
-      ],
+      "armor": [],
       "savthrows": [
         "str",
         "dex"
@@ -1236,9 +1232,7 @@
         "persuasion",
         "religion"
       ],
-      "tools": [
-        "none"
-      ],
+      "tools": [],
       "weapons": [
         "simple",
         "martial"
@@ -1435,9 +1429,7 @@
         "stealth",
         "survival"
       ],
-      "tools": [
-        "none"
-      ],
+      "tools": [],
       "weapons": [
         "simple",
         "martial"
@@ -1827,9 +1819,7 @@
     "name": "Sorcerer",
     "namel": "sorcerer",
     "prof": {
-      "armor": [
-        "none"
-      ],
+      "armor": [],
       "savthrows": [
         "con",
         "cha"
@@ -2034,9 +2024,7 @@
         "nature",
         "religion"
       ],
-      "tools": [
-        "none"
-      ],
+      "tools": [],
       "weapons": [
         "simple"
       ]
@@ -2208,9 +2196,7 @@
     "name": "Wizard",
     "namel": "wizard",
     "prof": {
-      "armor": [
-        "none"
-      ],
+      "armor": [],
       "savthrows": [
         "int",
         "wis"
@@ -2224,9 +2210,7 @@
         "medicine",
         "religion"
       ],
-      "tools": [
-        "none"
-      ],
+      "tools": [],
       "weapons": [
         "dagger",
         "dart",

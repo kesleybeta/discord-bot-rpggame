@@ -36,15 +36,6 @@ module.exports.run = async (message, cmd) => {
   let choosenBack = "choose"
   // Character variables
   let alignment = ""
-  let equip = {}
-  let features = []
-  let featuresAux = []
-  let hp = ""
-  let languages = []
-  let name = ""
-  let racialAttributes = {}
-  let prof = {}
-  let speed = {}
   let base = { // Base ability score
     str: tools.rollfourdsix(),
     dex: tools.rollfourdsix(),
@@ -53,6 +44,11 @@ module.exports.run = async (message, cmd) => {
     wis: tools.rollfourdsix(),
     cha: tools.rollfourdsix()
   }
+  let equip = {}
+  let features = []
+  let featuresAux = []
+  let hp = ""
+  let languages = []
   let mod = { // Modifier
     str: tools.modifier(base.str),
     dex: tools.modifier(base.dex),
@@ -61,6 +57,11 @@ module.exports.run = async (message, cmd) => {
     wis: tools.modifier(base.wis),
     cha: tools.modifier(base.cha)
   }
+  let armorclass = mod.dex
+  let name = ""
+  let prof = {}
+  let racialAttributes = {}
+  let speed = {}
   // Building Rich Embeds variables
   let embed = new Discord.RichEmbed()
   let raceEmbed = new Discord.RichEmbed() // An embed for races information
@@ -250,12 +251,27 @@ module.exports.run = async (message, cmd) => {
   })
 
   embed.setColor("#447FF3")
-    .addField("NAME", `\`\`\`css\n${name}\n\`\`\``, true)
-    .addField("HIT POINTS", `\`\`\`css\nMAX: ${hp}\n\`\`\``, true)
-    .addField("ALIGNMENT", `\`\`\`css\n${alignment}\n\`\`\``, true)
-    .addField("RACE", `\`\`\`css\n${choosenSubRace || choosenRace}\n\`\`\``, true)
-    .addField("CLASS", `\`\`\`css\n${choosenClass}\n\`\`\``, true)
-    .addField("BACKGROND", `\`\`\`css\n${choosenBack}\n\`\`\``, true)
+    .addField("BASIC INFORMATION", `\`\`\`css
+[NAME      *] > ${name}
+[HIT POINTS ] > Max: ${hp}
+[SPEED      ] > Base walking: ${speed.walking}
+[ARMOR CLASS] > ${armorclass} (no armor)
+[LANGUAGES  ] > ${languages.join(', ')}
+\`\`\``)
+    .addField("CHARACTERISTICS", `\`\`\`css
+[RACE       ] > ${choosenSubRace || choosenRace}
+[CLASS      ] > ${choosenClass}
+[BACKGROUND ] > ${choosenBack}
+[ALIGNMENT *] > ${alignment}
+\`\`\``)
+    //.addField("NAME", `\`\`\`css\n${name}\n\`\`\``, true)
+    // .addField("HIT POINTS", `\`\`\`css\nMAX: ${hp}\n\`\`\``, true)
+    // .addField("SPEED", `\`\`\`css\nBase walking: ${speed.walking}\n\`\`\``, true)
+    // .addField("ARMOR CLASS", `\`\`\`css\n${armorclass} (no armor)\n\`\`\``, true)
+    // .addField("ALIGNMENT", `\`\`\`css\n${alignment}\n\`\`\``, true)
+    // .addField("RACE", `\`\`\`css\n${choosenSubRace || choosenRace}\n\`\`\``)
+    // .addField("CLASS", `\`\`\`css\n${choosenClass}\n\`\`\``, true)
+    // .addField("BACKGROND", `\`\`\`css\n${choosenBack}\n\`\`\``, true)
     .addField("ATTRIBUTES", `\`\`\`css
 [STR] : ${base.str + racialAttributes.str} : (BASE: ${base.str}, MOD: ${mod.str}, RACE: ${racialAttributes.str})
 [DEX] : ${base.dex + racialAttributes.dex} : (BASE: ${base.dex}, MOD: ${mod.dex}, RACE: ${racialAttributes.dex})
@@ -275,7 +291,7 @@ module.exports.run = async (message, cmd) => {
 [Weapons]
   > ${equip.weapons.join(', ')}\n\`\`\``, true)
     .addField("FEATURES", `\`\`\`css\n${features.join(', ')}\n\`\`\``, true)
-    .addField("LANGUAGES", `\`\`\`css\n${languages.join(', ')}\n\`\`\``, true)
+    // .addField("LANGUAGES", `\`\`\`css\n${languages.join(', ')}\n\`\`\``, true)
     .addField("PROFICIENCY", `\`\`\`css
 [Armor        ] : ${prof.armor.join(', ')}
 [Saving throws] : ${prof.savthrows.join(', ')}
@@ -283,7 +299,6 @@ module.exports.run = async (message, cmd) => {
   > ${prof.skills.join(', ')}
 [Tools        ] : ${prof.tools.join(', ')}
 [Weapons      ] : ${prof.weapons.join(', ')}\n\`\`\``, true)
-    .addField("SPEED", `\`\`\`css\nBase walking: ${speed.walking}\n\`\`\``, true)
     .setTimestamp(new Date())
     .setFooter(`© ${sender.username} Character`, sender.displayAvatarURL)
 
