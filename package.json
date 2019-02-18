@@ -15,12 +15,12 @@
     "discord.js": "^11.4.2",
     "lodash": "^4.17.11",
     "lowdb": "^1.0.0",
-    "mongoose": "^5.4.8",
+    "mongoose": "^5.4.13",
     "ms": "^2.1.1",
     "superagent": "^4.1.0"
   },
   "devDependencies": {
-    "eslint": "^5.12.1",
+    "eslint": "^5.14.0",
     "jimp": "^0.6.0"
   }
 }
