@@ -1,58 +1,72 @@
 const Discord = require("discord.js")
-const ModClass = require("../models/mod-class.js")
+const capitalize = require("capitalize")
+// Require lowdb and then FileSync
+const low = require('lowdb')
+const FileSync = require('lowdb/adapters/FileSync')
+const jsonClass = low(new FileSync('./jsonfiles/char/charclasses.json', 'utf8'))
+const jsonCharCreation = low(new FileSync('./jsonfiles/charcreation.json', 'utf8'))
 
 module.exports.run = async (message, cmd, args) => {
   await message.delete()
-  console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`)
+  // Logging
+  await console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`)
+  // Variables
+  let thisClass = {}
+  let specificClass = ""
+  let allClassesEmbed = new Discord.RichEmbed()
+    .setColor("#65D8D6")
+    .setAuthor("D&D Beyond", "https://i.imgur.com/LaznxhN.png")
+    .setDescription(`Class is the primary definition of what your character can do.
+      It’s more than a profession; it’s your character’s calling.
+      Class shapes the way you think about the world and interact with it and your relationship with other people and powers in the multiverse.`)
+    .addField(`CLASSES`, `\`\`\`diff\n+ ${jsonCharCreation.get('allclasses').value().join('\n+ ')}\`\`\``, true)
 
-  if (!args.toString()) {
-    let embed = new Discord.RichEmbed()
-      .setAuthor("D&D Beyond", "https://media-waterdeep.cursecdn.com/avatars/104/378/636511944060210307.png")
-      .setDescription("Class is the primary definition of what your character can do.\nIt’s more than a profession; it’s your character’s calling.")
-      .setColor("#65D8D6")
+  let classEmbed = new Discord.RichEmbed()
+    .setColor("#65D8D6")
 
-    let classArray = []
-    ModClass.find({
-        source: "handbook"
-      }).sort([
-        [
-          'name',
-          'descending'
-        ]
-      ])
-      .exec((err, res) => {
-        if (err) return console.log('erro' + err)
-        classArray.push(res[0].name)
-        for (let i = 1; i < res.length; i++) classArray.unshift(res[i].name)
+  if (!args[0]) return message.channel.send(allClassesEmbed)
 
-        embed.addField("Classes:", `\`\`\`diff\n+ ${classArray.join('\n+ ')}\`\`\``)
-        return message.channel.send(embed)
-      })
-  } else {
-    let specificClass = args.toString().toLowerCase()
-      .split(",")
-      .join(" ")
-    let cembed = new Discord.RichEmbed()
-      .setColor("#65D8D6")
 
-    ModClass.findOne({
-      namel: specificClass
-    }, (err, result) => {
-      if (err) console.log("[2] " + err)
-      if (result === null) return message.reply(`Please, give a valid CLASS! Type \`${cmd}\` to see the classes's list.`)
-      if (!result) {
-        cembed.addField("Classes:", "Couldn't find any information.")
-        return message.channel.send(cembed)
-      } else {
-        cembed.setAuthor("Classes's Manual", `${result.icon}`)
-          .setTitle(`${result.name} `)
-          .setThumbnail(`${result.thumb}`)
-          .setDescription(`${result.description}`)
-        return message.channel.send(cembed)
-      }
-    })
+  specificClass = args.toString().toLowerCase()
+  if (message.content.split(' ').find(el => el === ".full") === ".full") {
+    specificClass = await specificClass.split(',')
+    specificClass.pop()
+    specificClass = await specificClass.join(' ')
   }
+  specificClass = await specificClass.split(',').join(' ')
+
+  thisClass = jsonClass.get(String(specificClass)).value()
+
+  classEmbed.setAuthor(thisClass.name, thisClass.icon)
+    .setDescription(thisClass.description)
+    .setThumbnail(thisClass.thumb)
+
+  if (message.content.split(' ').find(el => el === '.full') === '.full') {
+    classEmbed.addField("Starting Equipment", `\`\`\`css
+[Armor  ] : ${thisClass.equip.armor.join(', ')}
+[Gear   ] : ${thisClass.equip.gear.join(', ')}
+[Pack   ] : ${thisClass.equip.pack.join(', ')}
+[Tools  ] : ${thisClass.equip.tools.join(', ')}
+[Weapons] : ${thisClass.equip.weapons.join(', ')}
+\`\`\``, true)
+      .addField("Hit Points", `\`\`\`css
+[Hit Dice     ] : ${"1d" + thisClass.hp.hitdice} per ${thisClass.namel} level
+[HP at 1st Lvl] : ${thisClass.hp.hpfirst} + your Con modifier
+[HP after 1st ] : ${thisClass.hp.hplvl} + your Con modifier
+\`\`\``, true)
+      .addField("Proficiencies", `\`\`\`css
+[Armor        ] : ${thisClass.prof.armor.join(', ')}
+[Saving throws] : ${thisClass.prof.savthrows.join(', ')}
+[Skills       ] : ${thisClass.prof.skills.join(', ')}
+[Tools        ] : ${thisClass.prof.tools.join(', ')}
+[Weapons      ] : ${thisClass.prof.weapons.join(', ')}
+\`\`\``, true)
+  }
+
+  return message.channel.send(classEmbed)
+
 }
+
 
 module.exports.config = {
   name: "class",
