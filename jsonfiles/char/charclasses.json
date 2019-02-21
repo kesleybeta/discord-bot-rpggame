@@ -13,8 +13,8 @@
     },
     "hp": {
       "hitdice": 12,
-      "hpfirst": 12,
-      "hplvl": 7
+      "max": 12,
+      "perlevel": 7
     },
     "icon": "https://media-waterdeep.cursecdn.com/avatars/10/0/636336416778392507.jpeg",
     "name": "Barbarian",
@@ -145,8 +145,8 @@
     },
     "hp": {
       "hitdice": 8,
-      "hpfirst": 8,
-      "hplvl": 5
+      "max": 8,
+      "perlevel": 5
     },
     "icon": "https://media-waterdeep.cursecdn.com/avatars/10/1/636336416923635770.jpeg",
     "name": "Bard",
@@ -277,8 +277,8 @@
     },
     "hp": {
       "hitdice": 8,
-      "hpfirst": 8,
-      "hplvl": 5
+      "max": 8,
+      "perlevel": 5
     },
     "icon": "https://media-waterdeep.cursecdn.com/avatars/10/2/636336417054144618.jpeg",
     "name": "Cleric",
@@ -409,8 +409,8 @@
     },
     "hp": {
       "hitdice": 8,
-      "hpfirst": 8,
-      "hplvl": 5
+      "max": 8,
+      "perlevel": 5
     },
     "icon": "https://media-waterdeep.cursecdn.com/avatars/10/3/636336417152216156.jpeg",
     "name": "Druid",
@@ -541,8 +541,8 @@
     },
     "hp": {
       "hitdice": 10,
-      "hpfirst": 10,
-      "hplvl": 6
+      "max": 10,
+      "perlevel": 6
     },
     "icon": "https://media-waterdeep.cursecdn.com/avatars/10/4/636336417268495752.jpeg",
     "name": "Fighter",
@@ -673,8 +673,8 @@
     },
     "hp": {
       "hitdice": 8,
-      "hpfirst": 8,
-      "hplvl": 5
+      "max": 8,
+      "perlevel": 5
     },
     "icon": "https://media-waterdeep.cursecdn.com/avatars/10/5/636336417372349522.jpeg",
     "name": "Monk",
@@ -805,8 +805,8 @@
     },
     "hp": {
       "hitdice": 10,
-      "hpfirst": 10,
-      "hplvl": 6
+      "max": 10,
+      "perlevel": 6
     },
     "icon": "https://media-waterdeep.cursecdn.com/avatars/10/6/636336417477714942.jpeg",
     "name": "Paladin",
@@ -937,8 +937,8 @@
     },
     "hp": {
       "hitdice": 10,
-      "hpfirst": 10,
-      "hplvl": 6
+      "max": 10,
+      "perlevel": 6
     },
     "icon": "https://media-waterdeep.cursecdn.com/avatars/10/7/636336417569697438.jpeg",
     "name": "Ranger",
@@ -1069,8 +1069,8 @@
     },
     "hp": {
       "hitdice": 8,
-      "hpfirst": 8,
-      "hplvl": 5
+      "max": 8,
+      "perlevel": 5
     },
     "icon": "https://media-waterdeep.cursecdn.com/avatars/10/8/636336417681318097.jpeg",
     "name": "Rogue",
@@ -1201,8 +1201,8 @@
     },
     "hp": {
       "hitdice": 6,
-      "hpfirst": 6,
-      "hplvl": 4
+      "max": 6,
+      "perlevel": 4
     },
     "icon": "https://media-waterdeep.cursecdn.com/avatars/10/9/636336417773983369.jpeg",
     "name": "Sorcerer",
@@ -1333,8 +1333,8 @@
     },
     "hp": {
       "hitdice": 8,
-      "hpfirst": 8,
-      "hplvl": 5
+      "max": 8,
+      "perlevel": 5
     },
     "icon": "https://media-waterdeep.cursecdn.com/avatars/10/12/636336422983071263.jpeg",
     "name": "Warlock",
@@ -1465,8 +1465,8 @@
     },
     "hp": {
       "hitdice": 6,
-      "hpfirst": 6,
-      "hplvl": 4
+      "max": 6,
+      "perlevel": 4
     },
     "icon": "https://media-waterdeep.cursecdn.com/avatars/10/11/636336418370446635.jpeg",
     "name": "Wizard",
@@ -1597,8 +1597,8 @@
     },
     "hp": {
       "hitdice": 10,
-      "hpfirst": 10,
-      "hplvl": 6
+      "max": 10,
+      "perlevel": 6
     },
     "icon": "https://media-waterdeep.cursecdn.com/avatars/97/501/636502525831528922.png",
     "name": "Blood Hunter",

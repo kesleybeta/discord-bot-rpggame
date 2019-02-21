@@ -32,10 +32,11 @@ module.exports.run = async (message, cmd) => {
   //Choices made
   let choosenRace = "choose"
   let choosenSubRace = ""
+  let finalRaceChoice = ""
   let choosenClass = "choose"
   let choosenBack = "choose"
   // Character variables
-  let alignment = ""
+  let infoAlignment = ""
   let base = { // Base ability score
     str: tools.rollfourdsix(),
     dex: tools.rollfourdsix(),
@@ -47,7 +48,7 @@ module.exports.run = async (message, cmd) => {
   let equip = {}
   let features = []
   let featuresAux = []
-  let hp = ""
+  let hp = {}
   let languages = []
   let mod = { // Modifier
     str: tools.modifier(base.str),
@@ -58,7 +59,7 @@ module.exports.run = async (message, cmd) => {
     cha: tools.modifier(base.cha)
   }
   let armorclass = mod.dex
-  let name = ""
+  let infoName = ""
   let prof = {}
   let racialAttributes = {}
   let speed = {}
@@ -122,10 +123,10 @@ module.exports.run = async (message, cmd) => {
       if (!jsonRaces.has(choosenRace).value()) return message.reply(`\n• Please, give a valid RACE!\n• Restart the guide typing: \`${cmd}\`.`).then(choosenRace = "terminate")
 
       // Getting the races traits
-      alignment = await capitalize.words(jsonRaces.get(choosenRace + '.alignment').value())
+      infoAlignment = await capitalize.words(jsonRaces.get(choosenRace + '.alignment').value())
       features = await jsonRaces.get(choosenRace + '.features').value()
       languages = await jsonRaces.get(choosenRace + '.languages').value()
-      name = tools.randomName(choosenRace, 'm')
+      infoName = tools.randomName(choosenRace, 'm')
       racialAttributes = await jsonRaces.get(choosenRace + '.abilityscore').value()
       speed = await jsonRaces.get(choosenRace + '.speed').value()
 
@@ -139,7 +140,7 @@ module.exports.run = async (message, cmd) => {
           return message.reply("An error occurred. Try again later.").then(console.error(ce.message))
         }
       }
-      choosenRace = capitalize.words(choosenRace)
+      finalRaceChoice = capitalize.words(choosenRace)
 
     })
     .catch(ce => {
@@ -173,7 +174,7 @@ module.exports.run = async (message, cmd) => {
         featuresAux.map(el => features.push(el))
 
         // Capitalize the string
-        choosenSubRace = jsonSubRaces.get(choosenSubRace + '.name').value()
+        finalRaceChoice = jsonSubRaces.get(choosenSubRace + '.name').value()
       })
       .catch(ce => {
         choosenSubRace = "terminate"
@@ -199,8 +200,8 @@ module.exports.run = async (message, cmd) => {
       featuresAux = await jsonClass.get(choosenClass + '.table.1.features').value()
       equip = await jsonClass.get(choosenClass + '.equip').value()
       prof = await jsonClass.get(choosenClass + '.prof').value()
-      hp = await jsonClass.get(choosenClass + '.hp.hpfirst').value() + mod.con
-
+      hp = await jsonClass.get(choosenClass + '.hp').value()
+      hp.max = hp.max + mod.con
       featuresAux.map(el => features.push(el))
       choosenClass = capitalize.words(choosenClass)
     })
@@ -251,27 +252,8 @@ module.exports.run = async (message, cmd) => {
   })
 
   embed.setColor("#447FF3")
-    .addField("BASIC INFORMATION", `\`\`\`css
-[NAME      *] > ${name}
-[HIT POINTS ] > Max: ${hp}
-[SPEED      ] > Base walking: ${speed.walking}
-[ARMOR CLASS] > ${armorclass} (no armor)
-[LANGUAGES  ] > ${languages.join(', ')}
-\`\`\``)
-    .addField("CHARACTERISTICS", `\`\`\`css
-[RACE       ] > ${choosenSubRace || choosenRace}
-[CLASS      ] > ${choosenClass}
-[BACKGROUND ] > ${choosenBack}
-[ALIGNMENT *] > ${alignment}
-\`\`\``)
-    //.addField("NAME", `\`\`\`css\n${name}\n\`\`\``, true)
-    // .addField("HIT POINTS", `\`\`\`css\nMAX: ${hp}\n\`\`\``, true)
-    // .addField("SPEED", `\`\`\`css\nBase walking: ${speed.walking}\n\`\`\``, true)
-    // .addField("ARMOR CLASS", `\`\`\`css\n${armorclass} (no armor)\n\`\`\``, true)
-    // .addField("ALIGNMENT", `\`\`\`css\n${alignment}\n\`\`\``, true)
-    // .addField("RACE", `\`\`\`css\n${choosenSubRace || choosenRace}\n\`\`\``)
-    // .addField("CLASS", `\`\`\`css\n${choosenClass}\n\`\`\``, true)
-    // .addField("BACKGROND", `\`\`\`css\n${choosenBack}\n\`\`\``, true)
+    .addField("BASIC INFORMATION", `\`\`\`css\n[NAME      *] > ${infoName}\n[HIT POINTS ] > Max: ${hp.max}\n[SPEED      ] > Base walking: ${speed.walking}\n[ARMOR CLASS] > ${armorclass} (no armor)\n[LANGUAGES  ] > ${languages.join(', ')}\n\`\`\``)
+    .addField("CHARACTERISTICS", `\`\`\`css\n[RACE       ] > ${finalRaceChoice}\n[CLASS      ] > ${choosenClass}\n[BACKGROUND ] > ${choosenBack}\n[ALIGNMENT *] > ${infoAlignment}\n\`\`\``)
     .addField("ATTRIBUTES", `\`\`\`css
 [STR] : ${base.str + racialAttributes.str} : (BASE: ${base.str}, MOD: ${mod.str}, RACE: ${racialAttributes.str})
 [DEX] : ${base.dex + racialAttributes.dex} : (BASE: ${base.dex}, MOD: ${mod.dex}, RACE: ${racialAttributes.dex})
@@ -280,23 +262,17 @@ module.exports.run = async (message, cmd) => {
 [WIS] : ${base.wis + racialAttributes.wis} : (BASE: ${base.wis}, MOD: ${mod.wis}, RACE: ${racialAttributes.wis})
 [CHA] : ${base.cha + racialAttributes.cha} : (BASE: ${base.cha}, MOD: ${mod.cha}, RACE: ${racialAttributes.cha})\n\`\`\``)
     .addField("EQUIPMENT", `\`\`\`css
-[Armor  ]
-  > ${equip.armor.join(', ')}
-[Gear   ]
-  > ${equip.gear.join(', ')}
-[Pack   ]
-  > ${equip.pack.join(', ')}
-[Tools  ] 
-  > ${equip.tools.join(', ')}
-[Weapons]
-  > ${equip.weapons.join(', ')}\n\`\`\``, true)
+[Armor  ] : ${equip.armor.join(', ')}
+[Gear   ] : ${equip.gear.join(', ')}
+[Pack   ] : ${equip.pack.join(', ')}
+[Tools  ] : ${equip.tools.join(', ')}
+[Weapons] : ${equip.weapons.join(', ')}\n\`\`\``, true)
     .addField("FEATURES", `\`\`\`css\n${features.join(', ')}\n\`\`\``, true)
-    // .addField("LANGUAGES", `\`\`\`css\n${languages.join(', ')}\n\`\`\``, true)
     .addField("PROFICIENCY", `\`\`\`css
 [Armor        ] : ${prof.armor.join(', ')}
 [Saving throws] : ${prof.savthrows.join(', ')}
-[Skills       ]
-  > ${prof.skills.join(', ')}
+[Skills       ] : ${prof.skills.join(', ')}
+
 [Tools        ] : ${prof.tools.join(', ')}
 [Weapons      ] : ${prof.weapons.join(', ')}\n\`\`\``, true)
     .setTimestamp(new Date())
@@ -326,10 +302,86 @@ module.exports.run = async (message, cmd) => {
             // Create a new character profile with the choices made and the informations collected from it
             const newProfile = new ModCharacter({
               userID: sender.id,
-              serverID: server.id
+              serverID: server.id,
+              characters: {
+                armorclass: Number(armorclass),
+                attributes: {
+                  str: {
+                    base: base.str,
+                    racial: racialAttributes.str,
+                    mod: mod.str,
+                    improve: 0,
+                    total: base.str + racialAttributes.str
+                  },
+                  dex: {
+                    base: base.dex,
+                    racial: racialAttributes.dex,
+                    mod: mod.dex,
+                    improve: 0,
+                    total: base.dex + racialAttributes.dex
+                  },
+                  con: {
+                    base: base.con,
+                    racial: racialAttributes.con,
+                    mod: mod.con,
+                    improve: 0,
+                    total: base.con + racialAttributes.con
+                  },
+                  int: {
+                    base: base.int,
+                    racial: racialAttributes.int,
+                    mod: mod.int,
+                    improve: 0,
+                    total: base.int + racialAttributes.int
+                  },
+                  wis: {
+                    base: base.wis,
+                    racial: racialAttributes.wis,
+                    mod: mod.wis,
+                    improve: 0,
+                    total: base.wis + racialAttributes.wis
+                  },
+                  cha: {
+                    base: base.cha,
+                    racial: racialAttributes.cha,
+                    mod: mod.cha,
+                    improve: 0,
+                    total: base.cha + racialAttributes.cha
+                  }
+                },
+                basicinfo: {
+                  alignmentt: infoAlignment,
+                  name: infoName,
+                  background: choosenBack,
+                  class: choosenClass,
+                  race: finalRaceChoice
+                },
+                equipment: {
+                  gear: Array,
+                  weapon: Array,
+                  armor: Array
+                },
+                features: Array,
+                hp: {
+                  hitdice: Number,
+                  perlevel: Number,
+                  max: Number
+                },
+                image: {
+                  icon: String,
+                  portrait: String
+                },
+                level: Number,
+                speed: {
+                  walking: String,
+                  running: String,
+                  swimming: String
+                },
+                _valid: true
+              }
             })
 
-            return message.reply(`This will be your new character!\n• Mr. **${name}** the **${choosenClass} ${choosenSubRace || choosenRace}** with **${choosenBack}** background.`)
+            return message.reply(`This will be your new character!\n• Mr. **${infoName}** the **${choosenClass} ${choosenSubRace || choosenRace}** with **${choosenBack}** background.`)
 
           } else return message.reply("Come back later!")
         })
