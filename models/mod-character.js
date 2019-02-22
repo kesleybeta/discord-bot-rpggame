@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 // eslint-disable-next-line new-cap
 const profileSchema = mongoose.Schema({
-  _id: { $oid: Number },
+  _id: Number,
   userID: String,
   serverID: String,
   characters: {

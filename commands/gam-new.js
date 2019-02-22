@@ -264,8 +264,9 @@ module.exports.run = async (message, cmd) => {
     .addField("EQUIPMENT", `\`\`\`css
 [Armor  ] : ${equip.armor.join(', ')}
 [Gear   ] : ${equip.gear.join(', ')}
-[Pack   ] : ${equip.pack.join(', ')}
+[Pack   ] : ${capitalize.words(equip.pack)}
 [Tools  ] : ${equip.tools.join(', ')}
+[Wealth ] : ${equip.wealth.qtd}D${equip.wealth.dice} X ${equip.wealth.gp} GP
 [Weapons] : ${equip.weapons.join(', ')}\n\`\`\``, true)
     .addField("FEATURES", `\`\`\`css\n${features.join(', ')}\n\`\`\``, true)
     .addField("PROFICIENCY", `\`\`\`css
@@ -301,6 +302,7 @@ module.exports.run = async (message, cmd) => {
           if (saveChoices) {
             // Create a new character profile with the choices made and the informations collected from it
             const newProfile = new ModCharacter({
+              _id: 0,
               userID: sender.id,
               serverID: server.id,
               characters: {
@@ -369,7 +371,7 @@ module.exports.run = async (message, cmd) => {
                 },
                 image: {
                   icon: String,
-                  portrait: String
+                  portrait: "https://i.imgur.com/ZDe842R.png"
                 },
                 level: Number,
                 speed: {
@@ -381,7 +383,7 @@ module.exports.run = async (message, cmd) => {
               }
             })
 
-            return message.reply(`This will be your new character!\n• Mr. **${infoName}** the **${choosenClass} ${choosenSubRace || choosenRace}** with **${choosenBack}** background.`)
+            return message.reply(`This will be your new character!\n• Mr. **${infoName}** the **${choosenClass} ${finalRaceChoice}** with **${choosenBack}** background.`)
 
           } else return message.reply("Come back later!")
         })

@@ -1,4 +1,5 @@
 {
+  "_description": "D&D worlds are a vast tapestry made up of many different cultures, each with its own technology level. For this reason, adventurers have access to a variety of armor types, ranging from leather armor to chain mail to costly plate armor, with several other kinds of armor in between.",
   "heavy": {
     "chain mail": {
       "armorclass": 16,
@@ -26,15 +27,23 @@
     }
   },
   "light": {
+    "description": "Made from supple and thin materials, light armor favors agile adventurers since it offers some protection without sacrificing mobility. If you wear light armor, you add your Dexterity modifier to the base number from your armor type to determine your Armor Class.",
+    "list": ["leather", "padded", "studded leather"],
     "leather": {
-      "armorclass": [11, "dex"],
-      "cost": [10, "gp"],
+      "description": "The breastplate and shoulder protectors of this armor are made of leather that has been stiffened by being boiled in oil. The rest of the armor is made of softer and more flexible materials.",
+      "armorclass": 11,
+      "cost": {
+        "gp": 10
+      },
       "stealth": "",
       "strength": 0
     },
     "padded": {
-      "armorclass": [11, "dex"],
-      "cost": [5, "gp"],
+      "description": "Padded armor consists of quilted layers of cloth and batting.",
+      "armorclass": 11,
+      "cost": {
+        "gp": 5
+      },
       "stealth": "disadvantage",
       "strength": 0
     },
@@ -78,11 +87,17 @@
     }
   },
   "shield": {
-    "shield": {
+    "wood shield": {
       "armorclass": 2,
       "cost": [10, "gp"],
       "stealth": "",
       "strength": 0
+    },
+    "metal shield": {
+      "armorclass": 4,
+      "cost": [15, "gp"],
+      "stealth": "",
+      "strength": 8
     }
   }
 }

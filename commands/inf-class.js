@@ -37,17 +37,17 @@ module.exports.run = async (message, cmd, args) => {
 
   thisClass = jsonClass.get(String(specificClass)).value()
 
-  classEmbed.setAuthor(thisClass.name, thisClass.icon)
+  classEmbed.setAuthor(thisClass.name, thisClass.image.icon)
     .setDescription(thisClass.description)
-    .setThumbnail(thisClass.thumb)
+    .setThumbnail(thisClass.image.thumb)
 
   if (message.content.split(' ').find(el => el === '.full') === '.full') {
     classEmbed.addField("Starting Equipment", `\`\`\`css
-[Armor  ] : ${thisClass.equip.armor.join(', ')}
-[Gear   ] : ${thisClass.equip.gear.join(', ')}
-[Pack   ] : ${thisClass.equip.pack.join(', ')}
-[Tools  ] : ${thisClass.equip.tools.join(', ')}
-[Weapons] : ${thisClass.equip.weapons.join(', ')}
+[Armor  ] : ${thisClass.equip.armor.join(', ') || '---'}
+[Gear   ] : ${thisClass.equip.gear.join(', ') || '---'}
+[Pack   ] : ${thisClass.equip.pack}
+[Tools  ] : ${thisClass.equip.tools.join(', ') || '---'}
+[Weapons] : ${thisClass.equip.weapons.join(', ') || '---'}
 \`\`\``, true)
       .addField("Hit Points", `\`\`\`css
 [Hit Dice     ] : ${"1d" + thisClass.hp.hitdice} per ${thisClass.namel} level
