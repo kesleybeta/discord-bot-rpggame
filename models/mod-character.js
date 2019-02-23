@@ -7,20 +7,77 @@ const profileSchema = mongoose.Schema({
   characters: {
     armorclass: Number,
     attributes: {
-      str: { base: Number, racial: Number, mod: Number, improve: Number, total: Number },
-      dex: { base: Number, racial: Number, mod: Number, improve: Number, total: Number },
-      con: { base: Number, racial: Number, mod: Number, improve: Number, total: Number },
-      int: { base: Number, racial: Number, mod: Number, improve: Number, total: Number },
-      wis: { base: Number, racial: Number, mod: Number, improve: Number, total: Number },
-      cha: { base: Number, racial: Number, mod: Number, improve: Number, total: Number }
+      str: {
+        base: Number,
+        racial: Number,
+        mod: Number,
+        improve: Number,
+        total: Number
+      },
+      dex: {
+        base: Number,
+        racial: Number,
+        mod: Number,
+        improve: Number,
+        total: Number
+      },
+      con: {
+        base: Number,
+        racial: Number,
+        mod: Number,
+        improve: Number,
+        total: Number
+      },
+      int: {
+        base: Number,
+        racial: Number,
+        mod: Number,
+        improve: Number,
+        total: Number
+      },
+      wis: {
+        base: Number,
+        racial: Number,
+        mod: Number,
+        improve: Number,
+        total: Number
+      },
+      cha: {
+        base: Number,
+        racial: Number,
+        mod: Number,
+        improve: Number,
+        total: Number
+      }
     },
-    basicinfo: { alignment: String, name: String, background: String, class: String, race: String },
-    equipment: { gear: Array, weapon: Array, armor: Array },
+    basicinfo: {
+      alignment: String,
+      name: String,
+      background: String,
+      class: String,
+      race: String
+    },
+    equipment: {
+      gear: Array,
+      weapon: Array,
+      armor: Array
+    },
     features: Array,
-    hp: { hitdice: Number, perlevel: Number, max: Number },
-    image: {icon: String, portrait: String },
+    hp: {
+      hitdice: Number,
+      perlevel: Number,
+      max: Number
+    },
+    image: {
+      icon: String,
+      portrait: String
+    },
     level: Number,
-    speed: { walking: String, running: String, swimming: String },
+    speed: {
+      walking: String,
+      flying: String,
+      swimming: String
+    },
     _valid: Boolean
   }
 })

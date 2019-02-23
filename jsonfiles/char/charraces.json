@@ -1,8 +1,5 @@
 {
   "dragonborn": {
-    "_id": {
-      "$oid": "5c51deeae7179a1e4685bc9a"
-    },
     "abilityscore": {
       "cha": 1,
       "con": 0,
@@ -11,59 +8,37 @@
       "str": 2,
       "wis": 0
     },
-    "age": {
-      "adult": 15,
-      "max": 80
-    },
-    "alignment": "Good",
-    "description": "Born of dragons, as their name proclaims, the dragonborn walk proudly through a world that greets them with fearful incomprehension.",
+    "description": "Born of dragons, as their name proclaims, the dragonborn walk proudly through a world that greets them with fearful incomprehension. Shaped by draconic gods or the dragons themselves, dragonborn originally hatched from dragon eggs as a unique race, combining the best attributes of dragons and humanoids",
     "features": ["Draconic Ancestry", "Breath Weapon", "Damage Resistance"],
-    "icon": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/4808/149/400/250/636771205894109291.jpeg",
-    "languages": ["Common", "Draconic"],
-    "mark": [],
+    "image": {
+      "icon": "https://i.imgur.com/ZVABaBP.jpg",
+      "thumb": "https://i.imgur.com/Ba5tFS6.png"
+    },
     "name": "Dragonborn",
     "namel": "dragonborn",
     "names": {
       "family": ["Clethtinthiallor", "Daardendrian", "Delmirev", "Drachedandion", "Fenkenkabradon", "Kepeshkmolik", "Kerrhylon", "Kimbatuul", "Linxakasendalor", "Myastan", "Nemmonis", "Norixius", "Ophinshtalajiir", "Prexijandilin", "Shestendeliath", "Turnuroth", "Verthisathurgiesh", "Yarjerit"],
-      "female": ["Akra", "Biri", "Daar", "Farideh", "Harann", "HaviJar", "Jheri", "Kava", "Korinn", "Mishann", "Nala", "Perra", "Raiann", "Sora", "Surina", "Thava", "Uadjit"],
-      "male": ["Arjhan", "Balasar", "Bharash", "Donnar", "Ghesh", "Heskan", "Kriv", "Medrash", "Mehen", "Nadarr", "Pandjed", "Patrin", "Rhogar", "Shamash", "Shedinn", "Tarhun", "Torinn"]
+      "female": ["Akra", "Biri", "Daar", "Farideh", "Harann", "HaviJar", "Jheri", "Kava", "Korinn", "Mishann", "Nala", "Perra", "Pious", "Raiann", "Shieldbiter", "Sora", "Surina", "Thava", "Uadjit", "Zealous"],
+      "male": ["Arjhan", "Balasar", "Bharash", "Climber", "Donnar", "Earbender", "Ghesh", "Heskan", "Kriv", "Leaper", "Medrash", "Mehen", "Nadarr", "Pandjed", "Patrin", "Rhogar", "Shamash", "Shedinn", "Tarhun", "Torinn"]
     },
-    "raceonly": {
-      "dragon": {
-        "black": {
-          "breathweapon": {
-            "distance": 30,
-            "savthrow": "dex",
-            "type": "line"
-          },
-          "damagetype": "acid"
-        },
-        "blue": {},
-        "brass": {},
-        "bronze": {},
-        "copper": {},
-        "gold": {},
-        "green": {},
-        "red": {},
-        "silver": {},
-        "white": {}
-      }
-    },
-    "size": "medium",
     "source": "handbook",
-    "speed": {
-      "flying": 0,
-      "swimming": 0,
-      "walking": 30
-    },
     "subraces": "",
-    "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/340/420/618/636272677995471928.png",
-    "variant": []
+    "traits": {
+      "age": {
+        "adult": 15,
+        "max": 80
+      },
+      "alignment": "Good",
+      "languages": ["Common", "Draconic"],
+      "size": "medium",
+      "speed": {
+        "flying": 0,
+        "swimming": 0,
+        "walking": 30
+      }
+    }
   },
   "dwarf": {
-    "_id": {
-      "$oid": "5c4de5dfe7179a090e0ad793"
-    },
     "abilityscore": {
       "cha": 0,
       "con": 2,
@@ -72,16 +47,12 @@
       "str": 0,
       "wis": 0
     },
-    "age": {
-      "adult": 50,
-      "max": 350
-    },
-    "alignment": "Lawful",
     "description": "Bold and hardy, dwarves are known as skilled warriors, miners, and workers of stone and metal. Though they stand well under 5 feet tall, dwarves are so broad and compact that they can weigh as much as a human standing nearly two feet taller.",
     "features": ["Darkvision", "Dwarven Resilience", "Dwarven Combat Training", "Tool Proficiency", "Stonecunning"],
-    "icon": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/4808/149/400/250/636771205894109291.jpeg",
-    "languages": ["Common", "Dwarvish"],
-    "mark": [],
+    "image": {
+      "icon": "https://i.imgur.com/ZVABaBP.jpg",
+      "thumb": "https://i.imgur.com/KWIecFL.png"
+    },
     "name": "Dwarf",
     "namel": "dwarf",
     "names": {
@@ -89,22 +60,24 @@
       "female": ["Amber", "Artin", "Audhild", "Bardryn", "Oagnal", "Oiesa", "Eldeth", "Falkrunn", "Finellen", "Gunnloda", "Gurdis", "Helja", "Hlin", "Kathra", "Kristryd", "lide", "Liftrasa", "Mardred", "Riswynn", "Sannl", "Torbera", "Torgga", "Vistra"],
       "male": ["Adrik", "Alberich", "Baern", "Barendd", "Brottor", "Bruenor", "Oain", "Oarrak", "Oelg", "Eberk", "Einkil", "Fargrim", "Flint", "Gardain", "Harbek", "Kildrak", "Morgran", "Orsik", "Oskar", "Rangrim", "Rurik", "Taklinn", "Thoradin", "Thorin", "Tordek", "Traubon", "Travok", "Ulfgar", "Veit", "Vondal"]
     },
-    "raceonly": {},
-    "size": "medium",
     "source": "handbook",
-    "speed": {
-      "flying": 0,
-      "swimming": 0,
-      "walking": 25
-    },
     "subraces": ["Hill Dwarf", "Mountain Dwarf"],
-    "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/254/420/618/636271781394265550.png",
-    "variant": []
+    "traits": {
+      "age": {
+        "adult": 50,
+        "max": 350
+      },
+      "alignment": "Lawful",
+      "languages": ["Common", "Dwarvish"],
+      "size": "medium",
+      "speed": {
+        "flying": 0,
+        "swimming": 0,
+        "walking": 25
+      }
+    }
   },
   "elf": {
-    "_id": {
-      "$oid": "5c4de79ae7179a090e0ad801"
-    },
     "abilityscore": {
       "cha": 0,
       "con": 0,
@@ -113,16 +86,12 @@
       "str": 0,
       "wis": 0
     },
-    "age": {
-      "adult": 100,
-      "max": 750
-    },
-    "alignment": "Good",
     "description": "Elves are a magical people of otherworldly grace, living in the world but not entirely part of it.\nThey live in places of ethereal beauty, in the midst of ancient forests or in silvery spires glittering with faerie light, where soft music drifts through the air and gentle fragrances waft on the breeze.",
     "features": ["Darkvision", "Keen Senses", "Fey Ancestry", "Trance"],
-    "icon": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/4808/149/400/250/636771205894109291.jpeg",
-    "languages": ["Common", "Elvish"],
-    "mark": [],
+    "image": {
+      "icon": "https://i.imgur.com/ZVABaBP.jpg",
+      "thumb": "https://i.imgur.com/DN9bo80.png"
+    },
     "name": "Elf",
     "namel": "elf",
     "names": {
@@ -130,22 +99,24 @@
       "female": ["Adrie", "Althaea", "Anastrianna", "Andraste", "Antinua", "Bethrynna", "Birel", "Caelynn", "Orusilia", "Enna", "Felosial", "Ielenia", "Jelenneth", "Keyleth", "Leshanna", "Lia", "Meriele", "Mialee", "Naivara", "Quelenna", "Quillathe", "Sariel", "Shanairra", "Shava", "Silaqui", "Theirastra", "Thia", "Vadania", "Valanthe", "Xanaphia"],
       "male": ["Adran", "Aelar", "Aramil", "Arannis", "Aust", "Beiro", "Berrian", "Carrie", "Enialis", "Erdan", "Erevan", "Galinndan", "Hadarai", "Heian", "Himo", "Immeral", "Ivellios", "Laucian", "Mindartis", "Paelias", "Peren", "Quarion", "Riardon", "Rolen", "Soveliss", "Thamior", "Tharivol", "Theren", "Varis"]
     },
-    "raceonly": {},
-    "size": "medium",
     "source": "handbook",
-    "speed": {
-      "flying": 0,
-      "swimming": 0,
-      "walking": 30
-    },
     "subraces": ["High Elf", "Wood Elf", "Drow"],
-    "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/7/639/420/618/636287075350739045.png",
-    "variant": ["Eladrin Elf"]
+    "traits": {
+      "age": {
+        "adult": 100,
+        "max": 750
+      },
+      "alignment": "Good",
+      "languages": ["Common", "Elvish"],
+      "size": "medium",
+      "speed": {
+        "flying": 0,
+        "swimming": 0,
+        "walking": 30
+      }
+    }
   },
   "gnome": {
-    "_id": {
-      "$oid": "5c51e526e7179a1e4685c2cd"
-    },
     "abilityscore": {
       "cha": 0,
       "con": 0,
@@ -154,16 +125,12 @@
       "str": 0,
       "wis": 0
     },
-    "age": {
-      "adult": 40,
-      "max": 425
-    },
-    "alignment": "Good",
     "description": "A constant hum of busy activity pervades the warrens and neighborhoods where gnomes form their close-knit communities.\nLouder sounds punctuate the hum: a crunch of grinding gears here, a minor explosion there, a yelp of surprise or triumph, and especially bursts ofon, and play.",
     "features": ["Darkvision", "Gnome Cunning"],
-    "icon": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/4808/149/400/250/636771205894109291.jpeg",
-    "languages": ["Common", "Gnomish"],
-    "mark": [],
+    "image": {
+      "icon": "https://i.imgur.com/ZVABaBP.jpg",
+      "thumb": "https://i.imgur.com/RjvynOK.png"
+    },
     "name": "Gnome",
     "namel": "gnome",
     "names": {
@@ -171,22 +138,24 @@
       "female": ["Bimpnollin", "Breena", "Caramip", "Carlin", "Donella", "Duvamil", "Ella", "Ellyjobell", "Ellywick", "Lilli", "Loopmottin", "Lorilla", "Mardnab", "Nissa", "Nyx", "Oda", "Orla", "Roywyn", "Shamil", "Tana", "Waywocket", "Zanna"],
       "male": ["Alston", "Alvyn", "Boddynock", "Brocc", "Burgell", "Dimble", "Eldon", "Erky", "Fonkin", "Frug", "Gerbo", "Gimble", "Glim", "Jebeddo", "Kellen", "Namfoodle", "Orryn", "Roondar", "Seebo", "Sindri", "Warryn", "Wrenn", "Zook"]
     },
-    "raceonly": {},
-    "size": "small",
     "source": "handbook",
-    "speed": {
-      "flying": 0,
-      "swimming": 0,
-      "walking": 25
-    },
     "subraces": ["Rock Gnome", "Forest Gnome"],
-    "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/334/420/618/636272671553055253.png",
-    "variant": []
+    "traits": {
+      "age": {
+        "adult": 40,
+        "max": 425
+      },
+      "alignment": "Good",
+      "languages": ["Common", "Gnomish"],
+      "size": "small",
+      "speed": {
+        "flying": 0,
+        "swimming": 0,
+        "walking": 25
+      }
+    }
   },
   "half elf": {
-    "_id": {
-      "$oid": "5c51f67ce7179a1e4685d586"
-    },
     "abilityscore": {
       "cha": 2,
       "con": 1,
@@ -195,16 +164,12 @@
       "str": 0,
       "wis": 0
     },
-    "age": {
-      "adult": 20,
-      "max": 180
-    },
-    "alignment": "Chaotic",
     "description": "Walking in two worlds but truly belonging to neither, half-elves combine what some say are the best qualities of their elf and human parents: human curiosity, inventiveness, and ambition tempered by the refined senses, love of nature, and artistic tastes of the elves.ife.",
     "features": ["Darkvision", "Fey Ancestry", "Skill Versatility"],
-    "icon": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/4808/149/400/250/636771205894109291.jpeg",
-    "languages": ["Common", "Elvish"],
-    "mark": ["Detection Half Elf", "Storm Half Elf"],
+    "image": {
+      "icon": "https://i.imgur.com/ZVABaBP.jpg",
+      "thumb": "https://i.imgur.com/4JNOVD3.png"
+    },
     "name": "Half Elf",
     "namel": "half elf",
     "names": {
@@ -212,22 +177,24 @@
       "female": ["Atala", "Ceidil", "Hama", "Jasmal", "Meilil", "Seipora", "Yasheira", "Zasheida", "Arveene", "Esvele", "Jhessail", "Kerri", "Lureene", "Miri", "Rowan", "Shandri", "Tessele", "Alethra", "Kara", "Katernin", "Natali", "Mara", "Olma", "Tana", "Zora", "Amafrey", "Betha", "Cefrey", "Kethra", "Mara", "Olga", "Silifrey", "Westra", "Arizima", "Chathi", "Nephis", "Nulara", "Murithi", "Sefris", "Thola", "Umara", "Zolis", "Fyevarra", "Hulmarra", "Immith", "Imzel", "Navarra", "Shevarra", "Tammith", "Yuldra", "Bai", "Chao", "Jia", "Lei", "Mei", "Qiao", "Shui", "Tai", "Balama", "Dona", "Faila", "Jalana", "Luisa", "Marta", "Quara", "Selise", "Vonda"],
       "male": ["Aseir", "Bardeid", "Haseid", "Khemed", "Mehmen", "Sudeiman", "Zasheir", "Darvin", "Dorn", "Evendur", "Gorstag", "Grim", "Helm", "Malark", "Morn", "Randal", "Stedd", "Bor", "Fodel", "Glar", "Grigor", "Igan", "Ivor", "Kosef", "Mival", "Orel", "Pavel", "Sergor", "Ander", "Blath", "Bran", "Frath", "Geth", "Lander", "Luth", "Malcer", "Stor", "Taman", "Urth", "Aoth", "Bareris", "Ehput-Ki", "Kethoth", "Mumed", "Ramas", "So-Kehur", "Thazar-De", "Urhur", "Borivik", "Faurgar", "Jandar", "Kanithar", "Madislak", "Ralmevik", "Shaumar", "Vladislak", "An", "Chen", "Chi", "Fai", "Jiang", "Jun", "Lian", "Long", "Meng", "On", "Shan", "Shui", "Wen", "Anton", "Diero", "Marcon", "Pieron", "Rimardo", "Romero", "Salazar", "Umbero"]
     },
-    "raceonly": {},
-    "size": "medium",
     "source": "handbook",
-    "speed": {
-      "flying": 0,
-      "swimming": 0,
-      "walking": 30
-    },
     "subraces": "",
-    "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/481/420/618/636274618102950794.png",
-    "variant": []
+    "traits": {
+      "age": {
+        "adult": 20,
+        "max": 180
+      },
+      "alignment": "Chaotic",
+      "languages": ["Common", "Elvish"],
+      "size": "medium",
+      "speed": {
+        "flying": 0,
+        "swimming": 0,
+        "walking": 30
+      }
+    }
   },
   "half orc": {
-    "_id": {
-      "$oid": "5c52d4bde7179a1e46866156"
-    },
     "abilityscore": {
       "cha": 0,
       "con": 1,
@@ -236,16 +203,12 @@
       "str": 2,
       "wis": 0
     },
-    "age": {
-      "adult": 14,
-      "max": 75
-    },
-    "alignment": "Chaotic",
     "description": "Half-orcs most often live among orcs. Of the other races, humans are most likely to accept half-orcs, and half-orcs almost always live in human lands when not living among orc tribes.",
     "features": ["Darkvision", "Menancing", "Relentless Endurance", "Savage Attacks"],
-    "icon": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/4808/149/400/250/636771205894109291.jpeg",
-    "languages": ["Common", "Orc"],
-    "mark": ["Finding Half Orc"],
+    "image": {
+      "icon": "https://i.imgur.com/ZVABaBP.jpg",
+      "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/466/420/618/636274570630462055.png"
+    },
     "name": "Half Orc",
     "namel": "half orc",
     "names": {
@@ -253,22 +216,24 @@
       "female": ["Baggi", "Emen", "Engong", "Kansif", "Myev", "Neega", "Ovak", "Ownka", "Shaulha", "Sulha", "Vola", "Volen", "Yevelda"],
       "male": ["Deneh", "Feng", "Gell", "Henk", "Holg", "Imsh", "Kelh", "Krusk", "Mhurren", "Ront", "Shump", "Thokk"]
     },
-    "raceonly": {},
-    "size": "medium",
     "source": "handbook",
-    "speed": {
-      "flying": 0,
-      "swimming": 0,
-      "walking": 30
-    },
     "subraces": "",
-    "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/466/420/618/636274570630462055.png",
-    "variant": []
+    "traits": {
+      "age": {
+        "adult": 14,
+        "max": 75
+      },
+      "alignment": "Chaotic",
+      "languages": ["Common", "Orc"],
+      "size": "medium",
+      "speed": {
+        "flying": 0,
+        "swimming": 0,
+        "walking": 30
+      }
+    }
   },
   "halfling": {
-    "_id": {
-      "$oid": "5c4dfacae7179a090e0adeb6"
-    },
     "abilityscore": {
       "cha": 0,
       "con": 0,
@@ -277,16 +242,12 @@
       "str": 0,
       "wis": 0
     },
-    "age": {
-      "adult": 20,
-      "max": 150
-    },
-    "alignment": "Lawfull Good",
     "description": "The comforts of home are the goals of most halflings lives: a place to settle in peace and quiet, far from marauding monsters and clashing armies; a blazing fire and a generous meal; fine drink and fine conversation.",
     "features": ["Lucky", "Brave", "Halfling Nimbleness"],
-    "icon": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/4808/149/400/250/636771205894109291.jpeg",
-    "languages": ["Common", "Halfling"],
-    "mark": ["Mark of Healing Halfling", "Mark of Hospitality Halfling"],
+    "image": {
+      "icon": "https://i.imgur.com/ZVABaBP.jpg",
+      "thumb": "https://i.imgur.com/pK90V8Q.png"
+    },
     "name": "Halfling",
     "namel": "halfling",
     "names": {
@@ -294,22 +255,24 @@
       "female": ["Andry", "Bree", "Callie", "Cora", "Euphemia", "Jillian", "Kithri", "Lavinia", "Lidda", "Merla", "Nedda", "Paela", "Portia", "Seraphina", "Shaena", "Trym", "Vani", "Verna"],
       "male": ["Alton", "Ander", "Cade", "Corrin", "Eldon", "Errich", "Finnan", "Garret", "Lindal", "Lyle", "Merric", "Milo", "Osborn", "Perrin", "Reed", "Roscoe", "Wellby"]
     },
-    "raceonly": {},
-    "size": "small",
     "source": "handbook",
-    "speed": {
-      "flying": 0,
-      "swimming": 0,
-      "walking": 25
-    },
     "subraces": ["Lightfoot Halfling", "Stout Halfling"],
-    "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/256/420/618/636271789409776659.png",
-    "variant": []
+    "traits": {
+      "age": {
+        "adult": 20,
+        "max": 150
+      },
+      "alignment": "Lawfull Good",
+      "languages": ["Common", "Halfling"],
+      "size": "small",
+      "speed": {
+        "flying": 0,
+        "swimming": 0,
+        "walking": 25
+      }
+    }
   },
   "human": {
-    "_id": {
-      "$oid": "5c4e01b5e7179a090e0ae0b4"
-    },
     "abilityscore": {
       "cha": 1,
       "con": 1,
@@ -318,16 +281,12 @@
       "str": 1,
       "wis": 1
     },
-    "age": {
-      "adult": 16,
-      "max": 90
-    },
-    "alignment": "Neutral",
     "description": "In the reckonings of most worlds. humans are the youngest of the common races.\nLate to arrive on the world scene and short-lived in comparison to dwarves, elves, and dragons.",
     "features": [],
-    "icon": "",
-    "languages": ["Common"],
-    "mark": [],
+    "image": {
+      "icon": "https://i.imgur.com/ZVABaBP.jpg",
+      "thumb": "https://i.imgur.com/7lwXaPZ.png"
+    },
     "name": "Human",
     "namel": "human",
     "names": {
@@ -335,26 +294,24 @@
       "female": ["Atala", "Ceidil", "Hama", "Jasmal", "Meilil", "Seipora", "Yasheira", "Zasheida", "Arveene", "Esvele", "Jhessail", "Kerri", "Lureene", "Miri", "Rowan", "Shandri", "Tessele", "Alethra", "Kara", "Katernin", "Natali", "Mara", "Olma", "Tana", "Zora", "Amafrey", "Betha", "Cefrey", "Kethra", "Mara", "Olga", "Silifrey", "Westra", "Arizima", "Chathi", "Nephis", "Nulara", "Murithi", "Sefris", "Thola", "Umara", "Zolis", "Fyevarra", "Hulmarra", "Immith", "Imzel", "Navarra", "Shevarra", "Tammith", "Yuldra", "Bai", "Chao", "Jia", "Lei", "Mei", "Qiao", "Shui", "Tai", "Balama", "Dona", "Faila", "Jalana", "Luisa", "Marta", "Quara", "Selise", "Vonda"],
       "male": ["Aseir", "Bardeid", "Haseid", "Khemed", "Mehmen", "Sudeiman", "Zasheir", "Darvin", "Dorn", "Evendur", "Gorstag", "Grim", "Helm", "Malark", "Morn", "Randal", "Stedd", "Bor", "Fodel", "Glar", "Grigor", "Igan", "Ivor", "Kosef", "Mival", "Orel", "Pavel", "Sergor", "Ander", "Blath", "Bran", "Frath", "Geth", "Lander", "Luth", "Malcer", "Stor", "Taman", "Urth", "Aoth", "Bareris", "Ehput-Ki", "Kethoth", "Mumed", "Ramas", "So-Kehur", "Thazar-De", "Urhur", "Borivik", "Faurgar", "Jandar", "Kanithar", "Madislak", "Ralmevik", "Shaumar", "Vladislak", "An", "Chen", "Chi", "Fai", "Jiang", "Jun", "Lian", "Long", "Meng", "On", "Shan", "Shui", "Wen", "Anton", "Diero", "Marcon", "Pieron", "Rimardo", "Romero", "Salazar", "Umbero"]
     },
-    "raceonly": {
-      "names": {
-        "ethnicities": ["Calishite", "Chondathan", "Damaran", "Illuskan", "Mulan", "Rashemi", "Shou", "Tethyrian", "Turami"]
-      }
-    },
-    "size": "medium",
     "source": "handbook",
-    "speed": {
-      "flying": 0,
-      "swimming": 0,
-      "walking": 30
-    },
     "subraces": "",
-    "thumb": "",
-    "variant": ["Variant Human"]
+    "traits": {
+      "age": {
+        "adult": 16,
+        "max": 90
+      },
+      "alignment": "Neutral",
+      "languages": ["Common"],
+      "size": "medium",
+      "speed": {
+        "flying": 0,
+        "swimming": 0,
+        "walking": 30
+      }
+    }
   },
   "tiefling": {
-    "_id": {
-      "$oid": "db-generate"
-    },
     "abilityscore": {
       "cha": 2,
       "con": 0,
@@ -363,16 +320,12 @@
       "str": 0,
       "wis": 0
     },
-    "age": {
-      "adult": 18,
-      "max": 125
-    },
-    "alignment": "Evil",
     "description": "To be greeted with stares and whispers, to suffer violence and insult on the street, to see mistrust and fear in every eye: this is the lot of the tiefling.",
     "features": ["Darkvision", "Hellish Resistance", "Infernal Legacy"],
-    "icon": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/4808/149/400/250/636771205894109291.jpeg",
-    "languages": ["Common", "Infernal"],
-    "mark": [],
+    "image": {
+      "icon": "https://i.imgur.com/ZVABaBP.jpg",
+      "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/7/641/420/618/636287076637981942.png"
+    },
     "name": "Tiefling",
     "namel": "tiefling",
     "names": {
@@ -380,16 +333,21 @@
       "female": ["Akta", "Anakis", "Bryseis", "Criella", "Damaia", "Ea", "Kallista", "Lerissa", "Makaria", "Nemeia", "Orianna", "Phelaia", "Rieta"],
       "male": ["Akmenos", "Amnon", "Barakas", "Damakos", "Ekemon", "lados", "Kairon", "Leucis", "Melech", "Mordai", "Morthos", "Pelaios", "Skamos", "Therai"]
     },
-    "raceonly": {},
-    "size": "medium",
     "source": "handbook",
-    "speed": {
-      "flying": 0,
-      "swimming": 0,
-      "walking": 30
-    },
     "subraces": "",
-    "thumb": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/7/641/420/618/636287076637981942.png",
-    "variant": []
+    "traits": {
+      "age": {
+        "adult": 18,
+        "max": 125
+      },
+      "alignment": "Evil",
+      "languages": ["Common", "Infernal"],
+      "size": "medium",
+      "speed": {
+        "flying": 0,
+        "swimming": 0,
+        "walking": 30
+      }
+    }
   }
 }

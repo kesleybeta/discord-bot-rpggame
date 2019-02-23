@@ -262,20 +262,19 @@ module.exports.run = async (message, cmd) => {
 [WIS] : ${base.wis + racialAttributes.wis} : (BASE: ${base.wis}, MOD: ${mod.wis}, RACE: ${racialAttributes.wis})
 [CHA] : ${base.cha + racialAttributes.cha} : (BASE: ${base.cha}, MOD: ${mod.cha}, RACE: ${racialAttributes.cha})\n\`\`\``)
     .addField("EQUIPMENT", `\`\`\`css
-[Armor  ] : ${equip.armor.join(', ')}
-[Gear   ] : ${equip.gear.join(', ')}
-[Pack   ] : ${capitalize.words(equip.pack)}
-[Tools  ] : ${equip.tools.join(', ')}
+[Armor  ] : ${equip.armor.join(', ') || '---'}
+[Gear   ] : ${equip.gear.join(', ') || '---'}
+[Pack   ] : ${equip.pack}
+[Tools  ] : ${equip.tools.join(', ') || '---'}
 [Wealth ] : ${equip.wealth.qtd}D${equip.wealth.dice} X ${equip.wealth.gp} GP
-[Weapons] : ${equip.weapons.join(', ')}\n\`\`\``, true)
+[Weapons] : ${equip.weapons.join(', ') || '---'}\n\`\`\``, true)
     .addField("FEATURES", `\`\`\`css\n${features.join(', ')}\n\`\`\``, true)
     .addField("PROFICIENCY", `\`\`\`css
-[Armor        ] : ${prof.armor.join(', ')}
-[Saving throws] : ${prof.savthrows.join(', ')}
-[Skills       ] : ${prof.skills.join(', ')}
-
-[Tools        ] : ${prof.tools.join(', ')}
-[Weapons      ] : ${prof.weapons.join(', ')}\n\`\`\``, true)
+[Armor        ] : ${prof.armor.join(', ') || '---'}
+[Saving throws] : ${prof.savthrows.join(', ') || '---'}
+[Skills       ] : ${prof.skills.join(', ') || '---'}
+[Tools        ] : ${prof.tools.join(', ') || '---'}
+[Weapons      ] : ${prof.weapons.join(', ') || '---'}\n\`\`\``, true)
     .setTimestamp(new Date())
     .setFooter(`© ${sender.username} Character`, sender.displayAvatarURL)
 
@@ -376,7 +375,7 @@ module.exports.run = async (message, cmd) => {
                 level: Number,
                 speed: {
                   walking: String,
-                  running: String,
+                  flying: String,
                   swimming: String
                 },
                 _valid: true

@@ -1,5 +1,4 @@
 const Discord = require("discord.js")
-const capitalize = require("capitalize")
 // Require lowdb and then FileSync
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
@@ -26,7 +25,6 @@ module.exports.run = async (message, cmd, args) => {
 
   if (!args[0]) return message.channel.send(allClassesEmbed)
 
-
   specificClass = args.toString().toLowerCase()
   if (message.content.split(' ').find(el => el === ".full") === ".full") {
     specificClass = await specificClass.split(',')
@@ -37,7 +35,7 @@ module.exports.run = async (message, cmd, args) => {
 
   thisClass = jsonClass.get(String(specificClass)).value()
 
-  classEmbed.setAuthor(thisClass.name, thisClass.image.icon)
+  await classEmbed.setAuthor(thisClass.name, thisClass.image.icon)
     .setDescription(thisClass.description)
     .setThumbnail(thisClass.image.thumb)
 
@@ -50,21 +48,20 @@ module.exports.run = async (message, cmd, args) => {
 [Weapons] : ${thisClass.equip.weapons.join(', ') || '---'}
 \`\`\``, true)
       .addField("Hit Points", `\`\`\`css
-[Hit Dice     ] : ${"1d" + thisClass.hp.hitdice} per ${thisClass.namel} level
+[Hit Dice     ] : 1 D${thisClass.hp.hitdice} per ${thisClass.namel} level
 [HP at 1st Lvl] : ${thisClass.hp.hpfirst} + your Con modifier
 [HP after 1st ] : ${thisClass.hp.hplvl} + your Con modifier
 \`\`\``, true)
       .addField("Proficiencies", `\`\`\`css
-[Armor        ] : ${thisClass.prof.armor.join(', ')}
-[Saving throws] : ${thisClass.prof.savthrows.join(', ')}
-[Skills       ] : ${thisClass.prof.skills.join(', ')}
-[Tools        ] : ${thisClass.prof.tools.join(', ')}
-[Weapons      ] : ${thisClass.prof.weapons.join(', ')}
+[Armor        ] : ${thisClass.prof.armor.join(', ') || '---'}
+[Saving throws] : ${thisClass.prof.savthrows.join(', ') || '---'}
+[Skills       ] : ${thisClass.prof.skills.join(', ') || '---'}
+[Tools        ] : ${thisClass.prof.tools.join(', ') || '---'}
+[Weapons      ] : ${thisClass.prof.weapons.join(', ') || '---'}
 \`\`\``, true)
   }
 
   return message.channel.send(classEmbed)
-
 }
 
 
