@@ -1,64 +1,60 @@
 const Discord = require("discord.js")
-const ModBackground = require("../models/mod-background.js")
+// Require lowdb and then FileSync
+const low = require('lowdb')
+const FileSync = require('lowdb/adapters/FileSync')
+const jsonBack = low(new FileSync('./jsonfiles/char/charbacks.json', 'utf8'))
+const jsonCharCreation = low(new FileSync('./jsonfiles/char/charcreation.json', 'utf8'))
 
 module.exports.run = async (message, cmd, args) => {
   await message.delete()
-  console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`)
+  // Logging
+  await console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`)
+  // Variables
+  let thisBacks = {}
+  let specificBack = ""
+  let allBacksEmbed = new Discord.RichEmbed()
+    .setColor("#65D8D6")
+    .setAuthor("D&D Beyond", "https://i.imgur.com/LaznxhN.png")
+    .setDescription(`Every story has a beginning. Your character’s background reveals where you came from, how you became an adventurer, and your place in the world. Your fighter might have been a courageous knight or a grizzled soldier. Your wizard could have been a sage or an artisan. Your rogue might have gotten by as a guild thief or commanded audiences as a jester.`)
+    .addField(`BACKGROUNDS`, `\`\`\`diff\n+ ${jsonCharCreation.get('allbacks').value()
+    .join('\n+ ')}\`\`\``, true)
 
-  if (!args.toString()) {
-    let embed = new Discord.RichEmbed()
-      .setAuthor("D&D Beyond", "https://media-waterdeep.cursecdn.com/avatars/104/378/636511944060210307.png")
-      .setDescription("Your character’s background reveals where you came from, how you became an adventurer, and your place in the world.")
-      .setColor("#69db83")
+  let backsEmbed = new Discord.RichEmbed()
+    .setColor("#65D8D6")
 
-    let backArray = []
-    ModBackground.find({
-        source: "handbook"
-      })
-      .sort([
-        [
-          'name',
-          'descending'
-        ]
-      ])
-      .exec((err, res) => {
-        //console.log('res' + res)
-        //message.channel.send(res.slice(-res.length + 100))
-        if (err) return console.log('erro' + err)
-        else {
-          backArray.push(res[0].name)
-          for (let i = 1; i < res.length; i++) backArray.unshift(res[i].name)
-        }
-        embed.addField("Backgrounds: ", `\`\`\`diff\n+ ${backArray.join('\n+ ')}\`\`\``)
-        return message.channel.send(embed)
-      })
-  } else {
-    let specificBack = args.toString().toLowerCase()
-      .split(",")
-      .join(" ")
-    let cembed = new Discord.RichEmbed()
-      .setColor("#69db83")
+  if (!args[0]) return message.channel.send(allBacksEmbed)
 
-    ModBackground.findOne({
-      namel: specificBack
-    }, (err, result) => {
-      if (err) console.log("[2] " + err)
-      if (result === null) return message.reply(`Please, give a valid BACKGROUND! Type \`${cmd}\` to see the classes's list.`)
-      if (!result) {
-        cembed.setDescription("Couldn't find any information.")
-        return message.channel.send(cembed)
-      } else {
-        cembed.setAuthor("Classes's Manual", `${result.icon}`)
-          .setTitle(`${result.name} `)
-          .setThumbnail(`${result.thumb}`)
-          .setDescription(`${result.description}`)
-        return message.channel.send(cembed)
-      }
-    })
+  specificBack = args.toString().toLowerCase()
+  if (message.content.split(' ').find(el => el === ".full") === ".full") {
+    specificBack = await specificBack.split(',')
+    specificBack.pop()
+    specificBack = await specificBack.join(' ')
   }
+  specificBack = await specificBack.split(',').join(' ')
+
+  thisBacks = jsonBack.get(String(specificBack)).value()
+  await backsEmbed.setAuthor(thisBacks.name, thisBacks.image.icon)
+    .setDescription(thisBacks.description)
+    .setThumbnail(thisBacks.image.thumb)
+
+  if (message.content.split(' ').find(el => el === '.full') === '.full') {
+    backsEmbed.addField("Starting Equipment", `\`\`\`css
+[Gear  ] : ${thisBacks.equip.gear.join(', ') || '---'}
+[Tools ] : ${thisBacks.equip.tools.join(', ') || '---'}
+\`\`\``, true)
+      .addField("Proficiencies", `\`\`\`css
+[Skills] : ${thisBacks.prof.skills.join(', ') || '---'}
+[Tools ] : ${thisBacks.prof.tools.join(', ') || '---'}
+\`\`\``, true)
+  }
+
+  return message.channel.send(backsEmbed)
 }
 
 module.exports.config = {
   name: "background",
-  aliases: ["back"]
+  aliases: [
+    "back",
+    "backs"
+  ]
 }

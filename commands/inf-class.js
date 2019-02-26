@@ -3,7 +3,7 @@ const Discord = require("discord.js")
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 const jsonClass = low(new FileSync('./jsonfiles/char/charclasses.json', 'utf8'))
-const jsonCharCreation = low(new FileSync('./jsonfiles/charcreation.json', 'utf8'))
+const jsonCharCreation = low(new FileSync('./jsonfiles/char/charcreation.json', 'utf8'))
 
 module.exports.run = async (message, cmd, args) => {
   await message.delete()
@@ -48,9 +48,9 @@ module.exports.run = async (message, cmd, args) => {
 [Weapons] : ${thisClass.equip.weapons.join(', ') || '---'}
 \`\`\``, true)
       .addField("Hit Points", `\`\`\`css
-[Hit Dice     ] : 1 D${thisClass.hp.hitdice} per ${thisClass.namel} level
-[HP at 1st Lvl] : ${thisClass.hp.hpfirst} + your Con modifier
-[HP after 1st ] : ${thisClass.hp.hplvl} + your Con modifier
+[Hit Dice     ] : 1*D${thisClass.hp.hitdice} per ${thisClass.namel} level
+[HP at 1st Lvl] : ${thisClass.hp.max} + CON modifier
+[HP after 1st ] : ${thisClass.hp.perlevel} + CON modifier
 \`\`\``, true)
       .addField("Proficiencies", `\`\`\`css
 [Armor        ] : ${thisClass.prof.armor.join(', ') || '---'}

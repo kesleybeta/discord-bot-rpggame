@@ -7,11 +7,11 @@ const capitalize = require("capitalize")
 const low = require('lowdb') // Require lowdb and then FileSync
 const FileSync = require('lowdb/adapters/FileSync')
 // Json files
-const jsonCharCreation = low(new FileSync('./jsonfiles/charcreation.json', 'utf8'))
+const jsonCharCreation = low(new FileSync('./jsonfiles/char/charcreation.json', 'utf8'))
 const jsonRaces = low(new FileSync('./jsonfiles/char/charraces.json', 'utf8'))
 const jsonSubRaces = low(new FileSync('./jsonfiles/char/charsubraces.json', 'utf8'))
 const jsonClass = low(new FileSync('./jsonfiles/char/charclasses.json', 'utf8'))
-const jsonBackground = low(new FileSync('./jsonfiles/char/charbackgrounds.json', 'utf8'))
+const jsonBackground = low(new FileSync('./jsonfiles/char/charbacks.json', 'utf8'))
 
 module.exports.run = async (message, cmd) => {
   await message.delete()
@@ -369,14 +369,14 @@ module.exports.run = async (message, cmd) => {
                   max: Number
                 },
                 image: {
-                  icon: String,
-                  portrait: "https://i.imgur.com/ZDe842R.png"
+                  icon: "https://i.imgur.com/ZDe842R.png",
+                  portrait: "https://i.imgur.com/Qqqu0JQ.png"
                 },
-                level: Number,
+                level: 1,
                 speed: {
-                  walking: String,
-                  flying: String,
-                  swimming: String
+                  walking: speed.walking,
+                  flying: speed.flying,
+                  swimming: speed.swimming
                 },
                 _valid: true
               }
