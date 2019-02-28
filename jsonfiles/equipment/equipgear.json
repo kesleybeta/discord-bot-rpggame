@@ -1,4 +1,6 @@
 {
+  "_list": ["Ammunition", "Arcane Focus", "Druidic Focus", "Holy Symbol", "others"],
+  "_description": "",
   "ammunition": {
     "arrows": {
       "cost": {

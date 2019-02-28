@@ -9,38 +9,75 @@ const fileArmor = low(new FileSync('./jsonfiles/equipment/equiparmor.json', 'utf
 const fileGear = low(new FileSync('./jsonfiles/equipment/equipgear.json', 'utf8'))
 const fileWeapon = low(new FileSync('./jsonfiles/equipment/equipweapon.json', 'utf8'))
 const fileTools = low(new FileSync('./jsonfiles/equipment/equiptools.json', 'utf8'))
+const filePacks = low(new FileSync('./jsonfiles/equipment/equippack.json', 'utf8'))
 
 module.exports.run = async (message, cmd, args) => {
   await message.delete()
   // Logging
   await console.log(`[${cmd.slice(1)}] requested by: [${message.author.tag}]`)
-  // Treatment
-  //if (!args) message.reply("Usage: `feature` `your class` `level`")
   // Variables
   let embed = new Discord.RichEmbed()
   let jArmor = fileArmor.value()
   let jGear = fileGear.value()
   let jWeapon = fileWeapon.value()
   let jTools = fileTools.value()
-  let armorEmbed = new Discord.RichEmbed()
+  let jPacks = filePacks.value()
 
   if (!args[0]) {
     embed.setAuthor("Starting Equipment", "https://i.imgur.com/rYEcZ71.png")
-    .setColor("#3bb5f7")
-    embed.setDescription(`When you create your character, you receive equipment based on a combination of your class and background.\n
-    **Armor and Shields**:\n\`\`\`fix\n${jArmor._list.join(', ')}\`\`\`
-    `)
+      .setColor("#3bb5f7")
+      .setFooter("More info usage: `uequip (content)`")
+      .setDescription(`When you create your character, you receive equipment based on a combination of your class and background.\n
+    **Armor and Shields**: (*armor*)\n\`\`\`fix\n${jArmor._list.join(', ')}\`\`\`
+    **Adventuring Gear**: (*gear*)\n\`\`\`fix\n${jGear._list.join(', ')}\`\`\`
+    **Weapons**: (*weapon*)\n\`\`\`fix\n${jWeapon._list.join(', ')}\`\`\`
+    **Tools**: (*tools*)\n\`\`\`fix\n${jTools._list.join(', ')} tools\`\`\`
+    **Equipment Packs**: (*packs*)\n\`\`\`fix\n${jPacks._list.join('\'s pack, ')}'s pack\`\`\``)
     return message.channel.send(embed)
   }
-
   if (args[0] === "armor") {
-    armorEmbed.setAuthor("Starting Equipment", "https://i.imgur.com/HLBnf72.png")
+    embed.setAuthor("Armor and Shields", "https://i.imgur.com/HLBnf72.png")
       .setThumbnail("https://i.imgur.com/vCSeQpe.png")
+      .setFooter("More info usage: uequip armor <specific armor>")
       .setColor("#42f48f")
-      .setDescription(`${jArmor._description}`)
-      .addField("Armor and Shields", `\`\`\`css\n[Light Armor]\n• ${jArmor.light._list.join(', ')}\n\n[Medium Armor]\n• ${jArmor.medium._list.join(', ')}\n
-[Heavy Armor]\n• ${jArmor.heavy._list.join(', ')}\n\n[Shields]\n• ${jArmor.shield._list.join(', ')}\n\`\`\``, true)
-    return message.channel.send(armorEmbed)
+      .setDescription(`${jArmor._description}\n\n\`\`\`css
+[Light Armor]\n• ${jArmor.light._list.join(', ')}\n
+[Medium Armor]\n• ${jArmor.medium._list.join(', ')}\n
+[Heavy Armor]\n• ${jArmor.heavy._list.join(', ')}\n
+[Shields]\n• ${jArmor.shield._list.join(', ')}\n\`\`\``)
+    return message.channel.send(embed)
+  }
+  if (args[0] === "gear") {
+    embed.setAuthor("Adventuring Gear", "")
+      .setFooter("More info usage: ugear <specific gear>")
+      .setDescription(`${jGear._description}\n
+**Gear**:\n\`\`\`md\n${jGear._list.join(', ')}\`\`\``)
+    return message.channel.send(embed)
+  }
+  if (args[0] === "weapon") {
+    embed.setAuthor("Weapons", "")
+      .setFooter("More info usage: uweapon <specific weapon>")
+      .setDescription(`${jWeapon._description}\n\n\`\`\`css
+[Simple melee]\n• ${jWeapon.simple.melee._list.join(', ')}\n
+[Simple ranged]\n• ${jWeapon.simple.ranged._list.join(', ')}\n
+[Martial melee]\n• ${jWeapon.martial.melee._list.join(', ')}\n
+[Martial ranged]\n• ${jWeapon.martial.ranged._list.join(', ')}\n\`\`\``)
+    return message.channel.send(embed)
+  }
+  if (args[0] === "tools") {
+    return message.reply('• ' + jTools._list)
+  }
+  if (fileWeapon.has('simple.melee.' + String(args).toLowerCase()).value()) {
+    let weap = fileWeapon.get('simple.melee.' + String(args).toLowerCase()).value()
+    embed.setAuthor(`${weap.name} `, "https://i.imgur.com/CszcIeI.png")
+      .setDescription(`${weap.description}`)
+      .setThumbnail("https://i.imgur.com/kvGJP52.png")
+      .addField("Cost", `BP: ${weap.cost.bp} SP: ${weap.cost.sp} GP: ${weap.cost.gp}`, true)
+      .addField("Damage", `1D${weap.damage.hitdie} : ${weap.damage.type}`, true)
+      .addField("Properties", `${weap.properties.join(', ') || "---"}`, true)
+      .addField("Weight", `${weap.weight}lb.`, true)
+      .setColor("#226f89")
+    return message.channel.send(embed)
   }
 }
 

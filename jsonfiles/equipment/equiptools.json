@@ -1,4 +1,5 @@
 {
+  "_list": ["Artisan", "Disguise", "Forgery", "Gaming", "Herbalism", "Musician", "Navigator", "Poisoner", "Thieves"],
   "artisan": {
     "alchemist": {
       "cost": {
@@ -219,7 +220,7 @@
     "name": "Herbalism kit",
     "weight": 3
   },
-  "instrument": {
+  "musician": {
     "bagpipes": {
       "cost": {
         "bp": 0,
