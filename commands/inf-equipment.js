@@ -1,9 +1,8 @@
 /* eslint-disable no-underscore-dangle */
 const Discord = require("discord.js")
-const tools = require("../util/functions") // Require global functions
+// const tools = require("../util/functions") // Require global functions
 // const capitalize = require("capitalize")
-// Require lowdb and then FileSync
-const low = require('lowdb')
+const low = require('lowdb') // Require lowdb and then FileSync
 const FileSync = require('lowdb/adapters/FileSync')
 const fileArmor = low(new FileSync('./jsonfiles/equipment/equiparmor.json', 'utf8'))
 const fileGear = low(new FileSync('./jsonfiles/equipment/equipgear.json', 'utf8'))
@@ -66,18 +65,6 @@ module.exports.run = async (message, cmd, args) => {
   }
   if (args[0] === "tools") {
     return message.reply('• ' + jTools._list)
-  }
-  if (fileWeapon.has('simple.melee.' + String(args).toLowerCase()).value()) {
-    let weap = fileWeapon.get('simple.melee.' + String(args).toLowerCase()).value()
-    embed.setAuthor(`${weap.name} `, "https://i.imgur.com/CszcIeI.png")
-      .setDescription(`${weap.description}`)
-      .setThumbnail("https://i.imgur.com/kvGJP52.png")
-      .addField("Cost", `BP: ${weap.cost.bp} SP: ${weap.cost.sp} GP: ${weap.cost.gp}`, true)
-      .addField("Damage", `1D${weap.damage.hitdie} : ${weap.damage.type}`, true)
-      .addField("Properties", `${weap.properties.join(', ') || "---"}`, true)
-      .addField("Weight", `${weap.weight}lb.`, true)
-      .setColor("#226f89")
-    return message.channel.send(embed)
   }
 }
 

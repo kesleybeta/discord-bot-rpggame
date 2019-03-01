@@ -16,9 +16,10 @@
           "hitdie": 8,
           "type": "slashing"
         },
+        "description": "",
         "name": "Battleaxe",
         "namel": "battleaxe",
-        "properties": ["versatile"],
+        "properties": ["Versatile"],
         "weight": 4
       },
       "flail": {
@@ -106,9 +107,10 @@
   },
   "simple": {
     "_description": "Simple weapons require the least training to use correctly and effectively.",
+    "_list": ["Club", "Dagger", "Greatclub", "Handaxe", "Javelin", "Light hammer", "Mace", "Quarterstaff", "Sickle", "Spear"],
     "melee": {
       "_description": "A melee weapon is a weapon that can attack adjacent targets.",
-      "_list": ["Club", "Dagger", "Greatclub", "Handaxe", "Javelin", "Light hammer", "Mace", "Quarterstaff", "Sickle", "Spear"],
+      "_list": ["Club", "Dagger", "Dart", "Greatclub", "Handaxe", "Javelin", "Light crossbow", "Light hammer", "Mace", "Quarterstaff", "Shortbow", "Sickle", "Sling", "Spear"],
       "club": {
         "cost": {
           "bp": 0,
@@ -120,7 +122,10 @@
           "type": "bludgeoning"
         },
         "description": "A club is among the simplest of all weapons: a short staff or stick, usually made of wood, wielded as a weapon since prehistoric times.",
-        "image": "",
+        "image": {
+          "icon": "",
+          "thumb": ""
+        },
         "name": "Club",
         "namel": "club",
         "properties": ["Light"],
@@ -137,6 +142,10 @@
           "type": "piercing"
         },
         "description": "A dagger is a knife with a very sharp point and one or two sharp edges, typically designed or capable of being used as a thrusting or stabbing weapon.",
+        "image": {
+          "icon": "",
+          "thumb": ""
+        },
         "name": "Dagger",
         "namel": "dagger",
         "properties": ["Finesse", "Light", "Thrown (range 20 / 60)"],
@@ -153,6 +162,10 @@
           "type": "bludgeoning"
         },
         "description": "A greatclub is a simple two-handed melee weapon in the club weapon group.",
+        "image": {
+          "icon": "",
+          "thumb": ""
+        },
         "name": "Greatclub",
         "namel": "greatclub",
         "properties": ["Two-handed"],
@@ -169,6 +182,10 @@
           "type": "slashing"
         },
         "description": "A handaxe is an one-handed weapon. It is also a heavy thrown weapon, so a character can throw it to make ranged attacks, using STR instead of DEX for ranged basic attacks.",
+        "image": {
+          "icon": "",
+          "thumb": ""
+        },
         "name": "Handaxe",
         "namel": "handaxe",
         "properties": ["Light", "Thrown (range 20 / 60)"],
@@ -185,6 +202,10 @@
           "type": "piercing"
         },
         "description": "A javelin is a simple one-handed melee weapon in the spear weapon group. A javelin is a heavy thrown weapon, so a character can throw it to make ranged attacks, using STR instead of DEX for ranged basic attacks.",
+        "image": {
+          "icon": "",
+          "thumb": ""
+        },
         "name": "Javelin",
         "namel": "javelin",
         "properties": ["Thrown (range 30 / 120)"],
@@ -201,6 +222,10 @@
           "type": "bludgeoning"
         },
         "description": "The light hammer is a small sledge hammer, usually with a haft made of wood about one and a half feet long.",
+        "image": {
+          "icon": "",
+          "thumb": ""
+        },
         "name": "Light hammer",
         "namel": "light hammer",
         "properties": ["Light", "Thrown (range 20 / 60)"],
@@ -217,6 +242,10 @@
           "type": "bludgeoning"
         },
         "description": "A mace is a simple bludgeoning weapon resembling a metal club. The striking head of the mace is symmetrically arrayed with flanges, knobs, or high ridges designed to inflict damage on an armored opponent.",
+        "image": {
+          "icon": "",
+          "thumb": ""
+        },
         "name": "Mace",
         "namel": "mace",
         "properties": [""],
@@ -233,6 +262,10 @@
           "type": "bludgeoning"
         },
         "description": "A quarterstaff is a two-handed weapon. A quarterstaff is usually made of wood and sanded cylindrical, with blunt ends. They may be plain wood to intricately carved works of art.",
+        "image": {
+          "icon": "",
+          "thumb": ""
+        },
         "name": "Quarterstaff",
         "namel": "quarterstaff",
         "properties": ["versatile"],
@@ -249,6 +282,10 @@
           "type": "slashing"
         },
         "description": "The sickle is a farm implement slightly modified and strengthened to make a melee weapon. It has a handle to which is attached a blade that is curved in more or less a semicircle, coming to a sharp point. The cutting edge is on the inside of the curve.",
+        "image": {
+          "icon": "",
+          "thumb": ""
+        },
         "name": "Sickle",
         "namel": "sickle",
         "properties": ["light"],
@@ -265,6 +302,10 @@
           "type": "piercing"
         },
         "description": "A spear can be made of any rigid material but is typically a straight shaft made of wood. The piercing tip of the spear can be formed by just sharpening the shaft to a point or attaching a variety of spearheads made from metal.",
+        "image": {
+          "icon": "",
+          "thumb": ""
+        },
         "name": "Spear",
         "namel": "spear",
         "properties": ["thrown(range 20 / 60)", "versatile"],
@@ -273,11 +314,87 @@
     },
     "ranged": {
       "_description": "A ranged weapon is any weapon that can engage targets beyond hand-to-hand distance",
-      "_list": ["Light crossbow", "Dart", "Shortbow", "Sling"],
-      "dart": "5 cp 1 d4 piercing 1 / 4 lb.Finesse, thrown(range 20 / 60)",
-      "light crossbow": "25 gp 1 d8 piercing 5 lb.Ammunition(range 80 / 320), loading, two - handed",
-      "shortbow": "25 gp 1 d6 piercing 2 lb.Ammunition(range 80 / 320), two - handed",
-      "sling": "1 sp 1 d4 bludgeoning - Ammunition (range 30 / 120)"
+      "_list": ["Dart", "Light crossbow", "Shortbow", "Sling"],
+      "dart": {
+        "cost": {
+          "bp": 5,
+          "gp": 0,
+          "sp": 0
+        },
+        "damage": {
+          "hitdie": 4,
+          "type": "piercing"
+        },
+        "description": "Darts are missile weapons, designed to fly such that a sharp, often weighted point will strike first.",
+        "image": {
+          "icon": "",
+          "thumb": ""
+        },
+        "name": "Dart",
+        "namel": "dart",
+        "properties": ["Finesse", "Thrown (range 20 / 60)"],
+        "weight": 0.25
+      },
+      "light crossbow": {
+        "cost": {
+          "bp": 0,
+          "gp": 25,
+          "sp": 0
+        },
+        "damage": {
+          "hitdie": 8,
+          "type": "piercing"
+        },
+        "description": "Standard crossbow lighter and more portable. Must be readied before firing.",
+        "image": {
+          "icon": "",
+          "thumb": ""
+        },
+        "name": "Light Crossbow",
+        "namel": "light crossbow",
+        "properties": ["Ammunition (range 80 / 320)", "Loading", "Two-Handed"],
+        "weight": 5
+      },
+      "shortbow": {
+        "cost": {
+          "bp": 0,
+          "gp": 25,
+          "sp": 0
+        },
+        "damage": {
+          "hitdie": 8,
+          "type": "piercing"
+        },
+        "description": "The short bow is a two-handed weapon. Compared to a longbow, it has less power and range but a higher rate of fire.",
+        "image": {
+          "icon": "",
+          "thumb": ""
+        },
+        "name": "Shortbow",
+        "namel": "shortbow",
+        "properties": ["Ammunition (range 80 / 320)", "Two-handed"],
+        "weight": 2
+      },
+      "sling": {
+        "cost": {
+          "bp": 0,
+          "gp": 0,
+          "sp": 1
+        },
+        "damage": {
+          "hitdie": 4,
+          "type": "bludgeoning"
+        },
+        "description": "A sling is a projectile weapon typically used to throw a blunt projectile such as a stone, clay, or lead 'sling-bullet'. Someone who specialises in using slings is called a slinger.",
+        "image": {
+          "icon": "",
+          "thumb": ""
+        },
+        "name": "Sling",
+        "namel": "sling",
+        "properties": ["Ammunition (range 30 / 120)"],
+        "weight": 2
+      }
     }
   }
 }
