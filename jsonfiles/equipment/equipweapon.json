@@ -1,55 +1,41 @@
 {
   "_description": "The Weapons table shows the most common weapons used in the fantasy gaming worlds, their price and weight, the damage they deal when they hit, and any special properties they possess. Every weapon is classified as either melee or ranged. A melee weapon is used to attack a target within 5 feet of you, whereas a ranged weapon is used to attack a target at a distance.",
-  "_list": ["Simple Melee", "Simple Ranged", "Martial Melee", "Martial Ranged"],
+  "_list": ["Battleaxe", "Blowgun", "Flail", "Glaive", "Greataxe", "Greatclub", "Greatsword", "Halberd", "Hand Crossbow", "Handaxe", "Heavy crossbow", "Javelin", "Lance", "Light crossbow", "Light hammer", "Longbow", "Longsword", "Mace", "Maul", "Net", "Morningstar", "Pike", "Quarterstaff", "Rapier", "Scimitar", "Shortbow", "Shortsword", "Sickle", "Sling", "Spear", "Trident", "War pick", "Whip"],
+  "_typelist": ["Simple Melee", "Simple Ranged", "Martial Melee", "Martial Ranged"],
   "martial": {
     "_description": "A martial weapon is any weapon or offhand that aids a martialist profession.",
+    "_list": ["Battleaxe", "Blowgun", "Club", "Dagger", "Dart", "Flail", "Glaive", "Greataxe", "Greatsword", "Halberd", "Hand Crossbow", "Heavy crossbow", "Lance", "Longbow", "Longsword", "Maul", "Net", "Morningstar", "Pike", "Rapier", "Scimitar", "Shortsword", "Trident", "War pick", "Whip"],
     "melee": {
       "_description": "",
       "_list": ["Battleaxe", "Flail", "Glaive", "Greataxe", "Greatsword", "Halberd", "Lance", "Longsword", "Maul", "Morningstar", "Pike", "Rapier", "Scimitar", "Shortsword", "Trident", "War pick", "Whip"],
       "battleaxe": {
-        "cost": {
-          "bp": 0,
-          "gp": 10,
-          "sp": 0
-        },
-        "damage": {
-          "hitdie": 8,
-          "type": "slashing"
-        },
+        "cost": [10, "gp"],
+        "damage": [1, 8],
         "description": "",
         "name": "Battleaxe",
         "namel": "battleaxe",
         "properties": ["Versatile"],
+        "type": "slashing",
         "weight": 4
       },
       "flail": {
-        "cost": {
-          "bp": 0,
-          "gp": 10,
-          "sp": 0
-        },
-        "damage": {
-          "hitdie": 8,
-          "type": "bludgeoning"
-        },
+        "cost": [10, "gp"],
+        "damage": [1, 8],
+        "description": "",
         "name": "Flail",
         "namel": "flail",
         "properties": [""],
+        "type": "bludgeoning",
         "weight": 2
       },
       "glaive": {
-        "cost": {
-          "bp": 0,
-          "gp": 20,
-          "sp": 0
-        },
-        "damage": {
-          "hitdie": 10,
-          "type": "slashing"
-        },
+        "cost": [20, "gp"],
+        "damage": [1, 10],
+        "description": "",
         "name": "Glaive",
         "namel": "glaive",
-        "properties": ["heavy", "reach", "two-handed"],
+        "properties": ["Heavy", "Reach", "Two handed"],
+        "type": "slashing",
         "weight": 6
       },
       "greataxe": {
@@ -58,69 +44,218 @@
           "gp": 30,
           "sp": 0
         },
-        "damage": {
-          "hitdie": 12,
-          "type": "slashing"
-        },
+        "damage": [1, 12],
+        "description": "",
         "name": "Greataxe",
         "namel": "greataxe",
-        "properties": ["heavy", "two-handed"],
+        "properties": ["heavy", "Two handed"],
+        "type": "slashing",
         "weight": 7
       },
       "greatsword": {
-        "cost": {
-          "bp": 0,
-          "gp": 50,
-          "sp": 0
-        },
-        "damage": {
-          "hitdie": [2, 6],
-          "type": "slashing"
-        },
+        "cost": [50, "gp"],
+        "damage": [2, 6],
+        "description": "",
         "name": "Greatsword",
         "namel": "greatsword",
-        "properties": ["heavy", "two-handed"],
+        "properties": ["Heavy", "Two handed"],
+        "type": "slashing",
         "weight": 6
       },
-      "halberd": "20 gp 1 d10 slashing 6 lb.Heavy, reach, two - handed",
-      "lance": "10 gp 1 d12 piercing 6 lb.Reach, special",
-      "longsword": "15 gp 1 d8 slashing 3 lb.Versatile(1 d10)",
-      "maul": "10 gp 2 d6 bludgeoning 10 lb.Heavy, two - handed",
-      "morningstar": "15 gp 1 d8 piercing 4 lb. -",
-      "pike": "5 gp 1 d10 piercing 18 lb.Heavy, reach, two - handed",
-      "rapier": "25 gp 1 d8 piercing 2 lb.Finesse",
-      "scimitar": "25 gp 1 d6 slashing 3 lb.Finesse, light",
-      "shortsword": "10 gp 1 d6 piercing 2 lb.Finesse, light",
-      "trident": "5 gp 1 d6 piercing 4 lb.Thrown(range 20 / 60), versatile(1 d8)",
-      "war pick": "5 gp 1 d8 piercing 2 lb. -",
-      "warhammer": "15 gp 1 d8 bludgeoning 2 lb.Versatile(1 d10)",
-      "whip": "2 gp 1 d4 slashing 3 lb.Finesse, reach"
+      "halberd": {
+        "cost": [20, "gp"],
+        "damage": [1, 10],
+        "description": "",
+        "name": "Halberd",
+        "namel": "halberd",
+        "properties": ["Heavy", "Reached", "Two handed"],
+        "type": "slashing",
+        "weight": 6
+      },
+      "lance": {
+        "cost": [10, "gp"],
+        "damage": [1, 12],
+        "description": "",
+        "name": "Lance",
+        "namel": "lance",
+        "properties": ["Reach", "Special"],
+        "type": "piercing",
+        "weight": 6
+      },
+      "longsword": {
+        "cost": [15, "gp"],
+        "damage": [1, 8],
+        "description": "",
+        "name": "Longsword",
+        "namel": "longsword",
+        "properties": ["Versatile (1d10)"],
+        "type": "slashing",
+        "weight": 3
+      },
+      "maul": {
+        "cost": [10, "gp"],
+        "damage": [2, 6],
+        "description": "",
+        "name": "Maul",
+        "namel": "maul",
+        "properties": ["Heavy", "Two handed"],
+        "type": "bludgeoning",
+        "weight": 10
+      },
+      "morningstar": {
+        "cost": [15, "gp"],
+        "damage": [1, 8],
+        "description": "",
+        "name": "Morningstar",
+        "namel": "morningstar",
+        "properties": [""],
+        "type": "piercing",
+        "weight": 4
+      },
+      "pike": {
+        "cost": [5, "gp"],
+        "damage": [1, 10],
+        "description": "",
+        "name": "Pike",
+        "namel": "pike",
+        "properties": ["Heavy", "Reach", "Two handed"],
+        "type": "piercing",
+        "weight": 18
+      },
+      "rapier": {
+        "cost": [25, "gp"],
+        "damage": [1, 8],
+        "description": "",
+        "name": "Rapier",
+        "namel": "rapier",
+        "properties": ["Finesse"],
+        "type": "piercing",
+        "weight": 2
+      },
+      "scimitar": {
+        "cost": [25, "gp"],
+        "damage": [1, 6],
+        "description": "",
+        "name": "Scimitar",
+        "namel": "scimitar",
+        "properties": ["Finesse", "Light"],
+        "type": "slashing",
+        "weight": 3
+      },
+      "shortsword": {
+        "cost": [10, "gp"],
+        "damage": [1, 6],
+        "description": "",
+        "name": "Shortsword",
+        "namel": "shortsword",
+        "properties": ["Finesse", "Light"],
+        "type": "piercing",
+        "weight": 2
+      },
+      "trident": {
+        "cost": [5, "gp"],
+        "damage": [1, 6],
+        "description": "",
+        "name": "Trident",
+        "namel": "trident",
+        "properties": ["Thrown (range 20 / 60)", "Versatile (1d8)"],
+        "type": "piercing",
+        "weight": 4
+      },
+      "war pick": {
+        "cost": [5, "gp"],
+        "damage": [1, 8],
+        "description": "",
+        "name": "War Pick",
+        "namel": "war pick",
+        "properties": [""],
+        "type": "piercing",
+        "weight": 2
+      },
+      "warhammer": {
+        "cost": [15, "gp"],
+        "damage": [1, 8],
+        "description": "",
+        "name": "Warhammer",
+        "namel": "warhammer",
+        "properties": ["Versatile (1 d10)"],
+        "type": "bludgeoning",
+        "weight": 2
+      },
+      "whip": {
+        "cost": [2, "gp"],
+        "damage": [1, 4],
+        "description": "",
+        "name": "Whip",
+        "namel": "whip",
+        "properties": ["Finesse", "Reach"],
+        "type": "slashing",
+        "weight": 3
+      }
     },
     "ranged": {
       "_list": ["Blowgun", "Hand Crossbow", "Heavy crossbow", "Longbow", "Net"],
-      "blowgun": "10 gp 1 piercing 1 lb.Ammunition(range 25 / 100), loading",
-      "hand crossbow": "75 gp 1 d6 piercing 3 lb.Ammunition(range 30 / 120), light, loading",
-      "heavy crossbow": "50 gp 1 d10 piercing 18 lb.Ammunition(range 100 / 400), heavy, loading, two - handed",
-      "longbow": "50 gp 1 d8 piercing 2 lb.Ammunition(range 150 / 600), heavy, two - handed",
-      "net": "1 gp - 3 lb.Special, thrown(range 5 / 15)"
+      "blowgun": {
+        "cost": [10, "gp"],
+        "damage": [1, 6],
+        "description": "",
+        "name": "Blowgun",
+        "namel": "blowgun",
+        "properties": ["Ammunition (range 25 / 100)", "Loading"],
+        "type": "piercing",
+        "weight": 1
+      },
+      "hand crossbow": {
+        "cost": [75, "gp"],
+        "damage": [1, 6],
+        "description": "",
+        "name": "Hand crossbow",
+        "namel": "hand crossbow",
+        "properties": ["Ammunition (range 30 / 120)", "Light", "Loading"],
+        "type": "piercing",
+        "weight": 3
+      },
+      "heavy crossbow": {
+        "cost": [50, "gp"],
+        "damage": [1, 10],
+        "description": "",
+        "name": "Heavy crossbow",
+        "namel": "heavy crossbow",
+        "properties": ["Ammunition (range 100 / 400)", "Heavy", "Loading", "Two handed"],
+        "type": "piercing",
+        "weight": 18
+      },
+      "longbow": {
+        "cost": [50, "gp"],
+        "damage": [1, 8],
+        "description": "",
+        "name": "Longbow",
+        "namel": "longbow",
+        "properties": ["Ammunition (range 150 / 600)", "Heavy", "Two handed"],
+        "type": "piercing",
+        "weight": 2
+      },
+      "net": {
+        "cost": [1, "gp"],
+        "damage": [0, 0],
+        "description": "",
+        "name": "Net",
+        "namel": "net",
+        "properties": ["Special", "Thrown (range 5 / 15)"],
+        "type": "",
+        "weight": 3
+      }
     }
   },
   "simple": {
     "_description": "Simple weapons require the least training to use correctly and effectively.",
-    "_list": ["Club", "Dagger", "Greatclub", "Handaxe", "Javelin", "Light hammer", "Mace", "Quarterstaff", "Sickle", "Spear"],
+    "_list": ["Club", "Dagger", "Dart", "Greatclub", "Handaxe", "Javelin", "Light crossbow", "Light hammer", "Mace", "Quarterstaff", "Shortbow", "Sickle", "Sling", "Spear"],
     "melee": {
       "_description": "A melee weapon is a weapon that can attack adjacent targets.",
-      "_list": ["Club", "Dagger", "Dart", "Greatclub", "Handaxe", "Javelin", "Light crossbow", "Light hammer", "Mace", "Quarterstaff", "Shortbow", "Sickle", "Sling", "Spear"],
+      "_list": ["Club", "Dagger", "Greatclub", "Handaxe", "Javelin", "Light hammer", "Mace", "Quarterstaff", "Sickle", "Spear"],
       "club": {
-        "cost": {
-          "bp": 0,
-          "gp": 0,
-          "sp": 1
-        },
-        "damage": {
-          "hitdie": 4,
-          "type": "bludgeoning"
-        },
+        "cost": [1, "sp"],
+        "damage": [1, 8],
         "description": "A club is among the simplest of all weapons: a short staff or stick, usually made of wood, wielded as a weapon since prehistoric times.",
         "image": {
           "icon": "",
@@ -129,18 +264,12 @@
         "name": "Club",
         "namel": "club",
         "properties": ["Light"],
+        "type": "bludgeoning",
         "weight": 2
       },
       "dagger": {
-        "cost": {
-          "bp": 0,
-          "gp": 2,
-          "sp": 0
-        },
-        "damage": {
-          "hitdie": 4,
-          "type": "piercing"
-        },
+        "cost": [2, "gp"],
+        "damage": [1, 4],
         "description": "A dagger is a knife with a very sharp point and one or two sharp edges, typically designed or capable of being used as a thrusting or stabbing weapon.",
         "image": {
           "icon": "",
@@ -149,18 +278,12 @@
         "name": "Dagger",
         "namel": "dagger",
         "properties": ["Finesse", "Light", "Thrown (range 20 / 60)"],
+        "type": "piercing",
         "weight": 1
       },
       "greatclub": {
-        "cost": {
-          "bp": 0,
-          "gp": 0,
-          "sp": 2
-        },
-        "damage": {
-          "hitdie": 8,
-          "type": "bludgeoning"
-        },
+        "cost": [2, "sp"],
+        "damage": [1, 8],
         "description": "A greatclub is a simple two-handed melee weapon in the club weapon group.",
         "image": {
           "icon": "",
@@ -168,19 +291,13 @@
         },
         "name": "Greatclub",
         "namel": "greatclub",
-        "properties": ["Two-handed"],
+        "properties": ["Two handed"],
+        "type": "bludgeoning",
         "weight": 10
       },
       "handaxe": {
-        "cost": {
-          "bp": 0,
-          "gp": 5,
-          "sp": 0
-        },
-        "damage": {
-          "hitdie": 6,
-          "type": "slashing"
-        },
+        "cost": [5, "gp"],
+        "damage": [1, 6],
         "description": "A handaxe is an one-handed weapon. It is also a heavy thrown weapon, so a character can throw it to make ranged attacks, using STR instead of DEX for ranged basic attacks.",
         "image": {
           "icon": "",
@@ -189,18 +306,12 @@
         "name": "Handaxe",
         "namel": "handaxe",
         "properties": ["Light", "Thrown (range 20 / 60)"],
+        "type": "slashing",
         "weight": 2
       },
       "javelin": {
-        "cost": {
-          "bp": 0,
-          "gp": 0,
-          "sp": 5
-        },
-        "damage": {
-          "hitdie": 6,
-          "type": "piercing"
-        },
+        "cost": [5, "sp"],
+        "damage": [1, 6],
         "description": "A javelin is a simple one-handed melee weapon in the spear weapon group. A javelin is a heavy thrown weapon, so a character can throw it to make ranged attacks, using STR instead of DEX for ranged basic attacks.",
         "image": {
           "icon": "",
@@ -209,18 +320,12 @@
         "name": "Javelin",
         "namel": "javelin",
         "properties": ["Thrown (range 30 / 120)"],
+        "type": "piercing",
         "weight": 2
       },
       "light hammer": {
-        "cost": {
-          "bp": 0,
-          "gp": 2,
-          "sp": 0
-        },
-        "damage": {
-          "hitdie": 4,
-          "type": "bludgeoning"
-        },
+        "cost": [2, "sp"],
+        "damage": [1, 4],
         "description": "The light hammer is a small sledge hammer, usually with a haft made of wood about one and a half feet long.",
         "image": {
           "icon": "",
@@ -229,18 +334,12 @@
         "name": "Light hammer",
         "namel": "light hammer",
         "properties": ["Light", "Thrown (range 20 / 60)"],
+        "type": "bludgeoning",
         "weight": 2
       },
       "mace": {
-        "cost": {
-          "bp": 0,
-          "gp": 5,
-          "sp": 0
-        },
-        "damage": {
-          "hitdie": 6,
-          "type": "bludgeoning"
-        },
+        "cost": [5, "gp"],
+        "damage": [1, 6],
         "description": "A mace is a simple bludgeoning weapon resembling a metal club. The striking head of the mace is symmetrically arrayed with flanges, knobs, or high ridges designed to inflict damage on an armored opponent.",
         "image": {
           "icon": "",
@@ -249,19 +348,13 @@
         "name": "Mace",
         "namel": "mace",
         "properties": [""],
+        "type": "bludgeoning",
         "weight": 4
       },
       "quarterstaff": {
-        "cost": {
-          "bp": 0,
-          "gp": 0,
-          "sp": 2
-        },
-        "damage": {
-          "hitdie": 6,
-          "type": "bludgeoning"
-        },
-        "description": "A quarterstaff is a two-handed weapon. A quarterstaff is usually made of wood and sanded cylindrical, with blunt ends. They may be plain wood to intricately carved works of art.",
+        "cost": [2, "sp"],
+        "damage": [1, 6],
+        "description": "A quarterstaff is a Two handed weapon. A quarterstaff is usually made of wood and sanded cylindrical, with blunt ends. They may be plain wood to intricately carved works of art.",
         "image": {
           "icon": "",
           "thumb": ""
@@ -269,18 +362,12 @@
         "name": "Quarterstaff",
         "namel": "quarterstaff",
         "properties": ["versatile"],
+        "type": "bludgeoning",
         "weight": 4
       },
       "sickle": {
-        "cost": {
-          "bp": 0,
-          "gp": 1,
-          "sp": 0
-        },
-        "damage": {
-          "hitdie": 4,
-          "type": "slashing"
-        },
+        "cost": [1, "gp"],
+        "damage": [1, 4],
         "description": "The sickle is a farm implement slightly modified and strengthened to make a melee weapon. It has a handle to which is attached a blade that is curved in more or less a semicircle, coming to a sharp point. The cutting edge is on the inside of the curve.",
         "image": {
           "icon": "",
@@ -289,18 +376,12 @@
         "name": "Sickle",
         "namel": "sickle",
         "properties": ["light"],
+        "type": "slashing",
         "weight": 2
       },
       "spear": {
-        "cost": {
-          "bp": 0,
-          "gp": 1,
-          "sp": 0
-        },
-        "damage": {
-          "hitdie": 6,
-          "type": "piercing"
-        },
+        "cost": [1, "gp"],
+        "damage": [1, 6],
         "description": "A spear can be made of any rigid material but is typically a straight shaft made of wood. The piercing tip of the spear can be formed by just sharpening the shaft to a point or attaching a variety of spearheads made from metal.",
         "image": {
           "icon": "",
@@ -309,6 +390,7 @@
         "name": "Spear",
         "namel": "spear",
         "properties": ["thrown(range 20 / 60)", "versatile"],
+        "type": "piercing",
         "weight": 3
       }
     },
@@ -316,15 +398,8 @@
       "_description": "A ranged weapon is any weapon that can engage targets beyond hand-to-hand distance",
       "_list": ["Dart", "Light crossbow", "Shortbow", "Sling"],
       "dart": {
-        "cost": {
-          "bp": 5,
-          "gp": 0,
-          "sp": 0
-        },
-        "damage": {
-          "hitdie": 4,
-          "type": "piercing"
-        },
+        "cost": [5, "bp"],
+        "damage": [1, 4],
         "description": "Darts are missile weapons, designed to fly such that a sharp, often weighted point will strike first.",
         "image": {
           "icon": "",
@@ -333,18 +408,12 @@
         "name": "Dart",
         "namel": "dart",
         "properties": ["Finesse", "Thrown (range 20 / 60)"],
+        "type": "piercing",
         "weight": 0.25
       },
       "light crossbow": {
-        "cost": {
-          "bp": 0,
-          "gp": 25,
-          "sp": 0
-        },
-        "damage": {
-          "hitdie": 8,
-          "type": "piercing"
-        },
+        "cost": [25, "gp"],
+        "damage": [1, 8],
         "description": "Standard crossbow lighter and more portable. Must be readied before firing.",
         "image": {
           "icon": "",
@@ -352,39 +421,27 @@
         },
         "name": "Light Crossbow",
         "namel": "light crossbow",
-        "properties": ["Ammunition (range 80 / 320)", "Loading", "Two-Handed"],
+        "properties": ["Ammunition (range 80 / 320)", "Loading", "Two handed"],
+        "type": "piercing",
         "weight": 5
       },
       "shortbow": {
-        "cost": {
-          "bp": 0,
-          "gp": 25,
-          "sp": 0
-        },
-        "damage": {
-          "hitdie": 8,
-          "type": "piercing"
-        },
-        "description": "The short bow is a two-handed weapon. Compared to a longbow, it has less power and range but a higher rate of fire.",
+        "cost": [25, "gp"],
+        "damage": [1, 8],
+        "description": "The short bow is a Two handed weapon. Compared to a longbow, it has less power and range but a higher rate of fire.",
         "image": {
           "icon": "",
           "thumb": ""
         },
         "name": "Shortbow",
         "namel": "shortbow",
-        "properties": ["Ammunition (range 80 / 320)", "Two-handed"],
+        "properties": ["Ammunition (range 80 / 320)", "Two handed"],
+        "type": "piercing",
         "weight": 2
       },
       "sling": {
-        "cost": {
-          "bp": 0,
-          "gp": 0,
-          "sp": 1
-        },
-        "damage": {
-          "hitdie": 4,
-          "type": "bludgeoning"
-        },
+        "cost": [1, "sp"],
+        "damage": [1, 4],
         "description": "A sling is a projectile weapon typically used to throw a blunt projectile such as a stone, clay, or lead 'sling-bullet'. Someone who specialises in using slings is called a slinger.",
         "image": {
           "icon": "",
@@ -393,6 +450,7 @@
         "name": "Sling",
         "namel": "sling",
         "properties": ["Ammunition (range 30 / 120)"],
+        "type": "bludgeoning",
         "weight": 2
       }
     }
