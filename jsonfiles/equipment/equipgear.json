@@ -1,329 +1,106 @@
 {
-  "_list": ["Ammunition", "Arcane Focus", "Druidic Focus", "Holy Symbol", "others"],
-  "_description": "",
-  "ammunition": {
-    "arrows": {
-      "cost": {
-        "bp": 0,
-        "gp": 1,
-        "sp": 0
-      },
-      "qtd": 20,
-      "weight": 1
-    },
-    "blowgun needles": {
-      "cost": {
-        "bp": 0,
-        "gp": 1,
-        "sp": 0
-      },
-      "qtd": 50,
-      "weight": 1
-    },
-    "crossbow bolts": {
-      "cost": {
-        "bp": 0,
-        "gp": 1,
-        "sp": 0
-      },
-      "qtd": 20,
-      "weight": 1.5
-    },
-    "sling bullets": {
-      "cost": {
-        "bp": 4,
-        "gp": 0,
-        "sp": 0
-      },
-      "qtd": 20,
-      "weight": 1.5
-    }
+  "_description": {
+    "gear": ""
   },
-  "arcane focus": {
-    "crystal": {
-      "cost": {
-        "bp": 0,
-        "gp": 10,
-        "sp": 0
-      },
-      "weight": 1
-    },
-    "orb": {
-      "cost": {
-        "bp": 0,
-        "gp": 20,
-        "sp": 0
-      },
-      "weight": 3
-    },
-    "rod": {
-      "cost": {
-        "bp": 0,
-        "gp": 10,
-        "sp": 0
-      },
-      "weight": 2
-    },
-    "staff": {
-      "cost": {
-        "bp": 0,
-        "gp": 5,
-        "sp": 0
-      },
-      "weight": 4
-    },
-    "wand": {
-      "cost": {
-        "bp": 0,
-        "gp": 10,
-        "sp": 0
-      },
-      "weight": 1
-    }
+  "_list": {
+    "ammunition": ["Arrows", "Blowgun needles", "Crossbow bolts", "Sling bullets"],
+    "arcane focus": ["Crystal", "Orb", "Rod", "Staff", "Wand"],
+    "category": ["Ammunition", "Arcane Focus", "Druidic Focus", "Holy Symbol", "others"],
+    "druidic": ["Sprig of mistletoe", "Totem", "Wooden staff", "Yew wand"],
+    "holy symbol": ["Amulet", "Emblem", "Reliquary"],
+    "other": [""]
   },
-  "druidic focus": {
-    "sprig of mistletoe": {
-      "cost": {
-        "bp": 0,
-        "gp": 1,
-        "sp": 0
-      },
-      "weight": 0
-    },
-    "totem": {
-      "cost": {
-        "bp": 0,
-        "gp": 1,
-        "sp": 0
-      },
-      "weight": 0
-    },
-    "wooden staff": {
-      "cost": {
-        "bp": 0,
-        "gp": 5,
-        "sp": 0
-      },
-      "weight": 4
-    },
-    "yew wand": {
-      "cost": {
-        "bp": 0,
-        "gp": 10,
-        "sp": 0
-      },
-      "weight": 1
-    }
-  },
-  "holy symbol": {
-    "amulet": {
-      "cost": {
-        "bp": 0,
-        "gp": 5,
-        "sp": 0
-      },
-      "weight": 1
-    },
-    "emblem": {
-      "cost": {
-        "bp": 0,
-        "gp": 5,
-        "sp": 0
-      },
-      "weight": 0
-    },
-    "reliquary": {
-      "cost": {
-        "bp": 0,
-        "gp": 5,
-        "sp": 0
-      },
-      "weight": 2
-    }
-  },
-  "other": {
+  "_other": {
     "Ball bearings (bag of 1,000)": {
-      "cost": {
-        "bp": 0,
-        "gp": 1,
-        "sp": 0
-      },
+      "cost": [1, "gp"],
       "weight": 2
     },
     "Barrel": {
-      "cost": {
-        "bp": 0,
-        "gp": 2,
-        "sp": 0
-      },
+      "cost": [2, "gp"],
       "weight": 70
     },
     "Basket": {
-      "cost": {
-        "bp": 0,
-        "gp": 0,
-        "sp": 2
-      },
+      "cost": [2, "sp"],
       "weight": 52
     },
     "Bedroll": {
-      "cost": {
-        "bp": 0,
-        "gp": 1,
-        "sp": 0
-      },
+      "cost": [1, "gp"],
       "weight": 7
     },
     "Bell": {
-      "cost": {
-        "bp": 0,
-        "gp": 1,
-        "sp": 0
-      },
+      "cost": [1, "gp"],
       "weight": 0
     },
     "Blanket": {
-      "cost": {
-        "bp": 0,
-        "gp": 0,
-        "sp": 5
-      },
+      "cost": [5, "sp"],
       "weight": 3
     },
     "Block and tackle": {
-      "cost": {
-        "bp": 0,
-        "gp": 1,
-        "sp": 0
-      },
+      "cost": [1, "gp"],
       "weight": 5
     },
     "Book": {
-      "cost": {
-        "bp": 0,
-        "gp": 25,
-        "sp": 0
-      },
+      "cost": [25, "gp"],
       "weight": 5
     },
     "Bottle glass": {
-      "cost": {
-        "bp": 0,
-        "gp": 2,
-        "sp": 0
-      },
+      "cost": [2, "gp"],
       "weight": 2
     },
     "Bucket": {
-      "cost": {
-        "bp": 5,
-        "gp": 0,
-        "sp": 0
-      },
+      "cost": [5, "bp"],
       "weight": 2
     },
     "Caltrops(bag of 20)": {
-      "cost": {
-        "bp": 0,
-        "gp": 1,
-        "sp": 0
-      },
+      "cost": [1, "gp"],
       "weight": 2
     },
     "Candle": {
-      "cost": {
-        "bp": 1,
-        "gp": 0,
-        "sp": 0
-      },
+      "cost": [1, "bp"],
       "weight": 0
     },
     "Case, crossbow bolt": {
-      "cost": {
-        "bp": 0,
-        "gp": 1,
-        "sp": 0
-      },
+      "cost": [1, "gp"],
       "weight": 1
     },
     "Case, map or scroll": {
-      "cost": {
-        "bp": 0,
-        "gp": 1,
-        "sp": 0
-      },
+      "cost": [1, "gp"],
       "weight": 1
     },
     "Chain(10 feet)": {
-      "cost": {
-        "bp": 0,
-        "gp": 5,
-        "sp": 0
-      },
+      "cost": [5, "gp"],
       "weight": 10
     },
     "Chalk(1 piece)": {
-      "cost": {
-        "bp": 1,
-        "gp": 0,
-        "sp": 0
-      },
+      "cost": [1, "bp"],
       "weight": 0
     },
     "Chest": {
-      "cost": {
-        "bp": 0,
-        "gp": 5,
-        "sp": 0
-      },
+      "cost": [5, "gp"],
       "weight": 25
     },
     "Climber's kit": {
-      "cost": {
-        "bp": 0,
-        "gp": 25,
-        "sp": 0
-      },
+      "cost": [25, "gp"],
       "weight": 12
     },
     "Clothes, common": {
-      "cost": {
-        "bp": 0,
-        "gp": 0,
-        "sp": 5
-      },
+      "cost": [5, "sp"],
       "weight": 3
     },
     "Clothes, costume": {
-      "cost": {
-        "bp": 0,
-        "gp": 5,
-        "sp": 0
-      },
+      "cost": [5, "gp"],
       "weight": 4
     },
     "Clothes, fine": {
-      "cost": {
-        "bp": 0,
-        "gp": 15,
-        "sp": 0
-      },
+      "cost": [15, "gp"],
       "weight": 6
     },
     "Clothes, traveler's": {
-      "cost": {
-        "bp": 0,
-        "gp": 2,
-        "sp": 0
-      },
+      "cost": [2, "gp"],
       "weight": 4
     },
     "Component pouch": {
-      "cost": {
-        "bp": 0,
-        "gp": 25,
-        "sp": 0
-      },
+      "cost": [25, "gp"],
       "weight": 2
     },
     "Crowbar": {
@@ -806,5 +583,121 @@
       },
       "weight": 0
     }
+  },
+  "amulet": {
+    "category": "holy symbol",
+    "cost": [5, "gp"],
+    "description": "",
+    "name": "Amulet",
+    "weight": 1
+  },
+  "arrows": {
+    "category": "ammunition",
+    "cost": [1, "gp"],
+    "description": "",
+    "name": "Arrows",
+    "quantity": 20,
+    "weight": 1
+  },
+  "blowgun needles": {
+    "category": "ammunition",
+    "cost": [1, "gp"],
+    "description": "",
+    "name": "Blowgun needles",
+    "quantity": 50,
+    "weight": 1
+  },
+  "crossbow bolts": {
+    "category": "ammunition",
+    "cost": [1, "gp"],
+    "description": "",
+    "name": "Crossbow bolts",
+    "quantity": 20,
+    "weight": 1.5
+  },
+  "crystal": {
+    "category": "arcane focus",
+    "cost": [10, "gp"],
+    "description": "",
+    "name": "Crystal",
+    "weight": 1
+  },
+  "emblem": {
+    "category": "holy symbol",
+    "cost": [5, "gp"],
+    "description": "",
+    "name": "Emblem",
+    "weight": 0
+  },
+  "orb": {
+    "category": "arcane focus",
+    "cost": [20, "gp"],
+    "description": "",
+    "name": "Orb",
+    "weight": 3
+  },
+  "reliquary": {
+    "category": "holy symbol",
+    "cost": [5, "gp"],
+    "description": "",
+    "name": "Reliquary",
+    "weight": 2
+  },
+  "rod": {
+    "category": "arcane focus",
+    "cost": [10, "gp"],
+    "description": "",
+    "name": "Rod",
+    "weight": 2
+  },
+  "sling bullets": {
+    "category": "ammunition",
+    "cost": [4, "bp"],
+    "description": "",
+    "name": "Sling bullets",
+    "quantity": 20,
+    "weight": 1.5
+  },
+  "sprig of mistletoe": {
+    "category": "druidic focus",
+    "cost": [1, "gp"],
+    "description": "",
+    "name": "Sprig of mistletoe",
+    "weight": 0
+  },
+  "staff": {
+    "category": "arcane focus",
+    "cost": [5, "gp"],
+    "description": "",
+    "name": "Staff",
+    "weight": 4
+  },
+  "totem": {
+    "category": "druidic focus",
+    "cost": [1, "gp"],
+    "description": "",
+    "name": "Totem",
+    "weight": 0
+  },
+  "wand": {
+    "category": "arcane focus",
+    "cost": [10, "gp"],
+    "description": "",
+    "name": "Wand",
+    "weight": 1
+  },
+  "wooden staff": {
+    "category": "druidic focus",
+    "cost": [5, "gp"],
+    "description": "",
+    "name": "Wooden staff",
+    "weight": 4
+  },
+  "yew wand": {
+    "category": "druidic focus",
+    "cost": [10, "gp"],
+    "description": "",
+    "name": "Yew wand",
+    "weight": 1
   }
 }

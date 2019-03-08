@@ -15,19 +15,10 @@ module.exports.run = async (message, cmd, args) => {
   let embed = new Discord.RichEmbed()
   let jWeapon = fileWeapon.value()
 
-
-  let simmelList = fileWeapon.filter({
-    category: 'simple melee'
-  }).sortBy('name').map('name').value().join(', ')
-  let simranList = fileWeapon.filter({
-    category: 'simple ranged'
-  }).sortBy('name').map('name').value().join(', ')
-  let marmelList = fileWeapon.filter({
-    category: 'martial melee'
-  }).sortBy('name').map('name').value().join(', ')
-  let marranList = fileWeapon.filter({
-    category: 'martial ranged'
-  }).sortBy('name').map('name').value().join(', ')
+  // let simmelList = fileWeapon.filter({
+  //   category: 'simple melee'
+  // }).sortBy('name').map('name').value().join(', ')
+  
 
   // Treatment
   if (!args[0]) {
@@ -63,6 +54,6 @@ module.exports.run = async (message, cmd, args) => {
 }
 
 module.exports.config = {
-  name: "infoweapon",
-  aliases: ["infoweapons", "weaponinfo", "weaponsinfo", "infoweap", "infoarma", "infoarmas"]
+  name: "infoarmor",
+  aliases: ["infarm"]
 }

@@ -1,5 +1,4 @@
 {
-  "_categorylist": ["Light armor", "Medium armor", "Heavy armor", "Shields"],
   "_description": {
     "armor": "D&D worlds are a vast tapestry made up of many different cultures, each with its own technology level. For this reason, adventurers have access to a variety of armor types, ranging from leather armor to chain mail to costly plate armor, with several other kinds of armor in between.",
     "heavy": "Of all the armor categories, heavy armor offers the best protection. These suits of armor cover the entire body and are designed to stop a wide range of attacks. Only proficient warriors can manage their weight and bulk.\nHeavy armor doesn't let you add your Dexterity modifier to your Armor Class, but it also doesn't penalize you if your Dexterity modifier is negative.",
@@ -7,9 +6,16 @@
     "medium": "Medium armor offers more protection than light armor, but it also impairs movement more. If you wear medium armor, you add your Dexterity modifier, to the base number from your armor type to determine your Armor Class.",
     "shield": "A shield is made from wood or metal and is carried in one hand. Wielding a shield increases your Armor Class. You can benefit from only one shield at a time."
   },
-  "_itemlist": ["Breastplate", "Chain mail", "Chain shirt", "Half plate", "Hide", "Leather", "Metal shield", "Padded", "Plate", "Ring mail", "Scale mail", "Splint", "Studded leather", "Wood shield"],
-  "_itemlistl": ["breastplate", "chain mail", "chain shirt", "half plate", "hide", "leather", "metal shield", "padded", "plate", "ring mail", "scale mail", "splint", "studded leather", "wood shield"],
-  "breastplate": {  
+  "_list": {
+    "category": ["Light armor", "Medium armor", "Heavy armor", "Shields"],
+    "all": ["Breastplate", "Chain mail", "Chain shirt", "Half plate", "Hide", "Leather", "Metal shield", "Padded", "Plate", "Ring mail", "Scale mail", "Splint", "Studded leather", "Wood shield"],
+    "allLower": ["breastplate", "chain mail", "chain shirt", "half plate", "hide", "leather", "metal shield", "padded", "plate", "ring mail", "scale mail", "splint", "studded leather", "wood shield"],
+    "heavy": [""],
+    "light": [""],
+    "medium": [""],
+    "shield": [""]
+  },
+  "breastplate": {
     "armorclass": 14,
     "category": "medium",
     "cost": [400, "gp"],
