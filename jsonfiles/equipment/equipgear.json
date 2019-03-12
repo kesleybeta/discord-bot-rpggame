@@ -11,576 +11,670 @@
     "other": [""]
   },
   "_other": {
-    "Ball bearings (bag of 1,000)": {
-      "cost": [1, "gp"],
-      "weight": 2
-    },
-    "Barrel": {
-      "cost": [2, "gp"],
-      "weight": 70
-    },
-    "Basket": {
-      "cost": [2, "sp"],
-      "weight": 52
-    },
-    "Bedroll": {
-      "cost": [1, "gp"],
-      "weight": 7
-    },
-    "Bell": {
-      "cost": [1, "gp"],
-      "weight": 0
-    },
-    "Blanket": {
-      "cost": [5, "sp"],
-      "weight": 3
-    },
-    "Block and tackle": {
-      "cost": [1, "gp"],
-      "weight": 5
-    },
-    "Book": {
-      "cost": [25, "gp"],
-      "weight": 5
-    },
     "Bottle glass": {
+      "category": "",
+      "container": "",
       "cost": [2, "gp"],
+      "description": "",
+      "name": "",
       "weight": 2
     },
     "Bucket": {
+      "category": "",
+      "container": "",
       "cost": [5, "bp"],
+      "description": "",
+      "name": "",
       "weight": 2
     },
     "Caltrops(bag of 20)": {
+      "category": "",
+      "container": "",
       "cost": [1, "gp"],
+      "description": "",
+      "name": "",
       "weight": 2
     },
     "Candle": {
+      "category": "",
+      "container": "",
       "cost": [1, "bp"],
+      "description": "",
+      "name": "",
       "weight": 0
     },
     "Case, crossbow bolt": {
+      "category": "",
+      "container": "",
       "cost": [1, "gp"],
+      "description": "",
+      "name": "",
       "weight": 1
     },
     "Case, map or scroll": {
+      "category": "",
+      "container": "",
       "cost": [1, "gp"],
+      "description": "",
+      "name": "",
       "weight": 1
     },
     "Chain(10 feet)": {
+      "category": "",
+      "container": "",
       "cost": [5, "gp"],
+      "description": "",
+      "name": "",
       "weight": 10
     },
     "Chalk(1 piece)": {
+      "category": "",
+      "container": "",
       "cost": [1, "bp"],
+      "description": "",
+      "name": "",
       "weight": 0
     },
     "Chest": {
+      "category": "",
+      "container": "",
       "cost": [5, "gp"],
+      "description": "",
+      "name": "",
       "weight": 25
     },
     "Climber's kit": {
+      "category": "",
+      "container": "",
       "cost": [25, "gp"],
+      "description": "",
+      "name": "",
       "weight": 12
     },
     "Clothes, common": {
+      "category": "",
+      "container": "",
       "cost": [5, "sp"],
+      "description": "",
+      "name": "",
       "weight": 3
     },
     "Clothes, costume": {
+      "category": "",
+      "container": "",
       "cost": [5, "gp"],
+      "description": "",
+      "name": "",
       "weight": 4
     },
     "Clothes, fine": {
+      "category": "",
+      "container": "",
       "cost": [15, "gp"],
+      "description": "",
+      "name": "",
       "weight": 6
     },
     "Clothes, traveler's": {
+      "category": "",
+      "container": "",
       "cost": [2, "gp"],
+      "description": "",
+      "name": "",
       "weight": 4
     },
     "Component pouch": {
+      "category": "",
+      "container": "",
       "cost": [25, "gp"],
+      "description": "",
+      "name": "",
       "weight": 2
     },
     "Crowbar": {
-      "cost": {
-        "bp": 0,
-        "gp": 2,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [2, "gp"],
+      "description": "",
+      "name": "",
       "weight": 5
     },
     "Fishing tackle": {
-      "cost": {
-        "bp": 0,
-        "gp": 1,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [1, "gp"],
+      "description": "",
+      "name": "",
       "weight": 4
     },
     "Flask or tankard": {
-      "cost": {
-        "bp": 1,
-        "gp": 0,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [1, "bp"],
+      "description": "",
+      "name": "",
       "weight": 1
     },
     "Grappling hook": {
-      "cost": {
-        "bp": 0,
-        "gp": 2,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [2, "gp"],
+      "description": "",
+      "name": "",
       "weight": 4
     },
     "Hammer": {
-      "cost": {
-        "bp": 0,
-        "gp": 1,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [1, "gp"],
+      "description": "",
+      "name": "",
       "weight": 3
     },
     "Hammer, sledge": {
-      "cost": {
-        "bp": 0,
-        "gp": 2,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [2, "gp"],
+      "description": "",
+      "name": "",
       "weight": 10
     },
     "Healer 's kit": {
-      "cost": {
-        "bp": 0,
-        "gp": 5,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [5, "gp"],
+      "description": "",
+      "name": "",
       "weight": 3
     },
     "Holy water(flask)": {
-      "cost": {
-        "bp": 0,
-        "gp": 25,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [25, "gp"],
+      "description": "",
+      "name": "",
       "weight": 1
     },
     "Hourglass": {
-      "cost": {
-        "bp": 0,
-        "gp": 25,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [25, "gp"],
+      "description": "",
+      "name": "",
       "weight": 1
     },
     "Hunting trap": {
-      "cost": {
-        "bp": 0,
-        "gp": 5,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [5, "gp"],
+      "description": "",
+      "name": "",
       "weight": 25
     },
     "Ink pen": {
-      "cost": {
-        "bp": 2,
-        "gp": 0,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [2, "bp"],
+      "description": "",
+      "name": "",
       "weight": 0
     },
     "Ink(1 ounce bottle)": {
-      "cost": {
-        "bp": 0,
-        "gp": 10,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [10, "gp"],
+      "description": "",
+      "name": "",
       "weight": 0
     },
     "Jug or pitcher": {
-      "cost": {
-        "bp": 2,
-        "gp": 0,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [2, "bp"],
+      "description": "",
+      "name": "",
       "weight": 4
     },
     "Ladder(10 foot)": {
-      "cost": {
-        "bp": 0,
-        "gp": 0,
-        "sp": 1
-      },
+      "category": "",
+      "container": "",
+      "cost": [1, "sp"],
+      "description": "",
+      "name": "",
       "weight": 25
     },
     "Lamp": {
-      "cost": {
-        "bp": 0,
-        "gp": 0,
-        "sp": 5
-      },
+      "category": "",
+      "container": "",
+      "cost": [5, "sp"],
+      "description": "",
+      "name": "",
       "weight": 1
     },
     "Lantern, bullseye": {
-      "cost": {
-        "bp": 0,
-        "gp": 10,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [10, "gp"],
+      "description": "",
+      "name": "",
       "weight": 2
     },
     "Lantern, hooded": {
-      "cost": {
-        "bp": 0,
-        "gp": 5,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [5, "gp"],
+      "description": "",
+      "name": "",
       "weight": 2
     },
     "Lock": {
-      "cost": {
-        "bp": 0,
-        "gp": 10,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [10, "gp"],
+      "description": "",
+      "name": "",
       "weight": 1
     },
     "Magnifying glass": {
-      "cost": {
-        "bp": 0,
-        "gp": 100,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [100, "gp"],
+      "description": "",
+      "name": "",
       "weight": 0
     },
     "Manacles": {
-      "cost": {
-        "bp": 0,
-        "gp": 2,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [2, "gp"],
+      "description": "",
+      "name": "",
       "weight": 6
     },
     "Mess kit": {
-      "cost": {
-        "bp": 0,
-        "gp": 0,
-        "sp": 2
-      },
+      "category": "",
+      "container": "",
+      "cost": [2, "sp"],
+      "description": "",
+      "name": "",
       "weight": 1
     },
     "Mirror, steel": {
-      "cost": {
-        "bp": 0,
-        "gp": 5,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [5, "gp"],
+      "description": "",
+      "name": "",
       "weight": 1.5
     },
     "Oil(flask)": {
-      "cost": {
-        "bp": 0,
-        "gp": 0,
-        "sp": 1
-      },
+      "category": "",
+      "container": "",
+      "cost": [1, "sp"],
+      "description": "",
+      "name": "",
       "weight": 1
     },
-    "Paper(one sheet)": {
-      "cost": {
-        "bp": 0,
-        "gp": 0,
-        "sp": 2
-      },
+    "Paper": {
+      "category": "",
+      "container": "",
+      "cost": [2, "sp"],
+      "description": "",
+      "name": "",
       "weight": 0
     },
-    "Parchment(one sheet)": {
-      "cost": {
-        "bp": 0,
-        "gp": 0,
-        "sp": 1
-      },
+    "Parchment": {
+      "category": "",
+      "container": "",
+      "cost": [1, "sp"],
+      "description": "",
+      "name": "",
       "weight": 0
     },
-    "Perfume(vial)": {
-      "cost": {
-        "bp": 0,
-        "gp": 5,
-        "sp": 0
-      },
+    "Perfume (vial)": {
+      "category": "",
+      "container": "",
+      "cost": [5, "gp"],
+      "description": "",
+      "name": "",
       "weight": 0
     },
     "Pick, miner's": {
-      "cost": {
-        "bp": 0,
-        "gp": 2,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [2, "gp"],
+      "description": "",
+      "name": "",
       "weight": 10
     },
     "Piton": {
-      "cost": {
-        "bp": 5,
-        "gp": 0,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [5, "bp"],
+      "description": "",
+      "name": "",
       "weight": 0.75
     },
     "Poison, basic(vial)": {
-      "cost": {
-        "bp": 0,
-        "gp": 100,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [100, "gp"],
+      "description": "",
+      "name": "",
       "weight": 0
     },
     "Pole(10 - foot)": {
-      "cost": {
-        "bp": 5,
-        "gp": 0,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [5, "bp"],
+      "description": "",
+      "name": "",
       "weight": 7
     },
     "Pot, iron": {
-      "cost": {
-        "bp": 0,
-        "gp": 2,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [2, "gp"],
+      "description": "",
+      "name": "",
       "weight": 10
     },
     "Potion of healing": {
-      "cost": {
-        "bp": 0,
-        "gp": 50,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [50, "gp"],
+      "description": "",
+      "name": "",
       "weight": 0.5
     },
     "Pouch": {
-      "cost": {
-        "bp": 0,
-        "gp": 0,
-        "sp": 5
-      },
+      "category": "",
+      "container": "",
+      "cost": [5, "sp"],
+      "description": "",
+      "name": "",
       "weight": 1
     },
     "Quiver": {
-      "cost": {
-        "bp": 0,
-        "gp": 1,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [1, "gp"],
+      "description": "",
+      "name": "",
       "weight": 1
     },
     "Ram, portable": {
-      "cost": {
-        "bp": 0,
-        "gp": 4,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [4, "gp"],
+      "description": "",
+      "name": "",
       "weight": 35
     },
     "Rations(1 day)": {
-      "cost": {
-        "bp": 0,
-        "gp": 0,
-        "sp": 5
-      },
+      "category": "",
+      "container": "",
+      "cost": [5, "sp"],
+      "description": "",
+      "name": "",
       "weight": 2
     },
     "Robes": {
-      "cost": {
-        "bp": 0,
-        "gp": 1,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [1, "gp"],
+      "description": "",
+      "name": "",
       "weight": 4
     },
     "Rope, hempen(50 feet)": {
-      "cost": {
-        "bp": 0,
-        "gp": 1,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [1, "gp"],
+      "description": "",
+      "name": "",
       "weight": 10
     },
     "Rope, silk(50 feet)": {
-      "cost": {
-        "bp": 0,
-        "gp": 10,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [10, "gp"],
+      "description": "",
+      "name": "",
       "weight": 5
     },
     "Sack": {
-      "cost": {
-        "bp": 1,
-        "gp": 0,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [1, "bp"],
+      "description": "",
+      "name": "",
       "weight": 0.5
     },
     "Scale, merchant's": {
-      "cost": {
-        "bp": 0,
-        "gp": 5,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [5, "gp"],
+      "description": "",
+      "name": "",
       "weight": 3
     },
     "Sealing wax": {
-      "cost": {
-        "bp": 0,
-        "gp": 0,
-        "sp": 5
-      },
+      "category": "",
+      "container": "",
+      "cost": [5, "sp"],
+      "description": "",
+      "name": "",
       "weight": 0
     },
     "Shovel": {
-      "cost": {
-        "bp": 0,
-        "gp": 2,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [2, "gp"],
+      "description": "",
+      "name": "",
       "weight": 5
     },
     "Signal whistle": {
-      "cost": {
-        "bp": 5,
-        "gp": 0,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [5, "bp"],
+      "description": "",
+      "name": "",
       "weight": 0
     },
     "Signet ring": {
-      "cost": {
-        "bp": 0,
-        "gp": 5,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [5, "gp"],
+      "description": "",
+      "name": "",
       "weight": 0
     },
     "Soap": {
-      "cost": {
-        "bp": 2,
-        "gp": 0,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [2, "bp"],
+      "description": "",
+      "name": "",
       "weight": 0
     },
     "Spellbook": {
-      "cost": {
-        "bp": 0,
-        "gp": 50,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [50, "gp"],
+      "description": "",
+      "name": "",
       "weight": 3
     },
     "Spikes, iron(10)": {
-      "cost": {
-        "bp": 0,
-        "gp": 1,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [1, "gp"],
+      "description": "",
+      "name": "",
       "weight": 5
     },
     "Spyglass": {
-      "cost": {
-        "bp": 0,
-        "gp": 1000,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [1000, "gp"],
+      "description": "",
+      "name": "",
       "weight": 1
     },
     "Tent, two - person": {
-      "cost": {
-        "bp": 0,
-        "gp": 2,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [2, "gp"],
+      "description": "",
+      "name": "",
       "weight": 20
     },
     "Tinderbox": {
-      "cost": {
-        "bp": 0,
-        "gp": 0,
-        "sp": 5
-      },
+      "category": "",
+      "container": "",
+      "cost": [5, "sp"],
+      "description": "",
+      "name": "",
       "weight": 1
     },
     "Torch": {
-      "cost": {
-        "bp": 1,
-        "gp": 0,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [1, "bp"],
+      "description": "",
+      "name": "",
       "weight": 1
     },
     "Vial": {
-      "cost": {
-        "bp": 0,
-        "gp": 1,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [1, "gp"],
+      "description": "",
+      "name": "",
       "weight": 0
     },
     "Waterskin": {
-      "cost": {
-        "bp": 0,
-        "gp": 0,
-        "sp": 2
-      },
+      "category": "",
+      "container": "",
+      "cost": [2, "sp"],
+      "description": "",
+      "name": "",
       "weight": 5
     },
     "Whetstone": {
-      "cost": {
-        "bp": 1,
-        "gp": 0,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [1, "bp"],
+      "description": "",
+      "name": "",
       "weight": 1
     },
     "abacus": {
-      "cost": {
-        "bp": 0,
-        "gp": 2,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [2, "gp"],
+      "description": "",
+      "name": "",
       "weight": 2
     },
     "alchemist's fire flask": {
-      "cost": {
-        "bp": 0,
-        "gp": 50,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [5, "gp"],
+      "description": "",
+      "name": "",
       "weight": 1
     },
     "backpack": {
-      "cost": {
-        "bp": 0,
-        "gp": 2,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [2, "gp"],
+      "description": "",
+      "name": "",
+      "weight": 5
+    },
+    "ball bearings": {
+      "category": "action",
+      "container": "bag",
+      "cost": [1, "gp"],
+      "description": "You can spill these tiny metal balls from their pouch to cover a level, square area that is 10 feet on a side. A creature moving across the covered area must succeed on a DC 10 Dexterity saving throw or fall prone. A creature moving through the area at half speed doesn't need to make the save.",
+      "name": "Bag of ball bearings",
+      "quantity": "1000",
+      "weight": 2
+    },
+    "barrel": {
+      "category": "",
+      "container": "",
+      "cost": [2, "gp"],
+      "description": "",
+      "name": "Barrel",
+      "quantity": "",
+      "weight": 70
+    },
+    "basket": {
+      "category": "",
+      "container": "",
+      "cost": [2, "sp"],
+      "description": "",
+      "name": "Basket",
+      "weight": 52
+    },
+    "bedroll": {
+      "category": "",
+      "container": "",
+      "cost": [1, "gp"],
+      "description": "",
+      "name": "Bedroll",
+      "weight": 7
+    },
+    "bell": {
+      "category": "",
+      "container": "",
+      "cost": [1, "gp"],
+      "description": "",
+      "name": "Bell",
+      "weight": 0
+    },
+    "blanket": {
+      "category": "",
+      "container": "",
+      "cost": [5, "sp"],
+      "description": "",
+      "name": "Blanket",
+      "weight": 3
+    },
+    "block and tackle": {
+      "category": "",
+      "container": "set",
+      "cost": [1, "gp"],
+      "description": "A set of pulleys with a cable threaded through them and a hook to attach to objects, a block and tackle allows you to hoist up to four times the weight you can normally lift.",
+      "name": "Block and tackle",
+      "weight": 5
+    },
+    "book": {
+      "category": "",
+      "container": "",
+      "cost": [25, "gp"],
+      "description": "A book might contain poetry, historical accounts, information pertaining to a particular field of lore, diagrams and notes on gnomish contraptions, or just about anything else that can be represented using text or pictures. A book of spells is a spellbook (described later in this section).",
+      "name": "Book",
       "weight": 5
     },
     "vial of acid": {
-      "cost": {
-        "bp": 0,
-        "gp": 25,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [25, "gp"],
+      "description": "",
+      "name": "",
       "weight": 1
     },
     "vial of antitoxin": {
-      "cost": {
-        "bp": 0,
-        "gp": 50,
-        "sp": 0
-      },
+      "category": "",
+      "container": "",
+      "cost": [50, "gp"],
+      "description": "",
+      "name": "",
       "weight": 0
     }
   },
