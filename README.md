@@ -6,7 +6,9 @@
 ```
 IDE:
 ```
-- **Visual Studio Code**
+- [**Visual Studio Code**](https://code.visualstudio.com/)
+  
+  > Is a source code editor developed by Microsoft for Windows, Linux and macOS.
 
   ---
 ```
