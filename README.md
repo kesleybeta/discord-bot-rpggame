@@ -1,12 +1,8 @@
 # discordjs-bot
-```fix
-
   A Discord game-like bot using D&D elements.
 
-```
 
-
-# Software, services and tools used
+## Software, services and tools used
 ```
 IDE:
 ```
