@@ -7,17 +7,23 @@
 
 
 # Software, services and tools used
-`IDE:`
+```
+IDE:
+```
 - **Visual Studio Code**
 
-***
-`Programming languages:`
+  ---
+```
+Programming languages:
+```
 - **Javascript** ([Node.js](https://nodejs.org/en/))
 
   > Node.js is an open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser.
 
-***
-`Tools:`
+  ---
+```
+Tools:
+```
 - [Discord.js](https://discord.js.org/ "Discord.js"): 
 
   > Is  powerful node.js module that allows you to interact with the Discord API.
@@ -27,9 +33,10 @@
 
   > Mongoose provides a straight-forward, schema-based solution to model your application data.
 
-
-***
-`Services:`
+  ---
+```
+Services:
+```
 - [Heroku](https://heroku.com "Cloud platform")
 
   > Is a cloud platform as a service supporting several programming languages. 
@@ -39,6 +46,10 @@
 
   > Is a fully managed cloud database service that hosts MongoDB databases.
   
-***
-`API's:`
+  ---
+```
+API's:
+```
 - **Discord API**
+
+  ---
